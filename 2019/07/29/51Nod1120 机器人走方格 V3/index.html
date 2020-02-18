@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    51Nod1120 机器人走方格 V3 | CCWUCMCTS&#39;s Blog
+  </title>
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="CCWUCMCTS">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 96 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">CCWUCMCTS&#39;s Blog</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    CCWUCMCTS
+
+    <span class="post-date float-right" title="{{moment(1564382760000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1564382760000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>51Nod1120 机器人走方格 V3</h1>
+    <p>##题目</p>
+<p>N * N的方格，从左上到右下画一条线。一个机器人从左上走到右下，只能向右或向下走。并要求只能在这条线的上面或下面走，不能穿越这条线，有多少种不同的走法？由于方法数量可能很大，只需要输出Mod 10007的结果。<br>N&lt;=1e9</p>
+<p>##思路</p>
+<p>卡特兰数+卢卡斯定理+乘法逆元算组合数</p>
+<p>卡特兰数：某百科卡特兰数词条讲过这种情况。</p>
+<p>卢卡斯定理：组合数，模数很小，逐次拆分<img src="https://img2018.cnblogs.com/blog/1575943/201907/1575943-20190729224246253-1400059291.png" alt=""></p>
+<p>乘法逆元，见前面，此处n+1不能保证和p互质，建议用卡特兰数两组合数相减的公式。（不过数据很弱我写的/(n+1)）</p>
+<p>##代码</p>
+<pre><code>#include&lt;bits/stdc++.h&gt;
+using namespace std;
+#define ll long long
+#define db double
+#define mod 10007
+ll n;
+ll gcd(ll a,ll b){
+    return b==0?a:gcd(b,a%b);
+}
+ll speed(ll a,ll b,ll p){
+    ll cur=a,ans=1;
+    while(b){
+        if(b&amp;1) ans=ans*cur%p;
+        cur=cur*cur%p;
+        b&gt;&gt;=1;
+    }
+    return ans%p;
+}
+ll inv(ll t,ll p) {//Inverse element,求t关于p的逆元,注意:t要小于p,最好传参前先把t%p一下 
+    return t==1?1:(p-p/t)*inv(p%t,p)%p;
+}
+ll Scomb(ll _n,ll _m,ll p){//SmallCombination n,m可以线性求出 
+    if(_m==0) return 1;
+    //return Factorial(_n,p)*inv(Factorial(m,p)%p,p)%p*inv(Factorial(n-m,p)%p,p)%p;
+    ll ans=1,tmp=1;
+    for(ll i=_m+1;i&lt;=_n;i++){
+        ans=(ans*i)%p;
+    }
+    for(ll i=1;i&lt;=_n-_m;i++){
+        tmp=(tmp*i)%p;
+    }
+    //cout&lt;&lt;tmp&lt;&lt;endl;
+    return ans*inv(tmp%p,p)%p;
+}
+ll Bcomb(ll _n,ll _m,ll p){//BigCombination
+    if(_n&lt;p&amp;&amp;_m&lt;p) return Scomb(_n,_m,p)%p;
+    return Bcomb(_n/p,_m/p,p)*Scomb(_n%p,_m%p,p)%p;
+}
+
+int main(){
+    cin&gt;&gt;n;
+    n--;
+    ll ans=2*Bcomb(2*n,n,mod)*speed(n+1,mod-2,mod)%mod;
+    cout&lt;&lt;ans&lt;&lt;endl;
+    //cout&lt;&lt;speed(2,mod-2,mod)%mod;
+    return 0;
+}</code></pre>
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://github.com/CCWUCMCTS" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 CCWUCMCTS</li>
+      <li><a href="https://github.com/CCWUCMCTS">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    Disk Tree | CCWUCMCTS&#39;s Blog
+  </title>
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="CCWUCMCTS">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 96 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">CCWUCMCTS&#39;s Blog</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    CCWUCMCTS
+
+    <span class="post-date float-right" title="{{moment(1561227480000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1561227480000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>Disk Tree</h1>
+    <p>###题目描述</p>
+<p>Hacker Bill has accidentally lost all the information from his workstation’s hard drive and he has no backup copies of its contents. He does not regret for the loss of the files themselves, but for the very nice and convenient directory structure that he had created and cherished during years of work. Fortunately, Bill has several copies of directory listings from his hard drive. Using those listings he was able to recover full paths (like “WINNT\SYSTEM32\CERTSRV\CERTCO~1\X86”) for some directories. He put all of them in a file by writing each path he has found on a separate line. Your task is to write a program that will help Bill to restore his state of the art directory structure by providing nicely formatted directory tree.</p>
+<p>###输入</p>
+<p>The first line of the input file contains single integer number N (1 &lt;= N &lt;= 500) that denotes a total number of distinct directory paths. Then N lines with directory paths follow. Each directory path occupies a single line and does not contain any spaces, including leading or trailing ones. No path exceeds 80 characters. Each path is listed once and consists of a number of directory names separated by a back slash (“&quot;). </p>
+<p>Each directory name consists of 1 to 8 uppercase letters, numbers, or the special characters from the following list: exclamation mark, number sign, dollar sign, percent sign, ampersand, apostrophe, opening and closing parenthesis, hyphen sign, commercial at, circumflex accent, underscore, grave accent, opening and closing curly bracket, and tilde (“!#$%&amp;’()-@^_`{}~”). </p>
+<p>###输出</p>
+<p>Write to the output file the formatted directory tree. Each directory name shall be listed on its own line preceded by a number of spaces that indicate its depth in the directory hierarchy. The subdirectories shall be listed in lexicographic order immediately after their parent directories preceded by one more space than their parent directory. Top level directories shall have no spaces printed before their names and shall be listed in lexicographic order. See sample below for clarification of the output format.</p>
+<p>###样例输入</p>
+<blockquote>
+<p>7<br>WINNT\SYSTEM32\CONFIG<br>GAMES<br>WINNT\DRIVERS<br>HOME<br>WIN\SOFT<br>GAMES\DRIVERS<br>WINNT\SYSTEM32\CERTSRV\CERTCO~1\X86</p>
+</blockquote>
+<p>###样例输出<br>    GAMES<br>     DRIVERS<br>    HOME<br>    WIN<br>     SOFT<br>    WINNT<br>     DRIVERS<br>     SYSTEM32<br>      CERTSRV<br>       CERTCO~1<br>        X86<br>      CONFIG</p>
+<p>####瞎搞代码，只能在学校OJ上交过，POJ上交超时<br>####一开始想成文件名不重复了，正解是手动链树，多叉转二叉，添加节点的时候排序，vector瞎搞模拟有点慢，懒得改了 </p>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#include&lt;stdio.h&gt;
+#include&lt;cstdio&gt;
+#include&lt;queue&gt;
+#include&lt;cstring&gt;
+#include&lt;algorithm&gt;
+#include&lt;vector&gt;
+#include&lt;queue&gt;
+#include&lt;map&gt;
+using namespace std;
+int n,cnt,T;
+struct E{
+    string s;
+    int pla;
+    vector&lt;int&gt;v;
+};
+E fir[520];
+E node[20020];
+int fircnt=0;
+int cmp(E x,E y){
+    return x.s&lt;y.s;
+}
+int cmp1(int x,int y){
+    return node[x].s&lt;node[y].s;
+}
+void dfs(int cur,int h){
+    if(cur==0) return;
+    if(h==0){
+        cout&lt;&lt;fir[cur].s&lt;&lt;endl;
+        sort(fir[cur].v.begin(),fir[cur].v.end(),cmp1);
+        for(int i=0;i&lt;fir[cur].v.size();i++){
+            dfs(fir[cur].v[i],h+1);
+        }
+    }
+    else{
+        for(int i=1;i&lt;=h;i++) printf(&quot; &quot;);
+        cout&lt;&lt;node[cur].s&lt;&lt;endl;
+        sort(node[cur].v.begin(),node[cur].v.end(),cmp1);
+        for(int i=0;i&lt;node[cur].v.size();i++){
+            dfs(node[cur].v[i],h+1);
+        }
+    }
+}
+
+int main(){
+    //freopen(&quot;I.in&quot;,&quot;r&quot;,stdin);
+    //freopen(&quot;I.out&quot;,&quot;w&quot;,stdout);
+    //cin&gt;&gt;T;
+    T=1;
+    while(T--){
+        //for(int i=1;i&lt;=cnt;i++) a[i].clear();
+        cnt=fircnt=0;
+        //memset(e,0,sizeof(e));
+        //memset(root,0,sizeof(root));
+        //mp.clear();
+        cin&gt;&gt;n;
+        string s0;
+        for(int i=1;i&lt;=n;i++){
+            cin&gt;&gt;s0;
+            int x1=-1,x2=-1;
+            string tmps=&quot;&quot;;//,last=&quot;&quot;;
+            int last=0,tmp,cur=0;
+            for(int j=0;j&lt;s0.size();j++){
+                if(x2==-1&amp;&amp;s0[j]==&apos;\\&apos;){
+                    cur++;
+                    x2=j;
+                    tmps=s0.substr(0,j);
+                    tmp=-1;
+                    for(int k=1;k&lt;=fircnt;k++){
+                        if(tmps==fir[k].s){
+                            tmp=k;
+                            break;
+                        }
+                    }
+                    if(tmp==-1){
+                        ++fircnt;
+                        fir[fircnt]=(E){tmps,fircnt};
+                        last=fircnt;
+                    }
+                    else{
+                        last=fir[tmp].pla;
+                    }
+                    //cout&lt;&lt;tmps&lt;&lt;&apos; &apos;;
+                }
+                else if(s0[j]==&apos;\\&apos;){
+                    cur++;
+                    x1=x2,x2=j;
+                    tmps=s0.substr(x1+1,x2-x1-1);
+                    tmp=-1;
+                    //if(tmps==&quot;SYSTEM32&quot;)cout&lt;&lt;&quot;!!!&quot;;
+                    if(cur==2){
+
+                        for(int k=0;k&lt;fir[last].v.size();k++){
+                            if(tmps==node[fir[last].v[k]].s){
+                                tmp=k;
+                                break;
+                            }
+                        }
+                        if(tmp==-1){
+                            ++cnt;
+                            node[cnt]=(E){tmps,cnt};
+                            fir[last].v.push_back(cnt);
+                            last=cnt;
+                        }
+                        else{
+                            last=node[fir[last].v[tmp]].pla;
+                        }
+                        /*if(tmps==&quot;SYSTEM32&quot;){
+                            cout&lt;&lt;&quot;^^&quot;&lt;&lt;tmp;
+                            cout&lt;&lt;&quot;&amp;&amp;&quot;&lt;&lt;last&lt;&lt;&quot;&amp;&amp;&quot;&lt;&lt;endl;
+                        }*/
+                    }
+                    else{
+                        /*if(tmps==&quot;CERTSRV&quot;){
+                            cout&lt;&lt;&quot;&amp;&amp;&quot;&lt;&lt;last&lt;&lt;&quot;&amp;&amp;&quot;&lt;&lt;endl;
+                        }*/
+                        for(int k=0;k&lt;node[last].v.size();k++){
+                            if(tmps==node[node[last].v[k]].s){
+                                tmp=k;
+                                break;
+                            }
+                        }
+
+                        if(tmp==-1){
+                            ++cnt;
+                            node[cnt]=(E){tmps,cnt};
+                            node[last].v.push_back(cnt);
+                            last=cnt;
+                        }
+                        else{
+                            last=node[node[last].v[tmp]].pla;
+                        }
+                    }
+                    //cout&lt;&lt;tmps&lt;&lt;&apos; &apos;;
+                }
+            }
+            if(x1==-1&amp;&amp;x2==-1){
+                cur++;
+                tmps=s0.substr(0,s0.size());
+                tmp=-1;
+                for(int k=1;k&lt;=fircnt;k++){
+                    if(tmps==fir[k].s){
+                        tmp=k;
+                        break;
+                    }
+                }
+                if(tmp==-1){
+                    ++fircnt;
+                    fir[fircnt]=(E){tmps,fircnt};
+                    last=fircnt;
+                }
+                else{
+                    last=fir[tmp].pla;
+                }
+                //cout&lt;&lt;tmps&lt;&lt;&apos; &apos;;
+            }
+            else if(s0[s0.size()-1]!=&apos;\\&apos;){
+                cur++;
+                tmps=s0.substr(x2+1,s0.size()-x2-1);
+                tmp=-1;
+                if(cur==2){
+                    for(int k=0;k&lt;fir[last].v.size();k++){
+                        if(tmps==node[fir[last].v[k]].s){
+                            tmp=k;
+                            break;
+                        }
+                    }
+                    if(tmp==-1){
+                        ++cnt;
+                        node[cnt]=(E){tmps,cnt};
+                        fir[last].v.push_back(cnt);
+                        last=cnt;
+                    }
+                    else{
+                        last=node[fir[last].v[tmp]].pla;
+                    }
+                }
+                else{
+                    for(int k=0;k&lt;node[last].v.size();k++){
+                        if(tmps==node[node[last].v[k]].s){
+                            tmp=k;
+                            break;
+                        }
+                    }
+                    if(tmp==-1){
+                        ++cnt;
+                        node[cnt]=(E){tmps,cnt};
+                        node[last].v.push_back(cnt);
+                        last=cnt;
+                    }
+                    else{
+                        last=node[node[last].v[tmp]].pla;
+                    }
+                }
+                //cout&lt;&lt;tmps&lt;&lt;&apos; &apos;;
+            }
+            //cout&lt;&lt;endl;
+        }
+
+        sort(fir+1,fir+1+fircnt,cmp);
+        /*printf(&quot;*****测试*****\n&quot;);
+        for(int i=1;i&lt;=cnt;i++){
+            cout&lt;&lt;e[i].s&lt;&lt;&quot;:&quot;;
+            for(int j=0;j&lt;a[i][0];j++){
+                cout&lt;&lt;e[a[i][j]].s&lt;&lt;&apos; &apos;;
+            }
+            cout&lt;&lt;endl;
+        }
+        dfstest(trieroot);
+        printf(&quot;*****测试*****\n&quot;);*/
+        for(int i=1;i&lt;=fircnt;i++){
+            dfs(i,0);
+        }
+        /*cout&lt;&lt;&quot;**********&quot;&lt;&lt;endl;
+        for(int i=1;i&lt;=fircnt;i++){
+            cout&lt;&lt;fir[i].s&lt;&lt;endl;
+        }
+        cout&lt;&lt;&quot;************&quot;&lt;&lt;endl;
+        for(int i=1;i&lt;=cnt;i++){
+            cout&lt;&lt;node[i].s&lt;&lt;endl;
+        }*/
+        if(T) printf(&quot;\n&quot;);
+    }
+
+    return 0;
+}</code></pre>
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://github.com/CCWUCMCTS" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 CCWUCMCTS</li>
+      <li><a href="https://github.com/CCWUCMCTS">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

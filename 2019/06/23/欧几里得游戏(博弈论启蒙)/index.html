@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    欧几里得游戏(博弈论启蒙) | CCWUCMCTS&#39;s Blog
+  </title>
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="CCWUCMCTS">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 96 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">CCWUCMCTS&#39;s Blog</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    CCWUCMCTS
+
+    <span class="post-date float-right" title="{{moment(1561225980000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1561225980000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>欧几里得游戏(博弈论启蒙)</h1>
+    <p>###题目描述</p>
+<p>小明和小红在玩欧几里得游戏。他们从两个自然数开始，第一个玩家小明，从两个数的较大数中减去较小数的尽可能大的正整数倍，只要差为非负即可。然后，第二个玩家小红，对得到的两个数进行同样的操作，然后又是小明。就这样轮流进行游戏，直至某个玩家将较大数减去较小数的某个倍数之后差为0为止，此时游戏结束，该玩家就是胜利者。</p>
+<p>###输入</p>
+<p>输入包含多组测试数据。每组输入两个正整数，表示游戏一开始的两个数，游戏总是小明先开始。<br> 当输入两个0的时候，输入结束。</p>
+<p>###输出</p>
+<p>对于每组输入，输出最后的胜者，我们认为他们两个都是顶尖高手，每一步游戏都做出了最佳的选择。<br> 具体输出格式见输出样例。</p>
+<p>###样例输入</p>
+<blockquote>
+<p>34 12<br>15 24<br>0 0</p>
+</blockquote>
+<p>###样例输出</p>
+<blockquote>
+<p>xiaoming wins<br>xiaohong wins</p>
+</blockquote>
+<p>####两句话，能转移到必败点的是必胜点，只能转移到必胜点的是必败点。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1575943/201906/1575943-20190623095542588-1832008552.png" alt=""></p>
+<p>我是这么推出来的，或者从定理出发，一个点不是必败点就是必胜点，对三角形右下角分别假设，都可以推出m/n&gt;2必胜</p>
+<pre><code>#include&lt;cstdio&gt;
+#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#include&lt;string&gt;
+#include&lt;algorithm&gt;
+#define ll long long
+using namespace std;
+int n,m;
+int main(){
+    while(scanf(&quot;%d%d&quot;,&amp;n,&amp;m)==2&amp;&amp;n&amp;&amp;m){
+        if(n&gt;m) swap(n,m);
+        bool flag=true;
+        while(m%n!=0&amp;&amp;m/n==1){
+            m-=n;
+            if(n&gt;m) swap(n,m);
+            flag=!flag;
+        }
+        if(flag){
+            printf(&quot;xiaoming wins\n&quot;);
+        }
+        else printf(&quot;xiaohong wins\n&quot;);
+    }
+    return 0;
+}</code></pre>
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://github.com/CCWUCMCTS" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 CCWUCMCTS</li>
+      <li><a href="https://github.com/CCWUCMCTS">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

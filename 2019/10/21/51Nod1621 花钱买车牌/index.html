@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    51Nod1621 花钱买车牌 | CCWUCMCTS&#39;s Blog
+  </title>
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="CCWUCMCTS">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 96 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">CCWUCMCTS&#39;s Blog</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    CCWUCMCTS
+
+    <span class="post-date float-right" title="{{moment(1571640180000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1571640180000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>51Nod1621 花钱买车牌</h1>
+    <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>一个车牌号由n位数字组成。如果一个车牌至少有k位数字是相同的，那么我们就说这个车牌漂亮的车牌。现在华沙想要改变他自己的车牌，使得他的车牌变得漂亮。当然，改车牌是要花钱的。每改变一位数字所要花费的费用等于当前位上的新旧数字之差的绝对值。那么总费用就是每位上所花费用的总和。</p>
+<p>举例如下，</p>
+<p>旧牌为0123，新牌为7765，那么对应第一位所花费用为|0-7|＝7，第二位为|1-7|＝6，第三位为|2-6|＝4，第四位为|3-5|＝2，总和为7+6+4+2＝19</p>
+<p>华沙想用最少的钱，使他的车牌变得漂亮起来。现在给定n，k，和旧牌的号码，计算换牌的最少费，以及新牌的号码，</p>
+<p>如果最少费用的号码有多个，我们取字典序最小的那个。</p>
+<p>样例解释：</p>
+<p>在样例中，把第二个数字换成“8”花费|9-8|＝1，把第五个数字换成“8”也花了1。</p>
+<p>把第六个数字换成“8”花费|6-8|＝2.总费用为1+1+2＝4，新号码为“888188”</p>
+<p>两个长度为n的序列比较方法如下。</p>
+<p>存在两个序列x，y，长度都是n。</p>
+<p>如果存在i(1≤i≤n)和任意j(1≤j＜i)使得 xi＜yixi＜yi 并且 xj＝yjxj＝yj ，那么我们就说x比y小。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>0到9循环，每次排序改变前面的。</p>
+<p>排序规则，先排差绝对值小的，相等先排数大的，这样字典序会改小，数还相等，如果小于当前循环的i，说明字典序会变大，就先排后面的，否则先排前面的。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#define io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span><br><span class="line">using namespace std;</span><br><span class="line">int n,k;</span><br><span class="line">struct E&#123;</span><br><span class="line">	char c;</span><br><span class="line">	int pla;</span><br><span class="line">&#125;e[10020];</span><br><span class="line">E ans[10020];</span><br><span class="line">E cur[10020];</span><br><span class="line">int mn&#x3D;1e9;</span><br><span class="line">bool Ecmp(E x[],E y[])&#123;</span><br><span class="line">	for(int i&#x3D;1;i&lt;&#x3D;n;i++)&#123;</span><br><span class="line">		if(x[i].c&lt;y[i].c) return false;</span><br><span class="line">		else if(x[i].c&gt;y[i].c) return true;</span><br><span class="line">	&#125;</span><br><span class="line">	return false;</span><br><span class="line">&#125;</span><br><span class="line">void cpy(E x[],E y[])&#123;</span><br><span class="line">	for(int i&#x3D;1;i&lt;&#x3D;n;i++)&#123;</span><br><span class="line">		x[i]&#x3D;y[i];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">string s;</span><br><span class="line">int tmp&#x3D;0;</span><br><span class="line">int ab(int x)&#123;</span><br><span class="line">	return x&gt;0?x:-x;</span><br><span class="line">&#125;</span><br><span class="line">int cmp(E x,E y)&#123;</span><br><span class="line">	int xx&#x3D;x.c-&#39;0&#39;,yy&#x3D;y.c-&#39;0&#39;;</span><br><span class="line">	if(ab(xx-tmp)&#x3D;&#x3D;ab(yy-tmp))&#123;</span><br><span class="line">		if(xx&#x3D;&#x3D;yy)&#123;</span><br><span class="line">			if(xx&gt;tmp)&#123;</span><br><span class="line">				return x.pla&lt;y.pla;</span><br><span class="line">				&#x2F;&#x2F;cout&lt;&lt;x.pla&lt;&lt;&quot; before &quot;&lt;&lt;y.pla&lt;&lt;endl;</span><br><span class="line">			&#125;</span><br><span class="line">			else&#123;</span><br><span class="line">				return x.pla&gt;y.pla;</span><br><span class="line">				&#x2F;&#x2F;cout&lt;&lt;x.pla&lt;&lt;&quot; after &quot;&lt;&lt;y.pla&lt;&lt;endl;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			return xx&gt;yy;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return ab(xx-tmp)&lt;ab(yy-tmp);</span><br><span class="line">&#125;</span><br><span class="line">int cmp2(E x,E y)&#123;</span><br><span class="line">	return x.pla&lt;y.pla;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">	io_opt;</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">	cin&gt;&gt;s;</span><br><span class="line">	for(int i&#x3D;0;i&lt;n;i++)&#123;</span><br><span class="line">		e[i+1].c&#x3D;s[i];</span><br><span class="line">		e[i+1].pla&#x3D;i+1;</span><br><span class="line">	&#125;</span><br><span class="line">	int cmn;</span><br><span class="line">	for(int i&#x3D;0;i&lt;&#x3D;9;i++)&#123;</span><br><span class="line">		cmn&#x3D;0;</span><br><span class="line">		cpy(cur,e);</span><br><span class="line">		tmp&#x3D;i;</span><br><span class="line">		sort(cur+1,cur+1+n,cmp);</span><br><span class="line">		for(int j&#x3D;1;j&lt;&#x3D;k;j++)&#123;</span><br><span class="line">			cmn+&#x3D;ab(cur[j].c-&#39;0&#39;-i);</span><br><span class="line">			cur[j].c&#x3D;&#39;0&#39;+i;</span><br><span class="line">		&#125;</span><br><span class="line">		&#x2F;*if(i&#x3D;&#x3D;2)&#123;</span><br><span class="line">			for(int j&#x3D;1;j&lt;&#x3D;n;j++)&#123;</span><br><span class="line">				cout&lt;&lt;cur[j].pla&lt;&lt;&#39; &#39;;</span><br><span class="line">			&#125;</span><br><span class="line">			cout&lt;&lt;endl;</span><br><span class="line">		&#125;*&#x2F;</span><br><span class="line">		sort(cur+1,cur+1+n,cmp2);</span><br><span class="line">		if(cmn&lt;mn||cmn&#x3D;&#x3D;mn&amp;&amp;!Ecmp(cur,ans))&#123;</span><br><span class="line">			mn&#x3D;cmn;</span><br><span class="line">			for(int j&#x3D;1;j&lt;&#x3D;n;j++)&#123;</span><br><span class="line">				ans[j]&#x3D;cur[j];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;mn&lt;&lt;endl;</span><br><span class="line">	for(int i&#x3D;1;i&lt;&#x3D;n;i++)&#123;</span><br><span class="line">		cout&lt;&lt;ans[i].c;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;endl;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://github.com/CCWUCMCTS" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 CCWUCMCTS</li>
+      <li><a href="https://github.com/CCWUCMCTS">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

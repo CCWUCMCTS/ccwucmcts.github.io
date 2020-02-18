@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    最小的交换 | CCWUCMCTS&#39;s Blog
+  </title>
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="CCWUCMCTS">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 96 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">CCWUCMCTS&#39;s Blog</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    CCWUCMCTS
+
+    <span class="post-date float-right" title="{{moment(1550807580000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1550807580000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>最小的交换</h1>
+    <p>一、归并排序</p>
+<p>递归思路，将一个序列二分，使前半段有序，使后半段有序，然后使用双指针扫一遍使整段有序。</p>
+<p>对于n个元素，每个元素都在排序1个元素，2个元素，4个元素，8个元素……的时候出现，因此复杂度是O(nlogn)。</p>
+<p>二、求逆序数</p>
+<p>在一个排列中，如果一对数的前后位置与大小顺序相反，即前面的数大于后面的数，那么它们就称为一个逆序。一个排列中逆序的总数就称为这个排列的逆序数。</p>
+<p>如2 4 3 1中，2 1，4 3，4 1，3 1是逆序，逆序数是4。给出一个整数序列，求该序列的逆序数。</p>
+<h1 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h1><pre><code>第1行：N，N为序列的长度（n &lt;= 50000)
+第2 - N + 1行：序列中的元素（0 &lt;= A[i] &lt;= 10^9）</code></pre><h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><pre><code>输出逆序数</code></pre><h1 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h1><pre><code>4
+2
+4
+3
+1</code></pre><h1 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h1><h1 id="4"><a href="#4" class="headerlink" title="4"></a>4</h1><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><pre><code>____考虑在每次归并两个有序序列的过程中，我们会将后面一个有序序列的部分元素前移，那么从后向前中间 **超越的元素** 与它成为一个逆序对，代码中为当前总位置j减去已经被分配的比它小的元素k，即 **超越的元素** 数。 _ _  
+__</code></pre><p><img src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="">)<img src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<pre><code> 1 #include&lt;iostream&gt;
+ 2 #include&lt;cstdio&gt;
+ 3 using namespace std;
+ 4 int a[50020],b[50020];
+ 5 int n;
+ 6 long long merge(int low,int mid,int high){
+ 7     int i=low,j=mid+1,k=low;
+ 8     long long count=0;
+ 9     while(i&lt;=mid&amp;&amp;j&lt;=high){
+10         if(a[i]&lt;=a[j]){
+11             b[k++]=a[i++];
+12         }
+13         else{
+14             b[k++]=a[j++];
+15             count+=j-k;
+16         }
+17     }
+18     while(i&lt;=mid){
+19         b[k++]=a[i++];
+20     }
+21     while(j&lt;=high){
+22         b[k++]=a[j++];
+23     }
+24     for(i=low;i&lt;=high;i++){
+25         a[i]=b[i];
+26     }
+27     return count;
+28 }
+29 long long mergeSort(int x,int y){
+30     
+31     if(x&lt;y){
+32         int mid=(x+y)/2;
+33         long long count=0;
+34         count+=mergeSort(x,mid);
+35         count+=mergeSort(mid+1,y);
+36         count+=merge(x,mid,y);
+37         return count;
+38     }
+39     return 0;
+40 }
+41 int main(){
+42     cin&gt;&gt;n;
+43     for(int i=0;i&lt;n;i++){
+44         scanf(&quot;%d&quot;,&amp;a[i]);
+45     }
+46     cout&lt;&lt;mergeSort(0,n-1);
+47     return 0;
+48 }</code></pre><p>View Code</p>
+<p> 三、最小的交换</p>
+<p>只能相邻元素交换，求让序列升序的最小交换次数。</p>
+<p>我们不可避免的让大数向后交换，那么我们考虑最大的一个数，让其向后交换，肯定会交换到最后一位，交换的次数为后面比它小的数的个数，即包含它且它更大的逆序对数，再把次小的元素向后移动……最后的移动次数即为逆序对数。</p>
+<p>代码同上</p>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://github.com/CCWUCMCTS" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 CCWUCMCTS</li>
+      <li><a href="https://github.com/CCWUCMCTS">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

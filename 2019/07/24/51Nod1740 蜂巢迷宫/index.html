@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    51Nod1740 蜂巢迷宫 | CCWUCMCTS&#39;s Blog
+  </title>
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="CCWUCMCTS">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 96 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">CCWUCMCTS&#39;s Blog</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    CCWUCMCTS
+
+    <span class="post-date float-right" title="{{moment(1563910380000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1563910380000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>51Nod1740 蜂巢迷宫</h1>
+    <p>##题目<br><img src="https://img2018.cnblogs.com/blog/1575943/201907/1575943-20190724113104452-1683001528.png" alt=""></p>
+<p>有一个无限大的蜂巢迷宫，为了方便表示每一个六边形格子，现在把座标引入到这个迷宫中，如上图年示。</p>
+<p>艾瑞特在这个迷宫中街，刚开始他在(0,0)的位置，按照下图所示的路线在这个迷宫中行走。<br><img src="https://img2018.cnblogs.com/blog/1575943/201907/1575943-20190724113110406-1210737310.png" alt=""></p>
+<p>走了n步以后，他想知道自己在哪个位置了。</p>
+<p>##思路<br>走1-6步1层，7-18步2层，二分查找层数，在最后一层6个if走6边</p>
+<p>##代码<br>    #include&lt;bits/stdc++.h&gt;<br>    #define ll long long<br>    #define db double<br>    using namespace std;<br>    ll n;<br>    int main(){<br>        cin&gt;&gt;n;<br>        if(n==0){<br>            cout&lt;&lt;”0 0\n”;<br>            return 0;<br>        }<br>        ll l=1,r=1e9,mid,lev;<br>        while(l&lt;=r){<br>            mid=(l+r)&gt;&gt;1;<br>            if(3<em>mid</em>(mid-1)&lt;n){<br>                l=mid+1;<br>                lev=mid;<br>            }<br>            else r=mid-1;<br>        }<br>        //cout&lt;&lt;lev&lt;&lt;endl;<br>        ll cx=-1+2<em>lev,cy=2;<br>        n-=3*lev</em>(lev-1);n–;<br>        if(n&lt;=lev-1){<br>            cx-=n,cy+=2<em>n;<br>            cout&lt;&lt;cx&lt;&lt;’ ‘&lt;&lt;cy&lt;&lt;endl;<br>            return 0;<br>        }<br>        n-=(lev-1);<br>        cx-=(lev-1),cy+=2</em>(lev-1);<br>        if(n&lt;=lev){<br>            cx-=2<em>n;<br>            cout&lt;&lt;cx&lt;&lt;’ ‘&lt;&lt;cy&lt;&lt;endl;<br>            return 0;<br>        }<br>        n-=lev;<br>        cx-=lev</em>2;<br>        if(n&lt;=lev){<br>            cx-=n,cy-=2<em>n;<br>            cout&lt;&lt;cx&lt;&lt;’ ‘&lt;&lt;cy&lt;&lt;endl;<br>            return 0;<br>        }<br>        n-=lev;<br>        cx-=lev,cy-=2</em>lev;<br>        if(n&lt;=lev){<br>            cx+=n,cy-=2<em>n;<br>            cout&lt;&lt;cx&lt;&lt;’ ‘&lt;&lt;cy&lt;&lt;endl;<br>            return 0;<br>        }<br>        n-=lev;<br>        cx+=lev,cy-=2</em>lev;<br>        if(n&lt;=lev){<br>            cx+=2<em>n;<br>            cout&lt;&lt;cx&lt;&lt;’ ‘&lt;&lt;cy&lt;&lt;endl;<br>            return 0;<br>        }<br>        n-=lev;<br>        cx+=2</em>lev;<br>        if(n&lt;=lev){<br>            cx+=n,cy+=2<em>n;<br>            cout&lt;&lt;cx&lt;&lt;’ ‘&lt;&lt;cy&lt;&lt;endl;<br>            return 0;<br>        }<br>        n-=lev;<br>        cx+=lev,cy+=2</em>lev;<br>        return 0;<br>    }</p>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://github.com/CCWUCMCTS" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 CCWUCMCTS</li>
+      <li><a href="https://github.com/CCWUCMCTS">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

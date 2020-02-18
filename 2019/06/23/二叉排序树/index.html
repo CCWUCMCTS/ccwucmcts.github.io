@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    二叉排序树 | CCWUCMCTS&#39;s Blog
+  </title>
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="CCWUCMCTS">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 96 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">CCWUCMCTS&#39;s Blog</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    CCWUCMCTS
+
+    <span class="post-date float-right" title="{{moment(1561227120000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1561227120000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>二叉排序树</h1>
+    <p>###题目描述</p>
+<p>输入一系列整数，建立二叉排序数，并进行前序，中序，后序遍历。 </p>
+<p>###输入</p>
+<p>输入第一行包括一个整数n(1&lt;=n&lt;=100)。接下来的一行包括n个整数。 </p>
+<p>###输出</p>
+<p>可能有多组测试数据，对于每组数据，将题目所给数据建立一个二叉排序树，并对二叉排序树进行前序、中序和后序遍历。每种遍历结果输出一行。每行最后一个数据之后有一个空格。 </p>
+<p>###样例输入</p>
+<blockquote>
+<p>1<br>2<br>2<br>8 15<br>4<br>21 10 5 39 </p>
+</blockquote>
+<p>###样例输出</p>
+<blockquote>
+<p>2<br>2<br>2<br>8 15<br>8 15<br>15 8<br>21 10 5 39<br>5 10 21 39<br>5 10 39 21 </p>
+</blockquote>
+<p>####瞎搞的。。。</p>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+#include&lt;queue&gt;
+#include&lt;cstring&gt;
+#include&lt;algorithm&gt;
+#include&lt;vector&gt;
+#include&lt;queue&gt;
+#define ll long long
+#define INF -72340172838076674
+using namespace std;
+ll n;
+struct E{
+    ll num,lson,rson;
+}e[120];
+ll cnt=0,root=INF;
+ll find(ll x){
+    x=e[x].num;
+    ll cur=root;
+    while(1){
+        if(x&lt;e[cur].num){
+            if(e[cur].lson==INF){
+                return cur;
+            }
+            else{
+                cur=e[cur].lson;
+            }
+        }
+        else if(x&gt;e[cur].num){
+            if(e[cur].rson==INF){
+                return cur;
+            }
+            else{
+                cur=e[cur].rson;
+            }
+        }
+        else return INF;
+    }
+}
+void Insert(ll x){
+    if(!cnt){
+        cnt++;
+        root=x;
+        return; 
+    }
+    ll fat=find(x);
+    if(fat==INF) return;
+    cnt++;
+    if(e[x].num&gt;e[fat].num){
+        e[fat].rson=x;
+    }
+    else{
+        e[fat].lson=x;
+    }
+    return;
+}
+void dfs1(ll x){
+    if(x==INF) return;
+    cout&lt;&lt;e[x].num&lt;&lt;&apos; &apos;;
+    dfs1(e[x].lson);
+    dfs1(e[x].rson);
+}
+void dfs2(ll x){
+    if(x==INF) return;
+    dfs2(e[x].lson);
+    cout&lt;&lt;e[x].num&lt;&lt;&apos; &apos;;
+    dfs2(e[x].rson);
+}
+void dfs3(ll x){
+    if(x==INF) return;
+    dfs3(e[x].lson);
+    dfs3(e[x].rson);
+    cout&lt;&lt;e[x].num&lt;&lt;&apos; &apos;;
+}
+int main(){
+    while(cin&gt;&gt;n){
+        root=INF,cnt=0;
+        memset(e,-0x2,sizeof(e));
+        for(int i=1;i&lt;=n;i++){
+            ll x;
+            cin&gt;&gt;x;
+            e[i].num=x;
+            Insert(i);
+        }
+        dfs1(root);
+        cout&lt;&lt;endl;
+        dfs2(root);
+        cout&lt;&lt;endl;
+        dfs3(root);
+        cout&lt;&lt;endl;
+    }
+
+    return 0;
+}</code></pre>
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://github.com/CCWUCMCTS" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 CCWUCMCTS</li>
+      <li><a href="https://github.com/CCWUCMCTS">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    二分查找 | CCWUCMCTS&#39;s Blog
+  </title>
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="CCWUCMCTS">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 96 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">CCWUCMCTS&#39;s Blog</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    CCWUCMCTS
+
+    <span class="post-date float-right" title="{{moment(1550787660000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1550787660000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>二分查找</h1>
+    <p>终于下定决心不碰运气写二分了。。。</p>
+<p>思路比较乱，建议直接点进参考①</p>
+<p>来说一下我记忆的方法</p>
+<p>注意left&lt;=right</p>
+<p>首先标准查找是随机的找到一个，分三类，找不到返回-1</p>
+<p>然后如果要找第一个和最后一个，因为是准确查找，所以要有判别和找不到返回-1</p>
+<p>里面的大于还是大于等于，要具体分析。（分析相等的时候向左找还是向右找，返回谁）</p>
+<p>举个例子</p>
+<p>寻找最后一个相等的，没有的话找比key小的最后一个（searchLastEqualOrSmaller）</p>
+<p>这两个元素的位置都是偏右（比如说{1,2,3,4,4,4,5,6}，分成1,2,3|4,4,4|5,6，3和最后一个4都在所在区间的右边），因此要向右找，让相等的情况跟着缩小左边界，因此是大于</p>
+<p>解释一下为什么返回right，根据while结束条件，最后right&lt;right，如果没有相等的，arr[right]&lt;key&lt;arr[left]，否则，key==arr[right]&lt;arr[left]（所以返回left就是比key大的第一个）</p>
+<p>大于等于同理</p>
+<p><img src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="">)<img src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<pre><code> 1 //递增 
+ 2 #include&lt;cstdio&gt;
+ 3 #include&lt;iostream&gt;
+ 4 #include&lt;cstring&gt;
+ 5 #include&lt;algorithm&gt;
+ 6 using namespace std;
+ 7 int search(int *arr,int n,int key){
+ 8     int left=0,right=n-1;
+ 9     while(left&lt;=right){
+10         int mid=(left+right)&gt;&gt;1;
+11         if(arr[mid]==key) return mid;
+12         else if(arr[mid]&gt;key) right=mid-1;
+13         else left=mid+1;
+14     }
+15     return -1;
+16 }
+17 int searchFirstEqual(int *arr,int n,int key){
+18     int left=0,right=n-1;
+19     while(left&lt;=right){
+20         int mid=(left+right)&gt;&gt;1;
+21         if(arr[mid]&gt;=key) right=mid-1;
+22         else left=mid+1;
+23     }
+24     if(left&lt;n&amp;&amp;arr[left]==key){
+25         return left;
+26     }
+27     return -1;
+28 }
+29 int searchLastEqual(int *arr,int n,int key){
+30     int left=0,right=n-1;
+31     while(left&lt;=right){
+32         int mid=(left+right)&gt;&gt;1;
+33         if(arr[mid]&gt;key) right=mid-1;
+34         else left=mid+1;
+35     }
+36     if(right&gt;=0&amp;&amp;arr[right]==key){
+37         return right;
+38     }
+39     return -1;
+40 }
+41 int searchLastEqualOrSmaller(int *arr,int n,int key){
+42     int left=0,right=n-1;
+43     while(left&lt;=right){
+44         int mid=(left+right)&gt;&gt;1;
+45         if(arr[mid]&gt;key) right=mid-1;
+46         else left=mid+1;
+47     }
+48     return right;
+49 }
+50 int searchLastSmaller(int *arr,int n,int key){
+51     int left=0,right=n-1;
+52     while(left&lt;=right){
+53         int mid=(left+right)&gt;&gt;1;
+54         if(arr[mid]&gt;=key) right=mid-1;
+55         else left=mid+1;
+56     }
+57     return right;
+58 }
+59 int searchFirstEqualOrLarger(int *arr,int n,int key){
+60     int left=0,right=n-1;
+61     while(left&lt;=right){
+62         int mid=(left+right)&gt;&gt;1;
+63         if(arr[mid]&gt;=key) right=mid-1;
+64         else left=mid+1;
+65     }
+66     return left;
+67 }
+68 int searchFirstLarger(int *arr,int n,int key){
+69     int left=0,right=n-1;
+70     while(left&lt;=right){
+71         int mid=(left+right)&gt;&gt;1;
+72         if(arr[mid]&gt;key) right=mid-1;
+73         else left=mid+1;
+74     }
+75     return left;
+76 }
+77 
+78 int main(){
+79     int arr[17] = {1, 
+80                    2, 2, 5, 5, 5, 
+81                    5, 5, 5, 5, 5, 
+82                    5, 5, 6, 6, 7};
+83     printf(&quot;First Equal           : %2d \n&quot;, searchFirstEqual(arr, 16, 5));
+84     printf(&quot;Last Equal            : %2d \n&quot;, searchLastEqual(arr, 16, 5));
+85     printf(&quot;First Equal or Larger : %2d \n&quot;, searchFirstEqualOrLarger(arr, 16, 5));
+86     printf(&quot;First Larger          : %2d \n&quot;, searchFirstLarger(arr, 16, 5));
+87     printf(&quot;Last Equal or Smaller : %2d \n&quot;, searchLastEqualOrSmaller(arr, 16, 5));
+88     printf(&quot;Last Smaller          : %2d \n&quot;, searchLastSmaller(arr, 16, 5));
+89     return 0;
+90     return 0;
+91 }</code></pre><p>View Code</p>
+<p>参考：①<a href="https://www.cnblogs.com/luoxn28/p/5767571.html" target="_blank" rel="noopener">你真的会写二分查找吗 - luoxn28 -<br>博客园</a></p>
+<p>②<a href="http://blog.chinaunix.net/uid-1844931-id-3337784.html" target="_blank" rel="noopener">你真的会写二分检索吗？-liubird-<br>ChinaUnix博客</a>（测试段代码来源）</p>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://github.com/CCWUCMCTS" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 CCWUCMCTS</li>
+      <li><a href="https://github.com/CCWUCMCTS">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

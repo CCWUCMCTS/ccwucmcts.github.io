@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    ICPC2019银川网 络 赛 | CCWUCMCTS&#39;s Blog
+  </title>
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="CCWUCMCTS">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 96 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">CCWUCMCTS&#39;s Blog</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    CCWUCMCTS
+
+    <span class="post-date float-right" title="{{moment(1567222740000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1567222740000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>ICPC2019银川网 络 赛</h1>
+    <p>真实菜鸡，被AK打蒙了，签到都最后才找到的。</p>
+<h2 id="A-Maximum-Element-In-A-Stack"><a href="#A-Maximum-Element-In-A-Stack" class="headerlink" title="A.Maximum Element In A Stack"></a>A.Maximum Element In A Stack</h2><h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><p>栈操作，每次操作后求最大值。</p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>加入时加此时堆里的最大值，要开long long。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cstdlib&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">#include&lt;bitset&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#define ll long long</span><br><span class="line">#define inf 0x7fffffffffffffff</span><br><span class="line">#define mem(a, x) memset(a,x,sizeof(a))</span><br><span class="line">#define io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span><br><span class="line">typedef std::pair&lt;int, int&gt; Pii;</span><br><span class="line">typedef std::pair&lt;ll, ll&gt; Pll;</span><br><span class="line">ll power(ll a, ll b,ll p) &#123; ll res &#x3D; 1; for (; b &gt; 0; b &gt;&gt;&#x3D; 1) &#123; if (b &amp; 1) res &#x3D; res * a % p; a &#x3D; a * a % p; &#125; return res; &#125;</span><br><span class="line">ll gcd(ll p, ll q) &#123; return q &#x3D;&#x3D; 0 ? p : gcd(q, p % q); &#125;</span><br><span class="line">ll _abs(ll x)&#123;return x &lt; 0 ? -x : x;&#125;</span><br><span class="line">using namespace std;</span><br><span class="line">const int mod &#x3D; 1e9 + 7;</span><br><span class="line">const int N &#x3D; 5e6+10;</span><br><span class="line"></span><br><span class="line">int n,p,q,m;</span><br><span class="line">unsigned int SA,SB,SC;</span><br><span class="line">ll a[N];</span><br><span class="line"></span><br><span class="line">stack&lt;unsigned int&gt; s;</span><br><span class="line">unsigned int rng61()&#123;</span><br><span class="line">    SA ^&#x3D; SA&lt;&lt;16;</span><br><span class="line">    SA ^&#x3D; SA&gt;&gt;5;</span><br><span class="line">    SA ^&#x3D; SA&lt;&lt;1;</span><br><span class="line">    unsigned int t &#x3D; SA;SA &#x3D; SB;</span><br><span class="line">    SB &#x3D; SC;</span><br><span class="line">    SC ^&#x3D; t ^ SA;</span><br><span class="line">    return SC;</span><br><span class="line">&#125;</span><br><span class="line">inline void PUSH(unsigned int x)&#123;</span><br><span class="line">    if(s.empty()) s.push(x);</span><br><span class="line">    else s.push(max(x,s.top()));</span><br><span class="line">&#125;</span><br><span class="line">inline void POP()&#123;</span><br><span class="line">    if(!s.empty()) s.pop();</span><br><span class="line">&#125;</span><br><span class="line">void gen()&#123;</span><br><span class="line">    scanf(&quot;%d%d%d%d%u%u%u&quot;,&amp;n,&amp;p,&amp;q,&amp;m,&amp;SA,&amp;SB,&amp;SC);</span><br><span class="line">    for(int i&#x3D;1;i&lt;&#x3D;n;i++)&#123;</span><br><span class="line">        if(rng61() % (p+q) &lt; p)</span><br><span class="line">            PUSH(rng61() % m + 1);</span><br><span class="line">        else</span><br><span class="line">            POP();</span><br><span class="line">        if(s.empty()) a[i]&#x3D;0;</span><br><span class="line">        else a[i]&#x3D;s.top();</span><br><span class="line">        a[i]*&#x3D;i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">    int T;cin &gt;&gt; T;</span><br><span class="line">    for(int i&#x3D;1;i&lt;&#x3D;T;i++)&#123;</span><br><span class="line">        while(!s.empty()) s.pop();</span><br><span class="line">        gen();</span><br><span class="line">        ll ans&#x3D;a[1];</span><br><span class="line">        for(int j&#x3D;2;j&lt;&#x3D;n;j++)</span><br><span class="line">            ans^&#x3D;a[j];</span><br><span class="line">        printf(&quot;Case #%d: %lld\n&quot;,i,ans);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="B-Rolling-The-Polygon"><a href="#B-Rolling-The-Polygon" class="headerlink" title="B.Rolling The Polygon"></a>B.Rolling The Polygon</h2><p>一开始看计算几何就没做，最后半小时发现很简单，298分钟过的…</p>
+<h3 id="Problem-1"><a href="#Problem-1" class="headerlink" title="Problem"></a>Problem</h3><p>给一个凸多边形和其内一点，求凸多边形在地下转一周，点走过的距离。</p>
+<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><p>每个角都走一个圆弧，求出半径和补角，相乘即可。</p>
+<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cstdlib&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#define ll long long</span><br><span class="line">#define inf 0x7fffffffffffffff</span><br><span class="line">#define mem(a, x) memset(a,x,sizeof(a))</span><br><span class="line">#define io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span><br><span class="line">typedef std::pair&lt;int, int&gt; Pii;</span><br><span class="line">typedef std::pair&lt;ll, ll&gt; Pll;</span><br><span class="line">ll power(ll a, ll b,ll p) &#123; ll res &#x3D; 1; for (; b &gt; 0; b &gt;&gt;&#x3D; 1) &#123; if (b &amp; 1) res &#x3D; res * a % p; a &#x3D; a * a % p; &#125; return res; &#125;</span><br><span class="line">ll gcd(ll p, ll q) &#123; return q &#x3D;&#x3D; 0 ? p : gcd(q, p % q); &#125;</span><br><span class="line">ll _abs(ll x)&#123;return x &lt; 0 ? -x : x;&#125;</span><br><span class="line">using namespace std;</span><br><span class="line">int T,n;</span><br><span class="line">int cnt&#x3D;0,sx,sy;</span><br><span class="line">struct E&#123;</span><br><span class="line">    int x,y;</span><br><span class="line">&#125;e[60];</span><br><span class="line"></span><br><span class="line">double anss;</span><br><span class="line">double l(int x1,int y1,int x2,int y2)&#123;</span><br><span class="line">    return sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)+0.0);</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">    &#x2F;&#x2F;cout&lt;&lt;acos(-1&#x2F;sqrt(2.0));</span><br><span class="line">    &#x2F;&#x2F;io_opt;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;T);</span><br><span class="line">    while(T--)&#123;</span><br><span class="line">        anss&#x3D;0;</span><br><span class="line">        cnt++;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">        for(int i&#x3D;1;i&lt;&#x3D;n;i++)&#123;</span><br><span class="line">            scanf(&quot;%d%d&quot;,&amp;e[i].x,&amp;e[i].y);</span><br><span class="line">        &#125;</span><br><span class="line">        scanf(&quot;%d%d&quot;,&amp;sx,&amp;sy);</span><br><span class="line">        for(int i&#x3D;1;i&lt;&#x3D;n;i++)&#123;</span><br><span class="line">            int x1,x2,y1,y2;</span><br><span class="line">            double tmp1&#x3D;l(sx,sy,e[i].x,e[i].y);</span><br><span class="line">            if(i&#x3D;&#x3D;1)&#123;</span><br><span class="line">                x1&#x3D;e[n].x-e[1].x,y1&#x3D;e[n].y-e[1].y;</span><br><span class="line">                x2&#x3D;e[2].x-e[1].x,y2&#x3D;e[2].y-e[1].y;</span><br><span class="line">            &#125;</span><br><span class="line">            else if(i&#x3D;&#x3D;n)&#123;</span><br><span class="line">                x1&#x3D;e[n-1].x-e[n].x,y1&#x3D;e[n-1].y-e[n].y;</span><br><span class="line">                x2&#x3D;e[1].x-e[n].x,y2&#x3D;e[1].y-e[n].y;</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                x1&#x3D;e[i-1].x-e[i].x,y1&#x3D;e[i-1].y-e[i].y;</span><br><span class="line">                x2&#x3D;e[i+1].x-e[i].x,y2&#x3D;e[i+1].y-e[i].y;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            &#x2F;&#x2F;cout&lt;&lt;&#39;*&#39;&lt;&lt;y1&lt;&lt;&#39;*&#39;&lt;&lt;endl;</span><br><span class="line">            double tmp2&#x3D;acos(-1)-(acos((x1*x2+y1*y2)*1.0&#x2F;l(x1,y1,0,0)&#x2F;l(x2,y2,0,0)));</span><br><span class="line">            anss+&#x3D;tmp1*tmp2;</span><br><span class="line">            &#x2F;&#x2F;cout&lt;&lt;i&lt;&lt;&#39;:&#39;&lt;&lt;tmp1&lt;&lt;&#39; &#39;&lt;&lt;tmp2&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line">        printf(&quot;Case #%d: %.3f\n&quot;,cnt,anss);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="C-Caesar-Cipher"><a href="#C-Caesar-Cipher" class="headerlink" title="C.Caesar Cipher"></a>C.Caesar Cipher</h2><h3 id="Problem-2"><a href="#Problem-2" class="headerlink" title="Problem"></a>Problem</h3><p>字母后移，给出示范和目标串，求原串。</p>
+<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h3><p>模拟</p>
+<h3 id="Code-2"><a href="#Code-2" class="headerlink" title="Code"></a>Code</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cstdlib&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#define ll long long</span><br><span class="line">#define inf 0x7fffffffffffffff</span><br><span class="line">#define mem(a, x) memset(a,x,sizeof(a))</span><br><span class="line">#define io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span><br><span class="line">typedef std::pair&lt;int, int&gt; Pii;</span><br><span class="line">typedef std::pair&lt;ll, ll&gt; Pll;</span><br><span class="line">ll power(ll a, ll b,ll p) &#123; ll res &#x3D; 1; for (; b &gt; 0; b &gt;&gt;&#x3D; 1) &#123; if (b &amp; 1) res &#x3D; res * a % p; a &#x3D; a * a % p; &#125; return res; &#125;</span><br><span class="line">ll gcd(ll p, ll q) &#123; return q &#x3D;&#x3D; 0 ? p : gcd(q, p % q); &#125;</span><br><span class="line">ll _abs(ll x)&#123;return x &lt; 0 ? -x : x;&#125;</span><br><span class="line">using namespace std;</span><br><span class="line">const int mod &#x3D; 1e9 + 7;</span><br><span class="line">const int N &#x3D; 1e5+10;</span><br><span class="line">int n,m;</span><br><span class="line">char a[N],b[N],c[N],ans[N];</span><br><span class="line">int main()&#123;</span><br><span class="line">    int T;scanf(&quot;%d&quot;,&amp;T);</span><br><span class="line">    for(int i&#x3D;1;i&lt;&#x3D;T;i++)&#123;</span><br><span class="line">        scanf(&quot;%d%d&quot;,&amp;n,&amp;m);</span><br><span class="line">        scanf(&quot;%s%s%s&quot;,a,b,c);</span><br><span class="line">        int d&#x3D;b[0]-a[0];</span><br><span class="line">        int j&#x3D;0;</span><br><span class="line">        for(j&#x3D;0;j&lt;m;j++)&#123;</span><br><span class="line">            int ss&#x3D;c[j]-d;</span><br><span class="line">            while(ss&lt;&#39;A&#39;) ss+&#x3D;26;</span><br><span class="line">            while(ss&gt;&#39;Z&#39;) ss-&#x3D;26;</span><br><span class="line">            ans[j]&#x3D;ss;</span><br><span class="line">        &#125;</span><br><span class="line">        ans[j]&#x3D;&#39;\0&#39;;</span><br><span class="line">        printf(&quot;Case #%d: %s\n&quot;,i,ans);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="D-Take-Your-Seat"><a href="#D-Take-Your-Seat" class="headerlink" title="D.Take Your Seat"></a>D.Take Your Seat</h2><h3 id="Problems"><a href="#Problems" class="headerlink" title="Problems"></a>Problems</h3><p>n个乘客分别属于n个座位，顺序坐，第一个随机坐，后面的如果被占了就随机，否则坐自己的，求最后一个坐自己位置的概率。<br>m同样，不过乘客坐座位顺序随机。</p>
+<h3 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution"></a>Solution</h3><p>n=1显然为1，n=2显然为1/2，n=3的时候，P(3)=1/3<em>(1+P(2)+0)，n=4，P(4)=1/4</em>(1+P(3)+P(2)+0)。</p>
+<p>以4为例解释，1号坐在每个位置概率为1/4，当他坐在自己位置，4号必然坐到自己位置，概率为1；1号坐在2号，相当于2号随机坐（疯了），2号的原位置可以视作1，整个删除1号和他坐的2号位置，问题变为P(3)；1号坐在3号位置，2号坐对了，他也删去，规模变为P(2)；1号坐在4号，概率为0。</p>
+<p>所以推测不是1的时候概率都是1/2，可以直接敲了（或者数学归纳法证明）。</p>
+<p>m=1时也是1，1号最后登机时坐在自己位置概率为1，否则可以视作他前面的都正常删去，转化为第一个问题，则m不是1时，P(m)=1/m<em>(1+1/2</em>(m-1))。</p>
+<h3 id="Code-3"><a href="#Code-3" class="headerlink" title="Code"></a>Code</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cstdlib&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#define ll long long</span><br><span class="line">#define inf 0x7fffffffffffffff</span><br><span class="line">#define mem(a, x) memset(a,x,sizeof(a))</span><br><span class="line">#define io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span><br><span class="line">typedef std::pair&lt;int, int&gt; Pii;</span><br><span class="line">typedef std::pair&lt;ll, ll&gt; Pll;</span><br><span class="line">ll power(ll a, ll b,ll p) &#123; ll res &#x3D; 1; for (; b &gt; 0; b &gt;&gt;&#x3D; 1) &#123; if (b &amp; 1) res &#x3D; res * a % p; a &#x3D; a * a % p; &#125; return res; &#125;</span><br><span class="line">ll gcd(ll p, ll q) &#123; return q &#x3D;&#x3D; 0 ? p : gcd(q, p % q); &#125;</span><br><span class="line">ll _abs(ll x)&#123;return x &lt; 0 ? -x : x;&#125;</span><br><span class="line">using namespace std;</span><br><span class="line">int T,n,m;</span><br><span class="line">int cnt&#x3D;0,sx,sy;</span><br><span class="line">struct E&#123;</span><br><span class="line">    int x,y;</span><br><span class="line">&#125;e[60];</span><br><span class="line"></span><br><span class="line">double anss;</span><br><span class="line">double l(int x1,int y1,int x2,int y2)&#123;</span><br><span class="line">    return sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)+0.0);</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">    &#x2F;&#x2F;cout&lt;&lt;acos(-1&#x2F;sqrt(2.0));</span><br><span class="line">    &#x2F;&#x2F;io_opt;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;T);</span><br><span class="line">    while(T--)&#123;</span><br><span class="line">        cnt++;</span><br><span class="line">        scanf(&quot;%d%d&quot;,&amp;n,&amp;m);</span><br><span class="line">        double ans1&#x3D;(n&#x3D;&#x3D;1?1.0:0.5),ans2&#x3D;(m&#x3D;&#x3D;1?1:(m+1)&#x2F;2.0&#x2F;m);</span><br><span class="line">        printf(&quot;Case #%d: %.6f %6f\n&quot;,cnt,ans1,ans2);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="H-Fight-Against-Monsters"><a href="#H-Fight-Against-Monsters" class="headerlink" title="H.Fight Against Monsters"></a>H.Fight Against Monsters</h2><h3 id="Problem-3"><a href="#Problem-3" class="headerlink" title="Problem"></a>Problem</h3><p>回合制，勇士打n个怪，每个有hp和atk（血量和攻击），勇士打每一个怪的伤害分别计算，第一次是1，第二次是2，每次加1，怪物先手，问勇士受到的最小伤害。</p>
+<h3 id="Solution-4"><a href="#Solution-4" class="headerlink" title="Solution"></a>Solution</h3><p>hp转成击败次数，贪心，除法排序。</p>
+<h3 id="Code-4"><a href="#Code-4" class="headerlink" title="Code"></a>Code</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cstdlib&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#define ll long long</span><br><span class="line">#define inf 0x7fffffffffffffff</span><br><span class="line">#define mem(a, x) memset(a,x,sizeof(a))</span><br><span class="line">#define io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span><br><span class="line">typedef std::pair&lt;int, int&gt; Pii;</span><br><span class="line">typedef std::pair&lt;ll, ll&gt; Pll;</span><br><span class="line">ll power(ll a, ll b,ll p) &#123; ll res &#x3D; 1; for (; b &gt; 0; b &gt;&gt;&#x3D; 1) &#123; if (b &amp; 1) res &#x3D; res * a % p; a &#x3D; a * a % p; &#125; return res; &#125;</span><br><span class="line">ll gcd(ll p, ll q) &#123; return q &#x3D;&#x3D; 0 ? p : gcd(q, p % q); &#125;</span><br><span class="line">ll _abs(ll x)&#123;return x &lt; 0 ? -x : x;&#125;</span><br><span class="line">using namespace std;</span><br><span class="line">int T,n;</span><br><span class="line">struct E&#123;</span><br><span class="line">    int hp,atk;</span><br><span class="line">    ll sum;</span><br><span class="line">&#125;e[100020];</span><br><span class="line">int cmp(E x,E y)&#123;</span><br><span class="line">    if(x.atk*y.hp&#x3D;&#x3D;y.atk*x.hp) return x.atk&lt;y.atk;</span><br><span class="line">    return x.atk*y.hp&lt;y.atk*x.hp;</span><br><span class="line">&#125;</span><br><span class="line">bool check(int x,int s)&#123;</span><br><span class="line">    return x&gt;&#x3D;s;</span><br><span class="line">&#125;</span><br><span class="line">int ef(int s)&#123;</span><br><span class="line">    int l&#x3D;1,r&#x3D;1e3,mid,ans;</span><br><span class="line">    while(l&lt;&#x3D;r)&#123;</span><br><span class="line">        mid&#x3D;(l+r)&gt;&gt;1;</span><br><span class="line">        if(check((mid+1)*mid&#x2F;2,s))&#123;</span><br><span class="line">            r&#x3D;mid-1;</span><br><span class="line">            ans&#x3D;mid;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            l&#x3D;mid+1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br><span class="line">int cnt&#x3D;0;</span><br><span class="line">int main()&#123;</span><br><span class="line">    io_opt;</span><br><span class="line">    cin&gt;&gt;T;</span><br><span class="line">    while(T--)&#123;</span><br><span class="line">        cnt++;</span><br><span class="line">        cin&gt;&gt;n;</span><br><span class="line">        for(int i&#x3D;1;i&lt;&#x3D;n;i++)&#123;</span><br><span class="line">            cin&gt;&gt;e[i].hp&gt;&gt;e[i].atk;</span><br><span class="line">            e[i].hp&#x3D;ef(e[i].hp);</span><br><span class="line">        &#125;</span><br><span class="line">        sort(e+1,e+1+n,cmp);</span><br><span class="line">        for(int i&#x3D;1;i&lt;&#x3D;n;i++)&#123;</span><br><span class="line">            if(i&#x3D;&#x3D;1)&#123;</span><br><span class="line">                e[i].sum&#x3D;e[i].atk;</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                e[i].sum&#x3D;e[i-1].sum+e[i].atk;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ll ans&#x3D;0,tmp;</span><br><span class="line">        for(int i&#x3D;n;i&gt;&#x3D;1;i--)&#123;</span><br><span class="line">            &#x2F;&#x2F;cout&lt;&lt;e[i].hp&lt;&lt;endl;</span><br><span class="line">            tmp&#x3D;e[i].hp;</span><br><span class="line">            tmp*&#x3D;e[i].sum;</span><br><span class="line">            ans+&#x3D;tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;&quot;Case #&quot;&lt;&lt;cnt&lt;&lt;&quot;: &quot;&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Continue…"><a href="#Continue…" class="headerlink" title="Continue…"></a>Continue…</h1>
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://github.com/CCWUCMCTS" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 CCWUCMCTS</li>
+      <li><a href="https://github.com/CCWUCMCTS">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    51Nod1089最长回文子串 V2（Manacher算法） | CCWUCMCTS&#39;s Blog
+  </title>
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="CCWUCMCTS">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 96 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">CCWUCMCTS&#39;s Blog</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    CCWUCMCTS
+
+    <span class="post-date float-right" title="{{moment(1551236760000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1551236760000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>51Nod1089最长回文子串 V2（Manacher算法）</h1>
+    <p>俗称马拉车算法-&gt;_-&gt;</p>
+<p>处理最长回文字串复杂度O(n)</p>
+<p>这里菜鸡不会证，简单说一下思路。</p>
+<p>由于回文串有奇有偶，所以将串之间和两边加上’#’，为了防止后面某个地方超边界，新串0位置加上$。这样每个回文子串为#a#b#a#形式，必定奇数个，且原子串长度为新字串半径减一，求这个半径p[i]。（即p[i]是以i为中心的最长回文字串的半径）</p>
+<p>i从1到n，过程中维护一个id点(id&lt;i，i拉着id走，马拉车)，它是某个回文子串的中心，这个字串右边界是当前最大的。（p[i]是半径，故i+p[i]为边界）</p>
+<p>那么当右边界比i还大时，就可以根据对称性，找到i关于id的对称点j=2*id-i，来优化找字串的过程。怎么优化呢？在id管辖范围内，p[i]和p[j]情况是相同的。由于超出id右边界的的地方不符合对称性，因此p[i]=p[j]当且仅当p[j]小于等于j-(id-p[id])（即j串的左边界不超出id串的左边界），否则只能直接到id右边界，p[i]=mx-i，之后的手动算。</p>
+<p>如果id右边界太小，不能做优化，也得手动算。</p>
+<p>以下代码：</p>
+<pre><code> 1 #include&lt;iostream&gt;
+ 2 #include&lt;cstdio&gt;
+ 3 #include&lt;cstring&gt;
+ 4 #include&lt;string&gt;
+ 5 #define ll long long
+ 6 using namespace std;
+ 7 char s[100020],sn[200020];
+ 8 int p[200020];
+ 9 int init(){
+10     int len=strlen(s);
+11     sn[0]=&apos;$&apos;;sn[1]=&apos;#&apos;;
+12     int j=2;
+13     for(int i=0;i&lt;len;i++){
+14         sn[j++]=s[i];
+15         sn[j++]=&apos;#&apos;;
+16     }
+17     sn[j]=&apos;\0&apos;;
+18     return j;
+19 }
+20 int Manacher(){
+21     int len=init();
+22     int mx_len=-1,id,mx=0;
+23     for(int i=1;i&lt;len;i++){
+24         if(i&lt;mx){
+25             p[i]=min(p[2*id-i],mx-i);
+26         }
+27         else{
+28             p[i]=1;
+29         }
+30         while(sn[i-p[i]]==sn[i+p[i]]) p[i]++;
+31         if(p[i]+i&gt;mx){
+32             id=i;
+33             mx=p[i]+i;
+34         }
+35         mx_len=max(mx_len,p[i]-1);
+36     }
+37     return mx_len;
+38 }
+39 int main(){
+40     cin&gt;&gt;s;
+41     cout&lt;&lt;Manacher();
+42     return 0;
+43 }</code></pre>
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://github.com/CCWUCMCTS" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 CCWUCMCTS</li>
+      <li><a href="https://github.com/CCWUCMCTS">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    ICPC2017Beijing J Pangu and Stones(铜牌题) | CCWUCMCTS&#39;s Blog
+  </title>
+  <meta name="description" content="">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="CCWUCMCTS">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 96 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 0 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">CCWUCMCTS&#39;s Blog</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    CCWUCMCTS
+
+    <span class="post-date float-right" title="{{moment(1566968640000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1566968640000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>ICPC2017Beijing J Pangu and Stones(铜牌题)</h1>
+    <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>In Chinese mythology, Pangu is the first living being and the creator of the sky and the earth. He woke up from an egg and split the egg into two parts: the sky and the earth.</p>
+<p>At the beginning, there was no mountain on the earth, only stones all over the land.</p>
+<p>There were N piles of stones, numbered from 1 to N. Pangu wanted to merge all of them into one pile to build a great mountain. If the sum of stones of some piles was S, Pangu would need S seconds to pile them into one pile, and there would be S stones in the new pile.</p>
+<p>Unfortunately, every time Pangu could only merge successive piles into one pile. And the number of piles he merged shouldn’t be less than L or greater than R.</p>
+<p>Pangu wanted to finish this as soon as possible.</p>
+<p>Can you help him? If there was no solution, you should answer ‘0’.</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>There are multiple test cases.</p>
+<p>The first line of each case contains three integers N,L,R as above mentioned (2&lt;=N&lt;=100,2&lt;=L&lt;=R&lt;=N).</p>
+<p>The second line of each case contains N integers a1,a2 …aN (1&lt;= ai  &lt;=1000,i= 1…N ), indicating the number of stones of  pile 1, pile 2 …pile N.</p>
+<p>The number of test cases is less than 110 and there are at most 5 test cases in which N &gt;= 50.</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each test case, you should output the minimum time(in seconds) Pangu had to take . If it was impossible for Pangu to do his job, you should output  0.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>石子合并，每次合并相邻的一些堆，代价是合并的石子数之和，每次合并的堆数有上下限，求最小的代价。<br>dp[i][j][k]表示从i合并到j，划分成k堆的最小代价。<br>枚举要计算的区间长度，枚举具体的区间，枚举划分的堆数，枚举具体划分方法。<br>dp[i][j][k]=min(dp[i][j][k],dp[i][c][k-1]+dp[c+1][j][1]);<br>然后枚举符合条件的划分堆和具体方法，合并成一堆。<br>dp[i][j][1]=min(dp[i][j][1],dp[i][c][k]+dp[c+1][j][1]+sum[j]-sum[i-1]);</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#define ll long long</span><br><span class="line">#define ioss ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span><br><span class="line">ll gcd(ll a,ll b)&#123;return b&#x3D;&#x3D;0?a:gcd(b,a%b);&#125;</span><br><span class="line">using namespace std;</span><br><span class="line">const int N &#x3D; 110;</span><br><span class="line">const int INF &#x3D; 0x3f3f3f3f;</span><br><span class="line">int dp[N][N][N], s[N], sum[N];</span><br><span class="line">int n,l,r;</span><br><span class="line">int main()&#123;</span><br><span class="line">    ioss;</span><br><span class="line">    &#x2F;&#x2F;freopen(&quot;51nod_1880_5_in.txt&quot;,&quot;r&quot;,stdin);</span><br><span class="line">    &#x2F;&#x2F;freopen(&quot;ans.out&quot;,&quot;w&quot;,stdout);</span><br><span class="line">    while(cin&gt;&gt;n&gt;&gt;l&gt;&gt;r)&#123;</span><br><span class="line">        memset(dp,0x3f,sizeof(dp));</span><br><span class="line">        for(int i&#x3D;1;i&lt;&#x3D;n;i++)&#123;</span><br><span class="line">            cin&gt;&gt;s[i];</span><br><span class="line">            sum[i]&#x3D;sum[i-1]+s[i];</span><br><span class="line">            dp[i][i][1]&#x3D;0;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int len&#x3D;2;len&lt;&#x3D;n;len++)&#123;</span><br><span class="line">            for(int i&#x3D;1;i+len-1&lt;&#x3D;n;i++)&#123;</span><br><span class="line">                int j&#x3D;i+len-1;</span><br><span class="line">                for(int k&#x3D;2;k&lt;&#x3D;min(len,r);k++)&#123;</span><br><span class="line">                    for(int c&#x3D;i+k-2;c&lt;j;c++)&#123;</span><br><span class="line">                        dp[i][j][k]&#x3D;min(dp[i][j][k],dp[i][c][k-1]+dp[c+1][j][1]);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                for(int k&#x3D;l-1;k&lt;&#x3D;r-1;k++)&#123;</span><br><span class="line">                    for(int c&#x3D;i+k-2;c&lt;j;c++)&#123;</span><br><span class="line">                        dp[i][j][1]&#x3D;min(dp[i][j][1],dp[i][c][k]+dp[c+1][j][1]+sum[j]-sum[i-1]);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;(dp[1][n][1]&#x3D;&#x3D;INF?0:dp[1][n][1])&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://github.com/CCWUCMCTS" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 CCWUCMCTS</li>
+      <li><a href="https://github.com/CCWUCMCTS">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>
