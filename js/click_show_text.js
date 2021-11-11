@@ -37,6 +37,10 @@
     function c() {
       return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
     }
+    function c2() {
+      var colors = ["#000000","#292421","#C0C0C0","#F0FFF0","#FFFFCD","#FFF5EE","#FF0000","#FF4500","#FF7F50","#FFFF00","#FFD700","#FF8000","#33A1C9","#1E90FF","#0000FF","#87CEEB","#4169E1","#00FFFF","#00FF00","#7CFC00","#A020F0","#9933FA","#DA70D6","#BDFCC9"];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
     var s = [];
     e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
       setTimeout(e, 1e3 / 60)
@@ -58,7 +62,8 @@
         "left": x,
         "position": "absolute",
         "font-weight": "bold",
-        "color": "#ff6651"
+        // "color": "#ff6651"
+        "color": c2()
       });
       $("body").append($i);
       $i.animate({
