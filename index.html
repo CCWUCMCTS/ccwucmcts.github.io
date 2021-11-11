@@ -226,7 +226,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-11 10:37:21" itemprop="dateModified" datetime="2021-11-11T10:37:21+08:00">2021-11-11</time>
+                <time title="修改时间：2021-11-11 10:39:40" itemprop="dateModified" datetime="2021-11-11T10:39:40+08:00">2021-11-11</time>
               </span>
 
           <br>
@@ -259,9 +259,6 @@
 <h3 id="create-a-new-post">Create a new post</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/11/10/hello-world/#more" rel="contents">
@@ -284,8 +281,797 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/02/20/1765%20%E8%B0%B7%E6%AD%8C%E7%9A%84%E6%81%90%E9%BE%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="CCWUCMCTS">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CCWUCMCTS's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/20/1765%20%E8%B0%B7%E6%AD%8C%E7%9A%84%E6%81%90%E9%BE%99/" class="post-title-link" itemprop="url">1765 谷歌的恐龙</a>
+        </h2>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-20 16:47:00 / 修改时间：17:12:34" itemprop="dateCreated datePublished" datetime="2020-02-20T16:47:00+08:00">2020-02-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">概率论</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>173</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="problem">Problem</h2>
+<p>把整个游戏简化为，每次生成一个[0,n)的随机数，如果这个随机数和给出的m个数字中的其中一个数字相等，那么就停止生成随机数，否则继续生成，求出所有生成的数的和的期望。</p>
+<h2 id="solution">Solution</h2>
+<p>$ E = _{i=0}^{n-1} p_i (i+[flag_i]E), p_i = , 如果i不在m个数中, flag_i = 1, 否则为0。 $</p>
+<p>化简为$ E =  $ ## Code</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">#include&lt;deque&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">typedef long long ll;</span><br><span class="line">typedef long double ld;</span><br><span class="line">typedef double db;</span><br><span class="line">#define io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span><br><span class="line">using namespace std;</span><br><span class="line">const int mod=998244353;</span><br><span class="line">int mo(ll a,int p)&#123;</span><br><span class="line">    return a&gt;=p?a%p:a;</span><br><span class="line">&#125;</span><br><span class="line">inline int rd() &#123;</span><br><span class="line">    int x = 0, f = 1;</span><br><span class="line">    char ch;</span><br><span class="line">    while (ch &lt; &#x27;0&#x27; || ch &gt; &#x27;9&#x27;) &#123;</span><br><span class="line">        if (ch == &#x27;-&#x27;)f = -1;</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    while (ch &gt;= &#x27;0&#x27; &amp;&amp; ch &lt;= &#x27;9&#x27;) &#123;</span><br><span class="line">        x = x * 10 + ch - &#x27;0&#x27;;</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    return f * x;</span><br><span class="line">&#125;</span><br><span class="line">ll n,m,x;</span><br><span class="line">int main()&#123;</span><br><span class="line">    //io_opt;</span><br><span class="line">    scanf(&quot;%lld%lld&quot;,&amp;n,&amp;m);</span><br><span class="line">    </span><br><span class="line">    printf(&quot;%.6f\n&quot;,n*(n-1)/2.0/m);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/02/20/2504%20%E6%98%AF%E5%AD%90%E5%BA%8F%E5%88%97%E7%9A%84%E4%B8%AA%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="CCWUCMCTS">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CCWUCMCTS's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/20/2504%20%E6%98%AF%E5%AD%90%E5%BA%8F%E5%88%97%E7%9A%84%E4%B8%AA%E6%95%B0/" class="post-title-link" itemprop="url">2504 是子序列的个数</a>
+        </h2>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-20 13:09:00 / 修改时间：17:13:20" itemprop="dateCreated datePublished" datetime="2020-02-20T13:09:00+08:00">2020-02-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url" rel="index"><span itemprop="name">字符串</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>160</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="problem">Problem</h2>
+<p>小b有一个字符串S和n个字符串words[1...n]，现在她想知道有多少个i满足words[i]是S的子序列。</p>
+<p>S的长度≤50000，1≤n≤5000，words[i]长度≤50.</p>
+<p>样例解释</p>
+<p>a，acd，ace都是abcde的子序列，但bb不是。</p>
+<h2 id="solution">Solution</h2>
+<p>存一下s各个字母的位置，比较时二分查找。</p>
+<h2 id="code">Code</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">typedef long long ll;</span><br><span class="line">typedef long double ld;</span><br><span class="line">typedef double db;</span><br><span class="line">#define io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span><br><span class="line">using namespace std;</span><br><span class="line">const int mod=998244353;</span><br><span class="line">int mo(ll a,int p)&#123;</span><br><span class="line">    return a&gt;=p?a%p:a;</span><br><span class="line">&#125;</span><br><span class="line">inline int rd() &#123;</span><br><span class="line">    int x = 0, f = 1;</span><br><span class="line">    char ch;</span><br><span class="line">    while (ch &lt; &#x27;0&#x27; || ch &gt; &#x27;9&#x27;) &#123;</span><br><span class="line">        if (ch == &#x27;-&#x27;)f = -1;</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    while (ch &gt;= &#x27;0&#x27; &amp;&amp; ch &lt;= &#x27;9&#x27;) &#123;</span><br><span class="line">        x = x * 10 + ch - &#x27;0&#x27;;</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    return f * x;</span><br><span class="line">&#125;</span><br><span class="line">int ans,n;</span><br><span class="line">string s,x;</span><br><span class="line">int a[27][500020];</span><br><span class="line">bool fun(string &amp;cur)&#123;</span><br><span class="line">    //cout&lt;&lt;cur&lt;&lt;&quot;:\n&quot;;</span><br><span class="line">    int las=0,l,r,mid,anss;</span><br><span class="line">    for(char i : cur)&#123;</span><br><span class="line">        l=1,r=a[i-&#x27;a&#x27;][0],anss=0;</span><br><span class="line">        while(l&lt;=r)&#123;</span><br><span class="line">            mid=l+r&gt;&gt;1;</span><br><span class="line">            if(a[i-&#x27;a&#x27;][mid]&gt;las)&#123;</span><br><span class="line">                r=mid-1;</span><br><span class="line">                anss=mid;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                l=mid+1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(!anss)&#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">        las=a[i-&#x27;a&#x27;][anss];//cout&lt;&lt;las&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">    io_opt;</span><br><span class="line">    cin&gt;&gt;s&gt;&gt;n;</span><br><span class="line">    for(int i=0;i&lt;s.size();i++)&#123;</span><br><span class="line">        a[s[i]-&#x27;a&#x27;][++a[s[i]-&#x27;a&#x27;][0]]=i+1;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">        cin&gt;&gt;x;</span><br><span class="line">        if(fun(x))&#123;</span><br><span class="line">            ans++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/01/22/51Nod2386%20%E5%88%86%E5%88%99%E8%83%BD%E6%88%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="CCWUCMCTS">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CCWUCMCTS's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/22/51Nod2386%20%E5%88%86%E5%88%99%E8%83%BD%E6%88%90/" class="post-title-link" itemprop="url">51Nod2386 分则能成</a>
+        </h2>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-22 11:58:00" itemprop="dateCreated datePublished" datetime="2020-01-22T11:58:00+08:00">2020-01-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-18 20:59:47" itemprop="dateModified" datetime="2020-02-18T20:59:47+08:00">2020-02-18</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>445</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="problem">Problem</h2>
+<p>牛牛刚开始有一个正整数n。 每次操作牛牛可以选择一个自己有的数字x，把x分为两正整数y和z，需满足x=y+z，然后获得y*z的收益。 （当然，在这个过程中，牛牛会失去x这个数字，并且获得y和z这2个数字。）</p>
+<p>牛牛一共可以分k次，牛牛希望最大化这k次的收益之和。 因为分割的结果y和z是正整数，所以选择的x必须&gt;=2。</p>
+<p>对于100%的数据，1 &lt;= k &lt; n &lt;= 10^9 对于40%的数据，1 &lt;= k &lt; n &lt;= 10 对于70%的数据，1 &lt;= k &lt; n &lt;= 100</p>
+<h2 id="solution">Solution</h2>
+<p>问题等价于把n拆分成k+1份，然后我们设为a1，a2，...，ak+1，发现最后答案为两两相乘，n<sup>2=(a1+a2+a3...+ak+1)</sup>2=ans+2sum(ai^2)，求ans最大即为求平方和最小，可以假设2x=c，然后用两个x和(x-1)、(x+1)平方和相减，发现前者始终是最小的，于是转化为接近分组。（具体数学上好像有相关的，不过没带回书也不知道是啥）</p>
+<h2 id="code">Code</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">#include&lt;math.h&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">ll n,k;</span><br><span class="line">int main()&#123;</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">	k++;</span><br><span class="line">	int d=n/k;</span><br><span class="line">	ll sum=(k-n%k)*d*d+n%k*(d+1)*(d+1);</span><br><span class="line">	ll ans=(n*n-sum)/2;</span><br><span class="line">	cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/11/02/51Nod1179%20%E6%9C%80%E5%A4%A7%E7%9A%84%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="CCWUCMCTS">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CCWUCMCTS's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/02/51Nod1179%20%E6%9C%80%E5%A4%A7%E7%9A%84%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/" class="post-title-link" itemprop="url">51Nod1179 最大的最大公约数</a>
+        </h2>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-02 13:51:00" itemprop="dateCreated datePublished" datetime="2019-11-02T13:51:00+08:00">2019-11-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-18 20:59:47" itemprop="dateModified" datetime="2020-02-18T20:59:47+08:00">2020-02-18</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>116</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="problem">Problem</h2>
+<p>给出N个正整数，找出N个数两两之间最大公约数的最大值。例如：N = 4，4个数为：9 15 25 16，两两之间最大公约数的最大值是15同25的最大公约数5。</p>
+<h2 id="solution">Solution</h2>
+<p>把每个数所有因数搞出来，如果第二次出现就停止。</p>
+<h2 id="code">Code</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">typedef long long ll;</span><br><span class="line">typedef long double ld;</span><br><span class="line">typedef double db;</span><br><span class="line">#define io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span><br><span class="line">using namespace std;</span><br><span class="line">const int mod=998244353;</span><br><span class="line">int mo(ll a,int p)&#123;</span><br><span class="line">    return a&gt;=p?a%p:a;</span><br><span class="line">&#125;</span><br><span class="line">inline int rd() &#123;</span><br><span class="line">    int x = 0, f = 1;</span><br><span class="line">    char ch;</span><br><span class="line">    while (ch &lt; &#x27;0&#x27; || ch &gt; &#x27;9&#x27;) &#123;</span><br><span class="line">        if (ch == &#x27;-&#x27;)f = -1;</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    while (ch &gt;= &#x27;0&#x27; &amp;&amp; ch &lt;= &#x27;9&#x27;) &#123;</span><br><span class="line">        x = x * 10 + ch - &#x27;0&#x27;;</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    return f * x;</span><br><span class="line">&#125;</span><br><span class="line">int cnt=168;</span><br><span class="line">int pri[200]=&#123;0,2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,</span><br><span class="line">        53,59,61,67,71,73,79,83,89,97,</span><br><span class="line">        101,103,107,109,113,127,131,137,139,149,</span><br><span class="line">        151,157,163,167,173,179,181,191,193,197,199,</span><br><span class="line">        211,223,227,229,233,239,241,</span><br><span class="line">        251,257,263,269,271,277,281,283,293,</span><br><span class="line">        307,311,313,317,331,337,347,349,</span><br><span class="line">        353,359,367,373,379,383,389,397,</span><br><span class="line">        401,409,419,421,431,433,439,443,449,</span><br><span class="line">        457,461,463,467,479,487,491,499,</span><br><span class="line">        503,509,521,523,541,547,</span><br><span class="line">        557,563,569,571,577,587,593,599,</span><br><span class="line">        601,607,613,617,619,631,641,643,647,</span><br><span class="line">        653,659,661,673,677,683,691,</span><br><span class="line">        701,709,719,727,733,739,743,</span><br><span class="line">        751,757,761,769,773,787,797,</span><br><span class="line">        809,811,821,823,827,829,839,</span><br><span class="line">        853,857,859,863,877,881,883,887,</span><br><span class="line">        907,911,919,929,937,941,947,</span><br><span class="line">        953,967,971,977,983,991,997&#125;;</span><br><span class="line"></span><br><span class="line">int a[50020][30];</span><br><span class="line">int ct[50020][30];</span><br><span class="line">int n,tmp,mx;</span><br><span class="line">int num[50020];</span><br><span class="line">int ans[1000020];</span><br><span class="line">inline int speed(int a,int b)&#123;</span><br><span class="line">    int cur=a,anss=1;</span><br><span class="line">    while(b)&#123;</span><br><span class="line">        if(b&amp;1) anss=anss*cur;</span><br><span class="line">        cur=cur*cur;</span><br><span class="line">        b&gt;&gt;=1;</span><br><span class="line">    &#125;</span><br><span class="line">    return anss;</span><br><span class="line">&#125;</span><br><span class="line">void dfs(int t,int cur,int anx)&#123;</span><br><span class="line">    if(cur==a[t][0]+1)&#123;</span><br><span class="line">        ans[anx]++;</span><br><span class="line">        if(ans[anx]&gt;1) mx=max(mx,anx);</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i=0;i&lt;=ct[t][cur];i++)&#123;</span><br><span class="line">        dfs(t,cur+1,anx*speed(a[t][cur],i));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">    //io_opt;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">    for(int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;num[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    sort(num+1,num+1+n);</span><br><span class="line">    for(int i=n;i&gt;=1;i--)&#123;</span><br><span class="line">        tmp=num[i];</span><br><span class="line">        for(int j=1;j&lt;=cnt;j++)&#123;</span><br><span class="line">            if(num[i]%pri[j]==0)&#123;</span><br><span class="line">                a[i][++a[i][0]]=pri[j];</span><br><span class="line">            &#125;</span><br><span class="line">            while(num[i]%pri[j]==0)&#123;</span><br><span class="line">                ct[i][a[i][0]]++;</span><br><span class="line">                num[i]/=pri[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(num[i]&gt;1)&#123;</span><br><span class="line">            a[i][++a[i][0]]=num[i];</span><br><span class="line">            ct[i][a[i][0]]++;</span><br><span class="line">        &#125;</span><br><span class="line">        if(mx&gt;=tmp)&#123;</span><br><span class="line">            break;</span><br><span class="line">        &#125;dfs(i,1,1);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d\n&quot;,mx);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/11/02/51Nod1403%20%E6%9C%89%E8%B6%A3%E7%9A%84%E5%A0%86%E6%A0%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="CCWUCMCTS">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CCWUCMCTS's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/02/51Nod1403%20%E6%9C%89%E8%B6%A3%E7%9A%84%E5%A0%86%E6%A0%88/" class="post-title-link" itemprop="url">51Nod1403 有趣的堆栈</a>
+        </h2>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-02 13:47:00" itemprop="dateCreated datePublished" datetime="2019-11-02T13:47:00+08:00">2019-11-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-18 20:59:47" itemprop="dateModified" datetime="2020-02-18T20:59:47+08:00">2020-02-18</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>326</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="problem">Problem</h2>
+<p>大家都熟悉堆栈操作。一个堆栈一般有两种操作，push和pop。假设所有操作都是合法的并且最终堆栈为空。我们可以有很多方法记录堆栈的操作， （1） 对每个pop操作，我们记录它之前一共有多少个push操作。 （2） 对每个pop操作，我们记录这个被Pop的元素曾经被压上了几个。 例如：操作push, push, pop, push, push, pop, push, pop, pop, pop 用第一种方法 记录为 2, 4, 5, 5, 5 用第二种方法 记录为 0, 0, 0, 2, 4 这两种记录方法可以互相转化，我们的问题是，给定第二种记录方法的序列，请求出第一种记录方法的序列。</p>
+<h2 id="solution">Solution</h2>
+<p>第i个位置变成i，然后扫到几，就在他前面几个数上加1，我也不知道为啥，推出来的。</p>
+<h2 id="code">Code</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">//#include&lt;iostream&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">typedef long long ll;</span><br><span class="line">typedef long double ld;</span><br><span class="line">typedef double db;</span><br><span class="line">#define io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span><br><span class="line">//using namespace std;</span><br><span class="line">const int mod=998244353;</span><br><span class="line">int mo(ll a,int p)&#123;</span><br><span class="line">    return a&gt;=p?a%p:a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">inline int rd() &#123;</span><br><span class="line">    int x = 0, f = 1;</span><br><span class="line">    char ch;</span><br><span class="line">    while (ch &lt; &#x27;0&#x27; || ch &gt; &#x27;9&#x27;) &#123;</span><br><span class="line">        if (ch == &#x27;-&#x27;)f = -1;</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    while (ch &gt;= &#x27;0&#x27; &amp;&amp; ch &lt;= &#x27;9&#x27;) &#123;</span><br><span class="line">        x = x * 10 + ch - &#x27;0&#x27;;</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    return f * x;</span><br><span class="line">&#125;</span><br><span class="line">int n,x;</span><br><span class="line">int f[1000020];</span><br><span class="line">char pbuf[100000],*pp=pbuf;</span><br><span class="line">void push(const char c) &#123;</span><br><span class="line">    if(pp-pbuf==100000) fwrite(pbuf,1,100000,stdout),pp=pbuf;</span><br><span class="line">    *pp++=c;</span><br><span class="line">&#125;</span><br><span class="line">void write(int x) &#123;</span><br><span class="line">    static int sta[35];</span><br><span class="line">    int top=0;</span><br><span class="line">    do&#123;sta[top++]=x%10,x/=10;&#125;while(x);</span><br><span class="line">    while(top) push(sta[--top]+&#x27;0&#x27;);</span><br><span class="line">    push(&#x27; &#x27;);</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">    //io_opt;</span><br><span class="line">    n=rd();</span><br><span class="line">    for(register int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">        x=rd();</span><br><span class="line">        if(x)&#123;</span><br><span class="line">            f[i-x-1]++;</span><br><span class="line">            f[i-1]--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    register int las=0;</span><br><span class="line">    for(register int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">        las=1+las+f[i-1];</span><br><span class="line">        write(las);</span><br><span class="line">    &#125;</span><br><span class="line">    fwrite(pbuf,1,pp-pbuf,stdout);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/11/02/51Nod2676%20%E4%BC%97%E9%87%8C%E5%AF%BB%E8%8A%B1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="CCWUCMCTS">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CCWUCMCTS's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/02/51Nod2676%20%E4%BC%97%E9%87%8C%E5%AF%BB%E8%8A%B1/" class="post-title-link" itemprop="url">51Nod2676 众里寻花</a>
+        </h2>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-02 13:33:00" itemprop="dateCreated datePublished" datetime="2019-11-02T13:33:00+08:00">2019-11-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-18 20:59:47" itemprop="dateModified" datetime="2020-02-18T20:59:47+08:00">2020-02-18</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>223</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="problem">Problem</h2>
+<p>有𝑛个彩灯每个彩灯有一种颜色𝑐𝑜𝑙𝑖（彩灯从1到n标号），有𝑚根细线将它们连接在一起。你想用这些彩灯作出一朵美丽的花，进一步说你想从这𝑚根细线中保留𝑛−1根，且需要保证所有彩灯是连通在一起的。你希望这朵花五彩斑斓，因此你想要连接同颜色彩灯的细线越少越好。请问这个最小值是多少？</p>
+<p>数据范围：</p>
+<p>2≤𝑛≤100,1≤𝑚≤200,1≤𝑐𝑜𝑙𝑖≤𝑛</p>
+<h2 id="solution">Solution</h2>
+<p>连接同颜色的是1，否则为0，然后最小生成树。</p>
+<h2 id="code">Code</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">typedef long long ll;</span><br><span class="line">typedef long double ld;</span><br><span class="line">typedef double db;</span><br><span class="line">#define io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span><br><span class="line">using namespace std;</span><br><span class="line">const int mod=998244353;</span><br><span class="line">int mo(ll a,int p)&#123;</span><br><span class="line">    return a&gt;=p?a%p:a;</span><br><span class="line">&#125;</span><br><span class="line">inline int rd() &#123;</span><br><span class="line">    int x = 0, f = 1;</span><br><span class="line">    char ch;</span><br><span class="line">    while (ch &lt; &#x27;0&#x27; || ch &gt; &#x27;9&#x27;) &#123;</span><br><span class="line">        if (ch == &#x27;-&#x27;)f = -1;</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    while (ch &gt;= &#x27;0&#x27; &amp;&amp; ch &lt;= &#x27;9&#x27;) &#123;</span><br><span class="line">        x = x * 10 + ch - &#x27;0&#x27;;</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    return f * x;</span><br><span class="line">&#125;</span><br><span class="line">int n,m,f[120],ans;</span><br><span class="line">int a[120];</span><br><span class="line">int find(int x)&#123;</span><br><span class="line">    return f[x]==0?x:f[x]=find(f[x]);</span><br><span class="line">&#125;</span><br><span class="line">struct E&#123;</span><br><span class="line">    int u,v,w;</span><br><span class="line">&#125;e[220];;</span><br><span class="line">int cmp(E x,E y)&#123;</span><br><span class="line">    return x.w&lt;y.w;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">    io_opt;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    for(int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">        cin&gt;&gt;a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    int x,y;</span><br><span class="line">    for(int i=1;i&lt;=m;i++)&#123;</span><br><span class="line">        cin&gt;&gt;x&gt;&gt;y;</span><br><span class="line">        if(a[x]==a[y])&#123;</span><br><span class="line">            e[i]=(E)&#123;x,y,1&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            e[i]=(E)&#123;x,y,0&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(e+1,e+1+m,cmp);</span><br><span class="line">    int cnt=0;</span><br><span class="line">    for(int i=1;i&lt;=m;i++)&#123;</span><br><span class="line">        //cout&lt;&lt;e[i].w&lt;&lt;endl;</span><br><span class="line">        int u=find(e[i].u),v=find(e[i].v);</span><br><span class="line">        if(u!=v)&#123;</span><br><span class="line">            f[u]=v;</span><br><span class="line">            cnt++;</span><br><span class="line">            if(e[i].w) ans++;</span><br><span class="line">        &#125;</span><br><span class="line">        if(cnt==n-1) break;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/29/51Nod2602%20%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="CCWUCMCTS">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CCWUCMCTS's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/10/29/51Nod2602%20%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/" class="post-title-link" itemprop="url">51Nod2602 树的直径</a>
+        </h2>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-29 12:23:00" itemprop="dateCreated datePublished" datetime="2019-10-29T12:23:00+08:00">2019-10-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-18 20:59:47" itemprop="dateModified" datetime="2020-02-18T20:59:47+08:00">2020-02-18</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>122</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="problem">Problem</h2>
+<p>一棵树的直径就是这棵树上存在的最长路径。现在有一棵n个节点的树，现在想知道这棵树的直径包含的边的个数是多少？</p>
+<h2 id="solution">Solution</h2>
+<p>随便找一个点，找最远的，再找新的点最远的。</p>
+<p>当然我瞎搞的树状dp，子树分支最大的和次大的加起来就行。</p>
+<h2 id="code">Code</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">typedef long long ll;</span><br><span class="line">typedef long double ld;</span><br><span class="line">typedef double db;</span><br><span class="line">#define io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span><br><span class="line">using namespace std;</span><br><span class="line">const int mod=998244353;</span><br><span class="line">int mo(ll a,int p)&#123;</span><br><span class="line">    return a&gt;=p?a%p:a;</span><br><span class="line">&#125;</span><br><span class="line">inline int rd() &#123;</span><br><span class="line">    int x = 0, f = 1;</span><br><span class="line">    char ch;</span><br><span class="line">    while (ch &lt; &#x27;0&#x27; || ch &gt; &#x27;9&#x27;) &#123;</span><br><span class="line">        if (ch == &#x27;-&#x27;)f = -1;</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    while (ch &gt;= &#x27;0&#x27; &amp;&amp; ch &lt;= &#x27;9&#x27;) &#123;</span><br><span class="line">        x = x * 10 + ch - &#x27;0&#x27;;</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    return f * x;</span><br><span class="line">&#125;</span><br><span class="line">int n,ans;</span><br><span class="line">struct E&#123;</span><br><span class="line">    int u,v,nex;</span><br><span class="line">&#125;e[200020];</span><br><span class="line">int g[100020];</span><br><span class="line">int f[100020];</span><br><span class="line">int dfs(int x)&#123;</span><br><span class="line">    int mx1=0,mx2=0;</span><br><span class="line">    for(int i=g[x];i&gt;0;i=e[i].nex)&#123;</span><br><span class="line">        if(!f[e[i].v])&#123;</span><br><span class="line">            f[e[i].v]=1;</span><br><span class="line">            int d=dfs(e[i].v);</span><br><span class="line">            f[e[i].v]=0;</span><br><span class="line">            if(!mx1)&#123;</span><br><span class="line">                mx1=d;</span><br><span class="line">            &#125;</span><br><span class="line">            else if(!mx2)&#123;</span><br><span class="line">                mx2=d;</span><br><span class="line">                if(mx2&gt;mx1) swap(mx1,mx2);</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                if(d&gt;mx2) mx2=d;</span><br><span class="line">                if(mx2&gt;mx1) swap(mx1,mx2);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ans=max(ans,mx1+mx2+1);</span><br><span class="line">    if(!mx1&amp;&amp;!mx2)&#123;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line">    return mx1+1;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">    //io_opt;</span><br><span class="line">    n=rd();</span><br><span class="line">    int x,y;</span><br><span class="line">    for(int i=1;i&lt;=n-1;i++)&#123;</span><br><span class="line">        x=rd(),y=rd();</span><br><span class="line">        e[i]=(E)&#123;x,y,g[x]&#125;;g[x]=i;</span><br><span class="line">        e[i+n-1]=(E)&#123;y,x,g[y]&#125;;g[y]=i+n-1;</span><br><span class="line">    &#125;</span><br><span class="line">    f[1]=1;</span><br><span class="line">    dfs(1);</span><br><span class="line">    printf(&quot;%d\n&quot;,ans-1);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/29/51Nod2680%20%E4%BA%89%E6%B8%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="CCWUCMCTS">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CCWUCMCTS's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/10/29/51Nod2680%20%E4%BA%89%E6%B8%A1/" class="post-title-link" itemprop="url">51Nod2680 争渡</a>
+        </h2>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-29 12:20:00" itemprop="dateCreated datePublished" datetime="2019-10-29T12:20:00+08:00">2019-10-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-18 20:59:47" itemprop="dateModified" datetime="2020-02-18T20:59:47+08:00">2020-02-18</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>315</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="problem">Problem</h2>
+<p>人生如逆水行舟，不进则退。你一生中有𝑛个阶段，每个阶段有一个状态下限𝐿𝑖，也有一个状态上限𝑅𝑖，你想规划你的一生中各阶段的状态值，使得你的状态在𝑛个阶段中始终在变好（严格递增）。请你计算有多少种不同的人生规划。由于答案较大，只需输出答案对998244353取余的结果</p>
+<p>数据范围：1≤𝑛≤200,1≤𝐿𝑖≤𝑅𝑖≤104</p>
+<h2 id="solution">Solution</h2>
+<p>解法请购买，这里谈一点优化。</p>
+<p>反正多余的也没啥用。</p>
+<p>对于下限l，如果前一个大，当前的可以修改为前一个。（升序）</p>
+<p>对于上限r，如果后一个小，当前的可以修改为后一个。（降序）</p>
+<p>对于每个i，求j=l[i]的值，即求前面i-1，j小于l[i]的和时，从l[i-1]开始求。</p>
+<h2 id="code">Code</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">//#include&lt;iostream&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">typedef long long ll;</span><br><span class="line">typedef long double ld;</span><br><span class="line">typedef double db;</span><br><span class="line">#define io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span><br><span class="line">//using namespace std;</span><br><span class="line">const int mod=998244353;</span><br><span class="line">int mo(ll a,int p)&#123;</span><br><span class="line">    return a&gt;=p?a%p:a;</span><br><span class="line">&#125;</span><br><span class="line">inline int rd() &#123;</span><br><span class="line">    int x = 0, f = 1;</span><br><span class="line">    char ch;</span><br><span class="line">    while (ch &lt; &#x27;0&#x27; || ch &gt; &#x27;9&#x27;) &#123;</span><br><span class="line">        if (ch == &#x27;-&#x27;)f = -1;</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    while (ch &gt;= &#x27;0&#x27; &amp;&amp; ch &lt;= &#x27;9&#x27;) &#123;</span><br><span class="line">        x = x * 10 + ch - &#x27;0&#x27;;</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    return f * x;</span><br><span class="line">&#125;</span><br><span class="line">int n,sum;</span><br><span class="line">int l[220],r[220];</span><br><span class="line">int f[220][10020];</span><br><span class="line">inline int min(int a,int b)&#123;</span><br><span class="line">    return a&lt;b?a:b;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">    //io_opt;</span><br><span class="line">    n=rd();</span><br><span class="line">    f[0][0]=1;</span><br><span class="line">    for(int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">        l[i]=rd();</span><br><span class="line">        r[i]=rd();</span><br><span class="line">        if(l[i]&lt;l[i-1]) l[i]=l[i-1];</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i=n;i&gt;=2;i--)&#123;</span><br><span class="line">        if(r[i]&lt;r[i-1]) r[i-1]=r[i];</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">        for(int j=l[i-1];j&lt;l[i];j++) f[i][l[i]]=mo(f[i-1][j]+f[i][l[i]],mod);</span><br><span class="line">        for(int j=l[i]+1;j&lt;=r[i];j++)&#123;</span><br><span class="line">            f[i][j]=mo((ll)f[i-1][j-1]+f[i][j-1],mod);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i=l[n];i&lt;=r[n];i++)&#123;</span><br><span class="line">        sum=mo((ll)sum+f[n][i],mod);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d\n&quot;,sum);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/29/51Nod2671%20%E5%B9%B3%E8%A1%A1%E7%8E%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="CCWUCMCTS">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CCWUCMCTS's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/10/29/51Nod2671%20%E5%B9%B3%E8%A1%A1%E7%8E%AF/" class="post-title-link" itemprop="url">51Nod2671 平衡环</a>
+        </h2>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-29 12:19:00" itemprop="dateCreated datePublished" datetime="2019-10-29T12:19:00+08:00">2019-10-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-18 20:59:47" itemprop="dateModified" datetime="2020-02-18T20:59:47+08:00">2020-02-18</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>257</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="problem">Problem</h2>
+<p>给定一棵𝑛个点的树，每条边有一个边权，边权只可能是4或7。你想在树上选择两个没有直接连边的点，并在这两点间加一条边权为4或7的连边。很显然，树上出现一个环，如果这个环上边权为4的边数与边权为7的边数相等，那么这个环是一个平衡环。你希望得到这样一个平衡环，请问需要连接哪两个点，并赋予什么边权。</p>
+<p>如果有多种方案，输出任意一组解即可。如果无解，输出-1。</p>
+<p>数据范围：1≤𝑛≤100</p>
+<h2 id="solution">Solution</h2>
+<p>必定是长度为3的路，一开始dfs点1留影子找，后来发现只能dfs所有点，这样就是𝑂(n^2)的了。</p>
+<h2 id="code">Code</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line"></span><br><span class="line">typedef long long ll;</span><br><span class="line">typedef long double ld;</span><br><span class="line">typedef double db;</span><br><span class="line">#define io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">inline int rd() &#123;</span><br><span class="line">    int x = 0, f = 1;</span><br><span class="line">    char ch;</span><br><span class="line">    while (ch &lt; &#x27;0&#x27; || ch &gt; &#x27;9&#x27;) &#123;</span><br><span class="line">        if (ch == &#x27;-&#x27;)f = -1;</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    while (ch &gt;= &#x27;0&#x27; &amp;&amp; ch &lt;= &#x27;9&#x27;) &#123;</span><br><span class="line">        x = x * 10 + ch - &#x27;0&#x27;;</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    return f * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int n,g[1020];</span><br><span class="line">struct E&#123;</span><br><span class="line">    int u,v,w,nex;</span><br><span class="line">&#125;e[1020];</span><br><span class="line">int ansu=0,ansv=0;</span><br><span class="line">int f[1020];</span><br><span class="line">void dfs(int d1,int d2,int d3,int l1,int l2)&#123;</span><br><span class="line">    if(ansu&amp;&amp;ansv) return;</span><br><span class="line">    int n4=0,n7=0;</span><br><span class="line">    if(l1==4) n4++;</span><br><span class="line">    else if(l1==7) n7++;</span><br><span class="line">    if(l2==4) n4++;</span><br><span class="line">    else if(l2==7) n7++;</span><br><span class="line">    for(int i=g[d3];i&gt;0;i=e[i].nex)&#123;</span><br><span class="line">        if(f[e[i].v]) continue;</span><br><span class="line">        if(e[i].w==4) n4++;</span><br><span class="line">        else if(e[i].w==7) n7++;</span><br><span class="line">        if(n4&amp;&amp;n7&amp;&amp;n4+n7==3)&#123;</span><br><span class="line">            ansu=1,ansv=1;</span><br><span class="line">            if(n4==2)&#123;</span><br><span class="line"></span><br><span class="line">                cout&lt;&lt;d1&lt;&lt;&#x27; &#x27;&lt;&lt;e[i].v&lt;&lt;&#x27; &#x27;&lt;&lt;&quot;7&quot;&lt;&lt;endl;</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                cout&lt;&lt;d1&lt;&lt;&#x27; &#x27;&lt;&lt;e[i].v&lt;&lt;&#x27; &#x27;&lt;&lt;&quot;4&quot;&lt;&lt;endl;</span><br><span class="line">            &#125;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        if(e[i].w==4) n4--;</span><br><span class="line">        else if(e[i].w==7) n7--;</span><br><span class="line">        f[e[i].v]=1;</span><br><span class="line">        dfs(d2,d3,e[i].v,l2,e[i].w);</span><br><span class="line">        f[e[i].v]=0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">    io_opt;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    int x,y,z;</span><br><span class="line">    for(int i=1;i&lt;=n-1;i++)&#123;</span><br><span class="line">        cin&gt;&gt;x&gt;&gt;y&gt;&gt;z;</span><br><span class="line">        e[i]=(E)&#123;x,y,z,g[x]&#125;;g[x]=i;</span><br><span class="line">        e[i+n-1]=(E)&#123;y,x,z,g[y]&#125;;g[y]=i+n-1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for(int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">        ansu=ansv=0;</span><br><span class="line">        f[i]=1;</span><br><span class="line">        dfs(0,0,i,0,0);</span><br><span class="line">        f[i]=0;</span><br><span class="line">        if((ansu&amp;&amp;ansv))&#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;&quot;-1&quot;&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -352,9 +1138,15 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">98</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
 </div>
@@ -412,13 +1204,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">0k</span>
+    <span title="站点总字数">64k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1 分钟</span>
+    <span title="站点阅读时长">1:47</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
