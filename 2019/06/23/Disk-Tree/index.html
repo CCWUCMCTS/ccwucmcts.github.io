@@ -25,15 +25,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="###题目描述 Hacker Bill has accidentally lost all the information from his workstation&#39;s hard drive and he has no backup copies of its contents. He does not regret for the loss of the files themselves, b">
+  <meta name="description" content="题目描述 Hacker Bill has accidentally lost all the information from his workstation&#39;s hard drive and he has no backup copies of its contents. He does not regret for the loss of the files themselves, but">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Disk Tree">
 <meta property="og:url" content="http://example.com/2019/06/23/Disk-Tree/index.html">
 <meta property="og:site_name" content="CCWUCMCTS&#39;s blog">
-<meta property="og:description" content="###题目描述 Hacker Bill has accidentally lost all the information from his workstation&#39;s hard drive and he has no backup copies of its contents. He does not regret for the loss of the files themselves, b">
+<meta property="og:description" content="题目描述 Hacker Bill has accidentally lost all the information from his workstation&#39;s hard drive and he has no backup copies of its contents. He does not regret for the loss of the files themselves, but">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-06-22T18:18:00.000Z">
-<meta property="article:modified_time" content="2021-11-16T12:01:11.750Z">
+<meta property="article:modified_time" content="2021-11-16T12:33:13.357Z">
 <meta property="article:author" content="CCWUCMCTS">
 <meta name="twitter:card" content="summary">
 
@@ -228,7 +228,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 20:01:11" itemprop="dateModified" datetime="2021-11-16T20:01:11+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-16 20:33:13" itemprop="dateModified" datetime="2021-11-16T20:33:13+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -269,20 +269,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>###题目描述</p>
+        <h3 id="题目描述">题目描述</h3>
 <p>Hacker Bill has accidentally lost all the information from his workstation's hard drive and he has no backup copies of its contents. He does not regret for the loss of the files themselves, but for the very nice and convenient directory structure that he had created and cherished during years of work. Fortunately, Bill has several copies of directory listings from his hard drive. Using those listings he was able to recover full paths (like &quot;WINNT32~186&quot;) for some directories. He put all of them in a file by writing each path he has found on a separate line. Your task is to write a program that will help Bill to restore his state of the art directory structure by providing nicely formatted directory tree.</p>
 <span id="more"></span>
-<p>###输入</p>
+<h3 id="输入">输入</h3>
 <p>The first line of the input file contains single integer number N (1 &lt;= N &lt;= 500) that denotes a total number of distinct directory paths. Then N lines with directory paths follow. Each directory path occupies a single line and does not contain any spaces, including leading or trailing ones. No path exceeds 80 characters. Each path is listed once and consists of a number of directory names separated by a back slash (&quot;&quot;).</p>
 <p>Each directory name consists of 1 to 8 uppercase letters, numbers, or the special characters from the following list: exclamation mark, number sign, dollar sign, percent sign, ampersand, apostrophe, opening and closing parenthesis, hyphen sign, commercial at, circumflex accent, underscore, grave accent, opening and closing curly bracket, and tilde (&quot;!#$%&amp;'()-@^_`{}~&quot;).</p>
-<p>###输出</p>
+<h3 id="输出">输出</h3>
 <p>Write to the output file the formatted directory tree. Each directory name shall be listed on its own line preceded by a number of spaces that indicate its depth in the directory hierarchy. The subdirectories shall be listed in lexicographic order immediately after their parent directories preceded by one more space than their parent directory. Top level directories shall have no spaces printed before their names and shall be listed in lexicographic order. See sample below for clarification of the output format.</p>
-<p>###样例输入</p>
+<h3 id="样例输入">样例输入</h3>
 <blockquote>
 <p>7 WINNT32 GAMES WINNT HOME WIN GAMES WINNT32~186</p>
 </blockquote>
-<p>###样例输出 GAMES DRIVERS HOME WIN SOFT WINNT DRIVERS SYSTEM32 CERTSRV CERTCO~1 X86 CONFIG</p>
-<p>####瞎搞代码，只能在学校OJ上交过，POJ上交超时 ####一开始想成文件名不重复了，正解是手动链树，多叉转二叉，添加节点的时候排序，vector瞎搞模拟有点慢，懒得改了</p>
+<h3 id="样例输出">样例输出</h3>
+<pre><code>GAMES
+ DRIVERS
+HOME
+WIN
+ SOFT
+WINNT
+ DRIVERS
+ SYSTEM32
+  CERTSRV
+   CERTCO~1
+    X86
+  CONFIG</code></pre>
+<h4 id="瞎搞代码只能在学校oj上交过poj上交超时">瞎搞代码，只能在学校OJ上交过，POJ上交超时</h4>
+<h4 id="一开始想成文件名不重复了正解是手动链树多叉转二叉添加节点的时候排序vector瞎搞模拟有点慢懒得改了">一开始想成文件名不重复了，正解是手动链树，多叉转二叉，添加节点的时候排序，vector瞎搞模拟有点慢，懒得改了</h4>
 <p>```c++ #include<iostream> #include&lt;string.h&gt; #include&lt;stdio.h&gt; #include<cstdio> #include<queue> #include<cstring> #include<algorithm> #include<vector> #include<queue> #include<map> using namespace std; int n,cnt,T; struct E{ string s; int pla; vector<int>v; }; E fir[520]; E node[20020]; int fircnt=0; int cmp(E x,E y){ return x.s&lt;y.s; } int cmp1(int x,int y){ return node[x].s&lt;node[y].s; } void dfs(int cur,int h){ if(cur==0) return; if(h==0){ cout&lt;&lt;fir[cur].s&lt;&lt;endl; sort(fir[cur].v.begin(),fir[cur].v.end(),cmp1); for(int i=0;i&lt;fir[cur].v.size();i++){ dfs(fir[cur].v[i],h+1); } } else{ for(int i=1;i&lt;=h;i++) printf(&quot; &quot;); cout&lt;&lt;node[cur].s&lt;&lt;endl; sort(node[cur].v.begin(),node[cur].v.end(),cmp1); for(int i=0;i&lt;node[cur].v.size();i++){ dfs(node[cur].v[i],h+1); } } }</p>
 <p>int main(){ //freopen(&quot;I.in&quot;,&quot;r&quot;,stdin); //freopen(&quot;I.out&quot;,&quot;w&quot;,stdout); //cin&gt;&gt;T; T=1; while(T--){ //for(int i=1;i&lt;=cnt;i++) a[i].clear(); cnt=fircnt=0; //memset(e,0,sizeof(e)); //memset(root,0,sizeof(root)); //mp.clear(); cin&gt;&gt;n; string s0; for(int i=1;i&lt;=n;i++){ cin&gt;&gt;s0; int x1=-1,x2=-1; string tmps=&quot;&quot;;//,last=&quot;&quot;; int last=0,tmp,cur=0; for(int j=0;j&lt;s0.size();j++){ if(x2==-1&amp;&amp;s0[j]=='\'){ cur++; x2=j; tmps=s0.substr(0,j); tmp=-1; for(int k=1;k&lt;=fircnt;k++){ if(tmps==fir[k].s){ tmp=k; break; } } if(tmp==-1){ ++fircnt; fir[fircnt]=(E){tmps,fircnt}; last=fircnt; } else{ last=fir[tmp].pla; } //cout&lt;&lt;tmps&lt;&lt;' '; } else if(s0[j]=='\'){ cur++; x1=x2,x2=j; tmps=s0.substr(x1+1,x2-x1-1); tmp=-1; //if(tmps==&quot;SYSTEM32&quot;)cout&lt;&lt;&quot;!!!&quot;; if(cur==2){</p>
 <pre><code>                    for(int k=0;k&lt;fir[last].v.size();k++)&#123;
@@ -538,6 +551,7 @@ return 0;</code></pre>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5"><span class="nav-number">2.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-number">3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5"><span class="nav-number">4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA"><span class="nav-number">5.</span> <span class="nav-text">样例输出</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9E%8E%E6%90%9E%E4%BB%A3%E7%A0%81%E5%8F%AA%E8%83%BD%E5%9C%A8%E5%AD%A6%E6%A0%A1oj%E4%B8%8A%E4%BA%A4%E8%BF%87poj%E4%B8%8A%E4%BA%A4%E8%B6%85%E6%97%B6"><span class="nav-number">5.1.</span> <span class="nav-text">瞎搞代码，只能在学校OJ上交过，POJ上交超时</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E5%BC%80%E5%A7%8B%E6%83%B3%E6%88%90%E6%96%87%E4%BB%B6%E5%90%8D%E4%B8%8D%E9%87%8D%E5%A4%8D%E4%BA%86%E6%AD%A3%E8%A7%A3%E6%98%AF%E6%89%8B%E5%8A%A8%E9%93%BE%E6%A0%91%E5%A4%9A%E5%8F%89%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%B7%BB%E5%8A%A0%E8%8A%82%E7%82%B9%E7%9A%84%E6%97%B6%E5%80%99%E6%8E%92%E5%BA%8Fvector%E7%9E%8E%E6%90%9E%E6%A8%A1%E6%8B%9F%E6%9C%89%E7%82%B9%E6%85%A2%E6%87%92%E5%BE%97%E6%94%B9%E4%BA%86"><span class="nav-number">5.2.</span> <span class="nav-text">一开始想成文件名不重复了，正解是手动链树，多叉转二叉，添加节点的时候排序，vector瞎搞模拟有点慢，懒得改了</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -553,7 +567,7 @@ return 0;</code></pre>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">133</span>
+          <span class="site-state-item-count">138</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -625,13 +639,13 @@ return 0;</code></pre>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">58k</span>
+    <span title="站点总字数">59k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:36</span>
+    <span title="站点阅读时长">1:39</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
