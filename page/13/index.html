@@ -226,7 +226,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 16:49:31" itemprop="dateModified" datetime="2021-11-16T16:49:31+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-16 20:05:59" itemprop="dateModified" datetime="2021-11-16T20:05:59+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -234,7 +234,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
                 </span>
             </span>
 
@@ -269,19 +273,14 @@
 <p>输入包含多组测试数据。每组输入两个正整数，表示游戏一开始的两个数，游戏总是小明先开始。 当输入两个0的时候，输入结束。</p>
 <h2 id="输出">输出</h2>
 <p>对于每组输入，输出最后的胜者，我们认为他们两个都是顶尖高手，每一步游戏都做出了最佳的选择。 具体输出格式见输出样例。</p>
-<h2 id="样例输入">样例输入</h2>
-<blockquote>
-<p>34 12 15 24 0 0</p>
-</blockquote>
-<h2 id="样例输出">样例输出</h2>
-<blockquote>
-<p>xiaoming wins xiaohong wins</p>
-</blockquote>
-<h3 id="两句话能转移到必败点的是必胜点只能转移到必胜点的是必败点">两句话，能转移到必败点的是必胜点，只能转移到必胜点的是必败点。</h3>
-<p><img src="https://img2018.cnblogs.com/blog/1575943/201906/1575943-20190623095542588-1832008552.png" /></p>
-<p>我是这么推出来的，或者从定理出发，一个点不是必败点就是必胜点，对三角形右下角分别假设，都可以推出m/n&gt;2必胜</p>
-<p><code>c++ #include&lt;cstdio&gt; #include&lt;iostream&gt; #include&lt;cstring&gt; #include&lt;string&gt; #include&lt;algorithm&gt; #define ll long long using namespace std; int n,m; int main()&#123;     while(scanf(&quot;%d%d&quot;,&amp;n,&amp;m)==2&amp;&amp;n&amp;&amp;m)&#123;         if(n&gt;m) swap(n,m);         bool flag=true;         while(m%n!=0&amp;&amp;m/n==1)&#123;             m-=n;             if(n&gt;m) swap(n,m);             flag=!flag;         &#125;         if(flag)&#123;             printf(&quot;xiaoming wins\n&quot;);         &#125;         else printf(&quot;xiaohong wins\n&quot;);     &#125;     return 0; &#125;</code></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/06/23/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E6%B8%B8%E6%88%8F-%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%90%AF%E8%92%99/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -332,7 +331,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 16:58:23" itemprop="dateModified" datetime="2021-11-16T16:58:23+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-16 20:04:28" itemprop="dateModified" datetime="2021-11-16T20:04:28+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -340,7 +339,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
                 </span>
             </span>
 
@@ -375,16 +378,14 @@
 <p>输入包含多组测试数据，每组输入首先给出正整数N（&lt;=50），为树中结点总数。下面2行先后给出先序和中序遍历序列，均是长度为N的不包含重复英文字母（区别大小写）的字符串。</p>
 <h2 id="输出">输出</h2>
 <p>对于每组输入，输出一个整数，即该二叉树的高度。</p>
-<h2 id="样例输入">样例输入</h2>
-<blockquote>
-<p>9 ABDFGHIEC FDHGIBEAC 7 Abcdefg gfedcbA</p>
-</blockquote>
-<h2 id="样例输出">样例输出</h2>
-<blockquote>
-<p>5 7</p>
-</blockquote>
-<p><code>c++ #include&lt;iostream&gt; #include&lt;cstdio&gt; #include&lt;algorithm&gt; #include&lt;cstring&gt; #include&lt;map&gt; #define ll long long using namespace std; map&lt;char,int&gt;q; int n,h[1024],ans; string s1,s2; int lson[1024],rson[1024]; int tag[1024]; char buildtree(int s,int t)&#123;     memset(tag,0,sizeof(tag));     if(s==t) return s2[s];     for(int i=s;i&lt;=t;i++)&#123;         tag[s2[i]]=1;         //cout&lt;&lt;s2[i];     &#125;     //cout&lt;&lt;endl;     int lx=-1,rx=-1;     for(int i=0;i&lt;n;i++)&#123;         if(lx==-1)&#123;             if(tag[s1[i]])&#123;                 lx=i;             &#125;         &#125;         else&#123;             if(!tag[s1[i]])&#123;                 rx=i-1;                 break;             &#125;         &#125;     &#125;     if(rx==-1) rx=t;     char root=s1[lx];int pla;     for(int i=s;i&lt;=t;i++)&#123;         if(root==s2[i])&#123;             pla=i;             break;         &#125;     &#125;     if(s&lt;=pla-1) lson[root]=buildtree(s,pla-1);     if(pla+1&lt;=t) rson[root]=buildtree(pla+1,t);     return root; &#125; void dfs(char ss)&#123;     if(ss==0)&#123;         return;     &#125;     ans=max(ans,h[ss]);     h[lson[ss]]=h[rson[ss]]=h[ss]+1;     dfs(lson[ss]);     dfs(rson[ss]);//cout&lt;&lt;ss&lt;&lt;'*'; &#125; int main()&#123;     while(cin&gt;&gt;n)&#123;         memset(h,0,sizeof(h));         memset(lson,0,sizeof(lson));         memset(rson,0,sizeof(rson));         ans=0;         //q.erase(q.begin(),q.end());         cin&gt;&gt;s1&gt;&gt;s2;         char x=buildtree(0,n-1);         h[x]=1;         dfs(x);         cout&lt;&lt;ans&lt;&lt;endl;     &#125;     return 0; &#125;</code></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/06/23/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%97%AE%E9%A2%98/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -435,7 +436,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 16:56:58" itemprop="dateModified" datetime="2021-11-16T16:56:58+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-16 20:05:05" itemprop="dateModified" datetime="2021-11-16T20:05:05+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -443,7 +444,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
                 </span>
             </span>
 
@@ -453,7 +458,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>180</span>
+              <span>182</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -478,15 +483,14 @@
 <p>输入有多组数据。 每组第一行输入一个数n，接着输入n个叶节点（叶节点权值不超过100，2&lt;=n&lt;=1000）。</p>
 <h2 id="输出">输出</h2>
 <p>输出权值。</p>
-<h2 id="样例输入">样例输入</h2>
-<blockquote>
-<p>2 2 8 3 5 11 30</p>
-</blockquote>
-<h2 id="样例输出">样例输出</h2>
-<blockquote>
-<p>10 62 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">ll n,ans,h[<span class="number">5020</span>];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">E</span>&#123;</span></span><br><span class="line">    ll k,l,r,t;</span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (E x,E y)&#123;<span class="keyword">return</span> x.k&gt;y.k;&#125;</span><br><span class="line">&#125;e[<span class="number">5020</span>];</span><br><span class="line">priority_queue&lt;E&gt;q;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(ll root)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root==<span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    ll ls=e[root].l,rs=e[root].r;</span><br><span class="line">    h[ls]=h[rs]=h[root]+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(ls==<span class="number">0</span>&amp;&amp;rs==<span class="number">0</span>)&#123;</span><br><span class="line">        ans+=e[root].k*h[root];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">dfs</span>(ls);</span><br><span class="line">    <span class="built_in">dfs</span>(rs);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(cin&gt;&gt;n)&#123;</span><br><span class="line">        ll cur=n;ans=<span class="number">0</span>;</span><br><span class="line">        <span class="built_in">memset</span>(h,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(h));</span><br><span class="line">        <span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            ll x;</span><br><span class="line">            cin&gt;&gt;x;</span><br><span class="line">            e[i].k=x;</span><br><span class="line">            e[i].l=<span class="number">0</span>;</span><br><span class="line">            e[i].r=<span class="number">0</span>;</span><br><span class="line">            e[i].t=i;</span><br><span class="line">            q.<span class="built_in">push</span>(e[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(q.<span class="built_in">size</span>()&gt;<span class="number">1</span>)&#123;</span><br><span class="line">            E xx=q.<span class="built_in">top</span>();q.<span class="built_in">pop</span>();</span><br><span class="line">            E yy=q.<span class="built_in">top</span>();q.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="comment">//cout&lt;&lt;xx.k&lt;&lt;&#x27; &#x27;&lt;&lt;yy.k&lt;&lt;endl;</span></span><br><span class="line">            E neww=(E)&#123;xx.k+yy.k,xx.t,yy.t,++cur&#125;;</span><br><span class="line">            e[cur]=neww;</span><br><span class="line">            q.<span class="built_in">push</span>(neww);</span><br><span class="line">        &#125;</span><br><span class="line">        E root=q.<span class="built_in">top</span>();q.<span class="built_in">pop</span>();</span><br><span class="line">        h[root.t]=<span class="number">0</span>;</span><br><span class="line">        <span class="built_in">dfs</span>(root.t);</span><br><span class="line">        <span class="comment">/*for(int i=1;i&lt;=cur;i++)&#123;</span></span><br><span class="line"><span class="comment">            cout&lt;&lt;e[i].k&lt;&lt;&#x27; &#x27;&lt;&lt;e[i].l&lt;&lt;&#x27; &#x27;&lt;&lt;e[i].r&lt;&lt;&#x27; &#x27;&lt;&lt;e[i].t&lt;&lt;endl;</span></span><br><span class="line"><span class="comment">        &#125;*/</span></span><br><span class="line">        cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/06/23/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -537,7 +541,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 16:48:01" itemprop="dateModified" datetime="2021-11-16T16:48:01+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-16 20:06:13" itemprop="dateModified" datetime="2021-11-16T20:06:13+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -545,7 +549,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
                 </span>
             </span>
 
@@ -587,39 +595,14 @@
 每组输入两个整数n和m（1&lt;=n,m&lt;=1000），n和m的含义见题目描述。</p>
 <h2 id="输出">输出</h2>
 <p>对于每组输入，如果先走的人能赢，请输出&quot;first&quot;，否则请输出&quot;second&quot;。</p>
-<h2 id="样例输入">样例输入</h2>
-<pre><code>2
-23 2
-4 3</code></pre>
-<h2 id="样例输出">样例输出</h2>
-<pre><code>first
-second  
-  
-考虑第一个人什么时候赢，如果石子数为1到m，赢，m+1输，m+2可以让对方为m+1，赢，2m+2时怎么取都大于m+1输，2m+3可以取到2m+2让对方输，以此类推，如果n是m+1的整数倍，则A输，否则B输。  
-代码  </code></pre>
-<p><img src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" /><img src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" /></p>
-<pre><code>```
- 1 #include&lt;iostream&gt;
- 2 #include&lt;cstdio&gt;
- 3 #include&lt;cmath&gt;
- 4 #include&lt;cstring&gt;
- 5 #include&lt;algorithm&gt;
- 6 #define ll long long
- 7 using namespace std;
- 8 int T,n,m;
- 9 int main()&#123;
-10     cin&gt;&gt;T;
-11     while(T--)&#123;
-12         cin&gt;&gt;n&gt;&gt;m;
-13         if(n%(m+1))&#123;
-14             cout&lt;&lt;&quot;first\n&quot;;
-15         &#125;
-16         else cout&lt;&lt;&quot;second\n&quot;;
-17     &#125;
-18     return 0;
-19 &#125;```</code></pre>
-<p>View Code</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/06/05/%E5%8F%96%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -670,7 +653,7 @@ second
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 16:56:20" itemprop="dateModified" datetime="2021-11-16T16:56:20+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-16 19:57:57" itemprop="dateModified" datetime="2021-11-16T19:57:57+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -678,7 +661,11 @@ second
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
                 </span>
             </span>
 
@@ -770,7 +757,7 @@ second
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 16:35:04" itemprop="dateModified" datetime="2021-11-16T16:35:04+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-16 19:57:57" itemprop="dateModified" datetime="2021-11-16T19:57:57+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -778,7 +765,11 @@ second
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ACM%E6%AF%94%E8%B5%9B-%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">ACM比赛/总结</span></a>
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/ACM%E6%AF%94%E8%B5%9B-%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">ACM比赛/总结</span></a>
                 </span>
             </span>
 
@@ -807,8 +798,8 @@ second
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>1、long long=int*int，会数据溢出，直接定义long long或者long long*=long long。（51Nod1082）</p>
-<p>2、不要再忘记题目条件了！输出No Solution！！！！（51Nod1090）</p>
+          <p>1、long long=int*int，会数据溢出，直接定义long long或者long long*=long long。（51Nod 1082）</p>
+<p>2、不要再忘记题目条件了！输出No Solution！！！！（51Nod 1090）</p>
 <p>3、二分答案可以在修改边界的过程中留一个ans=mid，要向上取整可以（n+mod-1）%mod，注意不要除以0。（POJ3104）</p>
 <p>4、别人的程序初始化要看清楚。。。（POJ2976）</p>
 <p>5、变量的重名问题！！！</p>
@@ -871,7 +862,7 @@ second
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-15 21:10:55" itemprop="dateModified" datetime="2021-11-15T21:10:55+08:00">2021-11-15</time>
+                <time title="修改时间：2021-11-16 20:08:44" itemprop="dateModified" datetime="2021-11-16T20:08:44+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -879,7 +870,11 @@ second
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
                 </span>
             </span>
 
@@ -911,8 +906,14 @@ second
           <p><img src="https://img2018.cnblogs.com/blog/1575943/201902/1575943-20190227195117036-288323810.jpg" /></p>
 <p>log10(n!)=log10(2<em>pi</em>n)<em>0.5+n</em>log10(n/e)</p>
 <p>注意long long</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pi 3.1415926535</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> E 2.718281828459</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> n,x;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        cin&gt;&gt;x;</span><br><span class="line">        <span class="keyword">double</span> s=<span class="built_in">log10</span>(<span class="number">2</span>*pi*x)*<span class="number">0.5</span>+x*(<span class="built_in">log10</span>(x/E));</span><br><span class="line">        cout&lt;&lt;(<span class="keyword">long</span> <span class="keyword">long</span>)(s)+<span class="number">1</span>&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/02/27/51Nod-1130-%E6%96%AF%E7%89%B9%E6%9E%97%E8%BF%91%E4%BC%BC/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -963,7 +964,7 @@ second
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-15 20:59:40" itemprop="dateModified" datetime="2021-11-15T20:59:40+08:00">2021-11-15</time>
+                <time title="修改时间：2021-11-16 20:08:04" itemprop="dateModified" datetime="2021-11-16T20:08:04+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -971,7 +972,11 @@ second
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url" rel="index"><span itemprop="name">字符串</span></a>
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url" rel="index"><span itemprop="name">字符串</span></a>
                 </span>
             </span>
 
@@ -1042,7 +1047,7 @@ second
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/02/22/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-51Nod-1019%E9%80%86%E5%BA%8F%E6%95%B0-%E6%9C%80%E5%B0%8F%E7%9A%84%E4%BA%A4%E6%8D%A2/" class="post-title-link" itemprop="url">归并排序 && 51Nod1019逆序数 && 最小的交换</a>
+            <a href="/2019/02/22/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-51Nod-1019%E9%80%86%E5%BA%8F%E6%95%B0-%E6%9C%80%E5%B0%8F%E7%9A%84%E4%BA%A4%E6%8D%A2/" class="post-title-link" itemprop="url">归并排序 && 51Nod 1019逆序数 && 最小的交换</a>
         </h2>
 
         <div class="post-meta">
@@ -1060,7 +1065,7 @@ second
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 16:43:12" itemprop="dateModified" datetime="2021-11-16T16:43:12+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-16 20:04:38" itemprop="dateModified" datetime="2021-11-16T20:04:38+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1068,7 +1073,11 @@ second
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">基础算法</span></a>
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">基础算法</span></a>
                 </span>
             </span>
 
@@ -1108,25 +1117,14 @@ second
 第2 - N + 1行：序列中的元素（0 &lt;= A[i] &lt;= 10^9）</code></pre>
 <h1 id="输出">输出</h1>
 <pre><code>输出逆序数</code></pre>
-<h1 id="输入样例">输入样例</h1>
-<pre><code>4
-2
-4
-3
-1</code></pre>
-<h1 id="输出样例">输出样例</h1>
-<h1 id="section">4</h1>
-<h1 id="思路">思路</h1>
-<pre><code>____考虑在每次归并两个有序序列的过程中，我们会将后面一个有序序列的部分元素前移，那么从后向前中间 **超越的元素** 与它成为一个逆序对，代码中为当前总位置j减去已经被分配的比它小的元素k，即 **超越的元素** 数。 _ _  
-__</code></pre>
-<p><img src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" /><img src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" /></p>
-<pre><code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"> 1 #include&lt;iostream&gt;</span><br><span class="line"> 2 #include&lt;cstdio&gt;</span><br><span class="line"> 3 using namespace std;</span><br><span class="line"> 4 int a[50020],b[50020];</span><br><span class="line"> 5 int n;</span><br><span class="line"> 6 long long merge(int low,int mid,int high)&#123;</span><br><span class="line"> 7     int i=low,j=mid+1,k=low;</span><br><span class="line"> 8     long long count=0;</span><br><span class="line"> 9     while(i&lt;=mid&amp;&amp;j&lt;=high)&#123;</span><br><span class="line">10         if(a[i]&lt;=a[j])&#123;</span><br><span class="line">11             b[k++]=a[i++];</span><br><span class="line">12         &#125;</span><br><span class="line">13         else&#123;</span><br><span class="line">14             b[k++]=a[j++];</span><br><span class="line">15             count+=j-k;</span><br><span class="line">16         &#125;</span><br><span class="line">17     &#125;</span><br><span class="line">18     while(i&lt;=mid)&#123;</span><br><span class="line">19         b[k++]=a[i++];</span><br><span class="line">20     &#125;</span><br><span class="line">21     while(j&lt;=high)&#123;</span><br><span class="line">22         b[k++]=a[j++];</span><br><span class="line">23     &#125;</span><br><span class="line">24     for(i=low;i&lt;=high;i++)&#123;</span><br><span class="line">25         a[i]=b[i];</span><br><span class="line">26     &#125;</span><br><span class="line">27     return count;</span><br><span class="line">28 &#125;</span><br><span class="line">29 long long mergeSort(int x,int y)&#123;</span><br><span class="line">30     </span><br><span class="line">31     if(x&lt;y)&#123;</span><br><span class="line">32         int mid=(x+y)/2;</span><br><span class="line">33         long long count=0;</span><br><span class="line">34         count+=mergeSort(x,mid);</span><br><span class="line">35         count+=mergeSort(mid+1,y);</span><br><span class="line">36         count+=merge(x,mid,y);</span><br><span class="line">37         return count;</span><br><span class="line">38     &#125;</span><br><span class="line">39     return 0;</span><br><span class="line">40 &#125;</span><br><span class="line">41 int main()&#123;</span><br><span class="line">42     cin&gt;&gt;n;</span><br><span class="line">43     for(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">44         scanf(&quot;%d&quot;,&amp;a[i]);</span><br><span class="line">45     &#125;</span><br><span class="line">46     cout&lt;&lt;mergeSort(0,n-1);</span><br><span class="line">47     return 0;</span><br><span class="line">48 &#125;</span><br></pre></td></tr></table></figure></code></pre>
-<p>View Code</p>
-<p>三、最小的交换</p>
-<p>只能相邻元素交换，求让序列升序的最小交换次数。</p>
-<p>我们不可避免的让大数向后交换，那么我们考虑最大的一个数，让其向后交换，肯定会交换到最后一位，交换的次数为后面比它小的数的个数，即包含它且它更大的逆序对数，再把次小的元素向后移动......最后的移动次数即为逆序对数。</p>
-<p>代码同上</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/02/22/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-51Nod-1019%E9%80%86%E5%BA%8F%E6%95%B0-%E6%9C%80%E5%B0%8F%E7%9A%84%E4%BA%A4%E6%8D%A2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1177,7 +1175,7 @@ __</code></pre>
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 16:40:25" itemprop="dateModified" datetime="2021-11-16T16:40:25+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-16 20:06:33" itemprop="dateModified" datetime="2021-11-16T20:06:33+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1185,7 +1183,11 @@ __</code></pre>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="url" rel="index"><span itemprop="name">动态规划</span></a>
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="url" rel="index"><span itemprop="name">动态规划</span></a>
                 </span>
             </span>
 
@@ -1225,62 +1227,14 @@ __</code></pre>
 (A,B的长度 &lt;= 1000)</code></pre>
 <h1 id="输出">输出</h1>
 <pre><code>输出最长的子序列，如果有多个，随意输出1个。</code></pre>
-<h1 id="输入样例">输入样例</h1>
-<pre><code>abcicba
-abdkscab</code></pre>
-<h1 id="输出样例">输出样例</h1>
-<pre><code>abca  
-  
-
-
-```
- 1 #include&lt;cstdio&gt;
- 2 #include&lt;iostream&gt;
- 3 #include&lt;cstring&gt;
- 4 #include&lt;algorithm&gt;
- 5 using namespace std;
- 6 char a[1020],b[1020];
- 7 int f[1020][1020];
- 8 int ans[1020][1020];
- 9 void dfs(int x,int y)&#123;
-10     if(x==0||y==0) return;
-11     if(ans[x][y]==0)&#123;
-12         dfs(x-1,y-1);
-13         cout&lt;&lt;b[y];
-14     &#125;
-15     else if(ans[x][y]==1)&#123;
-16         dfs(x-1,y);
-17     &#125;
-18     else&#123;
-19         dfs(x,y-1);
-20     &#125;
-21 &#125;
-22 int main()&#123;
-23     cin&gt;&gt;a&gt;&gt;b;
-24     int l1=strlen(a),l2=strlen(b);
-25     for(int i=l1;i&gt;=1;i--) a[i]=a[i-1];
-26     for(int i=l2;i&gt;=1;i--) b[i]=b[i-1];
-27     for(int i=1;i&lt;=l1;i++)&#123;
-28         for(int j=1;j&lt;=l2;j++)&#123;
-29             if(a[i]==b[j])&#123;
-30                 f[i][j]=f[i-1][j-1]+1;
-31                 ans[i][j]=0;
-32             &#125;
-33             else if(f[i-1][j]&gt;=f[i][j-1])&#123;
-34                 f[i][j]=f[i-1][j];
-35                 ans[i][j]=1;
-36             &#125;
-37             else&#123;
-38                 f[i][j]=f[i][j-1];
-39                 ans[i][j]=-1;
-40             &#125;
-41         &#125;
-42     &#125;
-43     //cout&lt;&lt;f[l1][l2];
-44     dfs(l1,l2);
-45     return 0;
-46 &#125;```</code></pre>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/02/22/51Nod-1006-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97Lcs/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1373,13 +1327,13 @@ abdkscab</code></pre>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1438,7 +1392,7 @@ abdkscab</code></pre>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">58k</span>
+    <span title="站点总字数">57k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>

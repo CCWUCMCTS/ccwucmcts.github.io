@@ -226,7 +226,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-15 21:01:46" itemprop="dateModified" datetime="2021-11-15T21:01:46+08:00">2021-11-15</time>
+                <time title="修改时间：2021-11-16 20:08:17" itemprop="dateModified" datetime="2021-11-16T20:08:17+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -234,7 +234,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%80%E5%8D%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">简单题</span></a>
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E7%AE%80%E5%8D%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">简单题</span></a>
                 </span>
             </span>
 
@@ -265,9 +269,14 @@
       
           <p>##题目 一个单词a如果通过交换单词中字母的顺序可以得到另外的单词b，那么定义b是a的Anigram，例如单词army和mary互为Anigram。另：相同的2个单词不算Anigram。现在给定一个字典，输入Q个单词，从给出的字典中找出这些单词的Anigram。</p>
 <p>##思路 一个map保存原串出现次数，一个map保存排序串出现次数，减一下</p>
-<p>##代码</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> db double</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> n,q;</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">20</span>],sp[<span class="number">20</span>];</span><br><span class="line">map&lt;string,<span class="keyword">int</span>&gt;mp1;</span><br><span class="line">map&lt;string,<span class="keyword">int</span>&gt;mp2;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        cin&gt;&gt;s;</span><br><span class="line">        <span class="built_in">strcpy</span>(sp,s);</span><br><span class="line">        <span class="built_in">sort</span>(sp,sp+<span class="built_in">strlen</span>(sp));</span><br><span class="line">        mp1[s]++;<span class="comment">//cout&lt;&lt;s&lt;&lt;&#x27;;&#x27;&lt;&lt;mp[s]&lt;&lt;endl;</span></span><br><span class="line">        mp2[sp]++;</span><br><span class="line">    &#125;</span><br><span class="line">    cin&gt;&gt;q;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=q;i++)&#123;</span><br><span class="line">        cin&gt;&gt;s;</span><br><span class="line">        <span class="built_in">strcpy</span>(sp,s);</span><br><span class="line">        <span class="built_in">sort</span>(sp,sp+<span class="built_in">strlen</span>(sp));</span><br><span class="line">        <span class="comment">//cout&lt;&lt;sp&lt;&lt;&#x27;:&#x27;&lt;&lt;mp[sp]&lt;&lt;&#x27; &#x27;&lt;&lt;s&lt;&lt;&#x27;:&#x27;&lt;&lt;mp[s]&lt;&lt;&#x27; &#x27;;</span></span><br><span class="line">        cout&lt;&lt;mp2[sp]-mp1[s]&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/07/24/51Nod-1095-Anigram%E5%8D%95%E8%AF%8D/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -318,7 +327,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-15 21:00:52" itemprop="dateModified" datetime="2021-11-15T21:00:52+08:00">2021-11-15</time>
+                <time title="修改时间：2021-11-16 20:08:12" itemprop="dateModified" datetime="2021-11-16T20:08:12+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -326,7 +335,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">基础算法</span></a>
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">基础算法</span></a>
                 </span>
             </span>
 
@@ -357,9 +370,14 @@
       
           <p>##题目 一整数数列a1, a2, ... , an（有正有负），以及另一个整数k，求一个区间[i, j]，(1 &lt;= i &lt;= j &lt;= n)，使得a[i] + ... + a[j] = k。</p>
 <p>##思路 前缀和+n方查找，1e8如果数据小也是可以过的，毕竟1级题，也可以求前缀和，对前缀和排序，枚举i位置，二分查找j位置。</p>
-<p>##代码</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> db double</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">ll a[<span class="number">10020</span>],sum[<span class="number">10020</span>];</span><br><span class="line">ll n,k;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>,&amp;n,&amp;k);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;a[i]);</span><br><span class="line">        sum[i]=sum[i<span class="number">-1</span>]+a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;=n;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(sum[j]-sum[i<span class="number">-1</span>]==k)&#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,i,j);</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;No Solution\n&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/07/24/51Nod-1094-%E5%92%8C%E4%B8%BAk%E7%9A%84%E8%BF%9E%E7%BB%AD%E5%8C%BA%E9%97%B4/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -378,7 +396,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/23/51Nod1072-%E5%A8%81%E4%BD%90%E5%A4%AB%E6%B8%B8%E6%88%8F/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/23/51Nod-1072-%E5%A8%81%E4%BD%90%E5%A4%AB%E6%B8%B8%E6%88%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -392,7 +410,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/07/23/51Nod1072-%E5%A8%81%E4%BD%90%E5%A4%AB%E6%B8%B8%E6%88%8F/" class="post-title-link" itemprop="url">51Nod1072 威佐夫游戏</a>
+            <a href="/2019/07/23/51Nod-1072-%E5%A8%81%E4%BD%90%E5%A4%AB%E6%B8%B8%E6%88%8F/" class="post-title-link" itemprop="url">51Nod 1072 威佐夫游戏</a>
         </h2>
 
         <div class="post-meta">
@@ -410,7 +428,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-15 20:55:13" itemprop="dateModified" datetime="2021-11-15T20:55:13+08:00">2021-11-15</time>
+                <time title="修改时间：2021-11-16 20:09:40" itemprop="dateModified" datetime="2021-11-16T20:09:40+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -418,7 +436,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
                 </span>
             </span>
 
@@ -448,17 +470,14 @@
 
       
           <p>##题意 有2堆石子。A B两个人轮流拿，A先拿。每次可以从一堆中取任意个或从2堆中取相同数量的石子，但不可不取。拿到最后1颗石子的人获胜。假设A B都非常聪明，拿石子的过程中不会出现失误。给出2堆石子的数量，问最后谁能赢得比赛。</p>
-<p>##思路 枚举小数字的a,b，发现必败态有如下规律：</p>
-<ul>
-<li>每组必败态两数之差为1，2，3...</li>
-<li>必败态任意数字不重复</li>
-</ul>
-<p>于是可以递推(1,2),(3,5)(4,7),(6,10)...</p>
-<p>暴力可做，另有公式较小数a==(b-a)*1.618时为必败态。</p>
-<p>1.618具体为(sqrt(5)+1)/2，V2必须用这个公式和高精，未做，日后再做。</p>
-<p>##代码</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">ll T,a,b;</span><br><span class="line"><span class="keyword">int</span> c[<span class="number">5000020</span>];</span><br><span class="line"><span class="keyword">bool</span> f[<span class="number">50000200</span>];</span><br><span class="line"><span class="function">ll <span class="title">abs</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x&gt;<span class="number">0</span>?x:-x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(f,<span class="literal">false</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(f));</span><br><span class="line">    <span class="keyword">int</span> cnt=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">5000000</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!f[i]&amp;&amp;!f[i+cnt])&#123;</span><br><span class="line">            c[i]=i+cnt;</span><br><span class="line">            f[i]=f[i+cnt]=<span class="literal">true</span>;</span><br><span class="line">            cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">fun</span>();</span><br><span class="line">    cin&gt;&gt;T;</span><br><span class="line">    <span class="keyword">while</span>(T--)&#123;</span><br><span class="line">        cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">        <span class="keyword">if</span>(b&lt;a) <span class="built_in">swap</span>(a,b);</span><br><span class="line">        <span class="keyword">if</span>(c[a]==b) cout&lt;&lt;<span class="string">&quot;B\n&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span> cout&lt;&lt;<span class="string">&quot;A\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/07/23/51Nod-1072-%E5%A8%81%E4%BD%90%E5%A4%AB%E6%B8%B8%E6%88%8F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -509,7 +528,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-15 20:53:40" itemprop="dateModified" datetime="2021-11-15T20:53:40+08:00">2021-11-15</time>
+                <time title="修改时间：2021-11-16 20:06:56" itemprop="dateModified" datetime="2021-11-16T20:06:56+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -517,7 +536,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
                 </span>
             </span>
 
@@ -546,11 +569,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>##题意 有一堆石子共有N个。A B两个人轮流拿，A先拿。每次只能拿1，3，4颗，拿到最后1颗石子的人获胜。假设A B都非常聪明，拿石子的过程中不会出现失误。给出N，问最后谁能赢得比赛。</p>
-<p>##思路 博弈论，从零开始推状态，方法详见<a target="_blank" rel="noopener" href="https://www.cnblogs.com/sz-wcc/p/11071914.html">欧几里得游戏(博弈论启蒙)</a>。 最后发现%7为0和2的数是必败态，其它是必胜态。</p>
-<p>##代码</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">ll T,n;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;T;</span><br><span class="line">    <span class="keyword">while</span>(T--)&#123;</span><br><span class="line">        cin&gt;&gt;n;</span><br><span class="line">        <span class="keyword">if</span>(n%<span class="number">7</span>==<span class="number">2</span>||n%<span class="number">7</span>==<span class="number">0</span>)&#123;</span><br><span class="line">            cout&lt;&lt;<span class="string">&quot;B\n&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            cout&lt;&lt;<span class="string">&quot;A\n&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+          <p>##题意</p>
+<p>有一堆石子共有N个。A B两个人轮流拿，A先拿。每次只能拿1，3，4颗，拿到最后1颗石子的人获胜。假设A B都非常聪明，拿石子的过程中不会出现失误。给出N，问最后谁能赢得比赛。</p>
+<p>##思路</p>
+<p>博弈论，从零开始推状态，方法详见<a target="_blank" rel="noopener" href="https://www.cnblogs.com/sz-wcc/p/11071914.html">欧几里得游戏(博弈论启蒙)</a>。 最后发现%7为0和2的数是必败态，其它是必胜态。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/07/23/51Nod-1067-Bash%E6%B8%B8%E6%88%8F-V2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -601,7 +631,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-15 20:57:17" itemprop="dateModified" datetime="2021-11-15T20:57:17+08:00">2021-11-15</time>
+                <time title="修改时间：2021-11-16 20:07:47" itemprop="dateModified" datetime="2021-11-16T20:07:47+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -609,7 +639,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E5%B7%A7-%E5%AE%9E%E7%94%A8%E7%BB%93%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">技巧||实用结论</span></a>
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E6%8A%80%E5%B7%A7-%E5%AE%9E%E7%94%A8%E7%BB%93%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">技巧||实用结论</span></a>
                 </span>
             </span>
 
@@ -638,11 +672,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>##题意 约瑟夫环，N-1e18，K-1000</p>
-<p>##思路 由于K远小于N，后面i大了之后某些时候不用取模，可以加速。</p>
-<p>##代码</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">ll n,k;</span><br><span class="line">ll cur,t;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">    cur=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">2</span>;i&lt;=n;i+=t+<span class="number">1</span>)&#123;</span><br><span class="line">        t=(i-cur)/k<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">if</span>(t&lt;<span class="number">0</span>) t=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(i+t+<span class="number">1</span>&gt;n) t=n-i;</span><br><span class="line">        cur=(cur+(t+<span class="number">1</span>)*k)%(i+t);</span><br><span class="line">    &#125; </span><br><span class="line">    cur++;</span><br><span class="line">    cout&lt;&lt;cur&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+          <p>##题意</p>
+<p>约瑟夫环，N-1e18，K-1000</p>
+<p>##思路</p>
+<p>由于K远小于N，后面i大了之后某些时候不用取模，可以加速。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/07/23/51Nod-1074-%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF-V2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -693,7 +734,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-15 20:56:45" itemprop="dateModified" datetime="2021-11-15T20:56:45+08:00">2021-11-15</time>
+                <time title="修改时间：2021-11-16 20:07:35" itemprop="dateModified" datetime="2021-11-16T20:07:35+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -701,7 +742,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E5%B7%A7-%E5%AE%9E%E7%94%A8%E7%BB%93%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">技巧||实用结论</span></a>
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E6%8A%80%E5%B7%A7-%E5%AE%9E%E7%94%A8%E7%BB%93%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">技巧||实用结论</span></a>
                 </span>
             </span>
 
@@ -730,10 +775,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>##题意 编号1~N，每数K个出局，范围1e6</p>
-<p>##代码</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">ll n,k;</span><br><span class="line">ll cur;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">    cur=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        cur=(cur+k)%i;</span><br><span class="line">    &#125;</span><br><span class="line">    cur++;</span><br><span class="line">    cout&lt;&lt;cur&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+          <p>##题意</p>
+<p>编号1~N，每数K个出局，范围1e6</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/07/23/51Nod-1073-%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -784,7 +835,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 16:53:08" itemprop="dateModified" datetime="2021-11-16T16:53:08+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-16 20:05:47" itemprop="dateModified" datetime="2021-11-16T20:05:47+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -792,7 +843,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">基础算法</span></a>
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">基础算法</span></a>
                 </span>
             </span>
 
@@ -828,49 +883,14 @@
 <p>对于每组测试数据：第一行包含一个整数n(1&lt;=n&lt;=50000) ，表示奶牛的数量。接下来 n 行每行包含两个浮点数Si和wi (-106&lt;=Si&lt;=106, 0&lt;Wi&lt;15)。</p>
 <h2 id="输出">输出</h2>
 <h2 id="对于每组测试数据输出-case-c-ans-其中c表示测试数据编号ans表示消极情绪之和的最小值结果四舍五入为一个整数">对于每组测试数据，输出 &quot;Case #c: ans&quot; ，其中c表示测试数据编号，ans表示消极情绪之和的最小值，结果四舍五入为一个整数。</h2>
-<h2 id="样例输入">样例输入</h2>
-<blockquote>
-<p>1 5 0.9 2 1.4 4 3.1 1 6.2 1 8.3 2</p>
-</blockquote>
-<h2 id="样例输出">样例输出</h2>
-<blockquote>
-<p>Case #1: 300</p>
-</blockquote>
-<h3 id="三分裸的可以自己用定义证一下凸函数加凸函数等于凸函数">三分，裸的，可以自己用定义证一下凸函数加凸函数等于凸函数</h3>
-<p>```c++ #include<iostream> #include<cstdio> #include<cstring> #define ll long long #define ld double using namespace std; int T,n; ld sm1=0,sm2=0,sm3=0,sm4=0; ld w[50020],s[50020]; ld abs(ld x){ return x&gt;0?x:-x; } ld pow(ld x,int k){ ld cur=1; for(int i=1;i&lt;=k;i++){ cur<em>=x; } return cur; } ll ans(ld x){ ld cur=x-(ll)x; if(cur&lt;0.5) return (ll)x; return (ll)x+1; } ld smstp(ld ss){ ld cur=0; for(int i=1;i&lt;=n;i++){ cur+=pow(abs(s[i]-ss),3)</em>w[i]; } return cur; } int main(){ /*ld pla;</p>
-<pre><code>for(pla=0.9;pla&lt;=8.3;pla+=0.1)
-    cout&lt;&lt;pla&lt;&lt;&quot;:&quot;&lt;&lt;ans(pow(abs(0.9-pla),3)*2+pow(abs(1.4-pla),3)*4+pow(abs(3.1-pla),3)*13+pow(abs(6.2-pla),3)*1+pow(abs(8.3-pla),3)*2)&lt;&lt;endl;
-*/
-cin&gt;&gt;T;
-for(int I=1;I&lt;=T;I++)&#123;
-    memset(s,0,sizeof(s));
-    memset(w,0,sizeof(w));
-    scanf(&quot;%d&quot;,&amp;n);
-    ld l=1e7,r=-1e7;
-    for(int i=1;i&lt;=n;i++)&#123;
-        scanf(&quot;%lf%lf&quot;,&amp;s[i],&amp;w[i]);
-        //cin&gt;&gt;s[i]&gt;&gt;w[i];
-        //cout&lt;&lt;s[i]&lt;&lt;&#39; &#39;&lt;&lt;w[i]&lt;&lt;endl;
-        l=min(s[i],l);
-        r=max(s[i],r);
-    &#125;
-    //cout&lt;&lt;l&lt;&lt;&quot; &quot;&lt;&lt;r&lt;&lt;endl;
-    //cout&lt;&lt;r-l&lt;&lt;endl;
-    while(r-l&gt;0.00001)&#123;
-        ld m1=l+(r-l)/3.0;
-        ld m2=r-(r-l)/3.0;
-        if(smstp(m1)&lt;smstp(m2))&#123;
-            r=m2;
-        &#125;
-        else&#123;
-            l=m1;
-        &#125;//cout&lt;&lt;(int)l&lt;&lt;&quot; &quot;&lt;&lt;(int)r&lt;&lt;endl;
-    &#125;
-    cout&lt;&lt;&quot;Case #&quot;&lt;&lt;I&lt;&lt;&quot;: &quot;&lt;&lt;ans(smstp(l))&lt;&lt;endl;
-&#125;
-return 0;</code></pre>
-<p>}```</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/06/23/%E5%A5%B6%E7%89%9B%E7%9A%84%E8%81%9A%E4%BC%9A/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -921,8 +941,21 @@ return 0;</code></pre>
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 20:59:48" itemprop="dateModified" datetime="2020-02-18T20:59:48+08:00">2020-02-18</time>
+                <time title="修改时间：2021-11-16 20:01:11" itemprop="dateModified" datetime="2021-11-16T20:01:11+08:00">2021-11-16</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -930,14 +963,14 @@ return 0;</code></pre>
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>6.3k</span>
+              <span>6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>11 分钟</span>
+              <span>10 分钟</span>
             </span>
 
         </div>
@@ -951,245 +984,14 @@ return 0;</code></pre>
       
           <p>###题目描述</p>
 <p>Hacker Bill has accidentally lost all the information from his workstation's hard drive and he has no backup copies of its contents. He does not regret for the loss of the files themselves, but for the very nice and convenient directory structure that he had created and cherished during years of work. Fortunately, Bill has several copies of directory listings from his hard drive. Using those listings he was able to recover full paths (like &quot;WINNT32~186&quot;) for some directories. He put all of them in a file by writing each path he has found on a separate line. Your task is to write a program that will help Bill to restore his state of the art directory structure by providing nicely formatted directory tree.</p>
-<p>###输入</p>
-<p>The first line of the input file contains single integer number N (1 &lt;= N &lt;= 500) that denotes a total number of distinct directory paths. Then N lines with directory paths follow. Each directory path occupies a single line and does not contain any spaces, including leading or trailing ones. No path exceeds 80 characters. Each path is listed once and consists of a number of directory names separated by a back slash (&quot;&quot;).</p>
-<p>Each directory name consists of 1 to 8 uppercase letters, numbers, or the special characters from the following list: exclamation mark, number sign, dollar sign, percent sign, ampersand, apostrophe, opening and closing parenthesis, hyphen sign, commercial at, circumflex accent, underscore, grave accent, opening and closing curly bracket, and tilde (&quot;!#$%&amp;'()-@^_`{}~&quot;).</p>
-<p>###输出</p>
-<p>Write to the output file the formatted directory tree. Each directory name shall be listed on its own line preceded by a number of spaces that indicate its depth in the directory hierarchy. The subdirectories shall be listed in lexicographic order immediately after their parent directories preceded by one more space than their parent directory. Top level directories shall have no spaces printed before their names and shall be listed in lexicographic order. See sample below for clarification of the output format.</p>
-<p>###样例输入</p>
-<blockquote>
-<p>7 WINNT32 GAMES WINNT HOME WIN GAMES WINNT32~186</p>
-</blockquote>
-<p>###样例输出 GAMES DRIVERS HOME WIN SOFT WINNT DRIVERS SYSTEM32 CERTSRV CERTCO~1 X86 CONFIG</p>
-<p>####瞎搞代码，只能在学校OJ上交过，POJ上交超时 ####一开始想成文件名不重复了，正解是手动链树，多叉转二叉，添加节点的时候排序，vector瞎搞模拟有点慢，懒得改了</p>
-<pre><code>#include&lt;iostream&gt;
-#include&lt;string.h&gt;
-#include&lt;stdio.h&gt;
-#include&lt;cstdio&gt;
-#include&lt;queue&gt;
-#include&lt;cstring&gt;
-#include&lt;algorithm&gt;
-#include&lt;vector&gt;
-#include&lt;queue&gt;
-#include&lt;map&gt;
-using namespace std;
-int n,cnt,T;
-struct E&#123;
-    string s;
-    int pla;
-    vector&lt;int&gt;v;
-&#125;;
-E fir[520];
-E node[20020];
-int fircnt=0;
-int cmp(E x,E y)&#123;
-    return x.s&lt;y.s;
-&#125;
-int cmp1(int x,int y)&#123;
-    return node[x].s&lt;node[y].s;
-&#125;
-void dfs(int cur,int h)&#123;
-    if(cur==0) return;
-    if(h==0)&#123;
-        cout&lt;&lt;fir[cur].s&lt;&lt;endl;
-        sort(fir[cur].v.begin(),fir[cur].v.end(),cmp1);
-        for(int i=0;i&lt;fir[cur].v.size();i++)&#123;
-            dfs(fir[cur].v[i],h+1);
-        &#125;
-    &#125;
-    else&#123;
-        for(int i=1;i&lt;=h;i++) printf(&quot; &quot;);
-        cout&lt;&lt;node[cur].s&lt;&lt;endl;
-        sort(node[cur].v.begin(),node[cur].v.end(),cmp1);
-        for(int i=0;i&lt;node[cur].v.size();i++)&#123;
-            dfs(node[cur].v[i],h+1);
-        &#125;
-    &#125;
-&#125;
- 
-int main()&#123;
-    //freopen(&quot;I.in&quot;,&quot;r&quot;,stdin);
-    //freopen(&quot;I.out&quot;,&quot;w&quot;,stdout);
-    //cin&gt;&gt;T;
-    T=1;
-    while(T--)&#123;
-        //for(int i=1;i&lt;=cnt;i++) a[i].clear();
-        cnt=fircnt=0;
-        //memset(e,0,sizeof(e));
-        //memset(root,0,sizeof(root));
-        //mp.clear();
-        cin&gt;&gt;n;
-        string s0;
-        for(int i=1;i&lt;=n;i++)&#123;
-            cin&gt;&gt;s0;
-            int x1=-1,x2=-1;
-            string tmps=&quot;&quot;;//,last=&quot;&quot;;
-            int last=0,tmp,cur=0;
-            for(int j=0;j&lt;s0.size();j++)&#123;
-                if(x2==-1&amp;&amp;s0[j]==&#39;\\&#39;)&#123;
-                    cur++;
-                    x2=j;
-                    tmps=s0.substr(0,j);
-                    tmp=-1;
-                    for(int k=1;k&lt;=fircnt;k++)&#123;
-                        if(tmps==fir[k].s)&#123;
-                            tmp=k;
-                            break;
-                        &#125;
-                    &#125;
-                    if(tmp==-1)&#123;
-                        ++fircnt;
-                        fir[fircnt]=(E)&#123;tmps,fircnt&#125;;
-                        last=fircnt;
-                    &#125;
-                    else&#123;
-                        last=fir[tmp].pla;
-                    &#125;
-                    //cout&lt;&lt;tmps&lt;&lt;&#39; &#39;;
-                &#125;
-                else if(s0[j]==&#39;\\&#39;)&#123;
-                    cur++;
-                    x1=x2,x2=j;
-                    tmps=s0.substr(x1+1,x2-x1-1);
-                    tmp=-1;
-                    //if(tmps==&quot;SYSTEM32&quot;)cout&lt;&lt;&quot;!!!&quot;;
-                    if(cur==2)&#123;
-                         
-                        for(int k=0;k&lt;fir[last].v.size();k++)&#123;
-                            if(tmps==node[fir[last].v[k]].s)&#123;
-                                tmp=k;
-                                break;
-                            &#125;
-                        &#125;
-                        if(tmp==-1)&#123;
-                            ++cnt;
-                            node[cnt]=(E)&#123;tmps,cnt&#125;;
-                            fir[last].v.push_back(cnt);
-                            last=cnt;
-                        &#125;
-                        else&#123;
-                            last=node[fir[last].v[tmp]].pla;
-                        &#125;
-                        /*if(tmps==&quot;SYSTEM32&quot;)&#123;
-                            cout&lt;&lt;&quot;^^&quot;&lt;&lt;tmp;
-                            cout&lt;&lt;&quot;&amp;&amp;&quot;&lt;&lt;last&lt;&lt;&quot;&amp;&amp;&quot;&lt;&lt;endl;
-                        &#125;*/
-                    &#125;
-                    else&#123;
-                        /*if(tmps==&quot;CERTSRV&quot;)&#123;
-                            cout&lt;&lt;&quot;&amp;&amp;&quot;&lt;&lt;last&lt;&lt;&quot;&amp;&amp;&quot;&lt;&lt;endl;
-                        &#125;*/
-                        for(int k=0;k&lt;node[last].v.size();k++)&#123;
-                            if(tmps==node[node[last].v[k]].s)&#123;
-                                tmp=k;
-                                break;
-                            &#125;
-                        &#125;
-                         
-                        if(tmp==-1)&#123;
-                            ++cnt;
-                            node[cnt]=(E)&#123;tmps,cnt&#125;;
-                            node[last].v.push_back(cnt);
-                            last=cnt;
-                        &#125;
-                        else&#123;
-                            last=node[node[last].v[tmp]].pla;
-                        &#125;
-                    &#125;
-                    //cout&lt;&lt;tmps&lt;&lt;&#39; &#39;;
-                &#125;
-            &#125;
-            if(x1==-1&amp;&amp;x2==-1)&#123;
-                cur++;
-                tmps=s0.substr(0,s0.size());
-                tmp=-1;
-                for(int k=1;k&lt;=fircnt;k++)&#123;
-                    if(tmps==fir[k].s)&#123;
-                        tmp=k;
-                        break;
-                    &#125;
-                &#125;
-                if(tmp==-1)&#123;
-                    ++fircnt;
-                    fir[fircnt]=(E)&#123;tmps,fircnt&#125;;
-                    last=fircnt;
-                &#125;
-                else&#123;
-                    last=fir[tmp].pla;
-                &#125;
-                //cout&lt;&lt;tmps&lt;&lt;&#39; &#39;;
-            &#125;
-            else if(s0[s0.size()-1]!=&#39;\\&#39;)&#123;
-                cur++;
-                tmps=s0.substr(x2+1,s0.size()-x2-1);
-                tmp=-1;
-                if(cur==2)&#123;
-                    for(int k=0;k&lt;fir[last].v.size();k++)&#123;
-                        if(tmps==node[fir[last].v[k]].s)&#123;
-                            tmp=k;
-                            break;
-                        &#125;
-                    &#125;
-                    if(tmp==-1)&#123;
-                        ++cnt;
-                        node[cnt]=(E)&#123;tmps,cnt&#125;;
-                        fir[last].v.push_back(cnt);
-                        last=cnt;
-                    &#125;
-                    else&#123;
-                        last=node[fir[last].v[tmp]].pla;
-                    &#125;
-                &#125;
-                else&#123;
-                    for(int k=0;k&lt;node[last].v.size();k++)&#123;
-                        if(tmps==node[node[last].v[k]].s)&#123;
-                            tmp=k;
-                            break;
-                        &#125;
-                    &#125;
-                    if(tmp==-1)&#123;
-                        ++cnt;
-                        node[cnt]=(E)&#123;tmps,cnt&#125;;
-                        node[last].v.push_back(cnt);
-                        last=cnt;
-                    &#125;
-                    else&#123;
-                        last=node[node[last].v[tmp]].pla;
-                    &#125;
-                &#125;
-                //cout&lt;&lt;tmps&lt;&lt;&#39; &#39;;
-            &#125;
-            //cout&lt;&lt;endl;
-        &#125;
-         
-        sort(fir+1,fir+1+fircnt,cmp);
-        /*printf(&quot;*****测试*****\n&quot;);
-        for(int i=1;i&lt;=cnt;i++)&#123;
-            cout&lt;&lt;e[i].s&lt;&lt;&quot;:&quot;;
-            for(int j=0;j&lt;a[i][0];j++)&#123;
-                cout&lt;&lt;e[a[i][j]].s&lt;&lt;&#39; &#39;;
-            &#125;
-            cout&lt;&lt;endl;
-        &#125;
-        dfstest(trieroot);
-        printf(&quot;*****测试*****\n&quot;);*/
-        for(int i=1;i&lt;=fircnt;i++)&#123;
-            dfs(i,0);
-        &#125;
-        /*cout&lt;&lt;&quot;**********&quot;&lt;&lt;endl;
-        for(int i=1;i&lt;=fircnt;i++)&#123;
-            cout&lt;&lt;fir[i].s&lt;&lt;endl;
-        &#125;
-        cout&lt;&lt;&quot;************&quot;&lt;&lt;endl;
-        for(int i=1;i&lt;=cnt;i++)&#123;
-            cout&lt;&lt;node[i].s&lt;&lt;endl;
-        &#125;*/
-        if(T) printf(&quot;\n&quot;);
-    &#125;
-     
-    return 0;
-&#125;</code></pre>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/06/23/Disk-Tree/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1240,7 +1042,7 @@ int main()&#123;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 16:59:51" itemprop="dateModified" datetime="2021-11-16T16:59:51+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-16 20:04:07" itemprop="dateModified" datetime="2021-11-16T20:04:07+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1248,7 +1050,11 @@ int main()&#123;
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
                 </span>
             </span>
 
@@ -1283,19 +1089,14 @@ int main()&#123;
 <p>输入第一行包括一个整数n(1&lt;=n&lt;=100)。接下来的一行包括n个整数。</p>
 <h2 id="输出">输出</h2>
 <p>可能有多组测试数据，对于每组数据，将题目所给数据建立一个二叉排序树，并对二叉排序树进行前序、中序和后序遍历。每种遍历结果输出一行。每行最后一个数据之后有一个空格。</p>
-<h2 id="样例输入">样例输入</h2>
-<blockquote>
-<p>1 2 2 8 15 4 21 10 5 39</p>
-</blockquote>
-<h2 id="样例输出">样例输出</h2>
-<blockquote>
-<p>2 2 2 8 15 8 15 15 8 21 10 5 39 5 10 21 39 5 10 39 21</p>
-</blockquote>
-<h3 id="瞎搞的">瞎搞的。。。</h3>
-<p>```c++ #include<iostream> #include<cstdio> #include<queue> #include<cstring> #include<algorithm> #include<vector> #include<queue> #define ll long long #define INF -72340172838076674 using namespace std; ll n; struct E{ ll num,lson,rson; }e[120]; ll cnt=0,root=INF; ll find(ll x){ x=e[x].num; ll cur=root; while(1){ if(x&lt;e[cur].num){ if(e[cur].lson==INF){ return cur; } else{ cur=e[cur].lson; } } else if(x&gt;e[cur].num){ if(e[cur].rson==INF){ return cur; } else{ cur=e[cur].rson; } } else return INF; } } void Insert(ll x){ if(!cnt){ cnt++; root=x; return; } ll fat=find(x); if(fat==INF) return; cnt++; if(e[x].num&gt;e[fat].num){ e[fat].rson=x; } else{ e[fat].lson=x; } return; } void dfs1(ll x){ if(x==INF) return; cout&lt;&lt;e[x].num&lt;&lt;' '; dfs1(e[x].lson); dfs1(e[x].rson); } void dfs2(ll x){ if(x==INF) return; dfs2(e[x].lson); cout&lt;&lt;e[x].num&lt;&lt;' '; dfs2(e[x].rson); } void dfs3(ll x){ if(x==INF) return; dfs3(e[x].lson); dfs3(e[x].rson); cout&lt;&lt;e[x].num&lt;&lt;' '; } int main(){ while(cin&gt;&gt;n){ root=INF,cnt=0; memset(e,-0x2,sizeof(e)); for(int i=1;i&lt;=n;i++){ ll x; cin&gt;&gt;x; e[i].num=x; Insert(i); } dfs1(root); cout&lt;&lt;endl; dfs2(root); cout&lt;&lt;endl; dfs3(root); cout&lt;&lt;endl; }</p>
-<pre><code>return 0;</code></pre>
-<p>}```</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/06/23/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1346,7 +1147,7 @@ int main()&#123;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 16:45:57" itemprop="dateModified" datetime="2021-11-16T16:45:57+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-16 20:06:22" itemprop="dateModified" datetime="2021-11-16T20:06:22+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1354,7 +1155,11 @@ int main()&#123;
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url" rel="index"><span itemprop="name">字符串</span></a>
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url" rel="index"><span itemprop="name">字符串</span></a>
                 </span>
             </span>
 
@@ -1389,34 +1194,14 @@ int main()&#123;
 <p>输入只有1组数据。 输入一个短字符串（不含空格），再输入若干字符串直到文件结束为止。</p>
 <h2 id="输出">输出</h2>
 <p>删除输入的短字符串(不区分大小写)并去掉空格,输出。</p>
-<h2 id="样例输入">样例输入</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">in</span><br><span class="line">#include </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">printf(&quot; Hi &quot;);</span><br><span class="line">&#125;```</span><br><span class="line"></span><br><span class="line">### 样例输出</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>#clude tma() {</p>
-<p>prtf(&quot;Hi&quot;); }```</p>
-<h3 id="提示">提示</h3>
-<p>注:将字符串中的In、IN、iN、in删除。</p>
-<p>```c++ #include<iostream> #include<cstdio> #include<cmath> #include<cstring> #include<algorithm> #define ll long long using namespace std; string s,ts; string sub; void trans(string &amp;xx){ for(int i=0;i&lt;xx.size();i++){ if(xx[i]&gt;='A'&amp;&amp;xx[i]&lt;='Z') xx[i]+='a'-'A'; } } int main(){</p>
-<pre><code>cin&gt;&gt;sub;
-trans(sub);
-getchar();
-while(getline(cin,s))&#123;
-    ts=s;
-    trans(s);
-    string::size_type x=s.find(sub);
-    while(x!=s.npos)&#123;
-        for(int i=x;i&lt;x+sub.size();i++)&#123;
-            s[i]=&#39; &#39;;
-        &#125;
-        x=s.find(sub);
-    &#125;
-    for(int i=0;i&lt;s.size();i++)&#123;
-        if(s[i]!=&#39; &#39;) printf(&quot;%c&quot;,ts[i]);
-    &#125;
-    cout&lt;&lt;endl;
-&#125;
-return 0;</code></pre>
-<p>}```</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/06/23/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9F%A5%E6%89%BE%E5%88%A0%E9%99%A4/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1509,13 +1294,13 @@ return 0;</code></pre>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1574,7 +1359,7 @@ return 0;</code></pre>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">58k</span>
+    <span title="站点总字数">57k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
