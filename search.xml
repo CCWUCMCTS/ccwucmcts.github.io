@@ -156,8 +156,11 @@
 ]]></content>
       <categories>
         <category>程序设计竞赛</category>
-        <category>未分类</category>
+        <category>数学</category>
       </categories>
+      <tags>
+        <tag>博弈论</tag>
+      </tags>
   </entry>
   <entry>
     <title>51Nod 1714 B君的游戏</title>
@@ -174,8 +177,11 @@
 ]]></content>
       <categories>
         <category>程序设计竞赛</category>
-        <category>未分类</category>
+        <category>数学</category>
       </categories>
+      <tags>
+        <tag>博弈论</tag>
+      </tags>
   </entry>
   <entry>
     <title>51Nod 1154 回文串划分</title>
@@ -193,7 +199,7 @@
 ]]></content>
       <categories>
         <category>程序设计竞赛</category>
-        <category>未分类</category>
+        <category>字符串</category>
       </categories>
   </entry>
   <entry>
@@ -212,7 +218,7 @@
 ]]></content>
       <categories>
         <category>程序设计竞赛</category>
-        <category>未分类</category>
+        <category>字符串</category>
       </categories>
   </entry>
   <entry>
@@ -231,7 +237,7 @@
 ]]></content>
       <categories>
         <category>程序设计竞赛</category>
-        <category>未分类</category>
+        <category>图论</category>
       </categories>
   </entry>
   <entry>
@@ -247,7 +253,7 @@
 ]]></content>
       <categories>
         <category>程序设计竞赛</category>
-        <category>未分类</category>
+        <category>技巧||实用结论</category>
       </categories>
   </entry>
   <entry>
@@ -265,7 +271,7 @@
 ]]></content>
       <categories>
         <category>程序设计竞赛</category>
-        <category>未分类</category>
+        <category>数学</category>
       </categories>
   </entry>
   <entry>
@@ -723,7 +729,7 @@
 ]]></content>
       <categories>
         <category>程序设计竞赛</category>
-        <category>概率论</category>
+        <category>数学</category>
       </categories>
       <tags>
         <tag>概率论</tag>
@@ -1747,7 +1753,7 @@
 ]]></content>
       <categories>
         <category>程序设计竞赛</category>
-        <category>博弈论</category>
+        <category>数学</category>
       </categories>
   </entry>
   <entry>
