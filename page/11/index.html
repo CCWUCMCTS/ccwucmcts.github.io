@@ -405,6 +405,105 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/04/%E9%BE%9F%E9%80%9F%E4%B9%98-%E5%8F%AF%E9%9D%A0%E5%BF%AB%E9%80%9F%E5%B9%82/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="CCWUCMCTS">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CCWUCMCTS's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/08/04/%E9%BE%9F%E9%80%9F%E4%B9%98-%E5%8F%AF%E9%9D%A0%E5%BF%AB%E9%80%9F%E5%B9%82/" class="post-title-link" itemprop="url">龟速乘&可靠快速幂</a>
+        </h2>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-08-04 15:03:00" itemprop="dateCreated datePublished" datetime="2019-08-04T15:03:00+08:00">2019-08-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-16 20:26:14" itemprop="dateModified" datetime="2021-11-16T20:26:14+08:00">2021-11-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>418</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>学自<a target="_blank" rel="noopener" href="https://blog.csdn.net/Cyan_rose/article/details/83065026">【谈谈知识点】快速幂&amp;龟速乘&amp;快速乘 - Cyan_rose的博客 - CSDN博客</a></strong></p>
+<p>##基础快速幂</p>
+<p>直接上代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">speed</span><span class="params">(ll a,ll b,ll p)</span></span>&#123;</span><br><span class="line">    ll cur=a,ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b)&#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>) ans=ans*cur%p;</span><br><span class="line">        cur=cur*cur%p;</span><br><span class="line">        b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans%p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>##龟速乘</p>
+<p>乘法换成加法，原理差不多就是把其中一个乘数二进制拆分，每次让另一个乘数翻倍，能乘的时候就乘，因为只是翻倍，所以不会超范围。</p>
+<p><code>c++ ll lowspeed(ll a,ll b,ll p)&#123;     ll cur=a,ans=0;     while(b)&#123;         if(b&amp;1) ans=(ans+cur)%p;         cur=(cur+cur)%p;         b&gt;&gt;=1;     &#125;     return ans%p; &#125; ll speed(ll a,ll b,ll p)&#123;     ll cur=a,ans=1;     while(b)&#123;         if(b&amp;1) ans=lowspeed(ans,cur,p)%p;         cur=lowspeed(cur,cur,p)%p;         b&gt;&gt;=1;     &#125;     return ans%p; &#125;</code></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2019/08/04/%E6%95%B0%E5%AD%A6%E6%8A%80%E5%B7%A7%EF%BC%88%E4%BD%8D%E8%BF%90%E7%AE%97%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -769,7 +868,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 20:08:34" itemprop="dateModified" datetime="2021-11-16T20:08:34+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-16 20:30:19" itemprop="dateModified" datetime="2021-11-16T20:30:19+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -791,7 +890,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>240</span>
+              <span>234</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -810,12 +909,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>##题目</p>
+          <h2 id="题目">题目</h2>
 <p>N * N的方格，从左上到右下画一条线。一个机器人从左上走到右下，只能向右或向下走。并要求只能在这条线的上面或下面走，不能穿越这条线，有多少种不同的走法？由于方法数量可能很大，只需要输出Mod 10007的结果。 N&lt;=1e9</p>
-<p>##思路</p>
+<h2 id="思路">思路</h2>
 <p>卡特兰数+卢卡斯定理+乘法逆元算组合数</p>
 <p>卡特兰数：某百科卡特兰数词条讲过这种情况。</p>
-<p>卢卡斯定理：组合数，模数很小，逐次拆分<img src="https://img2018.cnblogs.com/blog/1575943/201907/1575943-20190729224246253-1400059291.png" /></p>
+<p>卢卡斯定理：组合数，模数很小，逐次拆分</p>
+<p><img src="https://img2018.cnblogs.com/blog/1575943/201907/1575943-20190729224246253-1400059291.png" /></p>
 <p>乘法逆元，见前面，此处n+1不能保证和p互质，建议用卡特兰数两组合数相减的公式。（不过数据很弱我写的/(n+1)）</p>
           <!--noindex-->
             <div class="post-button">
@@ -1186,109 +1286,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/24/51Nod-1279-%E6%89%94%E7%9B%98%E5%AD%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="CCWUCMCTS">
-      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CCWUCMCTS's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/07/24/51Nod-1279-%E6%89%94%E7%9B%98%E5%AD%90/" class="post-title-link" itemprop="url">51Nod 1279 扔盘子</a>
-        </h2>
-
-        <div class="post-meta">
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-07-24 03:29:00" itemprop="dateCreated datePublished" datetime="2019-07-24T03:29:00+08:00">2019-07-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 20:10:09" itemprop="dateModified" datetime="2021-11-16T20:10:09+08:00">2021-11-16</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E7%AE%80%E5%8D%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">简单题</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>743</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="题目">题目</h2>
-<p>有一口井，井的高度为N，每隔1个单位它的宽度有变化。现在从井口往下面扔圆盘，如果圆盘的宽度大于井在某个高度的宽度，则圆盘被卡住（恰好等于的话会下去）。</p>
-<p>盘子有几种命运：1、掉到井底。2、被卡住。3、落到别的盘子上方。</p>
-<p>盘子的高度也是单位高度。给定井的宽度和每个盘子的宽度，求最终落到井内的盘子数量。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/07/24/51Nod-1279-%E6%89%94%E7%9B%98%E5%AD%90/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1360,7 +1357,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">132</span>
+          <span class="site-state-item-count">133</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1432,7 +1429,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">57k</span>
+    <span title="站点总字数">58k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
