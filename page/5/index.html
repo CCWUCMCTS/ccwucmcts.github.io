@@ -194,7 +194,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/12/51Nod1110%20%E8%B7%9D%E7%A6%BB%E4%B9%8B%E5%92%8C%E6%9C%80%E5%B0%8F%20V3/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/12/51Nod-1110-%E8%B7%9D%E7%A6%BB%E4%B9%8B%E5%92%8C%E6%9C%80%E5%B0%8F-V3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -208,7 +208,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/10/12/51Nod1110%20%E8%B7%9D%E7%A6%BB%E4%B9%8B%E5%92%8C%E6%9C%80%E5%B0%8F%20V3/" class="post-title-link" itemprop="url">51Nod1110 距离之和最小 V3</a>
+            <a href="/2019/10/12/51Nod-1110-%E8%B7%9D%E7%A6%BB%E4%B9%8B%E5%92%8C%E6%9C%80%E5%B0%8F-V3/" class="post-title-link" itemprop="url">51Nod 1110 距离之和最小 V3</a>
         </h2>
 
         <div class="post-meta">
@@ -226,8 +226,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 20:59:48" itemprop="dateModified" datetime="2020-02-18T20:59:48+08:00">2020-02-18</time>
+                <time title="修改时间：2021-11-15 21:07:03" itemprop="dateModified" datetime="2021-11-15T21:07:03+08:00">2021-11-15</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E5%B7%A7-%E5%AE%9E%E7%94%A8%E7%BB%93%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">技巧||实用结论</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -259,7 +268,7 @@
 <h2 id="solution">Solution</h2>
 <p>中位数最小，加权可以看成多个点。</p>
 <h2 id="code">Code</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line">#define mem(ss) memset(ss,0,sizeof(ss))</span><br><span class="line">#define fo(d,s,t) for(int d=s;d&lt;=t;d++)</span><br><span class="line">#define fo0(d,s,t) for(int d=s;d&gt;=t;d--)</span><br><span class="line">typedef long long ll;</span><br><span class="line">typedef long double ld;</span><br><span class="line">typedef __int128 lll;</span><br><span class="line">const ll mod=1e9+7;</span><br><span class="line">#define io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span><br><span class="line">using namespace std;</span><br><span class="line">ll gcd(ll a,ll b)&#123;return b==0?a:gcd(b,a%b);&#125;</span><br><span class="line">inline int read()&#123;int data=0;char ch=0;while (ch&lt;&#x27;0&#x27; || ch&gt;&#x27;9&#x27;) ch=getchar();while (ch&gt;=&#x27;0&#x27; &amp;&amp; ch&lt;=&#x27;9&#x27;) data=data*10+ch-&#x27;0&#x27;,ch=getchar();return data;&#125;</span><br><span class="line">ll n,cnt1,cnt2,ansx,ans;</span><br><span class="line">struct E&#123;</span><br><span class="line">    int x,w;</span><br><span class="line">&#125;e[10020];</span><br><span class="line">int cmp(E x,E y)&#123;</span><br><span class="line">    return x.x&lt;y.x;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">    io_opt;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    fo(i,1,n)&#123;</span><br><span class="line">        cin&gt;&gt;e[i].x&gt;&gt;e[i].w;</span><br><span class="line">        cnt1+=e[i].w;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(e+1,e+1+n,cmp);</span><br><span class="line">    cnt1=cnt1/2+1;</span><br><span class="line">    fo(i,1,n)&#123;</span><br><span class="line">        cnt2+=e[i].w;</span><br><span class="line">        if(cnt2&gt;=cnt1)&#123;</span><br><span class="line">            ansx=e[i].x;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    fo(i,1,n)&#123;</span><br><span class="line">        ans+=abs(ansx-e[i].x)*e[i].w;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(ss) memset(ss,0,sizeof(ss))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fo(d,s,t) for(int d=s;d&lt;=t;d++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fo0(d,s,t) for(int d=s;d&gt;=t;d--)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> ld;</span><br><span class="line"><span class="keyword">typedef</span> __int128 lll;</span><br><span class="line"><span class="keyword">const</span> ll mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a,ll b)</span></span>&#123;<span class="keyword">return</span> b==<span class="number">0</span>?a:<span class="built_in">gcd</span>(b,a%b);&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;<span class="keyword">int</span> data=<span class="number">0</span>;<span class="keyword">char</span> ch=<span class="number">0</span>;<span class="keyword">while</span> (ch&lt;<span class="string">&#x27;0&#x27;</span> || ch&gt;<span class="string">&#x27;9&#x27;</span>) ch=<span class="built_in">getchar</span>();<span class="keyword">while</span> (ch&gt;=<span class="string">&#x27;0&#x27;</span> &amp;&amp; ch&lt;=<span class="string">&#x27;9&#x27;</span>) data=data*<span class="number">10</span>+ch-<span class="string">&#x27;0&#x27;</span>,ch=<span class="built_in">getchar</span>();<span class="keyword">return</span> data;&#125;</span><br><span class="line">ll n,cnt1,cnt2,ansx,ans;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">E</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x,w;</span><br><span class="line">&#125;e[<span class="number">10020</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmp</span><span class="params">(E x,E y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x.x&lt;y.x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    io_opt;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="built_in">fo</span>(i,<span class="number">1</span>,n)&#123;</span><br><span class="line">        cin&gt;&gt;e[i].x&gt;&gt;e[i].w;</span><br><span class="line">        cnt1+=e[i].w;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(e+<span class="number">1</span>,e+<span class="number">1</span>+n,cmp);</span><br><span class="line">    cnt1=cnt1/<span class="number">2</span>+<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">fo</span>(i,<span class="number">1</span>,n)&#123;</span><br><span class="line">        cnt2+=e[i].w;</span><br><span class="line">        <span class="keyword">if</span>(cnt2&gt;=cnt1)&#123;</span><br><span class="line">            ansx=e[i].x;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">fo</span>(i,<span class="number">1</span>,n)&#123;</span><br><span class="line">        ans+=<span class="built_in">abs</span>(ansx-e[i].x)*e[i].w;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -279,7 +288,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/12/51Nod2526%20%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%92%8C/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/12/51Nod2526-%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%92%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -293,7 +302,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/10/12/51Nod2526%20%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%92%8C/" class="post-title-link" itemprop="url">51Nod2526 最大异或和</a>
+            <a href="/2019/10/12/51Nod2526-%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%92%8C/" class="post-title-link" itemprop="url">51Nod2526 最大异或和</a>
         </h2>
 
         <div class="post-meta">
@@ -366,7 +375,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/12/51Nod2519%20%E5%B0%8Fb%E6%B5%87%E8%8A%B1/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/12/51Nod2519-%E5%B0%8Fb%E6%B5%87%E8%8A%B1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -380,7 +389,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/10/12/51Nod2519%20%E5%B0%8Fb%E6%B5%87%E8%8A%B1/" class="post-title-link" itemprop="url">51Nod2519 小b浇花</a>
+            <a href="/2019/10/12/51Nod2519-%E5%B0%8Fb%E6%B5%87%E8%8A%B1/" class="post-title-link" itemprop="url">51Nod2519 小b浇花</a>
         </h2>
 
         <div class="post-meta">
@@ -456,7 +465,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/05/51Nod1247%20%E5%8F%AF%E8%83%BD%E7%9A%84%E8%B7%AF%E5%BE%84/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/05/51Nod-1247-%E5%8F%AF%E8%83%BD%E7%9A%84%E8%B7%AF%E5%BE%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -470,7 +479,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/10/05/51Nod1247%20%E5%8F%AF%E8%83%BD%E7%9A%84%E8%B7%AF%E5%BE%84/" class="post-title-link" itemprop="url">51Nod1247 可能的路径</a>
+            <a href="/2019/10/05/51Nod-1247-%E5%8F%AF%E8%83%BD%E7%9A%84%E8%B7%AF%E5%BE%84/" class="post-title-link" itemprop="url">51Nod 1247 可能的路径</a>
         </h2>
 
         <div class="post-meta">
@@ -488,8 +497,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 20:59:48" itemprop="dateModified" datetime="2020-02-18T20:59:48+08:00">2020-02-18</time>
+                <time title="修改时间：2021-11-15 21:15:19" itemprop="dateModified" datetime="2021-11-15T21:15:19+08:00">2021-11-15</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -522,7 +540,7 @@
 <p>1,3操作互逆，2,4同样如此，4，3，2操作可以交换位置，假设前一个大于后一个，前一个可以不断减去后一个知道比后一个小。</p>
 <p>这就是一个求gcd，可知gcd相等就能走到。</p>
 <h2 id="code">Code</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line">#define mem(ss) memset(ss,0,sizeof(ss))</span><br><span class="line">typedef long long ll;</span><br><span class="line">typedef long double ld;</span><br><span class="line">typedef __int128 lll;</span><br><span class="line">const lll mod=1e36+1;</span><br><span class="line">#define io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span><br><span class="line">using namespace std;</span><br><span class="line">ll gcd(ll a,ll b)&#123;return b==0?a:gcd(b,a%b);&#125;</span><br><span class="line">inline int read()&#123;int data=0;char ch=0;while (ch&lt;&#x27;0&#x27; || ch&gt;&#x27;9&#x27;) ch=getchar();while (ch&gt;=&#x27;0&#x27; &amp;&amp; ch&lt;=&#x27;9&#x27;) data=data*10+ch-&#x27;0&#x27;,ch=getchar();return data;&#125;</span><br><span class="line">ll T,a,b,x,y;</span><br><span class="line">int main()&#123;</span><br><span class="line">    io_opt;</span><br><span class="line">    cin&gt;&gt;T;</span><br><span class="line">    while(T--)&#123;</span><br><span class="line">        cin&gt;&gt;a&gt;&gt;b&gt;&gt;x&gt;&gt;y;</span><br><span class="line"></span><br><span class="line">        if(gcd(a,b)==gcd(x,y))&#123;</span><br><span class="line">            cout&lt;&lt;&quot;Yes\n&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            cout&lt;&lt;&quot;No\n&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(ss) memset(ss,0,sizeof(ss))</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> ld;</span><br><span class="line"><span class="keyword">typedef</span> __int128 lll;</span><br><span class="line"><span class="keyword">const</span> lll mod=<span class="number">1e36</span>+<span class="number">1</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a,ll b)</span></span>&#123;<span class="keyword">return</span> b==<span class="number">0</span>?a:<span class="built_in">gcd</span>(b,a%b);&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;<span class="keyword">int</span> data=<span class="number">0</span>;<span class="keyword">char</span> ch=<span class="number">0</span>;<span class="keyword">while</span> (ch&lt;<span class="string">&#x27;0&#x27;</span> || ch&gt;<span class="string">&#x27;9&#x27;</span>) ch=<span class="built_in">getchar</span>();<span class="keyword">while</span> (ch&gt;=<span class="string">&#x27;0&#x27;</span> &amp;&amp; ch&lt;=<span class="string">&#x27;9&#x27;</span>) data=data*<span class="number">10</span>+ch-<span class="string">&#x27;0&#x27;</span>,ch=<span class="built_in">getchar</span>();<span class="keyword">return</span> data;&#125;</span><br><span class="line">ll T,a,b,x,y;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    io_opt;</span><br><span class="line">    cin&gt;&gt;T;</span><br><span class="line">    <span class="keyword">while</span>(T--)&#123;</span><br><span class="line">        cin&gt;&gt;a&gt;&gt;b&gt;&gt;x&gt;&gt;y;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">gcd</span>(a,b)==<span class="built_in">gcd</span>(x,y))&#123;</span><br><span class="line">            cout&lt;&lt;<span class="string">&quot;Yes\n&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            cout&lt;&lt;<span class="string">&quot;No\n&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -542,7 +560,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/05/51Nod2657%20%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E5%AD%97/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/05/51Nod2657-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E5%AD%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -556,7 +574,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/10/05/51Nod2657%20%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E5%AD%97/" class="post-title-link" itemprop="url">51Nod2657 二进制数字</a>
+            <a href="/2019/10/05/51Nod2657-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E5%AD%97/" class="post-title-link" itemprop="url">51Nod2657 二进制数字</a>
         </h2>
 
         <div class="post-meta">
@@ -629,7 +647,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/05/51Nod2658%20%E6%9C%80%E5%A4%9A%E5%88%86%E6%88%90%E5%A4%9A%E5%B0%91%E5%9D%97%20V2/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/05/51Nod2658-%E6%9C%80%E5%A4%9A%E5%88%86%E6%88%90%E5%A4%9A%E5%B0%91%E5%9D%97-V2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -643,7 +661,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/10/05/51Nod2658%20%E6%9C%80%E5%A4%9A%E5%88%86%E6%88%90%E5%A4%9A%E5%B0%91%E5%9D%97%20V2/" class="post-title-link" itemprop="url">51Nod2658 最多分成多少块 V2</a>
+            <a href="/2019/10/05/51Nod2658-%E6%9C%80%E5%A4%9A%E5%88%86%E6%88%90%E5%A4%9A%E5%B0%91%E5%9D%97-V2/" class="post-title-link" itemprop="url">51Nod2658 最多分成多少块 V2</a>
         </h2>
 
         <div class="post-meta">
@@ -722,7 +740,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/05/51Nod2499%20%E4%B8%8D%E9%99%8D%E7%9A%84%E6%95%B0%E5%AD%97/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/05/51Nod2499-%E4%B8%8D%E9%99%8D%E7%9A%84%E6%95%B0%E5%AD%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -736,7 +754,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/10/05/51Nod2499%20%E4%B8%8D%E9%99%8D%E7%9A%84%E6%95%B0%E5%AD%97/" class="post-title-link" itemprop="url">51Nod2499 不降的数字</a>
+            <a href="/2019/10/05/51Nod2499-%E4%B8%8D%E9%99%8D%E7%9A%84%E6%95%B0%E5%AD%97/" class="post-title-link" itemprop="url">51Nod2499 不降的数字</a>
         </h2>
 
         <div class="post-meta">
@@ -807,7 +825,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/05/51Nod2540%20%E5%B9%B3%E5%88%86/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/05/51Nod2540-%E5%B9%B3%E5%88%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -821,7 +839,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/10/05/51Nod2540%20%E5%B9%B3%E5%88%86/" class="post-title-link" itemprop="url">51Nod2540 平分</a>
+            <a href="/2019/10/05/51Nod2540-%E5%B9%B3%E5%88%86/" class="post-title-link" itemprop="url">51Nod2540 平分</a>
         </h2>
 
         <div class="post-meta">
@@ -895,7 +913,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/04/51Nod1065%20%E6%9C%80%E5%B0%8F%E6%AD%A3%E5%AD%90%E6%AE%B5%E5%92%8C/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/04/51Nod-1065-%E6%9C%80%E5%B0%8F%E6%AD%A3%E5%AD%90%E6%AE%B5%E5%92%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -909,7 +927,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/10/04/51Nod1065%20%E6%9C%80%E5%B0%8F%E6%AD%A3%E5%AD%90%E6%AE%B5%E5%92%8C/" class="post-title-link" itemprop="url">51Nod1065 最小正子段和</a>
+            <a href="/2019/10/04/51Nod-1065-%E6%9C%80%E5%B0%8F%E6%AD%A3%E5%AD%90%E6%AE%B5%E5%92%8C/" class="post-title-link" itemprop="url">51Nod 1065 最小正子段和</a>
         </h2>
 
         <div class="post-meta">
@@ -927,8 +945,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 20:59:48" itemprop="dateModified" datetime="2020-02-18T20:59:48+08:00">2020-02-18</time>
+                <time title="修改时间：2021-11-15 20:51:47" itemprop="dateModified" datetime="2021-11-15T20:51:47+08:00">2021-11-15</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="url" rel="index"><span itemprop="name">动态规划</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -965,7 +992,7 @@
 </blockquote>
 <p>%一下远古巨佬</p>
 <h2 id="code">Code</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line">#define mod 998244353LL</span><br><span class="line">#define mem(ss) memset(ss,0,sizeof(ss))</span><br><span class="line">typedef long long ll;</span><br><span class="line">typedef long double ld;</span><br><span class="line">#define io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span><br><span class="line">using namespace std;</span><br><span class="line">ll gcd(ll a,ll b)&#123;return b==0?a:gcd(b,a%b);&#125;</span><br><span class="line">inline int read()&#123;int data=0;char ch=0;while (ch&lt;&#x27;0&#x27; || ch&gt;&#x27;9&#x27;) ch=getchar();while (ch&gt;=&#x27;0&#x27; &amp;&amp; ch&lt;=&#x27;9&#x27;) data=data*10+ch-&#x27;0&#x27;,ch=getchar();return data;&#125;</span><br><span class="line">ll lowspeed(ll a,ll b,ll p)&#123;ll cur=a,ans=0;while(b)&#123;if(b&amp;1) ans=(ans+cur)%p;cur=(cur+cur)%p;b&gt;&gt;=1;&#125;return ans%p;&#125;</span><br><span class="line">ll speed(ll a,ll b,ll p)&#123;ll cur=a,ans=1;while(b)&#123;if(b&amp;1) ans=lowspeed(ans,cur,p)%p;cur=lowspeed(cur,cur,p)%p;b&gt;&gt;=1;&#125;return ans%p;&#125;</span><br><span class="line">int n;</span><br><span class="line">ll a[50020];</span><br><span class="line">ll ans=1e15;</span><br><span class="line">map&lt;int,int&gt;mx;</span><br><span class="line">map&lt;int,int&gt;mn;</span><br><span class="line">int main()&#123;</span><br><span class="line">    io_opt;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    for(int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">        cin&gt;&gt;a[i];</span><br><span class="line">        a[i]+=a[i-1];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for(int i=0;i&lt;=n;i++)&#123;</span><br><span class="line">        if(!mn[a[i]])&#123;</span><br><span class="line">            mn[a[i]]=i;</span><br><span class="line">        &#125;</span><br><span class="line">        mx[a[i]]=i;</span><br><span class="line">    &#125;sort(a,a+1+n);</span><br><span class="line">    ll m=unique(a,a+1+n)-(a+1);</span><br><span class="line"></span><br><span class="line">    for(int i=0;i&lt;m;i++)&#123;</span><br><span class="line">        if(mn[a[i]]&lt;mx[a[i+1]])&#123;</span><br><span class="line">            ans=min(ans,a[i+1]-a[i]);</span><br><span class="line">            //cout&lt;&lt;a[i]&lt;&lt;&#x27; &#x27;&lt;&lt;a[i+1]&lt;&lt;endl;</span><br><span class="line">            //cout&lt;&lt;mn[a[i]]&lt;&lt;&#x27; &#x27;&lt;&lt;mx[a[i+1]]&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    if(ans==1e15)&#123;</span><br><span class="line">        cout&lt;&lt;&quot;0&quot;&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 998244353LL</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(ss) memset(ss,0,sizeof(ss))</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> ld;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a,ll b)</span></span>&#123;<span class="keyword">return</span> b==<span class="number">0</span>?a:<span class="built_in">gcd</span>(b,a%b);&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;<span class="keyword">int</span> data=<span class="number">0</span>;<span class="keyword">char</span> ch=<span class="number">0</span>;<span class="keyword">while</span> (ch&lt;<span class="string">&#x27;0&#x27;</span> || ch&gt;<span class="string">&#x27;9&#x27;</span>) ch=<span class="built_in">getchar</span>();<span class="keyword">while</span> (ch&gt;=<span class="string">&#x27;0&#x27;</span> &amp;&amp; ch&lt;=<span class="string">&#x27;9&#x27;</span>) data=data*<span class="number">10</span>+ch-<span class="string">&#x27;0&#x27;</span>,ch=<span class="built_in">getchar</span>();<span class="keyword">return</span> data;&#125;</span><br><span class="line"><span class="function">ll <span class="title">lowspeed</span><span class="params">(ll a,ll b,ll p)</span></span>&#123;ll cur=a,ans=<span class="number">0</span>;<span class="keyword">while</span>(b)&#123;<span class="keyword">if</span>(b&amp;<span class="number">1</span>) ans=(ans+cur)%p;cur=(cur+cur)%p;b&gt;&gt;=<span class="number">1</span>;&#125;<span class="keyword">return</span> ans%p;&#125;</span><br><span class="line"><span class="function">ll <span class="title">speed</span><span class="params">(ll a,ll b,ll p)</span></span>&#123;ll cur=a,ans=<span class="number">1</span>;<span class="keyword">while</span>(b)&#123;<span class="keyword">if</span>(b&amp;<span class="number">1</span>) ans=<span class="built_in">lowspeed</span>(ans,cur,p)%p;cur=<span class="built_in">lowspeed</span>(cur,cur,p)%p;b&gt;&gt;=<span class="number">1</span>;&#125;<span class="keyword">return</span> ans%p;&#125;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line">ll a[<span class="number">50020</span>];</span><br><span class="line">ll ans=<span class="number">1e15</span>;</span><br><span class="line">map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;mx;</span><br><span class="line">map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;mn;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    io_opt;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        cin&gt;&gt;a[i];</span><br><span class="line">        a[i]+=a[i<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!mn[a[i]])&#123;</span><br><span class="line">            mn[a[i]]=i;</span><br><span class="line">        &#125;</span><br><span class="line">        mx[a[i]]=i;</span><br><span class="line">    &#125;<span class="built_in">sort</span>(a,a+<span class="number">1</span>+n);</span><br><span class="line">    ll m=<span class="built_in">unique</span>(a,a+<span class="number">1</span>+n)-(a+<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(mn[a[i]]&lt;mx[a[i+<span class="number">1</span>]])&#123;</span><br><span class="line">            ans=<span class="built_in">min</span>(ans,a[i+<span class="number">1</span>]-a[i]);</span><br><span class="line">            <span class="comment">//cout&lt;&lt;a[i]&lt;&lt;&#x27; &#x27;&lt;&lt;a[i+1]&lt;&lt;endl;</span></span><br><span class="line">            <span class="comment">//cout&lt;&lt;mn[a[i]]&lt;&lt;&#x27; &#x27;&lt;&lt;mx[a[i+1]]&lt;&lt;endl;</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(ans==<span class="number">1e15</span>)&#123;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;0&quot;</span>&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -985,7 +1012,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/04/51Nod2594%20%E6%8B%AC%E5%8F%B7%E4%B9%8B%E4%BB%B7/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/04/51Nod2594-%E6%8B%AC%E5%8F%B7%E4%B9%8B%E4%BB%B7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -999,7 +1026,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/10/04/51Nod2594%20%E6%8B%AC%E5%8F%B7%E4%B9%8B%E4%BB%B7/" class="post-title-link" itemprop="url">51Nod2594 括号之价</a>
+            <a href="/2019/10/04/51Nod2594-%E6%8B%AC%E5%8F%B7%E4%B9%8B%E4%BB%B7/" class="post-title-link" itemprop="url">51Nod2594 括号之价</a>
         </h2>
 
         <div class="post-meta">
@@ -1142,20 +1169,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-count">97</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1214,13 +1241,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">64k</span>
+    <span title="站点总字数">46k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:47</span>
+    <span title="站点阅读时长">1:17</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>

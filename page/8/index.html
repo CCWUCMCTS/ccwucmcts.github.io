@@ -194,7 +194,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/29/51Nod1120%20%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%B5%B0%E6%96%B9%E6%A0%BC%20V3/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/29/51Nod-1120-%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%B5%B0%E6%96%B9%E6%A0%BC-V3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -208,7 +208,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/07/29/51Nod1120%20%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%B5%B0%E6%96%B9%E6%A0%BC%20V3/" class="post-title-link" itemprop="url">51Nod1120 机器人走方格 V3</a>
+            <a href="/2019/07/29/51Nod-1120-%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%B5%B0%E6%96%B9%E6%A0%BC-V3/" class="post-title-link" itemprop="url">51Nod 1120 机器人走方格 V3</a>
         </h2>
 
         <div class="post-meta">
@@ -226,8 +226,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 20:59:48" itemprop="dateModified" datetime="2020-02-18T20:59:48+08:00">2020-02-18</time>
+                <time title="修改时间：2021-11-15 21:07:52" itemprop="dateModified" datetime="2021-11-15T21:07:52+08:00">2021-11-15</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -235,14 +244,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
+              <span>240</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -261,54 +270,7 @@
 <p>卡特兰数：某百科卡特兰数词条讲过这种情况。</p>
 <p>卢卡斯定理：组合数，模数很小，逐次拆分<img src="https://img2018.cnblogs.com/blog/1575943/201907/1575943-20190729224246253-1400059291.png" /></p>
 <p>乘法逆元，见前面，此处n+1不能保证和p互质，建议用卡特兰数两组合数相减的公式。（不过数据很弱我写的/(n+1)）</p>
-<p>##代码</p>
-<pre><code>#include&lt;bits/stdc++.h&gt;
-using namespace std;
-#define ll long long
-#define db double
-#define mod 10007
-ll n;
-ll gcd(ll a,ll b)&#123;
-    return b==0?a:gcd(b,a%b);
-&#125;
-ll speed(ll a,ll b,ll p)&#123;
-    ll cur=a,ans=1;
-    while(b)&#123;
-        if(b&amp;1) ans=ans*cur%p;
-        cur=cur*cur%p;
-        b&gt;&gt;=1;
-    &#125;
-    return ans%p;
-&#125;
-ll inv(ll t,ll p) &#123;//Inverse element,求t关于p的逆元,注意:t要小于p,最好传参前先把t%p一下 
-    return t==1?1:(p-p/t)*inv(p%t,p)%p;
-&#125;
-ll Scomb(ll _n,ll _m,ll p)&#123;//SmallCombination n,m可以线性求出 
-    if(_m==0) return 1;
-    //return Factorial(_n,p)*inv(Factorial(m,p)%p,p)%p*inv(Factorial(n-m,p)%p,p)%p;
-    ll ans=1,tmp=1;
-    for(ll i=_m+1;i&lt;=_n;i++)&#123;
-        ans=(ans*i)%p;
-    &#125;
-    for(ll i=1;i&lt;=_n-_m;i++)&#123;
-        tmp=(tmp*i)%p;
-    &#125;
-    //cout&lt;&lt;tmp&lt;&lt;endl;
-    return ans*inv(tmp%p,p)%p;
-&#125;
-ll Bcomb(ll _n,ll _m,ll p)&#123;//BigCombination
-    if(_n&lt;p&amp;&amp;_m&lt;p) return Scomb(_n,_m,p)%p;
-    return Bcomb(_n/p,_m/p,p)*Scomb(_n%p,_m%p,p)%p;
-&#125;
-
-int main()&#123;
-    cin&gt;&gt;n;
-    n--;
-    ll ans=2*Bcomb(2*n,n,mod)*speed(n+1,mod-2,mod)%mod;
-    cout&lt;&lt;ans&lt;&lt;endl;
-    //cout&lt;&lt;speed(2,mod-2,mod)%mod;
-    return 0;
-&#125;</code></pre>
+<p>##代码 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> db double</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 10007</span></span><br><span class="line">ll n;</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a,ll b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b==<span class="number">0</span>?a:<span class="built_in">gcd</span>(b,a%b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">speed</span><span class="params">(ll a,ll b,ll p)</span></span>&#123;</span><br><span class="line">    ll cur=a,ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b)&#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>) ans=ans*cur%p;</span><br><span class="line">        cur=cur*cur%p;</span><br><span class="line">        b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans%p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">inv</span><span class="params">(ll t,ll p)</span> </span>&#123;<span class="comment">//Inverse element,求t关于p的逆元,注意:t要小于p,最好传参前先把t%p一下 </span></span><br><span class="line">    <span class="keyword">return</span> t==<span class="number">1</span>?<span class="number">1</span>:(p-p/t)*<span class="built_in">inv</span>(p%t,p)%p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">Scomb</span><span class="params">(ll _n,ll _m,ll p)</span></span>&#123;<span class="comment">//SmallCombination n,m可以线性求出 </span></span><br><span class="line">    <span class="keyword">if</span>(_m==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//return Factorial(_n,p)*inv(Factorial(m,p)%p,p)%p*inv(Factorial(n-m,p)%p,p)%p;</span></span><br><span class="line">    ll ans=<span class="number">1</span>,tmp=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i=_m+<span class="number">1</span>;i&lt;=_n;i++)&#123;</span><br><span class="line">        ans=(ans*i)%p;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;=_n-_m;i++)&#123;</span><br><span class="line">        tmp=(tmp*i)%p;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//cout&lt;&lt;tmp&lt;&lt;endl;</span></span><br><span class="line">    <span class="keyword">return</span> ans*<span class="built_in">inv</span>(tmp%p,p)%p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">Bcomb</span><span class="params">(ll _n,ll _m,ll p)</span></span>&#123;<span class="comment">//BigCombination</span></span><br><span class="line">    <span class="keyword">if</span>(_n&lt;p&amp;&amp;_m&lt;p) <span class="keyword">return</span> <span class="built_in">Scomb</span>(_n,_m,p)%p;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Bcomb</span>(_n/p,_m/p,p)*<span class="built_in">Scomb</span>(_n%p,_m%p,p)%p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    n--;</span><br><span class="line">    ll ans=<span class="number">2</span>*<span class="built_in">Bcomb</span>(<span class="number">2</span>*n,n,mod)*<span class="built_in">speed</span>(n+<span class="number">1</span>,mod<span class="number">-2</span>,mod)%mod;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    <span class="comment">//cout&lt;&lt;speed(2,mod-2,mod)%mod;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -328,7 +290,7 @@ int main()&#123;
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/29/51Nod1267%204%E4%B8%AA%E6%95%B0%E5%92%8C%E4%B8%BA0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/29/51Nod-1267-4%E4%B8%AA%E6%95%B0%E5%92%8C%E4%B8%BA0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -342,7 +304,7 @@ int main()&#123;
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/07/29/51Nod1267%204%E4%B8%AA%E6%95%B0%E5%92%8C%E4%B8%BA0/" class="post-title-link" itemprop="url">51Nod1267 4个数和为0</a>
+            <a href="/2019/07/29/51Nod-1267-4%E4%B8%AA%E6%95%B0%E5%92%8C%E4%B8%BA0/" class="post-title-link" itemprop="url">51Nod 1267 4个数和为0</a>
         </h2>
 
         <div class="post-meta">
@@ -360,8 +322,17 @@ int main()&#123;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 20:59:48" itemprop="dateModified" datetime="2020-02-18T20:59:48+08:00">2020-02-18</time>
+                <time title="修改时间：2021-11-16 16:13:39" itemprop="dateModified" datetime="2021-11-16T16:13:39+08:00">2021-11-16</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">基础算法</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -369,7 +340,101 @@ int main()&#123;
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>932</span>
+              <span>114</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>##题目</p>
+<p>给出N个整数，你来判断一下是否能够选出4个数，他们的和为0，可以则输出&quot;Yes&quot;，否则输出&quot;No&quot;。 n&lt;=1e3</p>
+<p>##思路</p>
+<p>《挑战程序设计竞赛》的经典题，预处理两层+二分</p>
+<p>##代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">ll n,a[<span class="number">1020</span>],ct;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">E</span>&#123;</span></span><br><span class="line">    ll w;</span><br><span class="line">    <span class="keyword">int</span> p1,p2;</span><br><span class="line">&#125;e[<span class="number">600020</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmp</span><span class="params">(E x,E y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x.w&lt;y.w;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            e[++ct]=(E)&#123;a[i]+a[j],i,j&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(e+<span class="number">1</span>,e+<span class="number">1</span>+ct,cmp);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            <span class="keyword">int</span> l=<span class="number">1</span>,r=ct,mid;</span><br><span class="line">            <span class="keyword">while</span>(l&lt;=r)&#123;</span><br><span class="line">                mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span>(a[i]+a[j]+e[mid].w&lt;<span class="number">0</span>)&#123;</span><br><span class="line">                    l=mid+<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    r=mid<span class="number">-1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k=l;a[i]+a[j]+e[k].w==<span class="number">0</span>;k++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i!=e[k].p1&amp;&amp;i!=e[k].p2&amp;&amp;j!=e[k].p1&amp;&amp;j!=e[k].p2)&#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;Yes\n&quot;</span>);</span><br><span class="line">                    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;No\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/27/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%89%B9%E9%87%8F%E6%B1%82%E8%A7%A3-%E6%AD%A3%E5%9C%A8%E5%AD%A6%E6%AC%A7%E6%8B%89%E7%AD%9B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="CCWUCMCTS">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CCWUCMCTS's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/27/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%89%B9%E9%87%8F%E6%B1%82%E8%A7%A3-%E6%AD%A3%E5%9C%A8%E5%AD%A6%E6%AC%A7%E6%8B%89%E7%AD%9B/" class="post-title-link" itemprop="url">乘法逆元(从入门到批量求解)(正在学欧拉筛)</a>
+        </h2>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-27 07:33:00" itemprop="dateCreated datePublished" datetime="2019-07-27T07:33:00+08:00">2019-07-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-16 17:05:27" itemprop="dateModified" datetime="2021-11-16T17:05:27+08:00">2021-11-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -388,231 +453,50 @@ int main()&#123;
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>##题目</p>
-<p>给出N个整数，你来判断一下是否能够选出4个数，他们的和为0，可以则输出&quot;Yes&quot;，否则输出&quot;No&quot;。 n&lt;=1e3</p>
-<p>##思路</p>
-<p>《挑战程序设计竞赛》的经典题，预处理两层+二分</p>
-<p>##代码</p>
-<pre><code>#include&lt;bits/stdc++.h&gt;
-#define ll long long
-using namespace std;
-ll n,a[1020],ct;
-struct E&#123;
-    ll w;
-    int p1,p2;
-&#125;e[600020];
-int cmp(E x,E y)&#123;
-    return x.w&lt;y.w;
-&#125;
-int main()&#123;
-    scanf(&quot;%lld&quot;,&amp;n);
-    for(int i=1;i&lt;=n;i++)&#123;
-        scanf(&quot;%lld&quot;,&amp;a[i]);
-    &#125;
-    for(int i=1;i&lt;=n;i++)&#123;
-        for(int j=i+1;j&lt;=n;j++)&#123;
-            e[++ct]=(E)&#123;a[i]+a[j],i,j&#125;;
-        &#125;
-    &#125;
-    sort(e+1,e+1+ct,cmp);
-    for(int i=1;i&lt;=n;i++)&#123;
-        for(int j=i+1;j&lt;=n;j++)&#123;
-            int l=1,r=ct,mid;
-            while(l&lt;=r)&#123;
-                mid=(l+r)&gt;&gt;1;
-                if(a[i]+a[j]+e[mid].w&lt;0)&#123;
-                    l=mid+1;
-                &#125;
-                else&#123;
-                    r=mid-1;
-                &#125;
-            &#125;
-            for(int k=l;a[i]+a[j]+e[k].w==0;k++)&#123;
-                if(i!=e[k].p1&amp;&amp;i!=e[k].p2&amp;&amp;j!=e[k].p1&amp;&amp;j!=e[k].p2)&#123;
-                    printf(&quot;Yes\n&quot;);
-                    return 0;
-                &#125;
-            &#125;
-        &#125;
-    &#125;
-    printf(&quot;No\n&quot;);
-    return 0;
-&#125;</code></pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/27/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83(%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%89%B9%E9%87%8F%E6%B1%82%E8%A7%A3)(%E6%AD%A3%E5%9C%A8%E5%AD%A6%E6%AC%A7%E6%8B%89%E7%AD%9B)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="CCWUCMCTS">
-      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CCWUCMCTS's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/07/27/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83(%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%89%B9%E9%87%8F%E6%B1%82%E8%A7%A3)(%E6%AD%A3%E5%9C%A8%E5%AD%A6%E6%AC%A7%E6%8B%89%E7%AD%9B)/" class="post-title-link" itemprop="url">乘法逆元(从入门到批量求解)(正在学欧拉筛)</a>
-        </h2>
-
-        <div class="post-meta">
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-07-27 07:33:00" itemprop="dateCreated datePublished" datetime="2019-07-27T07:33:00+08:00">2019-07-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 20:59:48" itemprop="dateModified" datetime="2020-02-18T20:59:48+08:00">2020-02-18</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
           <blockquote>
 <p>在做各种取余运算时，我们会发现先除和先取余的结果是不同的，这会导致计算难度的加大，乘法逆元可以解决类似的分数取余问题。</p>
 </blockquote>
 <blockquote>
 <p>本文按照博主的学习思路排序，结论为<strong>（单个）费马小定理求乘法逆元</strong>、<strong>（单个）利用扩展欧几里得任意情况下求乘法逆元</strong>、<strong>（批量）线性递推求乘法逆元</strong></p>
 </blockquote>
-<p>##同余的运算法则之一</p>
+<h2 id="同余的运算法则之一">同余的运算法则之一</h2>
 <p>定理3 ac≡bc(mod m)，且若(m,c)≡d，则a≡b(mod m/d)。——数论讲义</p>
 <p>也就是说，同余式两边可以同除一个和模数互质的数（此时模数不变）。</p>
-<p>##费马小定理</p>
+<h2 id="费马小定理">费马小定理</h2>
 <p>形式1：<strong>若m是素数，则a^m≡a(mod m)。——数论讲义</strong>······①</p>
 <p>形式2：<strong>如果m是一个素数，而整数a不是m的倍数，则有a^(m-1)≡1(mod m)。——某百科</strong>······②</p>
-<p>###<strong><em>由于m是一个素数，因此①到②的条件：除数a和模数m互质，等价于a不是m的倍数。</em></strong></p>
-<p>##费马小定理②的推论</p>
-<p>###<strong>a^(m-1)≡1(mod m) =&gt; a*a^(m-2)≡1(mod m) =&gt; a^(m-2)≡1/a(mod m)</strong></p>
-<p>##乘法逆元</p>
+<h3 id="由于m是一个素数因此到的条件除数a和模数m互质等价于a不是m的倍数"><strong><em>由于m是一个素数，因此①到②的条件：除数a和模数m互质，等价于a不是m的倍数。</em></strong></h3>
+<h2 id="费马小定理的推论">费马小定理②的推论</h2>
+<h3 id="am-11mod-m-aam-21mod-m-am-21amod-m"><strong>a^(m-1)≡1(mod m) =&gt; a*a^(m-2)≡1(mod m) =&gt; a^(m-2)≡1/a(mod m)</strong></h3>
+<h2 id="乘法逆元">乘法逆元</h2>
 <p>对于正整数a和m，如果有ax≡1(mod m)，那么把这个同余方程中x的最小正整数解叫做a模m的逆元。</p>
 <p><em>若a与m不互质，易证ax%m!=1，故a必与m互质</em></p>
-<p>##乘法逆元与费马小定理的推论</p>
+<h2 id="乘法逆元与费马小定理的推论">乘法逆元与费马小定理的推论</h2>
 <p>如果m是素数，有以下推论:</p>
-<p>###<strong>ax≡1(mod m) =&gt; x≡1/a(mod m) =&gt; x≡a^(m-2)(mod m)</strong></p>
+<h3 id="ax1mod-m-x1amod-m-xam-2mod-m"><strong>ax≡1(mod m) =&gt; x≡1/a(mod m) =&gt; x≡a^(m-2)(mod m)</strong></h3>
 <p>(同余的传递性)</p>
-<p>##（单个）费马小定理求乘法逆元</p>
+<h2 id="单个费马小定理求乘法逆元">（单个）费马小定理求乘法逆元</h2>
 <p>计算(a/b)%m：</p>
 <p>若<strong>m是素数</strong>：</p>
 <p>将1/b替换成逆元x，即b^(m-2)%m。</p>
 <p>答案为(a*b^(m-2))%m。</p>
-<p>###例题</p>
+<h3 id="例题">例题</h3>
 <p><a target="_blank" rel="noopener" href="http://www.51nod.com/Challenge/Problem.html#problemId=1013" title="51Nod1013 3的幂的和">51Nod1013</a></p>
-<p>###代码</p>
-<pre><code>#include&lt;bits/stdc++.h&gt;
-using namespace std;
-#define ll long long
-#define db double
-#define mod 1000000007
-ll n;
-ll speed(ll a,ll b,ll p)&#123;
-    ll cur=a,ans=1;
-    while(b)&#123;
-        if(b&amp;1) ans=ans*cur%p;
-        cur=cur*cur%p;
-        b&gt;&gt;=1;
-    &#125;
-    return ans%p;
-&#125;
-int main()&#123;
-    cin&gt;&gt;n;
-    ll ans=((speed(3,n+1,mod)-1)*speed(2,mod-2,mod))%mod;
-    cout&lt;&lt;ans&lt;&lt;endl;
-    //cout&lt;&lt;speed(2,mod-2,mod)%mod;
-    return 0;
-&#125;</code></pre>
-<p><strong>为了方便求任意情况的逆元，我们先来补充几个概念：</strong></p>
-<p>##欧几里得算法</p>
-<p>log时间内求解最大公约数。</p>
-<p>###代码</p>
-<pre><code>ll gcd(ll a,llb)&#123;
-    return b==0?a:gcd(b,a%b);
-&#125;</code></pre>
-<p>###证明</p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zwffff/archive/2010/08/25/1808178.html" title="【整理】辗转相除法求最大公约数算法证明 - 凌风有约 - 博客园">辗转相除法求最大公约数算法证明</a></p>
-<p>##贝祖定理</p>
-<p>设a,b是整数，则存在整数x,y，使得ax+by=gcd(a,b)</p>
-<p>##扩展欧几里得算法</p>
-<p>####求贝祖定理中x和y的解，即求使ax+by=gcd(a,b)的x和y。</p>
-<p>我们利用gcd来求，当递归到最内层时，a=gcd(a,b)，b=0，因此x=1，y=0。</p>
-<p>假设我们已经得到内层x1，y1，对于外层a，b有a%b=a-(a/b)*b</p>
-<pre><code>外层：a*x+b*y=gcd(a,b)
-
-内层：b*x1+(a-(a/b)*b)*y1=gcd(a,b)</code></pre>
-<p>展开对比可得：</p>
-<pre><code>x=y1
-y=x1-a/b*y1</code></pre>
-<p>###代码</p>
-<pre><code>ll exgcd(ll a,ll b,ll &amp;x,ll &amp;y)&#123;//扩展欧几里得算法
-    if(b==0)&#123;//递归边界 
-        x=1;y=0;
-        return a;
-    &#125;
-    ll ret=exgcd(b,a%b,x,y);
-    ll tmp=y;//求解原x,y     
-    y=x-a/b*y;
-    x=tmp;
-    return ret;//返回gcd      
-&#125;</code></pre>
-<p>###参考</p>
+<h3 id="代码">代码</h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> db double</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 1000000007</span></span><br><span class="line">ll n;</span><br><span class="line"><span class="function">ll <span class="title">speed</span><span class="params">(ll a,ll b,ll p)</span></span>&#123;</span><br><span class="line">    ll cur=a,ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b)&#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>) ans=ans*cur%p;</span><br><span class="line">        cur=cur*cur%p;</span><br><span class="line">        b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans%p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    ll ans=((<span class="built_in">speed</span>(<span class="number">3</span>,n+<span class="number">1</span>,mod)<span class="number">-1</span>)*<span class="built_in">speed</span>(<span class="number">2</span>,mod<span class="number">-2</span>,mod))%mod;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    <span class="comment">//cout&lt;&lt;speed(2,mod-2,mod)%mod;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;```</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">**为了方便求任意情况的逆元，我们先来补充几个概念：**</span><br><span class="line"></span><br><span class="line">## 欧几里得算法</span><br><span class="line"></span><br><span class="line">log时间内求解最大公约数。</span><br><span class="line"></span><br><span class="line">### 代码</span><br><span class="line"></span><br><span class="line">```c++</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a,llb)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b==<span class="number">0</span>?a:<span class="built_in">gcd</span>(b,a%b);</span><br><span class="line">&#125;```</span><br><span class="line"></span><br><span class="line">### 证明</span><br><span class="line"></span><br><span class="line">[辗转相除法求最大公约数算法证明](https:<span class="comment">//www.cnblogs.com/zwffff/archive/2010/08/25/1808178.html &quot;【整理】辗转相除法求最大公约数算法证明 - 凌风有约 - 博客园&quot;)</span></span><br><span class="line"></span><br><span class="line">## 贝祖定理</span><br><span class="line"></span><br><span class="line">设a,b是整数，则存在整数x,y，使得ax+by=<span class="built_in">gcd</span>(a,b)</span><br><span class="line"></span><br><span class="line">## 扩展欧几里得算法</span><br><span class="line"></span><br><span class="line">#### 求贝祖定理中x和y的解，即求使ax+by=<span class="built_in">gcd</span>(a,b)的x和y。</span><br><span class="line"></span><br><span class="line">我们利用gcd来求，当递归到最内层时，a=<span class="built_in">gcd</span>(a,b)，b=<span class="number">0</span>，因此x=<span class="number">1</span>，y=<span class="number">0</span>。</span><br><span class="line"></span><br><span class="line">假设我们已经得到内层x1，y1，对于外层a，b有a%b=a-(a/b)*b</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>外层：a<em>x+b</em>y=gcd(a,b)</p>
+<p>内层：b<em>x1+(a-(a/b)</em>b)<em>y1=gcd(a,b) <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">展开对比可得：</span><br><span class="line"></span><br></pre></td></tr></table></figure> x=y1 y=x1-a/b</em>y1 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 代码</span><br><span class="line"></span><br><span class="line">```c++</span><br><span class="line">ll exgcd(ll a,ll b,ll &amp;x,ll &amp;y)&#123;//扩展欧几里得算法</span><br><span class="line">    if(b==0)&#123;//递归边界 </span><br><span class="line">        x=1;y=0;</span><br><span class="line">        return a;</span><br><span class="line">    &#125;</span><br><span class="line">    ll ret=exgcd(b,a%b,x,y);</span><br><span class="line">    ll tmp=y;//求解原x,y     </span><br><span class="line">    y=x-a/b*y;</span><br><span class="line">    x=tmp;</span><br><span class="line">    return ret;//返回gcd      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="参考">参考</h3>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/destiny1507/article/details/81750874" title="扩展欧几里得算法详解">扩展欧几里得算法详解</a></p>
-<p>##（单个）利用扩展欧几里得任意情况下求乘法逆元</p>
+<h2 id="单个利用扩展欧几里得任意情况下求乘法逆元">（单个）利用扩展欧几里得任意情况下求乘法逆元</h2>
 <p>计算(a/b)%m：</p>
 <p>仍需要逆元存在，即b与m互质。</p>
 <p>构造bx+my=gcd(b,m)=1，用exgcd求出来的x即为逆元。</p>
 <p>代码与前面相同。</p>
 <p><strong>注意这里参数传m和-m都一样，答案要加m再%m。</strong></p>
-<p>###参考</p>
+<h3 id="参考-1">参考</h3>
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/7876eb2dff89" title="欧几里得算法心得(辗转相除法) - 简书">欧几里得算法心得(辗转相除法)</a></p>
-<p>##（批量）线性递推求乘法逆元</p>
+<h2 id="批量线性递推求乘法逆元">（批量）线性递推求乘法逆元</h2>
 <p>给定n,p求1~n中所有整数在模p意义下的乘法逆元。</p>
 <p>n为3e6，p&gt;n且为质数。</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.org/problem/P3811" title="P3811 【模板】乘法逆元 - 洛谷 | 计算机科学教育新生态">洛谷P3811 【模板】乘法逆元</a></p>
@@ -620,27 +504,8 @@ y=x1-a/b*y1</code></pre>
 <p>本垃圾博主还不会用公式编辑器，于是看这里↓</p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/qdscwyy/p/7795368.html?tdsourcetag=s_pcqq_aiomsg" title="线性求逆元 - Grary - 博客园">线性求逆元 - Grary - 博客园</a></p>
 <p>试了试，这里p也必须是质数，还不知道为什么（逃</p>
-<p>###代码</p>
-<pre><code>#include&lt;bits/stdc++.h&gt;
-using namespace std;
-#define ll long long
-const ll MAXN=3e6+20;
-ll inv[MAXN];
-ll n,mod;
-void preinv(ll num,ll p)&#123;
-    inv[0]=inv[1]=1;
-    for(ll i=2;i&lt;=num;i++)&#123;
-        inv[i]=(p-p/i)*inv[p%i]%p;
-    &#125;
-&#125;
-int main()&#123;
-    cin&gt;&gt;n&gt;&gt;mod;
-    preinv(n,mod);
-    for(ll i=1;i&lt;=n;i++)&#123;
-        printf(&quot;%lld\n&quot;,inv[i]);
-    &#125;
-    return 0;
-&#125;</code></pre>
+<h3 id="代码-1">代码</h3>
+<p><code>c++ #include&lt;bits/stdc++.h&gt; using namespace std; #define ll long long const ll MAXN=3e6+20; ll inv[MAXN]; ll n,mod; void preinv(ll num,ll p)&#123;     inv[0]=inv[1]=1;     for(ll i=2;i&lt;=num;i++)&#123;         inv[i]=(p-p/i)*inv[p%i]%p;     &#125; &#125; int main()&#123;     cin&gt;&gt;n&gt;&gt;mod;     preinv(n,mod);     for(ll i=1;i&lt;=n;i++)&#123;         printf(&quot;%lld\n&quot;,inv[i]);     &#125;     return 0; &#125;</code></p>
 
       
     </div>
@@ -660,7 +525,7 @@ int main()&#123;
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/24/51Nod1740%20%E8%9C%82%E5%B7%A2%E8%BF%B7%E5%AE%AB/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/24/51Nod1740-%E8%9C%82%E5%B7%A2%E8%BF%B7%E5%AE%AB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -674,7 +539,7 @@ int main()&#123;
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/07/24/51Nod1740%20%E8%9C%82%E5%B7%A2%E8%BF%B7%E5%AE%AB/" class="post-title-link" itemprop="url">51Nod1740 蜂巢迷宫</a>
+            <a href="/2019/07/24/51Nod1740-%E8%9C%82%E5%B7%A2%E8%BF%B7%E5%AE%AB/" class="post-title-link" itemprop="url">51Nod1740 蜂巢迷宫</a>
         </h2>
 
         <div class="post-meta">
@@ -745,7 +610,7 @@ int main()&#123;
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/24/51Nod1279%20%E6%89%94%E7%9B%98%E5%AD%90/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/24/51Nod1279-%E6%89%94%E7%9B%98%E5%AD%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -759,7 +624,7 @@ int main()&#123;
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/07/24/51Nod1279%20%E6%89%94%E7%9B%98%E5%AD%90/" class="post-title-link" itemprop="url">51Nod1279 扔盘子</a>
+            <a href="/2019/07/24/51Nod1279-%E6%89%94%E7%9B%98%E5%AD%90/" class="post-title-link" itemprop="url">51Nod1279 扔盘子</a>
         </h2>
 
         <div class="post-meta">
@@ -829,7 +694,7 @@ int main()&#123;
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/24/51Nod1095%20Anigram%E5%8D%95%E8%AF%8D/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/24/51Nod-1095-Anigram%E5%8D%95%E8%AF%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -843,7 +708,7 @@ int main()&#123;
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/07/24/51Nod1095%20Anigram%E5%8D%95%E8%AF%8D/" class="post-title-link" itemprop="url">51Nod1095 Anigram单词</a>
+            <a href="/2019/07/24/51Nod-1095-Anigram%E5%8D%95%E8%AF%8D/" class="post-title-link" itemprop="url">51Nod 1095 Anigram单词</a>
         </h2>
 
         <div class="post-meta">
@@ -861,8 +726,17 @@ int main()&#123;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 20:59:48" itemprop="dateModified" datetime="2020-02-18T20:59:48+08:00">2020-02-18</time>
+                <time title="修改时间：2021-11-15 21:01:46" itemprop="dateModified" datetime="2021-11-15T21:01:46+08:00">2021-11-15</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%80%E5%8D%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">简单题</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -870,7 +744,7 @@ int main()&#123;
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>721</span>
+              <span>170</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -891,7 +765,8 @@ int main()&#123;
       
           <p>##题目 一个单词a如果通过交换单词中字母的顺序可以得到另外的单词b，那么定义b是a的Anigram，例如单词army和mary互为Anigram。另：相同的2个单词不算Anigram。现在给定一个字典，输入Q个单词，从给出的字典中找出这些单词的Anigram。</p>
 <p>##思路 一个map保存原串出现次数，一个map保存排序串出现次数，减一下</p>
-<p>##代码 #include&lt;bits/stdc++.h&gt; #define ll long long #define db double using namespace std; int n,q; char s[20],sp[20]; map&lt;string,int&gt;mp1; map&lt;string,int&gt;mp2; int main(){ cin&gt;&gt;n; for(int i=1;i&lt;=n;i++){ cin&gt;&gt;s; strcpy(sp,s); sort(sp,sp+strlen(sp)); mp1[s]++;//cout&lt;&lt;s&lt;&lt;';'&lt;&lt;mp[s]&lt;&lt;endl; mp2[sp]++; } cin&gt;&gt;q; for(int i=1;i&lt;=q;i++){ cin&gt;&gt;s; strcpy(sp,s); sort(sp,sp+strlen(sp)); //cout&lt;&lt;sp&lt;&lt;':'&lt;&lt;mp[sp]&lt;&lt;' '&lt;&lt;s&lt;&lt;':'&lt;&lt;mp[s]&lt;&lt;' '; cout&lt;&lt;mp2[sp]-mp1[s]&lt;&lt;endl; } return 0; }</p>
+<p>##代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> db double</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> n,q;</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">20</span>],sp[<span class="number">20</span>];</span><br><span class="line">map&lt;string,<span class="keyword">int</span>&gt;mp1;</span><br><span class="line">map&lt;string,<span class="keyword">int</span>&gt;mp2;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        cin&gt;&gt;s;</span><br><span class="line">        <span class="built_in">strcpy</span>(sp,s);</span><br><span class="line">        <span class="built_in">sort</span>(sp,sp+<span class="built_in">strlen</span>(sp));</span><br><span class="line">        mp1[s]++;<span class="comment">//cout&lt;&lt;s&lt;&lt;&#x27;;&#x27;&lt;&lt;mp[s]&lt;&lt;endl;</span></span><br><span class="line">        mp2[sp]++;</span><br><span class="line">    &#125;</span><br><span class="line">    cin&gt;&gt;q;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=q;i++)&#123;</span><br><span class="line">        cin&gt;&gt;s;</span><br><span class="line">        <span class="built_in">strcpy</span>(sp,s);</span><br><span class="line">        <span class="built_in">sort</span>(sp,sp+<span class="built_in">strlen</span>(sp));</span><br><span class="line">        <span class="comment">//cout&lt;&lt;sp&lt;&lt;&#x27;:&#x27;&lt;&lt;mp[sp]&lt;&lt;&#x27; &#x27;&lt;&lt;s&lt;&lt;&#x27;:&#x27;&lt;&lt;mp[s]&lt;&lt;&#x27; &#x27;;</span></span><br><span class="line">        cout&lt;&lt;mp2[sp]-mp1[s]&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -911,7 +786,7 @@ int main()&#123;
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/24/51Nod1094%20%E5%92%8C%E4%B8%BAk%E7%9A%84%E8%BF%9E%E7%BB%AD%E5%8C%BA%E9%97%B4/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/24/51Nod-1094-%E5%92%8C%E4%B8%BAk%E7%9A%84%E8%BF%9E%E7%BB%AD%E5%8C%BA%E9%97%B4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -925,7 +800,7 @@ int main()&#123;
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/07/24/51Nod1094%20%E5%92%8C%E4%B8%BAk%E7%9A%84%E8%BF%9E%E7%BB%AD%E5%8C%BA%E9%97%B4/" class="post-title-link" itemprop="url">51Nod1094 和为k的连续区间</a>
+            <a href="/2019/07/24/51Nod-1094-%E5%92%8C%E4%B8%BAk%E7%9A%84%E8%BF%9E%E7%BB%AD%E5%8C%BA%E9%97%B4/" class="post-title-link" itemprop="url">51Nod 1094 和为k的连续区间</a>
         </h2>
 
         <div class="post-meta">
@@ -943,8 +818,17 @@ int main()&#123;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 20:59:48" itemprop="dateModified" datetime="2020-02-18T20:59:48+08:00">2020-02-18</time>
+                <time title="修改时间：2021-11-15 21:00:52" itemprop="dateModified" datetime="2021-11-15T21:00:52+08:00">2021-11-15</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">基础算法</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -952,7 +836,7 @@ int main()&#123;
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>549</span>
+              <span>155</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -973,7 +857,8 @@ int main()&#123;
       
           <p>##题目 一整数数列a1, a2, ... , an（有正有负），以及另一个整数k，求一个区间[i, j]，(1 &lt;= i &lt;= j &lt;= n)，使得a[i] + ... + a[j] = k。</p>
 <p>##思路 前缀和+n方查找，1e8如果数据小也是可以过的，毕竟1级题，也可以求前缀和，对前缀和排序，枚举i位置，二分查找j位置。</p>
-<p>##代码 #include&lt;bits/stdc++.h&gt; #define ll long long #define db double using namespace std; ll a[10020],sum[10020]; ll n,k; int main(){ scanf(&quot;%lld%lld&quot;,&amp;n,&amp;k); for(int i=1;i&lt;=n;i++){ scanf(&quot;%lld&quot;,&amp;a[i]); sum[i]=sum[i-1]+a[i]; } for(int i=1;i&lt;=n;i++){ for(int j=i;j&lt;=n;j++){ if(sum[j]-sum[i-1]==k){ printf(&quot;%d %d&quot;,i,j); return 0; } } } cout&lt;&lt;&quot;No Solution&quot;; return 0; }</p>
+<p>##代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> db double</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">ll a[<span class="number">10020</span>],sum[<span class="number">10020</span>];</span><br><span class="line">ll n,k;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>,&amp;n,&amp;k);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;a[i]);</span><br><span class="line">        sum[i]=sum[i<span class="number">-1</span>]+a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;=n;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(sum[j]-sum[i<span class="number">-1</span>]==k)&#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,i,j);</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;No Solution\n&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -993,7 +878,7 @@ int main()&#123;
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/23/51Nod1072%20%E5%A8%81%E4%BD%90%E5%A4%AB%E6%B8%B8%E6%88%8F/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/23/51Nod1072-%E5%A8%81%E4%BD%90%E5%A4%AB%E6%B8%B8%E6%88%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -1007,7 +892,7 @@ int main()&#123;
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/07/23/51Nod1072%20%E5%A8%81%E4%BD%90%E5%A4%AB%E6%B8%B8%E6%88%8F/" class="post-title-link" itemprop="url">51Nod1072 威佐夫游戏</a>
+            <a href="/2019/07/23/51Nod1072-%E5%A8%81%E4%BD%90%E5%A4%AB%E6%B8%B8%E6%88%8F/" class="post-title-link" itemprop="url">51Nod1072 威佐夫游戏</a>
         </h2>
 
         <div class="post-meta">
@@ -1025,8 +910,17 @@ int main()&#123;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 20:59:48" itemprop="dateModified" datetime="2020-02-18T20:59:48+08:00">2020-02-18</time>
+                <time title="修改时间：2021-11-15 20:55:13" itemprop="dateModified" datetime="2021-11-15T20:55:13+08:00">2021-11-15</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -1034,7 +928,7 @@ int main()&#123;
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>839</span>
+              <span>276</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1063,41 +957,7 @@ int main()&#123;
 <p>暴力可做，另有公式较小数a==(b-a)*1.618时为必败态。</p>
 <p>1.618具体为(sqrt(5)+1)/2，V2必须用这个公式和高精，未做，日后再做。</p>
 <p>##代码</p>
-<pre><code>#include&lt;iostream&gt;
-#include&lt;cstdio&gt;
-#include&lt;algorithm&gt;
-#include&lt;cstring&gt;
-#define ll long long
-using namespace std;
-ll T,a,b;
-int c[5000020];
-bool f[50000200];
-ll abs(ll x)&#123;
-    return x&gt;0?x:-x;
-&#125;
-void fun()&#123;
-    memset(f,false,sizeof(f));
-    int cnt=1;
-    for(int i=1;i&lt;=5000000;i++)&#123;
-        if(!f[i]&amp;&amp;!f[i+cnt])&#123;
-            c[i]=i+cnt;
-            f[i]=f[i+cnt]=true;
-            cnt++;
-        &#125;
-    &#125;
-&#125;
-int main()&#123;
-    fun();
-    cin&gt;&gt;T;
-    while(T--)&#123;
-        cin&gt;&gt;a&gt;&gt;b;
-        if(b&lt;a) swap(a,b);
-        if(c[a]==b) cout&lt;&lt;&quot;B\n&quot;;
-        else cout&lt;&lt;&quot;A\n&quot;;
-    &#125;
-    
-    return 0;
-&#125;</code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">ll T,a,b;</span><br><span class="line"><span class="keyword">int</span> c[<span class="number">5000020</span>];</span><br><span class="line"><span class="keyword">bool</span> f[<span class="number">50000200</span>];</span><br><span class="line"><span class="function">ll <span class="title">abs</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x&gt;<span class="number">0</span>?x:-x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(f,<span class="literal">false</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(f));</span><br><span class="line">    <span class="keyword">int</span> cnt=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">5000000</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!f[i]&amp;&amp;!f[i+cnt])&#123;</span><br><span class="line">            c[i]=i+cnt;</span><br><span class="line">            f[i]=f[i+cnt]=<span class="literal">true</span>;</span><br><span class="line">            cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">fun</span>();</span><br><span class="line">    cin&gt;&gt;T;</span><br><span class="line">    <span class="keyword">while</span>(T--)&#123;</span><br><span class="line">        cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">        <span class="keyword">if</span>(b&lt;a) <span class="built_in">swap</span>(a,b);</span><br><span class="line">        <span class="keyword">if</span>(c[a]==b) cout&lt;&lt;<span class="string">&quot;B\n&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span> cout&lt;&lt;<span class="string">&quot;A\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -1117,7 +977,7 @@ int main()&#123;
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/23/51Nod1067%20Bash%E6%B8%B8%E6%88%8F%20V2/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/23/51Nod-1067-Bash%E6%B8%B8%E6%88%8F-V2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -1131,7 +991,7 @@ int main()&#123;
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/07/23/51Nod1067%20Bash%E6%B8%B8%E6%88%8F%20V2/" class="post-title-link" itemprop="url">51Nod1067 Bash游戏 V2</a>
+            <a href="/2019/07/23/51Nod-1067-Bash%E6%B8%B8%E6%88%8F-V2/" class="post-title-link" itemprop="url">51Nod 1067 Bash游戏 V2</a>
         </h2>
 
         <div class="post-meta">
@@ -1149,8 +1009,17 @@ int main()&#123;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 20:59:48" itemprop="dateModified" datetime="2020-02-18T20:59:48+08:00">2020-02-18</time>
+                <time title="修改时间：2021-11-15 20:53:40" itemprop="dateModified" datetime="2021-11-15T20:53:40+08:00">2021-11-15</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -1158,7 +1027,7 @@ int main()&#123;
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>365</span>
+              <span>152</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1179,9 +1048,8 @@ int main()&#123;
       
           <p>##题意 有一堆石子共有N个。A B两个人轮流拿，A先拿。每次只能拿1，3，4颗，拿到最后1颗石子的人获胜。假设A B都非常聪明，拿石子的过程中不会出现失误。给出N，问最后谁能赢得比赛。</p>
 <p>##思路 博弈论，从零开始推状态，方法详见<a target="_blank" rel="noopener" href="https://www.cnblogs.com/sz-wcc/p/11071914.html">欧几里得游戏(博弈论启蒙)</a>。 最后发现%7为0和2的数是必败态，其它是必胜态。</p>
-<p>##代码 #include<iostream> #include<cstdio> #include<cstdio> #include<algorithm> #define ll long long using namespace std; ll T,n; int main(){ cin&gt;&gt;T; while(T--){ cin&gt;&gt;n; if(n%7==2||n%7==0){ cout&lt;&lt;&quot;B&quot;; } else{ cout&lt;&lt;&quot;A&quot;; } }</p>
-<pre><code>    return 0;
-&#125;</code></pre>
+<p>##代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">ll T,n;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;T;</span><br><span class="line">    <span class="keyword">while</span>(T--)&#123;</span><br><span class="line">        cin&gt;&gt;n;</span><br><span class="line">        <span class="keyword">if</span>(n%<span class="number">7</span>==<span class="number">2</span>||n%<span class="number">7</span>==<span class="number">0</span>)&#123;</span><br><span class="line">            cout&lt;&lt;<span class="string">&quot;B\n&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            cout&lt;&lt;<span class="string">&quot;A\n&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -1201,7 +1069,7 @@ int main()&#123;
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/23/51Nod1074%20%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF%20V2/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/23/51Nod-1074-%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF-V2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -1215,7 +1083,7 @@ int main()&#123;
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/07/23/51Nod1074%20%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF%20V2/" class="post-title-link" itemprop="url">51Nod1074 约瑟夫环 V2</a>
+            <a href="/2019/07/23/51Nod-1074-%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF-V2/" class="post-title-link" itemprop="url">51Nod 1074 约瑟夫环 V2</a>
         </h2>
 
         <div class="post-meta">
@@ -1233,8 +1101,17 @@ int main()&#123;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 20:59:48" itemprop="dateModified" datetime="2020-02-18T20:59:48+08:00">2020-02-18</time>
+                <time title="修改时间：2021-11-15 20:57:17" itemprop="dateModified" datetime="2021-11-15T20:57:17+08:00">2021-11-15</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E5%B7%A7-%E5%AE%9E%E7%94%A8%E7%BB%93%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">技巧||实用结论</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -1242,7 +1119,7 @@ int main()&#123;
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>320</span>
+              <span>59</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1263,7 +1140,8 @@ int main()&#123;
       
           <p>##题意 约瑟夫环，N-1e18，K-1000</p>
 <p>##思路 由于K远小于N，后面i大了之后某些时候不用取模，可以加速。</p>
-<p>##代码 #include<iostream> #include<cstdio> #include<cstdio> #include<algorithm> #define ll long long using namespace std; ll n,k; ll cur,t; int main(){ cin&gt;&gt;n&gt;&gt;k; cur=0; for(ll i=2;i&lt;=n;i+=t+1){ t=(i-cur)/k-1; if(t&lt;0) t=0; if(i+t+1&gt;n) t=n-i; cur=(cur+(t+1)*k)%(i+t); } cur++; cout&lt;&lt;cur&lt;&lt;endl; return 0; }</p>
+<p>##代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">ll n,k;</span><br><span class="line">ll cur,t;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">    cur=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">2</span>;i&lt;=n;i+=t+<span class="number">1</span>)&#123;</span><br><span class="line">        t=(i-cur)/k<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">if</span>(t&lt;<span class="number">0</span>) t=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(i+t+<span class="number">1</span>&gt;n) t=n-i;</span><br><span class="line">        cur=(cur+(t+<span class="number">1</span>)*k)%(i+t);</span><br><span class="line">    &#125; </span><br><span class="line">    cur++;</span><br><span class="line">    cout&lt;&lt;cur&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -1350,20 +1228,20 @@ int main()&#123;
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-count">97</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1422,13 +1300,13 @@ int main()&#123;
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">64k</span>
+    <span title="站点总字数">46k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:47</span>
+    <span title="站点阅读时长">1:17</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>

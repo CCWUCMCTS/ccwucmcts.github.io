@@ -194,7 +194,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/23/51Nod1073%20%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/23/51Nod-1073-%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -208,7 +208,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/07/23/51Nod1073%20%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/" class="post-title-link" itemprop="url">51Nod1073 约瑟夫环</a>
+            <a href="/2019/07/23/51Nod-1073-%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/" class="post-title-link" itemprop="url">51Nod 1073 约瑟夫环</a>
         </h2>
 
         <div class="post-meta">
@@ -226,8 +226,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 20:59:48" itemprop="dateModified" datetime="2020-02-18T20:59:48+08:00">2020-02-18</time>
+                <time title="修改时间：2021-11-15 20:56:45" itemprop="dateModified" datetime="2021-11-15T20:56:45+08:00">2021-11-15</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E5%B7%A7-%E5%AE%9E%E7%94%A8%E7%BB%93%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">技巧||实用结论</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -235,7 +244,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>225</span>
+              <span>26</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -255,7 +264,8 @@
 
       
           <p>##题意 编号1~N，每数K个出局，范围1e6</p>
-<p>##代码 #include<iostream> #include<cstdio> #include<cstdio> #include<algorithm> #define ll long long using namespace std; ll n,k; ll cur; int main(){ cin&gt;&gt;n&gt;&gt;k; cur=0; for(int i=2;i&lt;=n;i++){ cur=(cur+k)%i; } cur++; cout&lt;&lt;cur&lt;&lt;endl; return 0; }</p>
+<p>##代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">ll n,k;</span><br><span class="line">ll cur;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">    cur=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        cur=(cur+k)%i;</span><br><span class="line">    &#125;</span><br><span class="line">    cur++;</span><br><span class="line">    cout&lt;&lt;cur&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -307,8 +317,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 20:59:48" itemprop="dateModified" datetime="2020-02-18T20:59:48+08:00">2020-02-18</time>
+                <time title="修改时间：2021-11-16 16:53:08" itemprop="dateModified" datetime="2021-11-16T16:53:08+08:00">2021-11-16</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">基础算法</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -316,7 +335,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2k</span>
+              <span>1.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -335,82 +354,55 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>###题目描述</p>
-<p>农历新年马上就要到了，奶牛们计划举办一次聚会庆祝新年的到来。但是，奶牛们并不喜欢走太远的路，这会给他们的聚会带来消极情绪，当一头奶牛的消极指数为Wi，他参加聚会所需行走的距离为si，那么他就会给聚会带来Si3*Wi的消极情绪。所有奶牛所在位置都在一条直线上，已知所有奶牛的坐标和消极指数，求如何确定聚会地点，使得所有奶牛给聚会带来的消极情绪之和最小，输出消极情绪之和的最小值。</p>
-<p>###输入</p>
+          <h2 id="题目描述">题目描述</h2>
+<p>农历新年马上就要到了，奶牛们计划举办一次聚会庆祝新年的到来。但是，奶牛们并不喜欢走太远的路，这会给他们的聚会带来消极情绪，当一头奶牛的消极指数为Wi，他参加聚会所需行走的距离为si，那么他就会给聚会带来Si*Wi的消极情绪。所有奶牛所在位置都在一条直线上，已知所有奶牛的坐标和消极指数，求如何确定聚会地点，使得所有奶牛给聚会带来的消极情绪之和最小，输出消极情绪之和的最小值。</p>
+<h2 id="输入">输入</h2>
 <p>第一行包含一个整数 Ca(Ca&lt;=20) ，表示有 Ca 组测试数据。</p>
 <p>对于每组测试数据：第一行包含一个整数n(1&lt;=n&lt;=50000) ，表示奶牛的数量。接下来 n 行每行包含两个浮点数Si和wi (-106&lt;=Si&lt;=106, 0&lt;Wi&lt;15)。</p>
-<p>###输出</p>
-<p>###对于每组测试数据，输出 &quot;Case #c: ans&quot; ，其中c表示测试数据编号，ans表示消极情绪之和的最小值，结果四舍五入为一个整数。</p>
-<p>###样例输入 &gt; 1 &gt; 5 &gt; 0.9 2 &gt; 1.4 4 &gt; 3.1 1 &gt; 6.2 1 &gt; 8.3 2</p>
-<p>###样例输出 &gt; Case #1: 300</p>
-<p>####三分，裸的，可以自己用定义证一下凸函数加凸函数等于凸函数</p>
-<pre><code>#include&lt;iostream&gt;
-#include&lt;cstdio&gt;
-#include&lt;cstring&gt;
-#define ll long long
-#define ld double
-using namespace std;
-int T,n;
-ld sm1=0,sm2=0,sm3=0,sm4=0;
-ld w[50020],s[50020];
-ld abs(ld x)&#123;
-    return x&gt;0?x:-x;
-&#125;
-ld pow(ld x,int k)&#123;
-    ld cur=1;
-    for(int i=1;i&lt;=k;i++)&#123;
-        cur*=x;
-    &#125;
-    return cur;
-&#125;
-ll ans(ld x)&#123;
-    ld cur=x-(ll)x;
-    if(cur&lt;0.5) return (ll)x;
-    return (ll)x+1;
-&#125;
-ld smstp(ld ss)&#123;
-    ld cur=0;
+<h2 id="输出">输出</h2>
+<h2 id="对于每组测试数据输出-case-c-ans-其中c表示测试数据编号ans表示消极情绪之和的最小值结果四舍五入为一个整数">对于每组测试数据，输出 &quot;Case #c: ans&quot; ，其中c表示测试数据编号，ans表示消极情绪之和的最小值，结果四舍五入为一个整数。</h2>
+<h2 id="样例输入">样例输入</h2>
+<blockquote>
+<p>1 5 0.9 2 1.4 4 3.1 1 6.2 1 8.3 2</p>
+</blockquote>
+<h2 id="样例输出">样例输出</h2>
+<blockquote>
+<p>Case #1: 300</p>
+</blockquote>
+<h3 id="三分裸的可以自己用定义证一下凸函数加凸函数等于凸函数">三分，裸的，可以自己用定义证一下凸函数加凸函数等于凸函数</h3>
+<p>```c++ #include<iostream> #include<cstdio> #include<cstring> #define ll long long #define ld double using namespace std; int T,n; ld sm1=0,sm2=0,sm3=0,sm4=0; ld w[50020],s[50020]; ld abs(ld x){ return x&gt;0?x:-x; } ld pow(ld x,int k){ ld cur=1; for(int i=1;i&lt;=k;i++){ cur<em>=x; } return cur; } ll ans(ld x){ ld cur=x-(ll)x; if(cur&lt;0.5) return (ll)x; return (ll)x+1; } ld smstp(ld ss){ ld cur=0; for(int i=1;i&lt;=n;i++){ cur+=pow(abs(s[i]-ss),3)</em>w[i]; } return cur; } int main(){ /*ld pla;</p>
+<pre><code>for(pla=0.9;pla&lt;=8.3;pla+=0.1)
+    cout&lt;&lt;pla&lt;&lt;&quot;:&quot;&lt;&lt;ans(pow(abs(0.9-pla),3)*2+pow(abs(1.4-pla),3)*4+pow(abs(3.1-pla),3)*13+pow(abs(6.2-pla),3)*1+pow(abs(8.3-pla),3)*2)&lt;&lt;endl;
+*/
+cin&gt;&gt;T;
+for(int I=1;I&lt;=T;I++)&#123;
+    memset(s,0,sizeof(s));
+    memset(w,0,sizeof(w));
+    scanf(&quot;%d&quot;,&amp;n);
+    ld l=1e7,r=-1e7;
     for(int i=1;i&lt;=n;i++)&#123;
-        cur+=pow(abs(s[i]-ss),3)*w[i];
+        scanf(&quot;%lf%lf&quot;,&amp;s[i],&amp;w[i]);
+        //cin&gt;&gt;s[i]&gt;&gt;w[i];
+        //cout&lt;&lt;s[i]&lt;&lt;&#39; &#39;&lt;&lt;w[i]&lt;&lt;endl;
+        l=min(s[i],l);
+        r=max(s[i],r);
     &#125;
-    return cur;
+    //cout&lt;&lt;l&lt;&lt;&quot; &quot;&lt;&lt;r&lt;&lt;endl;
+    //cout&lt;&lt;r-l&lt;&lt;endl;
+    while(r-l&gt;0.00001)&#123;
+        ld m1=l+(r-l)/3.0;
+        ld m2=r-(r-l)/3.0;
+        if(smstp(m1)&lt;smstp(m2))&#123;
+            r=m2;
+        &#125;
+        else&#123;
+            l=m1;
+        &#125;//cout&lt;&lt;(int)l&lt;&lt;&quot; &quot;&lt;&lt;(int)r&lt;&lt;endl;
+    &#125;
+    cout&lt;&lt;&quot;Case #&quot;&lt;&lt;I&lt;&lt;&quot;: &quot;&lt;&lt;ans(smstp(l))&lt;&lt;endl;
 &#125;
-int main()&#123;
-    /*ld pla;
-     
-    for(pla=0.9;pla&lt;=8.3;pla+=0.1)
-        cout&lt;&lt;pla&lt;&lt;&quot;:&quot;&lt;&lt;ans(pow(abs(0.9-pla),3)*2+pow(abs(1.4-pla),3)*4+pow(abs(3.1-pla),3)*13+pow(abs(6.2-pla),3)*1+pow(abs(8.3-pla),3)*2)&lt;&lt;endl;
-    */
-    cin&gt;&gt;T;
-    for(int I=1;I&lt;=T;I++)&#123;
-        memset(s,0,sizeof(s));
-        memset(w,0,sizeof(w));
-        scanf(&quot;%d&quot;,&amp;n);
-        ld l=1e7,r=-1e7;
-        for(int i=1;i&lt;=n;i++)&#123;
-            scanf(&quot;%lf%lf&quot;,&amp;s[i],&amp;w[i]);
-            //cin&gt;&gt;s[i]&gt;&gt;w[i];
-            //cout&lt;&lt;s[i]&lt;&lt;&#39; &#39;&lt;&lt;w[i]&lt;&lt;endl;
-            l=min(s[i],l);
-            r=max(s[i],r);
-        &#125;
-        //cout&lt;&lt;l&lt;&lt;&quot; &quot;&lt;&lt;r&lt;&lt;endl;
-        //cout&lt;&lt;r-l&lt;&lt;endl;
-        while(r-l&gt;0.00001)&#123;
-            ld m1=l+(r-l)/3.0;
-            ld m2=r-(r-l)/3.0;
-            if(smstp(m1)&lt;smstp(m2))&#123;
-                r=m2;
-            &#125;
-            else&#123;
-                l=m1;
-            &#125;//cout&lt;&lt;(int)l&lt;&lt;&quot; &quot;&lt;&lt;(int)r&lt;&lt;endl;
-        &#125;
-        cout&lt;&lt;&quot;Case #&quot;&lt;&lt;I&lt;&lt;&quot;: &quot;&lt;&lt;ans(smstp(l))&lt;&lt;endl;
-    &#125;
-    return 0;
-&#125;</code></pre>
+return 0;</code></pre>
+<p>}```</p>
 
       
     </div>
@@ -430,7 +422,7 @@ int main()&#123;
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/06/23/Disk%20Tree/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/06/23/Disk-Tree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -444,7 +436,7 @@ int main()&#123;
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/23/Disk%20Tree/" class="post-title-link" itemprop="url">Disk Tree</a>
+            <a href="/2019/06/23/Disk-Tree/" class="post-title-link" itemprop="url">Disk Tree</a>
         </h2>
 
         <div class="post-meta">
@@ -781,8 +773,17 @@ int main()&#123;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 20:59:48" itemprop="dateModified" datetime="2020-02-18T20:59:48+08:00">2020-02-18</time>
+                <time title="修改时间：2021-11-16 16:59:51" itemprop="dateModified" datetime="2021-11-16T16:59:51+08:00">2021-11-16</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -790,14 +791,14 @@ int main()&#123;
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.7k</span>
+              <span>1.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -809,108 +810,24 @@ int main()&#123;
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>###题目描述</p>
+          <h2 id="题目描述">题目描述</h2>
 <p>输入一系列整数，建立二叉排序数，并进行前序，中序，后序遍历。</p>
-<p>###输入</p>
+<h2 id="输入">输入</h2>
 <p>输入第一行包括一个整数n(1&lt;=n&lt;=100)。接下来的一行包括n个整数。</p>
-<p>###输出</p>
+<h2 id="输出">输出</h2>
 <p>可能有多组测试数据，对于每组数据，将题目所给数据建立一个二叉排序树，并对二叉排序树进行前序、中序和后序遍历。每种遍历结果输出一行。每行最后一个数据之后有一个空格。</p>
-<p>###样例输入 &gt; 1 &gt; 2 &gt; 2 &gt; 8 15 &gt; 4 &gt; 21 10 5 39</p>
-<p>###样例输出 &gt; 2 &gt; 2 &gt; 2 &gt; 8 15 &gt; 8 15 &gt; 15 8 &gt; 21 10 5 39 &gt; 5 10 21 39 &gt; 5 10 39 21</p>
-<p>####瞎搞的。。。</p>
-<pre><code>#include&lt;iostream&gt;
-#include&lt;cstdio&gt;
-#include&lt;queue&gt;
-#include&lt;cstring&gt;
-#include&lt;algorithm&gt;
-#include&lt;vector&gt;
-#include&lt;queue&gt;
-#define ll long long
-#define INF -72340172838076674
-using namespace std;
-ll n;
-struct E&#123;
-    ll num,lson,rson;
-&#125;e[120];
-ll cnt=0,root=INF;
-ll find(ll x)&#123;
-    x=e[x].num;
-    ll cur=root;
-    while(1)&#123;
-        if(x&lt;e[cur].num)&#123;
-            if(e[cur].lson==INF)&#123;
-                return cur;
-            &#125;
-            else&#123;
-                cur=e[cur].lson;
-            &#125;
-        &#125;
-        else if(x&gt;e[cur].num)&#123;
-            if(e[cur].rson==INF)&#123;
-                return cur;
-            &#125;
-            else&#123;
-                cur=e[cur].rson;
-            &#125;
-        &#125;
-        else return INF;
-    &#125;
-&#125;
-void Insert(ll x)&#123;
-    if(!cnt)&#123;
-        cnt++;
-        root=x;
-        return; 
-    &#125;
-    ll fat=find(x);
-    if(fat==INF) return;
-    cnt++;
-    if(e[x].num&gt;e[fat].num)&#123;
-        e[fat].rson=x;
-    &#125;
-    else&#123;
-        e[fat].lson=x;
-    &#125;
-    return;
-&#125;
-void dfs1(ll x)&#123;
-    if(x==INF) return;
-    cout&lt;&lt;e[x].num&lt;&lt;&#39; &#39;;
-    dfs1(e[x].lson);
-    dfs1(e[x].rson);
-&#125;
-void dfs2(ll x)&#123;
-    if(x==INF) return;
-    dfs2(e[x].lson);
-    cout&lt;&lt;e[x].num&lt;&lt;&#39; &#39;;
-    dfs2(e[x].rson);
-&#125;
-void dfs3(ll x)&#123;
-    if(x==INF) return;
-    dfs3(e[x].lson);
-    dfs3(e[x].rson);
-    cout&lt;&lt;e[x].num&lt;&lt;&#39; &#39;;
-&#125;
-int main()&#123;
-    while(cin&gt;&gt;n)&#123;
-        root=INF,cnt=0;
-        memset(e,-0x2,sizeof(e));
-        for(int i=1;i&lt;=n;i++)&#123;
-            ll x;
-            cin&gt;&gt;x;
-            e[i].num=x;
-            Insert(i);
-        &#125;
-        dfs1(root);
-        cout&lt;&lt;endl;
-        dfs2(root);
-        cout&lt;&lt;endl;
-        dfs3(root);
-        cout&lt;&lt;endl;
-    &#125;
-     
-    return 0;
-&#125;</code></pre>
+<h2 id="样例输入">样例输入</h2>
+<blockquote>
+<p>1 2 2 8 15 4 21 10 5 39</p>
+</blockquote>
+<h2 id="样例输出">样例输出</h2>
+<blockquote>
+<p>2 2 2 8 15 8 15 15 8 21 10 5 39 5 10 21 39 5 10 39 21</p>
+</blockquote>
+<h3 id="瞎搞的">瞎搞的。。。</h3>
+<p>```c++ #include<iostream> #include<cstdio> #include<queue> #include<cstring> #include<algorithm> #include<vector> #include<queue> #define ll long long #define INF -72340172838076674 using namespace std; ll n; struct E{ ll num,lson,rson; }e[120]; ll cnt=0,root=INF; ll find(ll x){ x=e[x].num; ll cur=root; while(1){ if(x&lt;e[cur].num){ if(e[cur].lson==INF){ return cur; } else{ cur=e[cur].lson; } } else if(x&gt;e[cur].num){ if(e[cur].rson==INF){ return cur; } else{ cur=e[cur].rson; } } else return INF; } } void Insert(ll x){ if(!cnt){ cnt++; root=x; return; } ll fat=find(x); if(fat==INF) return; cnt++; if(e[x].num&gt;e[fat].num){ e[fat].rson=x; } else{ e[fat].lson=x; } return; } void dfs1(ll x){ if(x==INF) return; cout&lt;&lt;e[x].num&lt;&lt;' '; dfs1(e[x].lson); dfs1(e[x].rson); } void dfs2(ll x){ if(x==INF) return; dfs2(e[x].lson); cout&lt;&lt;e[x].num&lt;&lt;' '; dfs2(e[x].rson); } void dfs3(ll x){ if(x==INF) return; dfs3(e[x].lson); dfs3(e[x].rson); cout&lt;&lt;e[x].num&lt;&lt;' '; } int main(){ while(cin&gt;&gt;n){ root=INF,cnt=0; memset(e,-0x2,sizeof(e)); for(int i=1;i&lt;=n;i++){ ll x; cin&gt;&gt;x; e[i].num=x; Insert(i); } dfs1(root); cout&lt;&lt;endl; dfs2(root); cout&lt;&lt;endl; dfs3(root); cout&lt;&lt;endl; }</p>
+<pre><code>return 0;</code></pre>
+<p>}```</p>
 
       
     </div>
@@ -962,8 +879,17 @@ int main()&#123;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 20:59:48" itemprop="dateModified" datetime="2020-02-18T20:59:48+08:00">2020-02-18</time>
+                <time title="修改时间：2021-11-16 16:45:57" itemprop="dateModified" datetime="2021-11-16T16:45:57+08:00">2021-11-16</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url" rel="index"><span itemprop="name">字符串</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -971,14 +897,14 @@ int main()&#123;
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>944</span>
+              <span>743</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -990,56 +916,39 @@ int main()&#123;
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>###题目描述</p>
+          <h2 id="题目描述">题目描述</h2>
 <p>给定一个短字符串（不含空格），再给定若干字符串，在这些字符串中删除所含有的短字符串。</p>
-<p>###输入</p>
+<h2 id="输入">输入</h2>
 <p>输入只有1组数据。 输入一个短字符串（不含空格），再输入若干字符串直到文件结束为止。</p>
-<p>###输出</p>
+<h2 id="输出">输出</h2>
 <p>删除输入的短字符串(不区分大小写)并去掉空格,输出。</p>
-<p>###样例输入 in #include int main() {</p>
-<pre><code>printf(&quot; Hi &quot;);
-&#125;</code></pre>
-<p>###样例输出 #clude tma() {</p>
-<pre><code>prtf(&quot;Hi&quot;);
-&#125;</code></pre>
-<p>###提示</p>
+<h2 id="样例输入">样例输入</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">in</span><br><span class="line">#include </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">printf(&quot; Hi &quot;);</span><br><span class="line">&#125;```</span><br><span class="line"></span><br><span class="line">### 样例输出</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>#clude tma() {</p>
+<p>prtf(&quot;Hi&quot;); }```</p>
+<h3 id="提示">提示</h3>
 <p>注:将字符串中的In、IN、iN、in删除。</p>
-<pre><code>#include&lt;iostream&gt;
-#include&lt;cstdio&gt;
-#include&lt;cmath&gt;
-#include&lt;cstring&gt;
-#include&lt;algorithm&gt;
-#define ll long long
-using namespace std;
-string s,ts;
-string sub;
-void trans(string &amp;xx)&#123;
-    for(int i=0;i&lt;xx.size();i++)&#123;
-        if(xx[i]&gt;=&#39;A&#39;&amp;&amp;xx[i]&lt;=&#39;Z&#39;) xx[i]+=&#39;a&#39;-&#39;A&#39;;
+<p>```c++ #include<iostream> #include<cstdio> #include<cmath> #include<cstring> #include<algorithm> #define ll long long using namespace std; string s,ts; string sub; void trans(string &amp;xx){ for(int i=0;i&lt;xx.size();i++){ if(xx[i]&gt;='A'&amp;&amp;xx[i]&lt;='Z') xx[i]+='a'-'A'; } } int main(){</p>
+<pre><code>cin&gt;&gt;sub;
+trans(sub);
+getchar();
+while(getline(cin,s))&#123;
+    ts=s;
+    trans(s);
+    string::size_type x=s.find(sub);
+    while(x!=s.npos)&#123;
+        for(int i=x;i&lt;x+sub.size();i++)&#123;
+            s[i]=&#39; &#39;;
+        &#125;
+        x=s.find(sub);
     &#125;
+    for(int i=0;i&lt;s.size();i++)&#123;
+        if(s[i]!=&#39; &#39;) printf(&quot;%c&quot;,ts[i]);
+    &#125;
+    cout&lt;&lt;endl;
 &#125;
-int main()&#123;
-     
-    cin&gt;&gt;sub;
-    trans(sub);
-    getchar();
-    while(getline(cin,s))&#123;
-        ts=s;
-        trans(s);
-        string::size_type x=s.find(sub);
-        while(x!=s.npos)&#123;
-            for(int i=x;i&lt;x+sub.size();i++)&#123;
-                s[i]=&#39; &#39;;
-            &#125;
-            x=s.find(sub);
-        &#125;
-        for(int i=0;i&lt;s.size();i++)&#123;
-            if(s[i]!=&#39; &#39;) printf(&quot;%c&quot;,ts[i]);
-        &#125;
-        cout&lt;&lt;endl;
-    &#125;
-    return 0;
-&#125;</code></pre>
+return 0;</code></pre>
+<p>}```</p>
 
       
     </div>
@@ -1059,7 +968,7 @@ int main()&#123;
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/06/23/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E6%B8%B8%E6%88%8F(%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%90%AF%E8%92%99)/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/06/23/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E6%B8%B8%E6%88%8F-%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%90%AF%E8%92%99/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -1073,7 +982,7 @@ int main()&#123;
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/23/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E6%B8%B8%E6%88%8F(%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%90%AF%E8%92%99)/" class="post-title-link" itemprop="url">欧几里得游戏(博弈论启蒙)</a>
+            <a href="/2019/06/23/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E6%B8%B8%E6%88%8F-%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%90%AF%E8%92%99/" class="post-title-link" itemprop="url">欧几里得游戏(博弈论启蒙)</a>
         </h2>
 
         <div class="post-meta">
@@ -1091,8 +1000,17 @@ int main()&#123;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 20:59:48" itemprop="dateModified" datetime="2020-02-18T20:59:48+08:00">2020-02-18</time>
+                <time title="修改时间：2021-11-16 16:49:31" itemprop="dateModified" datetime="2021-11-16T16:49:31+08:00">2021-11-16</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -1100,14 +1018,14 @@ int main()&#123;
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>920</span>
+              <span>884</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -1119,41 +1037,24 @@ int main()&#123;
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>###题目描述</p>
+          <h2 id="题目描述">题目描述</h2>
 <p>小明和小红在玩欧几里得游戏。他们从两个自然数开始，第一个玩家小明，从两个数的较大数中减去较小数的尽可能大的正整数倍，只要差为非负即可。然后，第二个玩家小红，对得到的两个数进行同样的操作，然后又是小明。就这样轮流进行游戏，直至某个玩家将较大数减去较小数的某个倍数之后差为0为止，此时游戏结束，该玩家就是胜利者。</p>
-<p>###输入</p>
+<h2 id="输入">输入</h2>
 <p>输入包含多组测试数据。每组输入两个正整数，表示游戏一开始的两个数，游戏总是小明先开始。 当输入两个0的时候，输入结束。</p>
-<p>###输出</p>
+<h2 id="输出">输出</h2>
 <p>对于每组输入，输出最后的胜者，我们认为他们两个都是顶尖高手，每一步游戏都做出了最佳的选择。 具体输出格式见输出样例。</p>
-<p>###样例输入 &gt; 34 12 &gt; 15 24 &gt; 0 0</p>
-<p>###样例输出 &gt; xiaoming wins &gt; xiaohong wins</p>
-<p>####两句话，能转移到必败点的是必胜点，只能转移到必胜点的是必败点。</p>
+<h2 id="样例输入">样例输入</h2>
+<blockquote>
+<p>34 12 15 24 0 0</p>
+</blockquote>
+<h2 id="样例输出">样例输出</h2>
+<blockquote>
+<p>xiaoming wins xiaohong wins</p>
+</blockquote>
+<h3 id="两句话能转移到必败点的是必胜点只能转移到必胜点的是必败点">两句话，能转移到必败点的是必胜点，只能转移到必胜点的是必败点。</h3>
 <p><img src="https://img2018.cnblogs.com/blog/1575943/201906/1575943-20190623095542588-1832008552.png" /></p>
 <p>我是这么推出来的，或者从定理出发，一个点不是必败点就是必胜点，对三角形右下角分别假设，都可以推出m/n&gt;2必胜</p>
-<pre><code>#include&lt;cstdio&gt;
-#include&lt;iostream&gt;
-#include&lt;cstring&gt;
-#include&lt;string&gt;
-#include&lt;algorithm&gt;
-#define ll long long
-using namespace std;
-int n,m;
-int main()&#123;
-    while(scanf(&quot;%d%d&quot;,&amp;n,&amp;m)==2&amp;&amp;n&amp;&amp;m)&#123;
-        if(n&gt;m) swap(n,m);
-        bool flag=true;
-        while(m%n!=0&amp;&amp;m/n==1)&#123;
-            m-=n;
-            if(n&gt;m) swap(n,m);
-            flag=!flag;
-        &#125;
-        if(flag)&#123;
-            printf(&quot;xiaoming wins\n&quot;);
-        &#125;
-        else printf(&quot;xiaohong wins\n&quot;);
-    &#125;
-    return 0;
-&#125;</code></pre>
+<p><code>c++ #include&lt;cstdio&gt; #include&lt;iostream&gt; #include&lt;cstring&gt; #include&lt;string&gt; #include&lt;algorithm&gt; #define ll long long using namespace std; int n,m; int main()&#123;     while(scanf(&quot;%d%d&quot;,&amp;n,&amp;m)==2&amp;&amp;n&amp;&amp;m)&#123;         if(n&gt;m) swap(n,m);         bool flag=true;         while(m%n!=0&amp;&amp;m/n==1)&#123;             m-=n;             if(n&gt;m) swap(n,m);             flag=!flag;         &#125;         if(flag)&#123;             printf(&quot;xiaoming wins\n&quot;);         &#125;         else printf(&quot;xiaohong wins\n&quot;);     &#125;     return 0; &#125;</code></p>
 
       
     </div>
@@ -1205,8 +1106,17 @@ int main()&#123;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 20:59:48" itemprop="dateModified" datetime="2020-02-18T20:59:48+08:00">2020-02-18</time>
+                <time title="修改时间：2021-11-16 16:58:23" itemprop="dateModified" datetime="2021-11-16T16:58:23+08:00">2021-11-16</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -1233,87 +1143,21 @@ int main()&#123;
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>###题目描述</p>
+          <h2 id="题目描述">题目描述</h2>
 <p>现给定一棵二叉树的先序遍历序列和中序遍历序列，要求你计算该二叉树的高度。</p>
-<p>###输入</p>
+<h2 id="输入">输入</h2>
 <p>输入包含多组测试数据，每组输入首先给出正整数N（&lt;=50），为树中结点总数。下面2行先后给出先序和中序遍历序列，均是长度为N的不包含重复英文字母（区别大小写）的字符串。</p>
-<p>###输出</p>
+<h2 id="输出">输出</h2>
 <p>对于每组输入，输出一个整数，即该二叉树的高度。</p>
-<p>###样例输入</p>
+<h2 id="样例输入">样例输入</h2>
 <blockquote>
 <p>9 ABDFGHIEC FDHGIBEAC 7 Abcdefg gfedcbA</p>
 </blockquote>
-<p>###样例输出 &gt; 5 &gt; 7</p>
-<pre><code>#include&lt;iostream&gt;
-#include&lt;cstdio&gt;
-#include&lt;algorithm&gt;
-#include&lt;cstring&gt;
-#include&lt;map&gt;
-#define ll long long
-using namespace std;
-map&lt;char,int&gt;q;
-int n,h[1024],ans;
-string s1,s2;
-int lson[1024],rson[1024];
-int tag[1024];
-char buildtree(int s,int t)&#123;
-    memset(tag,0,sizeof(tag));
-    if(s==t) return s2[s];
-    for(int i=s;i&lt;=t;i++)&#123;
-        tag[s2[i]]=1;
-        //cout&lt;&lt;s2[i];
-    &#125;
-    //cout&lt;&lt;endl;
-    int lx=-1,rx=-1;
-    for(int i=0;i&lt;n;i++)&#123;
-        if(lx==-1)&#123;
-            if(tag[s1[i]])&#123;
-                lx=i;
-            &#125;
-        &#125;
-        else&#123;
-            if(!tag[s1[i]])&#123;
-                rx=i-1;
-                break;
-            &#125;
-        &#125;
-    &#125;
-    if(rx==-1) rx=t;
-    char root=s1[lx];int pla;
-    for(int i=s;i&lt;=t;i++)&#123;
-        if(root==s2[i])&#123;
-            pla=i;
-            break;
-        &#125;
-    &#125;
-    if(s&lt;=pla-1) lson[root]=buildtree(s,pla-1);
-    if(pla+1&lt;=t) rson[root]=buildtree(pla+1,t);
-    return root;
-&#125;
-void dfs(char ss)&#123;
-    if(ss==0)&#123;
-        return;
-    &#125;
-    ans=max(ans,h[ss]);
-    h[lson[ss]]=h[rson[ss]]=h[ss]+1;
-    dfs(lson[ss]);
-    dfs(rson[ss]);//cout&lt;&lt;ss&lt;&lt;&#39;*&#39;;
-&#125;
-int main()&#123;
-    while(cin&gt;&gt;n)&#123;
-        memset(h,0,sizeof(h));
-        memset(lson,0,sizeof(lson));
-        memset(rson,0,sizeof(rson));
-        ans=0;
-        //q.erase(q.begin(),q.end());
-        cin&gt;&gt;s1&gt;&gt;s2;
-        char x=buildtree(0,n-1);
-        h[x]=1;
-        dfs(x);
-        cout&lt;&lt;ans&lt;&lt;endl;
-    &#125;
-    return 0;
-&#125;</code></pre>
+<h2 id="样例输出">样例输出</h2>
+<blockquote>
+<p>5 7</p>
+</blockquote>
+<p><code>c++ #include&lt;iostream&gt; #include&lt;cstdio&gt; #include&lt;algorithm&gt; #include&lt;cstring&gt; #include&lt;map&gt; #define ll long long using namespace std; map&lt;char,int&gt;q; int n,h[1024],ans; string s1,s2; int lson[1024],rson[1024]; int tag[1024]; char buildtree(int s,int t)&#123;     memset(tag,0,sizeof(tag));     if(s==t) return s2[s];     for(int i=s;i&lt;=t;i++)&#123;         tag[s2[i]]=1;         //cout&lt;&lt;s2[i];     &#125;     //cout&lt;&lt;endl;     int lx=-1,rx=-1;     for(int i=0;i&lt;n;i++)&#123;         if(lx==-1)&#123;             if(tag[s1[i]])&#123;                 lx=i;             &#125;         &#125;         else&#123;             if(!tag[s1[i]])&#123;                 rx=i-1;                 break;             &#125;         &#125;     &#125;     if(rx==-1) rx=t;     char root=s1[lx];int pla;     for(int i=s;i&lt;=t;i++)&#123;         if(root==s2[i])&#123;             pla=i;             break;         &#125;     &#125;     if(s&lt;=pla-1) lson[root]=buildtree(s,pla-1);     if(pla+1&lt;=t) rson[root]=buildtree(pla+1,t);     return root; &#125; void dfs(char ss)&#123;     if(ss==0)&#123;         return;     &#125;     ans=max(ans,h[ss]);     h[lson[ss]]=h[rson[ss]]=h[ss]+1;     dfs(lson[ss]);     dfs(rson[ss]);//cout&lt;&lt;ss&lt;&lt;'*'; &#125; int main()&#123;     while(cin&gt;&gt;n)&#123;         memset(h,0,sizeof(h));         memset(lson,0,sizeof(lson));         memset(rson,0,sizeof(rson));         ans=0;         //q.erase(q.begin(),q.end());         cin&gt;&gt;s1&gt;&gt;s2;         char x=buildtree(0,n-1);         h[x]=1;         dfs(x);         cout&lt;&lt;ans&lt;&lt;endl;     &#125;     return 0; &#125;</code></p>
 
       
     </div>
@@ -1365,8 +1209,17 @@ int main()&#123;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 20:59:48" itemprop="dateModified" datetime="2020-02-18T20:59:48+08:00">2020-02-18</time>
+                <time title="修改时间：2021-11-16 16:56:58" itemprop="dateModified" datetime="2021-11-16T16:56:58+08:00">2021-11-16</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -1374,14 +1227,14 @@ int main()&#123;
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
+              <span>180</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -1393,70 +1246,20 @@ int main()&#123;
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>###题目描述</p>
+          <h2 id="题目描述">题目描述</h2>
 <p>哈夫曼树，第一行输入一个数n，表示叶结点的个数。需要用这些叶结点生成哈夫曼树，根据哈夫曼树的概念，这些结点有权值，即weight，题目需要输出所有结点的值与权值的乘积之和。</p>
-<p>###输入</p>
+<h2 id="输入">输入</h2>
 <p>输入有多组数据。 每组第一行输入一个数n，接着输入n个叶节点（叶节点权值不超过100，2&lt;=n&lt;=1000）。</p>
-<p>###输出</p>
+<h2 id="输出">输出</h2>
 <p>输出权值。</p>
-<p>###样例输入 &gt; 2 &gt; 2 8 &gt; 3 &gt; 5 11 30</p>
-<p>###样例输出 &gt; 10 &gt; 62</p>
-<pre><code>#include&lt;iostream&gt;
-#include&lt;cstdio&gt;
-#include&lt;algorithm&gt;
-#include&lt;cstring&gt;
-#include&lt;map&gt;
-#include&lt;stack&gt;
-#include&lt;queue&gt;
-#define ll long long
-using namespace std;
-ll n,ans,h[5020];
-struct E&#123;
-    ll k,l,r,t;
-    friend bool operator &lt; (E x,E y)&#123;return x.k&gt;y.k;&#125;
-&#125;e[5020];
-priority_queue&lt;E&gt;q;
-void dfs(ll root)&#123;
-    if(root==0) return;
-    ll ls=e[root].l,rs=e[root].r;
-    h[ls]=h[rs]=h[root]+1;
-    if(ls==0&amp;&amp;rs==0)&#123;
-        ans+=e[root].k*h[root];
-    &#125;
-    dfs(ls);
-    dfs(rs);
-&#125;
-int main()&#123;
-    while(cin&gt;&gt;n)&#123;
-        ll cur=n;ans=0;
-        memset(h,0,sizeof(h));
-        for(ll i=1;i&lt;=n;i++)&#123;
-            ll x;
-            cin&gt;&gt;x;
-            e[i].k=x;
-            e[i].l=0;
-            e[i].r=0;
-            e[i].t=i;
-            q.push(e[i]);
-        &#125;
-        while(q.size()&gt;1)&#123;
-            E xx=q.top();q.pop();
-            E yy=q.top();q.pop();
-            //cout&lt;&lt;xx.k&lt;&lt;&#39; &#39;&lt;&lt;yy.k&lt;&lt;endl;
-            E neww=(E)&#123;xx.k+yy.k,xx.t,yy.t,++cur&#125;;
-            e[cur]=neww;
-            q.push(neww);
-        &#125;
-        E root=q.top();q.pop();
-        h[root.t]=0;
-        dfs(root.t);
-        /*for(int i=1;i&lt;=cur;i++)&#123;
-            cout&lt;&lt;e[i].k&lt;&lt;&#39; &#39;&lt;&lt;e[i].l&lt;&lt;&#39; &#39;&lt;&lt;e[i].r&lt;&lt;&#39; &#39;&lt;&lt;e[i].t&lt;&lt;endl;
-        &#125;*/
-        cout&lt;&lt;ans&lt;&lt;endl;
-    &#125;
-    return 0;
-&#125;</code></pre>
+<h2 id="样例输入">样例输入</h2>
+<blockquote>
+<p>2 2 8 3 5 11 30</p>
+</blockquote>
+<h2 id="样例输出">样例输出</h2>
+<blockquote>
+<p>10 62 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">ll n,ans,h[<span class="number">5020</span>];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">E</span>&#123;</span></span><br><span class="line">    ll k,l,r,t;</span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (E x,E y)&#123;<span class="keyword">return</span> x.k&gt;y.k;&#125;</span><br><span class="line">&#125;e[<span class="number">5020</span>];</span><br><span class="line">priority_queue&lt;E&gt;q;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(ll root)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root==<span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    ll ls=e[root].l,rs=e[root].r;</span><br><span class="line">    h[ls]=h[rs]=h[root]+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(ls==<span class="number">0</span>&amp;&amp;rs==<span class="number">0</span>)&#123;</span><br><span class="line">        ans+=e[root].k*h[root];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">dfs</span>(ls);</span><br><span class="line">    <span class="built_in">dfs</span>(rs);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(cin&gt;&gt;n)&#123;</span><br><span class="line">        ll cur=n;ans=<span class="number">0</span>;</span><br><span class="line">        <span class="built_in">memset</span>(h,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(h));</span><br><span class="line">        <span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            ll x;</span><br><span class="line">            cin&gt;&gt;x;</span><br><span class="line">            e[i].k=x;</span><br><span class="line">            e[i].l=<span class="number">0</span>;</span><br><span class="line">            e[i].r=<span class="number">0</span>;</span><br><span class="line">            e[i].t=i;</span><br><span class="line">            q.<span class="built_in">push</span>(e[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(q.<span class="built_in">size</span>()&gt;<span class="number">1</span>)&#123;</span><br><span class="line">            E xx=q.<span class="built_in">top</span>();q.<span class="built_in">pop</span>();</span><br><span class="line">            E yy=q.<span class="built_in">top</span>();q.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="comment">//cout&lt;&lt;xx.k&lt;&lt;&#x27; &#x27;&lt;&lt;yy.k&lt;&lt;endl;</span></span><br><span class="line">            E neww=(E)&#123;xx.k+yy.k,xx.t,yy.t,++cur&#125;;</span><br><span class="line">            e[cur]=neww;</span><br><span class="line">            q.<span class="built_in">push</span>(neww);</span><br><span class="line">        &#125;</span><br><span class="line">        E root=q.<span class="built_in">top</span>();q.<span class="built_in">pop</span>();</span><br><span class="line">        h[root.t]=<span class="number">0</span>;</span><br><span class="line">        <span class="built_in">dfs</span>(root.t);</span><br><span class="line">        <span class="comment">/*for(int i=1;i&lt;=cur;i++)&#123;</span></span><br><span class="line"><span class="comment">            cout&lt;&lt;e[i].k&lt;&lt;&#x27; &#x27;&lt;&lt;e[i].l&lt;&lt;&#x27; &#x27;&lt;&lt;e[i].r&lt;&lt;&#x27; &#x27;&lt;&lt;e[i].t&lt;&lt;endl;</span></span><br><span class="line"><span class="comment">        &#125;*/</span></span><br><span class="line">        cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
 
       
     </div>
@@ -1508,8 +1311,17 @@ int main()&#123;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 20:59:48" itemprop="dateModified" datetime="2020-02-18T20:59:48+08:00">2020-02-18</time>
+                <time title="修改时间：2021-11-16 16:48:01" itemprop="dateModified" datetime="2021-11-16T16:48:01+08:00">2021-11-16</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -1517,7 +1329,7 @@ int main()&#123;
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>773</span>
+              <span>779</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1560,7 +1372,8 @@ second
 考虑第一个人什么时候赢，如果石子数为1到m，赢，m+1输，m+2可以让对方为m+1，赢，2m+2时怎么取都大于m+1输，2m+3可以取到2m+2让对方输，以此类推，如果n是m+1的整数倍，则A输，否则B输。  
 代码  </code></pre>
 <p><img src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" /><img src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" /></p>
-<pre><code> 1 #include&lt;iostream&gt;
+<pre><code>```
+ 1 #include&lt;iostream&gt;
  2 #include&lt;cstdio&gt;
  3 #include&lt;cmath&gt;
  4 #include&lt;cstring&gt;
@@ -1578,7 +1391,7 @@ second
 16         else cout&lt;&lt;&quot;second\n&quot;;
 17     &#125;
 18     return 0;
-19 &#125;</code></pre>
+19 &#125;```</code></pre>
 <p>View Code</p>
 
       
@@ -1631,8 +1444,17 @@ second
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 20:59:48" itemprop="dateModified" datetime="2020-02-18T20:59:48+08:00">2020-02-18</time>
+                <time title="修改时间：2021-11-16 16:56:20" itemprop="dateModified" datetime="2021-11-16T16:56:20+08:00">2021-11-16</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -1757,20 +1579,20 @@ second
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-count">97</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1829,13 +1651,13 @@ second
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">64k</span>
+    <span title="站点总字数">46k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:47</span>
+    <span title="站点阅读时长">1:17</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
