@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-vivy.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-vivy.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
   <meta name="google-site-verification" content="PM9xImIZJ5OdDw0XFeXwCNkOm3u98JLNDYmGDd40f0U">
 
@@ -22,24 +22,22 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"ccwucmcts.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="Problem 用一个长度为N的整数数组A，描述山峰和山谷的高度。山峰需要满足如下条件， 0 &lt; P &lt; N - 1 且 A[P - 1] &lt; A[P] &gt; A[P + 1]。 现在要将整个山分为K段，要求每段的点数都一样，且每段中都至少存在一个山峰，问最多可以分为多少段。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="51Nod 1285 山峰和分段">
-<meta property="og:url" content="http://example.com/2019/10/19/51Nod-1285-%E5%B1%B1%E5%B3%B0%E5%92%8C%E5%88%86%E6%AE%B5/index.html">
-<meta property="og:site_name" content="CCWUCMCTS&#39;s blog">
+<meta property="og:url" content="https://ccwucmcts.github.io/2019/10/19/51Nod-1285-%E5%B1%B1%E5%B3%B0%E5%92%8C%E5%88%86%E6%AE%B5/index.html">
+<meta property="og:site_name" content="C. C. Blog">
 <meta property="og:description" content="Problem 用一个长度为N的整数数组A，描述山峰和山谷的高度。山峰需要满足如下条件， 0 &lt; P &lt; N - 1 且 A[P - 1] &lt; A[P] &gt; A[P + 1]。 现在要将整个山分为K段，要求每段的点数都一样，且每段中都至少存在一个山峰，问最多可以分为多少段。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-10-19T02:26:00.000Z">
-<meta property="article:modified_time" content="2021-11-16T12:31:46.005Z">
+<meta property="article:modified_time" content="2021-11-17T02:06:41.693Z">
 <meta property="article:author" content="CCWUCMCTS">
-<meta property="article:tag" content="程序设计竞赛">
-<meta property="article:tag" content="技巧||实用结论">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2019/10/19/51Nod-1285-%E5%B1%B1%E5%B3%B0%E5%92%8C%E5%88%86%E6%AE%B5/">
+<link rel="canonical" href="https://ccwucmcts.github.io/2019/10/19/51Nod-1285-%E5%B1%B1%E5%B3%B0%E5%92%8C%E5%88%86%E6%AE%B5/">
 
 
 <script id="page-configurations">
@@ -52,7 +50,7 @@
   };
 </script>
 
-  <title>51Nod 1285 山峰和分段 | CCWUCMCTS's blog</title>
+  <title>51Nod 1285 山峰和分段 | C. C. Blog</title>
   
 
 
@@ -83,7 +81,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="CCWUCMCTS's blog" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="C. C. Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -104,9 +102,10 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">CCWUCMCTS's blog</h1>
+      <h1 class="site-title">C. C. Blog</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">一切都是脆弱的，因此一切都可以变得更强大。</p>
   </div>
 
   <div class="site-nav-right">
@@ -199,16 +198,16 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/19/51Nod-1285-%E5%B1%B1%E5%B3%B0%E5%92%8C%E5%88%86%E6%AE%B5/">
+    <link itemprop="mainEntityOfPage" href="https://ccwucmcts.github.io/2019/10/19/51Nod-1285-%E5%B1%B1%E5%B3%B0%E5%92%8C%E5%88%86%E6%AE%B5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="CCWUCMCTS">
-      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
+      <meta itemprop="description" content="论文、安全技术、算法、数据结构">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CCWUCMCTS's blog">
+      <meta itemprop="name" content="C. C. Blog">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -230,8 +229,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 20:31:46" itemprop="dateModified" datetime="2021-11-16T20:31:46+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-17 10:06:41" itemprop="dateModified" datetime="2021-11-17T10:06:41+08:00">2021-11-17</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E6%8A%80%E5%B7%A7-%E5%AE%9E%E7%94%A8%E7%BB%93%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">技巧||实用结论</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -282,7 +294,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2019/10/19/51Nod-1285-%E5%B1%B1%E5%B3%B0%E5%92%8C%E5%88%86%E6%AE%B5/" title="51Nod 1285 山峰和分段">http://example.com/2019/10/19/51Nod-1285-山峰和分段/</a>
+    <a href="https://ccwucmcts.github.io/2019/10/19/51Nod-1285-%E5%B1%B1%E5%B3%B0%E5%92%8C%E5%88%86%E6%AE%B5/" title="51Nod 1285 山峰和分段">https://ccwucmcts.github.io/2019/10/19/51Nod-1285-山峰和分段/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -331,10 +343,6 @@
 
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" rel="tag"># 程序设计竞赛</a>
-              <a href="/tags/%E6%8A%80%E5%B7%A7-%E5%AE%9E%E7%94%A8%E7%BB%93%E8%AE%BA/" rel="tag"># 技巧||实用结论</a>
-          </div>
 
         
 
@@ -416,7 +424,7 @@
     <img class="site-author-image" itemprop="image" alt="CCWUCMCTS"
       src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">CCWUCMCTS</p>
-  <div class="site-description" itemprop="description">一切都是脆弱的，因此一切都可以变得更强大。</div>
+  <div class="site-description" itemprop="description">论文、安全技术、算法、数据结构</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -436,7 +444,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -447,6 +455,12 @@
       </span>
       <span class="links-of-author-item">
         <a href="https://www.zhihu.com/people/wang-cheng-chun-18" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;wang-cheng-chun-18" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/23731371" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23731371" rel="noopener" target="_blank"><i class="fab fa-bootstrap fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wwwwww931121@gmail.com" title="E-Mail → mailto:wwwwww931121@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
         <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i></a>
@@ -469,10 +483,8 @@
   </div>
 
       </div>
-        <div class="back-to-top motion-element">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
+
+      
       
     </div>
   </aside>
@@ -644,7 +656,15 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
 
   
 
+  <!--使用 Gitter 实现一个 IM 即时通讯聊天室功能-->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'CCWUCMCTS/blog_comments'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
   <!--单击显示文字-->
+  <script src="/live2d-widget/autoload.js"></script>
   <script type="text/javascript" src="/js/click_show_text.js"></script> 
 
 </body>
