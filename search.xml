@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>新博客正式启用</title>
-    <url>/2021/11/17/%E6%96%B0%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E5%90%AF%E7%94%A8/</url>
+    <url>/posts/27000/</url>
     <content><![CDATA[<p>新博客正式启用！</p>
 <p>这几天在搞github pages上的博客，之前也搭过，但功能不是很满意，就没有继续用。换了NexT主题后发现可以实现的功能还是很多的，也把 <a href="https://www.cnblogs.com/sz-wcc/">博客园上的博客</a> 迁移了过来，尽量修改了格式，有些格式不对的可以回去看。</p>
 <p>以后可能会发一些技术类的和论文阅读类的，偶尔也会继续做题发题解。</p>
@@ -14,7 +14,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2021/11/10/hello-world/</url>
+    <url>/posts/16107/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="quick-start">Quick Start</h2>
 <h3 id="create-a-new-post">Create a new post</h3>
@@ -37,7 +37,7 @@
   </entry>
   <entry>
     <title>HDU2588 GCD</title>
-    <url>/2021/01/21/HDU2588-GCD/</url>
+    <url>/posts/38455/</url>
     <content><![CDATA[<h1 id="problem">Problem</h1>
 <p>Given integers N and M, how many integer X satisfies 1&lt;=X&lt;=N and (X,N)&gt;=M.</p>
 <p>The first line of input is an integer T(T&lt;=100) representing the number of test cases. The following T lines each contains two numbers N and M (2&lt;=N&lt;=1000000000, 1&lt;=M&lt;=N), representing a test case.</p>
@@ -59,7 +59,7 @@
   </entry>
   <entry>
     <title>ACM中的数学</title>
-    <url>/2021/01/21/ACM%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%A6/</url>
+    <url>/posts/64709/</url>
     <content><![CDATA[<p><strong>记录一下方便回看</strong></p>
 <p><a href="https://www.cnblogs.com/Morning-Glory/p/11106828.html">欧拉函数|(扩展)欧拉定理|欧拉反演</a></p>
 <p><a href="https://www.cnblogs.com/Khada-Jhin/p/9526292.html">初探莫比乌斯反演及欧拉反演</a></p>
@@ -72,7 +72,7 @@
   </entry>
   <entry>
     <title>2020年冬季PAT甲级</title>
-    <url>/2020/12/05/2020%E5%B9%B4%E5%86%AC%E5%AD%A3PAT%E7%94%B2%E7%BA%A7/</url>
+    <url>/posts/49912/</url>
     <content><![CDATA[<p><strong>代码懒得修了，写的特别烂</strong></p>
 <span id="more"></span>
 <h2 id="section">1</h2>
@@ -110,7 +110,7 @@
   </entry>
   <entry>
     <title>PTA团体程序设计天梯赛题目集 L1-064 估值一亿的AI核心代码 (20分)</title>
-    <url>/2020/10/26/PTA%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B%E9%A2%98%E7%9B%AE%E9%9B%86-L1-064-%E4%BC%B0%E5%80%BC%E4%B8%80%E4%BA%BF%E7%9A%84AI%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81-20%E5%88%86/</url>
+    <url>/posts/33790/</url>
     <content><![CDATA[<p>去年比赛的时候虽然对了，但写的好麻烦，以至于后面不敢再写这道题，今天又写了一遍，贴出来做纪念。</p>
 <span id="more"></span>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isbiaodian</span><span class="params">(<span class="keyword">char</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> !(x&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;x&lt;=<span class="string">&#x27;9&#x27;</span>||x&gt;=<span class="string">&#x27;a&#x27;</span>&amp;&amp;x&lt;=<span class="string">&#x27;z&#x27;</span>||x&gt;=<span class="string">&#x27;A&#x27;</span>&amp;&amp;x&lt;=<span class="string">&#x27;Z&#x27;</span>||x==<span class="string">&#x27; &#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">iswall</span><span class="params">(<span class="keyword">char</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> !(x&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;x&lt;=<span class="string">&#x27;9&#x27;</span>||x&gt;=<span class="string">&#x27;a&#x27;</span>&amp;&amp;x&lt;=<span class="string">&#x27;z&#x27;</span>||x&gt;=<span class="string">&#x27;A&#x27;</span>&amp;&amp;x&lt;=<span class="string">&#x27;Z&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">del32</span><span class="params">(vector&lt;<span class="keyword">char</span>&gt; &amp;v)</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(!v.<span class="built_in">empty</span>()&amp;&amp;*v.<span class="built_in">begin</span>()==<span class="string">&#x27; &#x27;</span>) v.<span class="built_in">erase</span>(v.<span class="built_in">begin</span>());</span><br><span class="line">	<span class="keyword">while</span>(!v.<span class="built_in">empty</span>()&amp;&amp;*(v.<span class="built_in">end</span>()<span class="number">-1</span>)==<span class="string">&#x27; &#x27;</span>) v.<span class="built_in">erase</span>(v.<span class="built_in">end</span>()<span class="number">-1</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;v.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(v[i]!=<span class="string">&#x27; &#x27;</span>) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">while</span>(i+<span class="number">1</span>&lt;v.<span class="built_in">size</span>()&amp;&amp;v[i+<span class="number">1</span>]==<span class="string">&#x27; &#x27;</span>) v.<span class="built_in">erase</span>(v.<span class="built_in">begin</span>()+i+<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;v.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(v[i]!=<span class="string">&#x27; &#x27;</span>) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">if</span>(i+<span class="number">1</span>&lt;v.<span class="built_in">size</span>()&amp;&amp;<span class="built_in">isbiaodian</span>(v[i+<span class="number">1</span>])) v.<span class="built_in">erase</span>(v.<span class="built_in">begin</span>()+i);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">smallwen</span><span class="params">(vector&lt;<span class="keyword">char</span>&gt; &amp;v)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;v.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(v[i]==<span class="string">&#x27;?&#x27;</span>) v[i]=<span class="string">&#x27;!&#x27;</span>;</span><br><span class="line">		<span class="keyword">if</span>(v[i]&gt;=<span class="string">&#x27;A&#x27;</span>&amp;&amp;v[i]&lt;=<span class="string">&#x27;Z&#x27;</span>&amp;&amp;v[i]!=<span class="string">&#x27;I&#x27;</span>)&#123;</span><br><span class="line">			v[i]+=<span class="string">&#x27;a&#x27;</span>-<span class="string">&#x27;A&#x27;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">you2i</span><span class="params">(vector&lt;<span class="keyword">char</span>&gt; &amp;v)</span></span>&#123;</span><br><span class="line">	string s=<span class="string">&quot;can you&quot;</span>,t=<span class="string">&quot;\1 can&quot;</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;v.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(v[i]!=s[<span class="number">0</span>]||(i<span class="number">-1</span>&gt;=<span class="number">0</span>&amp;&amp;!<span class="built_in">iswall</span>(v[i<span class="number">-1</span>]))||i+s.<span class="built_in">size</span>()<span class="number">-1</span>&gt;=v.<span class="built_in">size</span>()||(i+s.<span class="built_in">size</span>()&lt;v.<span class="built_in">size</span>()&amp;&amp;!<span class="built_in">iswall</span>(v[i+s.<span class="built_in">size</span>()]))) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">bool</span> fg=<span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;s.<span class="built_in">size</span>();j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(v[i+j]!=s[j])&#123;</span><br><span class="line">				fg=<span class="literal">false</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(!fg) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=s.<span class="built_in">size</span>();j++) v.<span class="built_in">erase</span>(v.<span class="built_in">begin</span>()+i);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=t.<span class="built_in">size</span>()<span class="number">-1</span>;j&gt;=<span class="number">0</span>;j--) v.<span class="built_in">insert</span>(v.<span class="built_in">begin</span>()+i,t[j]);</span><br><span class="line">	&#125;</span><br><span class="line">	s=<span class="string">&quot;could you&quot;</span>,t=<span class="string">&quot;\1 could&quot;</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;v.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(v[i]!=s[<span class="number">0</span>]||(i<span class="number">-1</span>&gt;=<span class="number">0</span>&amp;&amp;!<span class="built_in">iswall</span>(v[i<span class="number">-1</span>]))||i+s.<span class="built_in">size</span>()<span class="number">-1</span>&gt;=v.<span class="built_in">size</span>()||(i+s.<span class="built_in">size</span>()&lt;v.<span class="built_in">size</span>()&amp;&amp;!<span class="built_in">iswall</span>(v[i+s.<span class="built_in">size</span>()]))) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">bool</span> fg=<span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;s.<span class="built_in">size</span>()&amp;&amp;i+j&lt;v.<span class="built_in">size</span>();j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(v[i+j]!=s[j])&#123;</span><br><span class="line">				fg=<span class="literal">false</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(!fg) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=s.<span class="built_in">size</span>();j++) v.<span class="built_in">erase</span>(v.<span class="built_in">begin</span>()+i);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=t.<span class="built_in">size</span>()<span class="number">-1</span>;j&gt;=<span class="number">0</span>;j--) v.<span class="built_in">insert</span>(v.<span class="built_in">begin</span>()+i,t[j]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">i2you</span><span class="params">(vector&lt;<span class="keyword">char</span>&gt; &amp;v)</span></span>&#123;</span><br><span class="line">	string s=<span class="string">&quot;I&quot;</span>,t=<span class="string">&quot;you&quot;</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;v.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(v[i]!=s[<span class="number">0</span>]||(i<span class="number">-1</span>&gt;=<span class="number">0</span>&amp;&amp;!<span class="built_in">iswall</span>(v[i<span class="number">-1</span>]))||i+s.<span class="built_in">size</span>()<span class="number">-1</span>&gt;=v.<span class="built_in">size</span>()||(i+s.<span class="built_in">size</span>()&lt;v.<span class="built_in">size</span>()&amp;&amp;!<span class="built_in">iswall</span>(v[i+s.<span class="built_in">size</span>()]))) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">bool</span> fg=<span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;s.<span class="built_in">size</span>();j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(v[i+j]!=s[j])&#123;</span><br><span class="line">				fg=<span class="literal">false</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(!fg) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=s.<span class="built_in">size</span>();j++) v.<span class="built_in">erase</span>(v.<span class="built_in">begin</span>()+i);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=t.<span class="built_in">size</span>()<span class="number">-1</span>;j&gt;=<span class="number">0</span>;j--) v.<span class="built_in">insert</span>(v.<span class="built_in">begin</span>()+i,t[j]);</span><br><span class="line">	&#125;</span><br><span class="line">	s=<span class="string">&quot;me&quot;</span>,t=<span class="string">&quot;you&quot;</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;v.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(v[i]!=s[<span class="number">0</span>]||(i<span class="number">-1</span>&gt;=<span class="number">0</span>&amp;&amp;!<span class="built_in">iswall</span>(v[i<span class="number">-1</span>]))||i+s.<span class="built_in">size</span>()<span class="number">-1</span>&gt;=v.<span class="built_in">size</span>()||(i+s.<span class="built_in">size</span>()&lt;v.<span class="built_in">size</span>()&amp;&amp;!<span class="built_in">iswall</span>(v[i+s.<span class="built_in">size</span>()]))) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">bool</span> fg=<span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;s.<span class="built_in">size</span>()&amp;&amp;i+j&lt;v.<span class="built_in">size</span>();j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(v[i+j]!=s[j])&#123;</span><br><span class="line">				fg=<span class="literal">false</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(!fg) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=s.<span class="built_in">size</span>();j++) v.<span class="built_in">erase</span>(v.<span class="built_in">begin</span>()+i);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=t.<span class="built_in">size</span>()<span class="number">-1</span>;j&gt;=<span class="number">0</span>;j--) v.<span class="built_in">insert</span>(v.<span class="built_in">begin</span>()+i,t[j]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">i2I</span><span class="params">(vector&lt;<span class="keyword">char</span>&gt; &amp;v)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;v.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(v[i]==<span class="string">&#x27;\1&#x27;</span>) v[i]=<span class="string">&#x27;I&#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(string &amp;s)</span></span>&#123;</span><br><span class="line">	vector&lt;<span class="keyword">char</span>&gt;v;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">		v.<span class="built_in">push_back</span>(s[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">del32</span>(v);</span><br><span class="line">	<span class="built_in">smallwen</span>(v);</span><br><span class="line">	<span class="built_in">you2i</span>(v);</span><br><span class="line">	<span class="built_in">i2you</span>(v);</span><br><span class="line">	<span class="built_in">i2I</span>(v);</span><br><span class="line">	cout&lt;&lt;<span class="string">&quot;AI: &quot;</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;v.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">		cout&lt;&lt;v[i];</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">string s[<span class="number">20</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	io_opt;</span><br><span class="line">	<span class="comment">/*vector&lt;int&gt;v;</span></span><br><span class="line"><span class="comment">	for(int i=0;i&lt;5;i++)</span></span><br><span class="line"><span class="comment">		v.push_back(i);</span></span><br><span class="line"><span class="comment">	v.insert(v.begin()+1,10);</span></span><br><span class="line"><span class="comment">	for(int &amp;i:v) cout&lt;&lt;i&lt;&lt;endl;*/</span></span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="built_in">getline</span>(cin,s[<span class="number">0</span>]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="built_in">getline</span>(cin,s[i]);</span><br><span class="line">		cout&lt;&lt;s[i]&lt;&lt;endl;</span><br><span class="line">		<span class="built_in">solve</span>(s[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -122,7 +122,7 @@
   </entry>
   <entry>
     <title>NC16759 方格取数O(n^3)</title>
-    <url>/2020/08/20/NC16759-%E6%96%B9%E6%A0%BC%E5%8F%96%E6%95%B0O-n-3/</url>
+    <url>/posts/50829/</url>
     <content><![CDATA[<p>链接：https://ac.nowcoder.com/acm/problem/16759</p>
 <p>来源：牛客网</p>
 <h1 id="problem">Problem</h1>
@@ -155,7 +155,7 @@
   </entry>
   <entry>
     <title>51Nod 1831 小C的游戏</title>
-    <url>/2020/07/06/51Nod-1831-%E5%B0%8FC%E7%9A%84%E6%B8%B8%E6%88%8F/</url>
+    <url>/posts/17483/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>小C和小L是好朋友，她们在玩一个游戏。 一开始有一个大小为n的石子堆，小C先手。 每次可以对这个石子堆拿走一个或者把这个石子堆分成等量的几份并只取其中一份（不能不变或只剩下一个）。 如果取走最后一个人的算败，请问这个游戏小C是否能胜。</p>
 <span id="more"></span>
@@ -179,7 +179,7 @@
   </entry>
   <entry>
     <title>51Nod 1714 B君的游戏</title>
-    <url>/2020/07/06/51Nod-1714-B%E5%90%9B%E7%9A%84%E6%B8%B8%E6%88%8F/</url>
+    <url>/posts/26780/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>B君和L君要玩一个游戏。刚开始有n个正整数 𝑎𝑖 。</p>
 <p>双方轮流操作。每次操作，选一个正整数x，将其移除，再添加7个数字 𝑥1,𝑥2...𝑥7 。要求对于 𝑥𝑖 ，满足 0&lt;=𝑥𝑖&lt;𝑥 且 𝑥&amp;𝑥𝑖=𝑥𝑖</p>
@@ -200,7 +200,7 @@
   </entry>
   <entry>
     <title>51Nod 1154 回文串划分</title>
-    <url>/2020/06/27/51Nod-1154-%E5%9B%9E%E6%96%87%E4%B8%B2%E5%88%92%E5%88%86/</url>
+    <url>/posts/45854/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>有一个字符串S，求S最少可以被划分为多少个回文串。 例如：abbaabaa，有多种划分方式。</p>
 <p>a|bb|aabaa - 3 个回文串 a|bb|a|aba|a - 5 个回文串 a|b|b|a|a|b|a|a - 8 个回文串</p>
@@ -219,7 +219,7 @@
   </entry>
   <entry>
     <title>51Nod 1464 半回文</title>
-    <url>/2020/06/27/51Nod-1464-%E5%8D%8A%E5%9B%9E%E6%96%87/</url>
+    <url>/posts/32449/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>一个字符串t是半回文的条件是，对于所有的奇数𝑖(1≤𝑖≤|𝑡|+12)，𝑡𝑖 = 𝑡|𝑡| − 𝑖 + 1 始终成立，|t|表示字符串t的长度。下标从1开始。例如&quot;abaa&quot;, &quot;a&quot;, &quot;bb&quot;, &quot;abbbaa&quot;都是半回文，而&quot;ab&quot;, &quot;bba&quot;和&quot;aaabaa&quot;则不是。</p>
 <p>现在有一个字符串s，只由小写字母a,b构成，还有一个数字k。现在要求找出s的半回文子串中字典序排在第k位的串，字符串可以是一样，只要所在的位置不同就是不一样的串。</p>
@@ -238,7 +238,7 @@
   </entry>
   <entry>
     <title>51Nod 1535 深海探险</title>
-    <url>/2020/06/26/51Nod-1535-%E6%B7%B1%E6%B5%B7%E6%8E%A2%E9%99%A9/</url>
+    <url>/posts/47776/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>很久很久以前的一天，一位美男子来到海边，海上狂风大作。美男子希望在海中找到美人鱼，但是很不幸他只找到了章鱼怪。</p>
 <p>然而，在世界的另一端，人们正在积极的收集怪物的行为信息，以便研制出强大的武器来对付章鱼怪。由于地震的多发，以及恶劣的天气，使得我们的卫星不能很好的定位怪物，从而不能很好的命中目标。第一次射击的分析结果会反映在一张由n个点和m条边组成的无向图上。现在让我们来确定这张图是不是可以被认为是章鱼怪。</p>
@@ -257,7 +257,7 @@
   </entry>
   <entry>
     <title>51Nod 1350 斐波那契表示</title>
-    <url>/2020/06/26/51Nod-1350-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E8%A1%A8%E7%A4%BA/</url>
+    <url>/posts/13693/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>每一个正整数都可以表示为若干个斐波那契数的和，一个整数可能存在多种不同的表示方法，例如：14 = 13 + 1 = 8 + 5 + 1，其中13 + 1是最短的表示（只用了2个斐波那契数）。定义F(n) = n的最短表示中的数字个数，F(14) = 2，F(100) = 3（100 = 3 + 8 + 89），F(16) = 2（16 = 8 + 8 = 13 + 3）。定义G(n) = F(1) + F(2) + F(3) + ...... F(n)，G(6) = 1 + 1 + 1 + 2 + 1 + 2 = 8。给出若干个数字n，求对应的G(n)。</p>
 <span id="more"></span>
@@ -273,7 +273,7 @@
   </entry>
   <entry>
     <title>51Nod 1486 大大走格子</title>
-    <url>/2020/06/26/51Nod-1486-%E5%A4%A7%E5%A4%A7%E8%B5%B0%E6%A0%BC%E5%AD%90/</url>
+    <url>/posts/31286/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>有一个h行w列的棋盘，里面有一些格子是不能走的，现在要求从左上角走到右下角的方案数。（只能向右和向下走）</p>
 <span id="more"></span>
@@ -291,7 +291,7 @@
   </entry>
   <entry>
     <title>51Nod 1429 巧克力</title>
-    <url>/2020/06/26/51Nod-1429-%E5%B7%A7%E5%85%8B%E5%8A%9B/</url>
+    <url>/posts/29472/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>现在有两个块巧克力一块大小是𝑎1 × 𝑏1 的，另外一块大小是𝑎2 × 𝑏2 的。</p>
 <p>现在要把两块巧克力变成面积一样大小，可以使用下列两种方法：</p>
@@ -313,7 +313,7 @@
   </entry>
   <entry>
     <title>51Nod 3049 挑选数字</title>
-    <url>/2020/06/24/51Nod-3049-%E6%8C%91%E9%80%89%E6%95%B0%E5%AD%97/</url>
+    <url>/posts/47161/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>给出n个正整数，从中挑选若干个，使得他们的和为m。如果存在多个，输出排序后字典序最小的一组。如果没有找到任何一组，输出&quot;No Solution&quot;。</p>
 <span id="more"></span>
@@ -330,7 +330,7 @@
   </entry>
   <entry>
     <title>51Nod 1799 二分答案</title>
-    <url>/2020/06/24/51Nod-1799-%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/</url>
+    <url>/posts/17706/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>lyk最近在研究二分答案类的问题。</p>
 <p>对于一个有n个互不相同的数且从小到大的正整数数列a（其中最大值不超过n），若要找一个在a中出现过的数字m，一个正确的二分程序是这样子的：</p>
@@ -354,7 +354,7 @@
   </entry>
   <entry>
     <title>51Nod 1523 非回文</title>
-    <url>/2020/06/24/51Nod-1523-%E9%9D%9E%E5%9B%9E%E6%96%87/</url>
+    <url>/posts/18728/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>一个字符串是非回文的，当且仅当，他只由前p个小写字母构成，而且他不包含长度大于等于2的回文子串。</p>
 <p>给出长度为n的非回文串s。请找出字典序比s大的，而且字典序要最小的长度为n的非回文。</p>
@@ -371,7 +371,7 @@
   </entry>
   <entry>
     <title>51Nod 3016 Prime Path</title>
-    <url>/2020/06/24/51Nod-3016-Prime-Path/</url>
+    <url>/posts/4657/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>阿P给阿K出了一个难题，他给阿K两个素数A,B，保证A，B的位数相同且为4位或5位。</p>
 <p>阿K只能对A作一种操作，即将其中一位数字改成另一个数字，要求每次操作后得到的数还是一个素数，问最少多少次可以从A变到B</p>
@@ -388,7 +388,7 @@
   </entry>
   <entry>
     <title>51Nod 1109 01组成的N的倍数</title>
-    <url>/2020/05/24/51Nod-1109-01%E7%BB%84%E6%88%90%E7%9A%84N%E7%9A%84%E5%80%8D%E6%95%B0/</url>
+    <url>/posts/56907/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>给定一个自然数N，找出一个M，使得M &gt; 0且M是N的倍数，并且M的10进制表示只包含0或1。求最小的M。 例如：N = 4，M = 100。</p>
 <span id="more"></span>
@@ -404,7 +404,7 @@
   </entry>
   <entry>
     <title>51Nod 1274 最长递增路径</title>
-    <url>/2020/05/24/51Nod-1274-%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E8%B7%AF%E5%BE%84/</url>
+    <url>/posts/28054/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>一个无向图，可能有自环，有重边，每条边有一个边权。你可以从任何点出发，任何点结束，可以经过同一个点任意次。但是不能经过同一条边2次，并且你走过的路必须满足所有边的权值严格单调递增，求最长能经过多少条边。</p>
 <span id="more"></span>
@@ -420,7 +420,7 @@
   </entry>
   <entry>
     <title>51Nod 1524 可除图的最大团</title>
-    <url>/2020/05/05/51Nod-1524-%E5%8F%AF%E9%99%A4%E5%9B%BE%E7%9A%84%E6%9C%80%E5%A4%A7%E5%9B%A2/</url>
+    <url>/posts/47779/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>对于一般的图，最大团问题是一个NP-难的问题。然而，对于一些特殊的图，最大团问题可以有比较有效的解决方案。</p>
 <p>关于最大团问题的概念，请百度之。^_^</p>
@@ -441,7 +441,7 @@
   </entry>
   <entry>
     <title>51Nod 1412 AVL树的种类</title>
-    <url>/2020/05/05/51Nod-1412-AVL%E6%A0%91%E7%9A%84%E7%A7%8D%E7%B1%BB/</url>
+    <url>/posts/52032/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>平衡二叉树(AVL树），是指左右子树高度差至多为1的二叉树，并且该树的左右两个子树也均为AVL树。 现在问题来了，给定AVL树的节点个数n，求有多少种形态的AVL树恰好有n个节点。</p>
 <span id="more"></span>
@@ -459,7 +459,7 @@
   </entry>
   <entry>
     <title>51Nod 1020 逆序排列</title>
-    <url>/2020/04/30/51Nod-1020-%E9%80%86%E5%BA%8F%E6%8E%92%E5%88%97/</url>
+    <url>/posts/22856/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>在一个排列中，如果一对数的前后位置与大小顺序相反，即前面的数大于后面的数，那么它们就称为一个逆序。一个排列中逆序的总数就称为这个排列的逆序数。</p>
 <p>如2 4 3 1中，2 1，4 3，4 1，3 1是逆序，逆序数是4。</p>
@@ -487,7 +487,7 @@
   </entry>
   <entry>
     <title>51Nod 3105 小明喜欢树 V2</title>
-    <url>/2020/04/28/51Nod-3105-%E5%B0%8F%E6%98%8E%E5%96%9C%E6%AC%A2%E6%A0%91-V2/</url>
+    <url>/posts/15019/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>小明非常喜欢树，有一天小明得到这样一棵树，每个树节点都有一个编号，有n个节点的树的编号为1到n,每个编号代表该节点的海拔高度，现在小明要在这颗树上找到一些路径，从起点到终点需要满足海拔先单调上升后单调下降的性质，起点或终点不同即为不同的路径，问满足条件的路径有多少条，聪明的你可以帮助小明解决这个问题吗？</p>
 <span id="more"></span>
@@ -506,7 +506,7 @@
   </entry>
   <entry>
     <title>51Nod 1421 最大MOD值</title>
-    <url>/2020/04/28/51Nod-1421-%E6%9C%80%E5%A4%A7MOD%E5%80%BC/</url>
+    <url>/posts/57254/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>有一个a数组，里面有n个整数。现在要从中找到两个数字(可以是同一个) ai,aj ，使得 ai mod aj 最大并且 ai ≥ aj。</p>
 <span id="more"></span>
@@ -522,7 +522,7 @@
   </entry>
   <entry>
     <title>51Nod 2495 小明垒墙</title>
-    <url>/2020/04/28/51Nod-2495-%E5%B0%8F%E6%98%8E%E5%9E%92%E5%A2%99/</url>
+    <url>/posts/61971/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>小明家要盖新房子了，但是小明家里没有钱，垒墙用的砖块都是别人用省下来的，所以砖块的长度是不固定的，但是无论怎么说，墙是垒好了，有一天小明看着墙发呆，想出来这样一个问题，问题如下：</p>
 <p>你的面前有一堵方形的、由多行砖块组成的砖墙。 这些砖块高度相同但是宽度不同。你现在要画一条自顶向下的、穿过最少砖块的垂线。</p>
@@ -540,7 +540,7 @@
   </entry>
   <entry>
     <title>51Nod 1307 绳子与重物</title>
-    <url>/2020/04/28/51Nod-1307-%E7%BB%B3%E5%AD%90%E4%B8%8E%E9%87%8D%E7%89%A9/</url>
+    <url>/posts/872/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>有N条绳子编号 0 至 N - 1，每条绳子后面栓了一个重物重量为Wi，绳子的最大负重为Ci。每条绳子或挂在别的绳子下或直接挂在钩子上（编号-1）。如果绳子下所有重物的重量大于绳子的最大负重就会断掉（等于不会断）。依次给出每条绳子的负重Ci、重物的重量Wi以及绳子会挂在之前的哪条绳子的下面，问最多挂多少个绳子而不会出现绳子断掉的情况。</p>
 <p>例如下图：</p>
@@ -558,7 +558,7 @@
   </entry>
   <entry>
     <title>51Nod 1388 六边形平面</title>
-    <url>/2020/04/28/51Nod-1388-%E5%85%AD%E8%BE%B9%E5%BD%A2%E5%B9%B3%E9%9D%A2/</url>
+    <url>/posts/59654/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>现在有一个N<em>N的六边形网格平面（这种平面类似蜂窝形状）。下图是N=1,2,3,4条件下的具体形状，根据它们可以依次类推N=5,6,....。 现在你需要对N</em>N网格中一些格子进行上色，在给定的输入中这些格子被标记上字符‘X’，而不用上色的网格被标记为‘-’。上色时需要注意，如果两个被上色的格子有公共边，那么这两个格子需要被涂成不同的颜色。问最少需要多少种颜色来完成任务？</p>
 <span id="more"></span>
@@ -574,7 +574,7 @@
   </entry>
   <entry>
     <title>51Nod 1605 棋盘问题</title>
-    <url>/2020/04/22/51Nod-1605-%E6%A3%8B%E7%9B%98%E9%97%AE%E9%A2%98/</url>
+    <url>/posts/10846/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>上帝创造了一个n*m棋盘，每一个格子都只有可能是黑色或者白色的。</p>
 <p>亚当和夏娃在玩一个游戏，每次寻找边长为x的正方形，其中每个格子必须为黑色，然后将这些格子染白。</p>
@@ -599,7 +599,7 @@
   </entry>
   <entry>
     <title>51Nod 1434 区间LCM</title>
-    <url>/2020/04/20/51Nod-1434-%E5%8C%BA%E9%97%B4LCM/</url>
+    <url>/posts/36826/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>一个整数序列S的LCM（最小公倍数）是指最小的正整数X使得它是序列S中所有元素的倍数，那么LCM(S)=X。</p>
 <p>例如，LCM(2)=2,LCM(4,6)=12,LCM(1,2,3,4,5)=60。</p>
@@ -624,7 +624,7 @@
   </entry>
   <entry>
     <title>51Nod 1453 抽彩球</title>
-    <url>/2020/04/20/51Nod-1453-%E6%8A%BD%E5%BD%A9%E7%90%83/</url>
+    <url>/posts/52120/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>一个袋子中有n个彩球，他们用k种不同的颜色染色。颜色被从1到k编号。同一种颜色的球看成是一样的。现在从袋中一个一个的拿出球来，直到拿完所有的球。对于所有颜色为i (1&lt;=i&lt;=k-1)的球，他的最后一个球总是在编号比他大的球拿完之前拿完，问这样情况有多少种。</p>
 <p>样例解释：这个样例中有2个1号颜色的球，2个2号颜色的球，1个3号颜色的球。三种方案是： 1 2 1 2 3 1 1 2 2 3 2 1 1 2 3</p>
@@ -642,7 +642,7 @@
   </entry>
   <entry>
     <title>51Nod 1420 数袋鼠好有趣</title>
-    <url>/2020/04/19/51Nod-1420-%E6%95%B0%E8%A2%8B%E9%BC%A0%E5%A5%BD%E6%9C%89%E8%B6%A3/</url>
+    <url>/posts/27492/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>有n只袋鼠。每只袋鼠的大小用一个整数表示。一只小袋鼠能装进一只大袋鼠的条件是，大袋鼠的大小至少是小袋鼠的两倍。 每只大袋鼠最多可以装一只袋鼠。小袋鼠被装进大袋鼠之后就不能再装其它的袋鼠了。 小袋鼠被装进大袋鼠之后就不能被我们看见了。请找出一个装袋鼠的方案，使得被看见的袋鼠最少。</p>
 <p>（袋鼠不能3只套在一起）</p>
@@ -660,7 +660,7 @@
   </entry>
   <entry>
     <title>51Nod 1456 小K的技术</title>
-    <url>/2020/04/03/51Nod-1456-%E5%B0%8FK%E7%9A%84%E6%8A%80%E6%9C%AF/</url>
+    <url>/posts/29169/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>苏塞克王国是世界上创新技术的领先国家，在王国中有n个城市，标记为1到n。</p>
 <p>由于小K的研究，我们最终能过在两个城市之间建立传输管道，一个传输管道能单向连接两个城市，即，一个从城市x到城市y的传输管道不能被用于从城市y传输到城市x。在每个城市之间的运输系统已经建立完善，因此，如果从城市x到城市y的管道和从城市y到城市z的管道都被已经被建立，人们能够立即从x到z。</p>
@@ -678,7 +678,7 @@
   </entry>
   <entry>
     <title>51Nod 2840 ATM</title>
-    <url>/2020/04/02/51Nod-2840-ATM/</url>
+    <url>/posts/19537/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>Siruseri 城中的道路都是单向的。不同的道路由路口连接。按照法律的规定， 在每个路口都设立了一个 Siruseri 银行的 ATM 取款机。令人奇怪的是，Siruseri 的酒吧也都设在路口，虽然并不是每个路口都设有酒吧。Banditji 计划实施 Siruseri 有史以来最惊天动地的 ATM 抢劫。他将从市中心 出发，沿着单向道路行驶，抢劫所有他途径的 ATM 机，最终他将在一个酒吧庆 祝他的胜利。使用高超的黑客技术，他获知了每个 ATM 机中可以掠取的现金数额。他希 望你帮助他计算从市中心出发最后到达某个酒吧时最多能抢劫的现金总数。他可 以经过同一路口或道路任意多次。但只要他抢劫过某个 ATM 机后，该 ATM 机 里面就不会再有钱了。 例如，假设该城中有 6 个路口，道路的连接情况如下图所示： [没有图] 市中心在路口 1，由一个入口符号→来标识，那些有酒吧的路口用双圈来表示。每个 ATM 机中可取的钱数标在了路口的上方。在这个例子中，Banditji 能抢 劫的现金总数为 47，实施的抢劫路线是：1-2-4-1-2-3-5。</p>
 <p>第一行包含两个整数N、M。N表示路口的个数，M表示道路条数。 接下来M行，每行两个整数，这两个整数都在1到N之间， 第i+1行的两个整数表示第i条道路的起点和终点的路口编号。 接下来N行，每行一个整数，按顺序表示每个路口处的ATM机中的钱数。 接下来一行包含两个整数S、P，S表示市中心的编号，也就是出发的路口。P表示酒吧数目。 接下来的一行中有P个整数，表示P个有酒吧的路口的编号 N, M&lt;=500000。每个ATM机中可取的钱数为一个非负整数且不超过4000。 输入数据保证你可以从市中心沿着Siruseri的单向的道路到达其中的至少一个酒吧。</p>
@@ -697,7 +697,7 @@
   </entry>
   <entry>
     <title>51Nod 2849 信息传递</title>
-    <url>/2020/04/01/51Nod-2849-%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92/</url>
+    <url>/posts/55524/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>有n个同学（编号为 1 到 n ）正在玩一个信息传递的游戏。在游戏里每人都有一个固定的信息传递对象，其中，编号为 i 的同学的信息传递对象是编号为 Ti的同学。游戏开始时，每人都只知道自己的生日。之后每一轮中，所有人会同时将自己当前所知的生日信息告诉各自的信息传递对象（注意：可能有人可以从若干人那里获取信息，但是每人只会把信息告诉一个人，即自己的信息传递对象）。当有人从别人口中得知自己的生日时，游戏结束。请问该游戏一共可以进行几轮？</p>
 <span id="more"></span>
@@ -714,7 +714,7 @@
   </entry>
   <entry>
     <title>51Nod 2903 稳定婚姻(Tarjan)</title>
-    <url>/2020/04/01/51Nod-2903-%E7%A8%B3%E5%AE%9A%E5%A9%9A%E5%A7%BB-Tarjan/</url>
+    <url>/posts/22858/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>我们已知n对夫妻的婚姻状况，称第i对夫妻的男方为Bi，女方为Gi。若某男Bi与某女Gj曾经交往过（无论是大学，高中，亦或是幼儿园阶段，i≠j），则当某方与其配偶（即Bi与Gi或Bj与Gj）感情出现问题时，他们有私奔的可能性。不妨设Bi和其配偶Gi感情不和，于是Bi和Gj旧情复燃，进而Bj因被戴绿帽而感到不爽，联系上了他的初恋情人Gk……一串串的离婚事件像多米诺骨牌一般接踵而至。若在Bi和Gi离婚的前提下，这2n个人最终依然能够结合成n对情侣，那么我们称婚姻i为不安全的，否则婚姻i就是安全的。给定所需信息，你的任务是判断每对婚姻是否安全。</p>
 <p>第一行为一个正整数n，表示夫妻的对数； 以下n行，每行包含两个字符串，表示这n对夫妻的姓名（先女后男），由一个空格隔开； 第n+2行包含一个正整数m，表示曾经相互喜欢过的情侣对数； 以下m行，每行包含两个字符串，表示这m对相互喜欢过的情侣姓名（先女后男），由一个空格隔开。 所有姓名字符串中只包含英文大小写字母，大小写敏感，长度不大于8， 保证每对关系只在输入文件中出现一次，输入文件的最后m行不会出现未在之前出现过的姓名， 这2n个人的姓名各不相同</p>
@@ -732,7 +732,7 @@
   </entry>
   <entry>
     <title>51Nod 1765 谷歌的恐龙</title>
-    <url>/2020/02/20/51Nod-1765-%E8%B0%B7%E6%AD%8C%E7%9A%84%E6%81%90%E9%BE%99/</url>
+    <url>/posts/31378/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>把整个游戏简化为，每次生成一个[0,n)的随机数，如果这个随机数和给出的m个数字中的其中一个数字相等，那么就停止生成随机数，否则继续生成，求出所有生成的数的和的期望。</p>
 <span id="more"></span>
@@ -752,7 +752,7 @@
   </entry>
   <entry>
     <title>51Nod 2504 是子序列的个数</title>
-    <url>/2020/02/20/51Nod-2504-%E6%98%AF%E5%AD%90%E5%BA%8F%E5%88%97%E7%9A%84%E4%B8%AA%E6%95%B0/</url>
+    <url>/posts/4237/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>小b有一个字符串S和n个字符串words[1...n]，现在她想知道有多少个i满足words[i]是S的子序列。</p>
 <p>S的长度≤50000，1≤n≤5000，words[i]长度≤50.</p>
@@ -771,7 +771,7 @@
   </entry>
   <entry>
     <title>51Nod 2386 分则能成</title>
-    <url>/2020/01/22/51Nod-2386-%E5%88%86%E5%88%99%E8%83%BD%E6%88%90/</url>
+    <url>/posts/56366/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>牛牛刚开始有一个正整数n。 每次操作牛牛可以选择一个自己有的数字x，把x分为两正整数y和z，需满足x=y+z，然后获得y*z的收益。 （当然，在这个过程中，牛牛会失去x这个数字，并且获得y和z这2个数字。）</p>
 <p>牛牛一共可以分k次，牛牛希望最大化这k次的收益之和。 因为分割的结果y和z是正整数，所以选择的x必须&gt;=2。</p>
@@ -789,7 +789,7 @@
   </entry>
   <entry>
     <title>51Nod 1179 最大的最大公约数</title>
-    <url>/2019/11/02/51Nod-1179-%E6%9C%80%E5%A4%A7%E7%9A%84%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/</url>
+    <url>/posts/18398/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>给出N个正整数，找出N个数两两之间最大公约数的最大值。例如：N = 4，4个数为：9 15 25 16，两两之间最大公约数的最大值是15同25的最大公约数5。</p>
 <span id="more"></span>
@@ -808,7 +808,7 @@
   </entry>
   <entry>
     <title>51Nod 1403 有趣的堆栈</title>
-    <url>/2019/11/02/51Nod-1403-%E6%9C%89%E8%B6%A3%E7%9A%84%E5%A0%86%E6%A0%88/</url>
+    <url>/posts/15049/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>大家都熟悉堆栈操作。一个堆栈一般有两种操作，push和pop。假设所有操作都是合法的并且最终堆栈为空。我们可以有很多方法记录堆栈的操作， （1） 对每个pop操作，我们记录它之前一共有多少个push操作。 （2） 对每个pop操作，我们记录这个被Pop的元素曾经被压上了几个。 例如：操作push, push, pop, push, push, pop, push, pop, pop, pop 用第一种方法 记录为 2, 4, 5, 5, 5 用第二种方法 记录为 0, 0, 0, 2, 4 这两种记录方法可以互相转化，我们的问题是，给定第二种记录方法的序列，请求出第一种记录方法的序列。</p>
 <span id="more"></span>
@@ -824,7 +824,7 @@
   </entry>
   <entry>
     <title>51Nod 2676 众里寻花</title>
-    <url>/2019/11/02/51Nod-2676-%E4%BC%97%E9%87%8C%E5%AF%BB%E8%8A%B1/</url>
+    <url>/posts/16772/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>有𝑛个彩灯每个彩灯有一种颜色𝑐𝑜𝑙𝑖（彩灯从1到n标号），有𝑚根细线将它们连接在一起。你想用这些彩灯作出一朵美丽的花，进一步说你想从这𝑚根细线中保留𝑛−1根，且需要保证所有彩灯是连通在一起的。你希望这朵花五彩斑斓，因此你想要连接同颜色彩灯的细线越少越好。请问这个最小值是多少？</p>
 <p>数据范围：</p>
@@ -842,7 +842,7 @@
   </entry>
   <entry>
     <title>51Nod 2602 树的直径</title>
-    <url>/2019/10/29/51Nod-2602-%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/</url>
+    <url>/posts/56389/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>一棵树的直径就是这棵树上存在的最长路径。现在有一棵n个节点的树，现在想知道这棵树的直径包含的边的个数是多少？</p>
 <span id="more"></span>
@@ -859,7 +859,7 @@
   </entry>
   <entry>
     <title>51Nod 2680 争渡</title>
-    <url>/2019/10/29/51Nod-2680-%E4%BA%89%E6%B8%A1/</url>
+    <url>/posts/31182/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>人生如逆水行舟，不进则退。你一生中有𝑛个阶段，每个阶段有一个状态下限𝐿𝑖，也有一个状态上限𝑅𝑖，你想规划你的一生中各阶段的状态值，使得你的状态在𝑛个阶段中始终在变好（严格递增）。请你计算有多少种不同的人生规划。由于答案较大，只需输出答案对998244353取余的结果</p>
 <p>数据范围：1≤𝑛≤200,1≤𝐿𝑖≤𝑅𝑖≤104</p>
@@ -880,7 +880,7 @@
   </entry>
   <entry>
     <title>51Nod 2671 平衡环</title>
-    <url>/2019/10/29/51Nod-2671-%E5%B9%B3%E8%A1%A1%E7%8E%AF/</url>
+    <url>/posts/1548/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>给定一棵𝑛个点的树，每条边有一个边权，边权只可能是4或7。你想在树上选择两个没有直接连边的点，并在这两点间加一条边权为4或7的连边。很显然，树上出现一个环，如果这个环上边权为4的边数与边权为7的边数相等，那么这个环是一个平衡环。你希望得到这样一个平衡环，请问需要连接哪两个点，并赋予什么边权。</p>
 <p>如果有多种方案，输出任意一组解即可。如果无解，输出-1。</p>
@@ -898,7 +898,7 @@
   </entry>
   <entry>
     <title>51Nod 2542 咖啡和作业</title>
-    <url>/2019/10/29/51Nod-2542-%E5%92%96%E5%95%A1%E5%92%8C%E4%BD%9C%E4%B8%9A/</url>
+    <url>/posts/39294/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>你要完成一个𝑚页的作业，手里有𝑛杯咖啡，每一杯咖啡有一个咖啡因强度值𝑎𝑖，能支撑你写𝑎𝑖页作业。每一天你会选择一些咖啡喝掉，对于当天喝的第i杯咖啡，咖啡因的强度会减弱𝑖−1单位，减到0就不再减小。问你最少经过几天能完成作业。</p>
 <span id="more"></span>
@@ -914,7 +914,7 @@
   </entry>
   <entry>
     <title>51Nod 1640 天气晴朗的魔法</title>
-    <url>/2019/10/29/51Nod-1640-%E5%A4%A9%E6%B0%94%E6%99%B4%E6%9C%97%E7%9A%84%E9%AD%94%E6%B3%95/</url>
+    <url>/posts/36377/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>51nod魔法学校近日开展了主题为“天气晴朗”的魔法交流活动。 N名魔法师按阵法站好，之后选取N - 1条魔法链将所有魔法师的魔力连接起来，形成一个魔法阵。 魔法链是做法成功与否的关键。每一条魔法链都有一个魔力值V，魔法最终的效果取决于阵中所有魔法链的魔力值的和。 由于逆天改命的魔法过于暴力，所以我们要求阵中的魔法链的魔力值最大值尽可能的小，与此同时，魔力值之和要尽可能的大。 现在给定魔法师人数N，魔法链数目M。求此魔法阵的最大效果。</p>
 <span id="more"></span>
@@ -930,7 +930,7 @@
   </entry>
   <entry>
     <title>51 Nod1051 最大子矩阵和</title>
-    <url>/2019/10/23/51Nod-1051-%E6%9C%80%E5%A4%A7%E5%AD%90%E7%9F%A9%E9%98%B5%E5%92%8C/</url>
+    <url>/posts/17548/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>一个M*N的矩阵，找到此矩阵的一个子矩阵，并且这个子矩阵的元素的和是最大的，输出这个最大的值。</p>
 <p>例如：3*3的矩阵：</p>
@@ -954,7 +954,7 @@
   </entry>
   <entry>
     <title>51 Nod1050 循环数组最大子段和</title>
-    <url>/2019/10/23/51Nod-1050-%E5%BE%AA%E7%8E%AF%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E5%AD%90%E6%AE%B5%E5%92%8C/</url>
+    <url>/posts/64211/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>N个整数组成的循环序列a[1],a[2],a[3],…,a[n]，求该序列如a[i]+a[i+1]+…+a[j]的连续的子段和的最大值（循环序列是指n个数围成一个圈，因此需要考虑a[n-1],a[n],a[1],a[2]这样的序列）。当所给的整数均为负数时和为0。 例如：-2,11,-4,13,-5,-2，和最大的子段为：11,-4,13。和为20。</p>
 <span id="more"></span>
@@ -970,7 +970,7 @@
   </entry>
   <entry>
     <title>51Nod 1496 最小异或和</title>
-    <url>/2019/10/23/51Nod-1496-%E6%9C%80%E5%B0%8F%E5%BC%82%E6%88%96%E5%92%8C/</url>
+    <url>/posts/13915/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>一个集合包含一组相互不同的数字。现在我们要去寻找一个集合，他要满足如下性质：</p>
 <p>对于所有 𝑥(𝑥∈𝑆) ，要满足l ≤ x ≤ r;</p>
@@ -993,7 +993,7 @@
   </entry>
   <entry>
     <title>51Nod 1774 多重排序</title>
-    <url>/2019/10/23/51Nod-1774-%E5%A4%9A%E9%87%8D%E6%8E%92%E5%BA%8F/</url>
+    <url>/posts/49412/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>有一个数组a，长度为n，下标从1开始。现在要对a进行m次排序，每一次排序给定两个参数t[i]，r[i]表示要对数组的前r[i]个元素进行排序，如果t[i]＝1则按照非降序排序，t[i]=2则按照非升序排序。</p>
 <p>请输出经过m次排序之后的数组a。</p>
@@ -1014,7 +1014,7 @@
   </entry>
   <entry>
     <title>51Nod 1621 花钱买车牌</title>
-    <url>/2019/10/21/51Nod-1621-%E8%8A%B1%E9%92%B1%E4%B9%B0%E8%BD%A6%E7%89%8C/</url>
+    <url>/posts/11806/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>一个车牌号由n位数字组成。如果一个车牌至少有k位数字是相同的，那么我们就说这个车牌漂亮的车牌。现在华沙想要改变他自己的车牌，使得他的车牌变得漂亮。当然，改车牌是要花钱的。每改变一位数字所要花费的费用等于当前位上的新旧数字之差的绝对值。那么总费用就是每位上所花费用的总和。</p>
 <p>举例如下，</p>
@@ -1041,7 +1041,7 @@
   </entry>
   <entry>
     <title>51Nod 1140 矩阵相乘结果的判断</title>
-    <url>/2019/10/21/51Nod-1140-%E7%9F%A9%E9%98%B5%E7%9B%B8%E4%B9%98%E7%BB%93%E6%9E%9C%E7%9A%84%E5%88%A4%E6%96%AD/</url>
+    <url>/posts/44245/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>给出三个N*N的矩阵A, B, C，问A * B是否等于C？</p>
 <span id="more"></span>
@@ -1057,7 +1057,7 @@
   </entry>
   <entry>
     <title>51Nod 1225 余数之和</title>
-    <url>/2019/10/21/51Nod-1225-%E4%BD%99%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
+    <url>/posts/24053/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>F(n) = (n % 1) + (n % 2) + (n % 3) + ...... (n % n)。其中%表示Mod，也就是余数。 例如F(6) = 6 % 1 + 6 % 2 + 6 % 3 + 6 % 4 + 6 % 5 + 6 % 6 = 0 + 0 + 0 + 2 + 1 + 0 = 3。 给出n，计算F(n), 由于结果很大，输出Mod 1000000007的结果即可。</p>
 <span id="more"></span>
@@ -1076,7 +1076,7 @@
   </entry>
   <entry>
     <title>51Nod 1105 第K大的数</title>
-    <url>/2019/10/21/51Nod-1105-%E7%AC%ACK%E5%A4%A7%E7%9A%84%E6%95%B0/</url>
+    <url>/posts/56095/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>数组A和数组B，里面都有n个整数。</p>
 <p>数组C共有n^2个整数，分别是：</p>
@@ -1109,7 +1109,7 @@
   </entry>
   <entry>
     <title>51Nod 1097 拼成最小的数</title>
-    <url>/2019/10/19/51Nod-1097-%E6%8B%BC%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0/</url>
+    <url>/posts/3869/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>设有n个正整数，将它们联接成一排，组成一个最小的多位整数。</p>
 <p>例如： n=2时，2个整数32，321连接成的最小整数为：32132， n=4时，4个整数55，31，312, 33 联接成的最小整数为：312313355</p>
@@ -1129,7 +1129,7 @@
   </entry>
   <entry>
     <title>51Nod 1166 大数开平方</title>
-    <url>/2019/10/19/51Nod-1166-%E5%A4%A7%E6%95%B0%E5%BC%80%E5%B9%B3%E6%96%B9/</url>
+    <url>/posts/6211/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>给出一个大整数N，求不大于N的平方根的最大整数。例如：N = 8，2 * 2 &lt; 8，3 * 3 &gt; 8，所以输出2。</p>
 <span id="more"></span>
@@ -1147,7 +1147,7 @@
   </entry>
   <entry>
     <title>51 Nod1029 大数除法</title>
-    <url>/2019/10/19/51Nod-1029-%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95/</url>
+    <url>/posts/53233/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>给出2个大整数A,B，计算A / B和A Mod B的结果。</p>
 <span id="more"></span>
@@ -1165,7 +1165,7 @@
   </entry>
   <entry>
     <title>51Nod 1435 位数阶乘</title>
-    <url>/2019/10/19/51Nod-1435-%E4%BD%8D%E6%95%B0%E9%98%B6%E4%B9%98/</url>
+    <url>/posts/13832/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>X是一个n位数的正整数 (𝑥=𝑎0𝑎1...𝑎𝑛−1)</p>
 <p>现在定义 F(x)=∏𝑖=0𝑛−1(𝑎𝑖!) ， 比如F(135)=1!<em>3!</em>5!=720.</p>
@@ -1187,7 +1187,7 @@
   </entry>
   <entry>
     <title>51Nod 1536 不一样的猜数游戏</title>
-    <url>/2019/10/19/51Nod-1536-%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E7%8C%9C%E6%95%B0%E6%B8%B8%E6%88%8F/</url>
+    <url>/posts/26359/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>瓦斯亚和皮台亚在玩一个简单的游戏。瓦斯亚心中想一个整数x，它是1到n之间的整数。然后皮台亚尝试着猜这个数字。</p>
 <p>皮台亚每次问一个形如这样的问题：这个x是y的倍数吗？</p>
@@ -1213,7 +1213,7 @@
   </entry>
   <entry>
     <title>51Nod 1548 欧姆诺姆和糖果</title>
-    <url>/2019/10/19/51Nod-1548-%E6%AC%A7%E5%A7%86%E8%AF%BA%E5%A7%86%E5%92%8C%E7%B3%96%E6%9E%9C/</url>
+    <url>/posts/58686/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>一天，欧姆诺诺姆来到了朋友家里，他发现了许多糖果。有蓝色和红色两种。他知道每颗红色糖果重Wr克，每颗蓝色糖果重Wb克。吃一颗蓝色糖果会给他带来Hb的欢乐值，吃一颗红色糖果会给他带来Hr的欢乐值。</p>
 <p>欧姆诺姆最多只能吃C克的糖果，而且每一颗糖果不能只吃一半。现在他想通过吃蓝色和红色的糖果来获得最大的欢乐值。</p>
@@ -1232,7 +1232,7 @@
   </entry>
   <entry>
     <title>51Nod 1127 最短的包含字符串</title>
-    <url>/2019/10/19/51Nod-1127-%E6%9C%80%E7%9F%AD%E7%9A%84%E5%8C%85%E5%90%AB%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
+    <url>/posts/12499/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>给出一个字符串，求该字符串的一个子串s，s包含A-Z中的全部字母，并且s是所有符合条件的子串中最短的，输出s的长度。如果给出的字符串中并不包括A-Z中的全部字母，则输出No Solution。</p>
 <span id="more"></span>
@@ -1251,7 +1251,7 @@
   </entry>
   <entry>
     <title>51Nod 1272 最大距离</title>
-    <url>/2019/10/19/51Nod-1272-%E6%9C%80%E5%A4%A7%E8%B7%9D%E7%A6%BB/</url>
+    <url>/posts/25243/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>给出一个长度为N的整数数组A，对于每一个数组元素，如果他后面存在大于等于该元素的数，则这两个数可以组成一对。每个元素和自己也可以组成一对。例如：{5, 3, 6, 3, 4, 2}，可以组成11对，如下（数字为下标）： (0,0), (0, 2), (1, 1), (1, 2), (1, 3), (1, 4), (2, 2), (3, 3), (3, 4), (4, 4), (5, 5)。其中(1, 4)是距离最大的一对，距离为3。</p>
 <span id="more"></span>
@@ -1267,7 +1267,7 @@
   </entry>
   <entry>
     <title>51Nod 1103 N的倍数</title>
-    <url>/2019/10/19/51Nod-1103-N%E7%9A%84%E5%80%8D%E6%95%B0/</url>
+    <url>/posts/24612/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>一个长度为N的数组A，从A中选出若干个数，使得这些数的和是N的倍数。</p>
 <p>例如：N = 8，数组A包括：2 5 6 3 18 7 11 19，可以选2 6，因为2 + 6 = 8，是8的倍数。</p>
@@ -1284,7 +1284,7 @@
   </entry>
   <entry>
     <title>51Nod 1285 山峰和分段</title>
-    <url>/2019/10/19/51Nod-1285-%E5%B1%B1%E5%B3%B0%E5%92%8C%E5%88%86%E6%AE%B5/</url>
+    <url>/posts/53545/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>用一个长度为N的整数数组A，描述山峰和山谷的高度。山峰需要满足如下条件， 0 &lt; P &lt; N - 1 且 A[P - 1] &lt; A[P] &gt; A[P + 1]。</p>
 <p>现在要将整个山分为K段，要求每段的点数都一样，且每段中都至少存在一个山峰，问最多可以分为多少段。</p>
@@ -1302,7 +1302,7 @@
   </entry>
   <entry>
     <title>2019 ACM-TINA实验室10.12训练赛</title>
-    <url>/2019/10/12/2019%20ACM-TINA%E5%AE%9E%E9%AA%8C%E5%AE%A410.12%E8%AE%AD%E7%BB%83%E8%B5%9B/</url>
+    <url>/posts/44103/</url>
     <content><![CDATA[<h2 id="a-codeforces-1238a-prime-subtraction">A CodeForces 1238A Prime Subtraction</h2>
 <p>水题，除了差1都行。</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(ss) memset(ss,0,sizeof(ss))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(d, s, t) for(int d=s;d&lt;=t;d++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rev(d, s, t) for(int d=s;d&gt;=t;d--)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> ld;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> db;</span><br><span class="line"><span class="keyword">const</span> ll mod = <span class="number">998244353</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e4</span> + <span class="number">10</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">ll T,x,y;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T--)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>,&amp;x,&amp;y);</span><br><span class="line">        <span class="keyword">if</span>(x-y==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;NO\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;YES\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1346,7 +1346,7 @@
   </entry>
   <entry>
     <title>51Nod 1265 四点共面</title>
-    <url>/2019/10/12/51Nod-1265-%E5%9B%9B%E7%82%B9%E5%85%B1%E9%9D%A2/</url>
+    <url>/posts/34516/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>给出三维空间上的四个点（点与点的位置均不相同），判断这4个点是否在同一个平面内（4点共线也算共面）。如果共面，输出&quot;Yes&quot;，否则输出&quot;No&quot;。</p>
 <span id="more"></span>
@@ -1362,7 +1362,7 @@
   </entry>
   <entry>
     <title>51Nod 1287 加农炮</title>
-    <url>/2019/10/12/51Nod-1287-%E5%8A%A0%E5%86%9C%E7%82%AE/</url>
+    <url>/posts/43926/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>一个长度为M的正整数数组A，表示从左向右的地形高度。测试一种加农炮，炮弹平行于地面从左向右飞行，高度为H，如果某处地形的高度大于等于炮弹飞行的高度H（A[i] &gt;= H），炮弹会被挡住并落在i - 1处，则A[i - 1] + 1。如果H &lt;= A[0]，则这个炮弹无效，如果H &gt; 所有的A[i]，这个炮弹也无效。现在给定N个整数的数组B代表炮弹高度，计算出最后地形的样子。</p>
 <p>例如：地形高度A = {1, 2, 0, 4, 3, 2, 1, 5, 7}, 炮弹高度B = {2, 8, 0, 7, 6, 5, 3, 4, 5, 6, 5}，最终得到的地形高度为：{2, 2, 2, 4, 3, 3, 5, 6, 7}。</p>
@@ -1380,7 +1380,7 @@
   </entry>
   <entry>
     <title>51Nod 1785 数据流中的算法</title>
-    <url>/2019/10/12/51Nod-1785-%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E7%AE%97%E6%B3%95/</url>
+    <url>/posts/56103/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>51nod近日上线了用户满意度检测工具，使用高级人工智能算法，通过用户访问时间、鼠标轨迹等特征计算用户对于网站的满意程度。</p>
 <p>现有的统计工具只能统计某一个窗口中，用户的满意程度的均值。夹克老爷想让你为统计工具添加一个新feature，即在统计均值的同时，计算窗口中满意程度的标准差和中位数（均值需要向下取整）。</p>
@@ -1398,7 +1398,7 @@
   </entry>
   <entry>
     <title>51Nod 1255 字典序最小的子序列</title>
-    <url>/2019/10/12/51Nod-1255-%E5%AD%97%E5%85%B8%E5%BA%8F%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E5%BA%8F%E5%88%97/</url>
+    <url>/posts/5931/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>给出一个由a-z组成的字符串S，求他的一个子序列，满足如下条件：</p>
 <p>1、包含字符串中所有出现过的字符各1个。</p>
@@ -1417,7 +1417,7 @@
   </entry>
   <entry>
     <title>51Nod 1755 除数游戏</title>
-    <url>/2019/10/12/51Nod-1755-%E9%99%A4%E6%95%B0%E6%B8%B8%E6%88%8F/</url>
+    <url>/posts/11579/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>在除数游戏中，两人轮流行动，初始时有一个整数q，每次行动要写下一个整数，这个整数必须是最近一次出现的整数的“强除数”。所谓一个整数的“强除数”是指除了1和该整数本身以外，可以整除该整数的整数。</p>
 <p>当游戏的某一方找不出符合以上条件的整数时，该方取得胜利，游戏结束。</p>
@@ -1437,7 +1437,7 @@
   </entry>
   <entry>
     <title>51Nod 1639 绑鞋带</title>
-    <url>/2019/10/12/51Nod-1639-%E7%BB%91%E9%9E%8B%E5%B8%A6/</url>
+    <url>/posts/47909/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>有n根鞋带混在一起，现在重复n次以下操作：随机抽出两个鞋带头，把它们绑在一起。可以想象，这n次之后將不再有单独的鞋带头，n条鞋带系成了一些环。那么有多大概率刚好所有这些鞋带只形成了一个环？</p>
 <span id="more"></span>
@@ -1453,7 +1453,7 @@
   </entry>
   <entry>
     <title>51Nod 1163 最高的奖励</title>
-    <url>/2019/10/12/51Nod-1163-%E6%9C%80%E9%AB%98%E7%9A%84%E5%A5%96%E5%8A%B1/</url>
+    <url>/posts/45564/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>有N个任务，每个任务有一个最晚结束时间以及一个对应的奖励。在结束时间之前完成该任务，就可以获得对应的奖励。完成每一个任务所需的时间都是1个单位时间。有时候完成所有任务是不可能的，因为时间上可能会有冲突，这需要你来取舍。求能够获得的最高奖励。</p>
 <span id="more"></span>
@@ -1469,7 +1469,7 @@
   </entry>
   <entry>
     <title>51Nod 1562 玻璃切割</title>
-    <url>/2019/10/12/51Nod-1562-%E7%8E%BB%E7%92%83%E5%88%87%E5%89%B2/</url>
+    <url>/posts/23386/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>现在有一块玻璃，是长方形的（w 毫米× h 毫米），现在要对他进行切割。</p>
 <p>切割的方向有两种，横向和纵向。每一次切割之后就会有若干块玻璃被分成两块更小的玻璃。在切割之后玻璃不会被移动。</p>
@@ -1493,7 +1493,7 @@
   </entry>
   <entry>
     <title>51Nod 2493 二进制距离之和</title>
-    <url>/2019/10/12/51Nod-2493-%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%B7%9D%E7%A6%BB%E4%B9%8B%E5%92%8C/</url>
+    <url>/posts/59914/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>小b有一个数组a，她想知道a中任意两个数之间二进制距离的总和。</p>
 <p>两个整数的二进制距离指的是这两个数字的二进制数对应位不同的数量。</p>
@@ -1516,7 +1516,7 @@
   </entry>
   <entry>
     <title>51Nod 2201 做任务一</title>
-    <url>/2019/10/12/51Nod-2201-%E5%81%9A%E4%BB%BB%E5%8A%A1%E4%B8%80/</url>
+    <url>/posts/43052/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>B君和m个人一起，要完成n个任务，在这个题中，m个人会看着这B君，自己什么都不做。</p>
 <p>第i个任务有一个开始时间s[i]和结束时间e[i]（保证s[i]&lt;=e[i]），一个人完成两个任务的时间区间，不能有交集，但是可以首尾相连。（参考样例）</p>
@@ -1540,7 +1540,7 @@
   </entry>
   <entry>
     <title>51Nod 1110 距离之和最小 V3</title>
-    <url>/2019/10/12/51Nod-1110-%E8%B7%9D%E7%A6%BB%E4%B9%8B%E5%92%8C%E6%9C%80%E5%B0%8F-V3/</url>
+    <url>/posts/38949/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>X轴上有N个点，每个点除了包括一个位置数据X[i]，还包括一个权值W[i]。点P到点P[i]的带权距离 = 实际距离 * P[i]的权值。求X轴上一点使它到这N个点的带权距离之和最小，输出这个最小的带权距离之和。</p>
 <span id="more"></span>
@@ -1556,7 +1556,7 @@
   </entry>
   <entry>
     <title>51Nod 2526 最大异或和</title>
-    <url>/2019/10/12/51Nod-2526-%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%92%8C/</url>
+    <url>/posts/44945/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>给定𝑛个数𝑥1…𝑥𝑛，请你选择n个数𝑝1…𝑝𝑛，使得𝑝1&lt;=𝑥1,𝑝2&lt;=𝑥2......，并且𝑝1 𝑥𝑜𝑟 𝑝2 𝑥𝑜𝑟 𝑝3 … 𝑝𝑛的值尽量大。问这个最大的异或和是多少。</p>
 <p>𝑛≤100 , 0≤𝑥𝑖≤1e9</p>
@@ -1574,7 +1574,7 @@
   </entry>
   <entry>
     <title>51Nod 2519 小b浇花</title>
-    <url>/2019/10/12/51Nod-2519-%E5%B0%8Fb%E6%B5%87%E8%8A%B1/</url>
+    <url>/posts/18868/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>小b养了n盆花，第i盆花高度为A[i]。</p>
 <p>小b每天可以给某一盆花浇水，这样这盆花就会长高一单位。</p>
@@ -1595,7 +1595,7 @@
   </entry>
   <entry>
     <title>51Nod 1247 可能的路径</title>
-    <url>/2019/10/05/51Nod-1247-%E5%8F%AF%E8%83%BD%E7%9A%84%E8%B7%AF%E5%BE%84/</url>
+    <url>/posts/32111/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>在一个无限大的二维网格上，你站在(a,b)点上，下一步你可以移动到(a + b, b), (a, a + b), (a - b, b), 或者 (a, a - b)这4个点。 给出起点坐标(a,b)，以及终点坐标(x,y)，问你能否从起点移动到终点。如果可以，输出&quot;Yes&quot;，否则输出&quot;No&quot;。 例如：(1,1) 到 (2,3)，(1,1) -&gt; (2,1) -&gt; (2,3)。</p>
 <span id="more"></span>
@@ -1612,7 +1612,7 @@
   </entry>
   <entry>
     <title>51Nod 2657 二进制数字</title>
-    <url>/2019/10/05/51Nod-2657-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E5%AD%97/</url>
+    <url>/posts/18204/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>有多少个长度为n的二进制串，即不存在3个连续的1，也不存在3个连续的0。</p>
 <p>例如n = 4，共有16个长度为4的01串，其中0000 0001 1000 1111 0111 1110，不符合要求，所以共有10个符合要求的串。</p>
@@ -1630,7 +1630,7 @@
   </entry>
   <entry>
     <title>51Nod 2658 最多分成多少块 V2</title>
-    <url>/2019/10/05/51Nod-2658-%E6%9C%80%E5%A4%9A%E5%88%86%E6%88%90%E5%A4%9A%E5%B0%91%E5%9D%97-V2/</url>
+    <url>/posts/46823/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>小b有个长度为n的数组a，她想将这个数组排序。</p>
 <p>然而小b很懒，她觉得对整个数组排序太累了，因此她请你将a分成一些块，使得她只需要对每一块分别排序，就能将整个数组排序。</p>
@@ -1654,7 +1654,7 @@
   </entry>
   <entry>
     <title>51Nod 2499 不降的数字</title>
-    <url>/2019/10/05/51Nod-2499-%E4%B8%8D%E9%99%8D%E7%9A%84%E6%95%B0%E5%AD%97/</url>
+    <url>/posts/64480/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>小b有一个非负整数N，她想请你找出 ≤𝑁 的最大整数x，满足x各个位数上的数字是不降的。也就是说，设x的十进制表示为 𝑎1,𝑎2,…,𝑎𝑚，则对于任意 1≤𝑖&lt;𝑚，𝑎𝑖≤𝑎𝑖+1。</p>
 <span id="more"></span>
@@ -1670,7 +1670,7 @@
   </entry>
   <entry>
     <title>51Nod 2540 平分</title>
-    <url>/2019/10/05/51Nod-2540-%E5%B9%B3%E5%88%86/</url>
+    <url>/posts/25990/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>考虑足球比分系统，一场足球比赛从开始到结束的过程中，摄像机随机拍摄了𝑛张比分信息，问你本场比赛最多出现了几次平分。</p>
 <p>例如：3个比分信息为：</p>
@@ -1689,7 +1689,7 @@
   </entry>
   <entry>
     <title>51Nod 1065 最小正子段和</title>
-    <url>/2019/10/04/51Nod-1065-%E6%9C%80%E5%B0%8F%E6%AD%A3%E5%AD%90%E6%AE%B5%E5%92%8C/</url>
+    <url>/posts/37901/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>N个整数组成的序列a[1],a[2],a[3],…,a[n]，从中选出一个子段（a[i],a[i+1],…a[j]），使这个子段的和&gt;0，并且这个和是所有和&gt;0的子序列中最小的。</p>
 <p>例如：4，-1，5，-2，-1，2，6，-2。-1，5，-2，-1，序列和为1，是最小的。</p>
@@ -1710,7 +1710,7 @@
   </entry>
   <entry>
     <title>51Nod 2594 括号之价</title>
-    <url>/2019/10/04/51Nod-2594-%E6%8B%AC%E5%8F%B7%E4%B9%8B%E4%BB%B7/</url>
+    <url>/posts/14824/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>小Y上数据结构课的时候摸鱼，听到老师在讲用栈做括号匹配，于是乎边随意写了一个合法的括号序列。但是光是写括号太无聊了，他现在想知道这个括号序列的价值。他是这样定义一个括号序列的价值的：</p>
 <p>1、一对括号价值一分（比如&quot;()&quot;得一分）</p>
@@ -1731,7 +1731,7 @@
   </entry>
   <entry>
     <title>51Nod 1417 天堂里的游戏</title>
-    <url>/2019/10/04/51Nod-1417-%E5%A4%A9%E5%A0%82%E9%87%8C%E7%9A%84%E6%B8%B8%E6%88%8F/</url>
+    <url>/posts/25513/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>正当Noder惊魂未定的时候，走来一个美女，要求和他一起玩个数学游戏。美女提议：“让我们各自亮出硬币的一面，或正或反。如果我们都是正面，那么我给你A元，如果我们都是反面，我给你B元（A + B为偶数）。剩下的情况你给我（A + B） / 2元就可以了。</p>
 <p>Noder知道这个游戏他多半要输，可他并不在乎，他只想让自己输的慢一点。</p>
@@ -1773,7 +1773,7 @@
   </entry>
   <entry>
     <title>51Nod 2206 低买高卖</title>
-    <url>/2019/10/03/51Nod-2206-%E4%BD%8E%E4%B9%B0%E9%AB%98%E5%8D%96/</url>
+    <url>/posts/44059/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>考虑股票市场，一共有n天。 对于第i天，B君知道股票的价格是每单位a[i]元 在每一天，B君可以选择买入一个单位的股票，卖出一个单位的股票，或者什么都不做。 刚开始B君有无穷多的钱，但是没有任何股票。 问n天之后B君最多可以赚多少钱。 (1 &lt;= n &lt;= 200000) (1 &lt;= a[i] &lt;= 10000)</p>
 <span id="more"></span>
@@ -1805,7 +1805,7 @@
   </entry>
   <entry>
     <title>51Nod 2522 和为K的倍数</title>
-    <url>/2019/10/03/51Nod-2522-%E5%92%8C%E4%B8%BAK%E7%9A%84%E5%80%8D%E6%95%B0/</url>
+    <url>/posts/28397/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>小b喜欢和为K的倍数的序列。</p>
 <p>现在有一个长度为n的序列A，请问A有多少个非空连续子序列是小b喜欢的。</p>
@@ -1822,7 +1822,7 @@
   </entry>
   <entry>
     <title>51Nod 1278 相离的圆</title>
-    <url>/2019/10/03/51Nod-1278-%E7%9B%B8%E7%A6%BB%E7%9A%84%E5%9C%86/</url>
+    <url>/posts/42603/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>平面上有N个圆，他们的圆心都在X轴上，给出所有圆的圆心和半径，求有多少对圆是相离的。</p>
 <p>例如：4个圆分别位于1, 2, 3, 4的位置，半径分别为1, 1, 2, 1，那么{1, 2}, {1, 3} {2, 3} {2, 4} {3, 4}这5对都有交点，只有{1, 4}是相离的。</p>
@@ -1839,7 +1839,7 @@
   </entry>
   <entry>
     <title>51Nod 2488 矩形并的面积</title>
-    <url>/2019/09/08/51Nod-2488-%E7%9F%A9%E5%BD%A2%E5%B9%B6%E7%9A%84%E9%9D%A2%E7%A7%AF/</url>
+    <url>/posts/13933/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>在二维平面上，给定两个矩形，满足矩形的每条边分别和坐标轴平行，求这个两个矩形的并的面积。即它们重叠在一起之后的总的面积。</p>
 <span id="more"></span>
@@ -1855,7 +1855,7 @@
   </entry>
   <entry>
     <title>51Nod 2656 阿克曼函数</title>
-    <url>/2019/09/08/51Nod-2656-%E9%98%BF%E5%85%8B%E6%9B%BC%E5%87%BD%E6%95%B0/</url>
+    <url>/posts/62002/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>阿克曼（Arkmann）函数 𝐴(𝑚,𝑛) 中，m与n的定义域是非负整数且本题中m&lt;=3，n&lt;=16。</p>
 <p>函数的定义为：</p>
@@ -1875,7 +1875,7 @@
   </entry>
   <entry>
     <title>51Nod 2518 和为S</title>
-    <url>/2019/09/08/51Nod-2518-%E5%92%8C%E4%B8%BAS/</url>
+    <url>/posts/41681/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>小b有一个01序列A，她想知道A有多少个非空连续子序列和为S。</p>
 <p>你能帮帮她吗？</p>
@@ -1893,7 +1893,7 @@
   </entry>
   <entry>
     <title>51Nod 2489 小b和灯泡</title>
-    <url>/2019/09/07/51Nod-2489-%E5%B0%8Fb%E5%92%8C%E7%81%AF%E6%B3%A1/</url>
+    <url>/posts/55291/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>小b有n个关闭的灯泡，编号为1...n。</p>
 <p>小b会进行n轮操作，第i轮她会将编号为i的倍数的灯泡的开关状态取反，即开变成关，关变成开。</p>
@@ -1909,7 +1909,7 @@
   </entry>
   <entry>
     <title>欧拉函数</title>
-    <url>/2019/09/06/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/</url>
+    <url>/posts/55226/</url>
     <content><![CDATA[<h2 id="定义">定义</h2>
 <p>n的欧拉函数表示小于n的数中和n互质的数。</p>
 <h2 id="求法">求法</h2>
@@ -1928,7 +1928,7 @@
   </entry>
   <entry>
     <title>51Nod 1070 Bash游戏 V4</title>
-    <url>/2019/09/02/51Nod-1070-Bash%E6%B8%B8%E6%88%8F-V4/</url>
+    <url>/posts/52786/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>有一堆石子共有N个。A B两个人轮流拿，A先拿。每次拿的数量最少1个，最多不超过对手上一次拿的数量的2倍（A第1次拿时要求不能全拿走）。拿到最后1颗石子的人获胜。假设A B都非常聪明，拿石子的过程中不会出现失误。给出N，问最后谁能赢得比赛。</p>
 <p>例如N = 3。A只能拿1颗或2颗，所以B可以拿到最后1颗石子。</p>
@@ -1946,7 +1946,7 @@
   </entry>
   <entry>
     <title>51Nod 1021 石子归并</title>
-    <url>/2019/09/02/51Nod-1021-%E7%9F%B3%E5%AD%90%E5%BD%92%E5%B9%B6/</url>
+    <url>/posts/57514/</url>
     <content><![CDATA[<h2 id="code">Code</h2>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x7fffffffffffffff</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(a, x) memset(a,x,sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> io_opt ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)</span></span><br><span class="line"><span class="keyword">typedef</span> std::pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; Pii;</span><br><span class="line"><span class="keyword">typedef</span> std::pair&lt;ll, ll&gt; Pll;</span><br><span class="line"><span class="function">ll <span class="title">power</span><span class="params">(ll a, ll b,ll p)</span> </span>&#123; ll res = <span class="number">1</span>; <span class="keyword">for</span> (; b &gt; <span class="number">0</span>; b &gt;&gt;= <span class="number">1</span>) &#123; <span class="keyword">if</span> (b &amp; <span class="number">1</span>) res = res * a % p; a = a * a % p; &#125; <span class="keyword">return</span> res; &#125;</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll p, ll q)</span> </span>&#123; <span class="keyword">return</span> q == <span class="number">0</span> ? p : <span class="built_in">gcd</span>(q, p % q); &#125;</span><br><span class="line">ll _abs(ll x)&#123;<span class="keyword">return</span> x &lt; <span class="number">0</span> ? -x : x;&#125;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">120</span>],sum[<span class="number">120</span>];</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">120</span>][<span class="number">120</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    io_opt;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            dp[i][j]=<span class="number">10000000</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        dp[i][i]=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        cin&gt;&gt;a[i];</span><br><span class="line">        sum[i]=sum[i<span class="number">-1</span>]+a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> len=<span class="number">2</span>;len&lt;=n;len++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i+len<span class="number">-1</span>&lt;=n;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> j=i+len<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k=i;k&lt;=j;k++)&#123;</span><br><span class="line">                dp[i][j]=<span class="built_in">min</span>(dp[i][k]+dp[k+<span class="number">1</span>][j]+sum[j]-sum[i<span class="number">-1</span>],dp[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;dp[<span class="number">1</span>][n]&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
@@ -1957,7 +1957,7 @@
   </entry>
   <entry>
     <title>51Nod 1068 Bash游戏 V3</title>
-    <url>/2019/09/02/51Nod-1068-Bash%E6%B8%B8%E6%88%8F-V3/</url>
+    <url>/posts/39610/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>有一堆石子共有N个。A B两个人轮流拿，A先拿。每次拿的数量只能是2的正整数次幂，比如(1,2,4,8,16....)，拿到最后1颗石子的人获胜。假设A B都非常聪明，拿石子的过程中不会出现失误。给出N，问最后谁能赢得比赛。</p>
 <p>例如N = 3。A只能拿1颗或2颗，所以B可以拿到最后1颗石子。（输入的N可能为大数）</p>
@@ -1977,7 +1977,7 @@
   </entry>
   <entry>
     <title>ICPC2019南京网络赛</title>
-    <url>/2019/09/01/ICPC2019%E5%8D%97%E4%BA%AC%E7%BD%91%E7%BB%9C%E8%B5%9B/</url>
+    <url>/posts/60030/</url>
     <content><![CDATA[<h1 id="icpc2019南京网络赛">ICPC2019南京网络赛</h1>
 <h2 id="b.super_log">B.super_log</h2>
 <h3 id="problem">Problem</h3>
@@ -2003,7 +2003,7 @@
   </entry>
   <entry>
     <title>ICPC2019银川网 络 赛</title>
-    <url>/2019/08/31/ICPC2019%E9%93%B6%E5%B7%9D%E7%BD%91-%E7%BB%9C-%E8%B5%9B/</url>
+    <url>/posts/53295/</url>
     <content><![CDATA[<p>真实菜鸡，被AK打蒙了，签到都最后才找到的。</p>
 <h2 id="a.maximum-element-in-a-stack">A.Maximum Element In A Stack</h2>
 <h3 id="problem">Problem</h3>
@@ -2053,7 +2053,7 @@
   </entry>
   <entry>
     <title>ICPC 2017 Beijing J Pangu and Stones(铜牌题)</title>
-    <url>/2019/08/28/ICPC-2017-Beijing-J-Pangu-and-Stones-%E9%93%9C%E7%89%8C%E9%A2%98/</url>
+    <url>/posts/31514/</url>
     <content><![CDATA[<h2 id="problem">Problem</h2>
 <p>In Chinese mythology, Pangu is the first living being and the creator of the sky and the earth. He woke up from an egg and split the egg into two parts: the sky and the earth.</p>
 <p>At the beginning, there was no mountain on the earth, only stones all over the land.</p>
@@ -2081,7 +2081,7 @@
   </entry>
   <entry>
     <title>扩展KMP(讲解+模版+例题)</title>
-    <url>/2019/08/10/%E6%89%A9%E5%B1%95KMP-%E8%AE%B2%E8%A7%A3-%E6%A8%A1%E7%89%88-%E4%BE%8B%E9%A2%98/</url>
+    <url>/posts/58130/</url>
     <content><![CDATA[<blockquote>
 <p>在阅读这篇文章之前，我们假定你已经掌握了<a href="https://www.cnblogs.com/sz-wcc/p/11331357.html">KMP:n+1次探</a>里的定义。</p>
 </blockquote>
@@ -2112,7 +2112,7 @@
   </entry>
   <entry>
     <title>LaTeX测试</title>
-    <url>/2019/08/09/LaTeX%E6%B5%8B%E8%AF%95/</url>
+    <url>/posts/26724/</url>
     <content><![CDATA[<p><span class="math display">\[y = x^2\]</span></p>
 <p>可以创建行内公式，例如 <span class="math inline">\(\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N\)</span>。或者块级公式：</p>
 <p><span class="math display">\[  x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]</span></p>
@@ -2124,7 +2124,7 @@
   </entry>
   <entry>
     <title>龟速乘&amp;可靠快速幂</title>
-    <url>/2019/08/04/%E9%BE%9F%E9%80%9F%E4%B9%98-%E5%8F%AF%E9%9D%A0%E5%BF%AB%E9%80%9F%E5%B9%82/</url>
+    <url>/posts/8041/</url>
     <content><![CDATA[<p><strong>学自<a href="https://blog.csdn.net/Cyan_rose/article/details/83065026">【谈谈知识点】快速幂&amp;龟速乘&amp;快速乘 - Cyan_rose的博客 - CSDN博客</a></strong></p>
 <h2 id="基础快速幂">基础快速幂</h2>
 <p>直接上代码</p>
@@ -2140,7 +2140,7 @@
   </entry>
   <entry>
     <title>数学技巧（位运算）</title>
-    <url>/2019/08/04/%E6%95%B0%E5%AD%A6%E6%8A%80%E5%B7%A7%EF%BC%88%E4%BD%8D%E8%BF%90%E7%AE%97%EF%BC%89/</url>
+    <url>/posts/6899/</url>
     <content><![CDATA[<ol type="1">
 <li>n mod 2^k = n&amp;((1&lt;&lt;k)-1)</li>
 <li>判断n是否为2的正整数幂n&gt;1 &amp;&amp; !(n&amp;(n-1))</li>
@@ -2182,7 +2182,7 @@
   </entry>
   <entry>
     <title>POJ2287 Tian Ji -- The Horse Racing</title>
-    <url>/2019/08/01/POJ2287-Tian-Ji-The-Horse-Racing/</url>
+    <url>/posts/44096/</url>
     <content><![CDATA[<h2 id="题目">题目</h2>
 <p><a href="http://poj.org/problem?id=2287">POJ2287</a></p>
 <h2 id="思路">思路</h2>
@@ -2206,7 +2206,7 @@ return 0;</code></pre>
   </entry>
   <entry>
     <title>POJ1505 Copying Books</title>
-    <url>/2019/08/01/POJ1505-Copying-Books/</url>
+    <url>/posts/60777/</url>
     <content><![CDATA[<p>ZOJ2002</p>
 <h2 id="题目">题目</h2>
 <p>Before the invention of book-printing, it was very hard to make a copy of a book. All the contents had to be re-written by hand by so called scribers. The scriber had been given a book and after several months he finished its copy. One of the most famous scribers lived in the 15th century and his name was Xaverius Endricus Remius Ontius Xendrianus (Xerox). Anyway, the work was very annoying and boring. And the only way to speed it up was to hire more scribers.</p>
@@ -2243,7 +2243,7 @@ return 0;</code></pre>
   </entry>
   <entry>
     <title>51Nod 1120 机器人走方格 V3</title>
-    <url>/2019/07/29/51Nod-1120-%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%B5%B0%E6%96%B9%E6%A0%BC-V3/</url>
+    <url>/posts/33732/</url>
     <content><![CDATA[<h2 id="题目">题目</h2>
 <p>N * N的方格，从左上到右下画一条线。一个机器人从左上走到右下，只能向右或向下走。并要求只能在这条线的上面或下面走，不能穿越这条线，有多少种不同的走法？由于方法数量可能很大，只需要输出Mod 10007的结果。 N&lt;=1e9</p>
 <h2 id="思路">思路</h2>
@@ -2263,7 +2263,7 @@ return 0;</code></pre>
   </entry>
   <entry>
     <title>51Nod 1267 4个数和为0</title>
-    <url>/2019/07/29/51Nod-1267-4%E4%B8%AA%E6%95%B0%E5%92%8C%E4%B8%BA0/</url>
+    <url>/posts/57573/</url>
     <content><![CDATA[<h2 id="题目">题目</h2>
 <p>给出N个整数，你来判断一下是否能够选出4个数，他们的和为0，可以则输出&quot;Yes&quot;，否则输出&quot;No&quot;。 n&lt;=1e3</p>
 <span id="more"></span>
@@ -2279,7 +2279,7 @@ return 0;</code></pre>
   </entry>
   <entry>
     <title>乘法逆元(从入门到批量求解)(正在学欧拉筛)</title>
-    <url>/2019/07/27/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%89%B9%E9%87%8F%E6%B1%82%E8%A7%A3-%E6%AD%A3%E5%9C%A8%E5%AD%A6%E6%AC%A7%E6%8B%89%E7%AD%9B/</url>
+    <url>/posts/34770/</url>
     <content><![CDATA[<blockquote>
 <p>在做各种取余运算时，我们会发现先除和先取余的结果是不同的，这会导致计算难度的加大，乘法逆元可以解决类似的分数取余问题。</p>
 </blockquote>
@@ -2341,7 +2341,7 @@ return 0;</code></pre>
   </entry>
   <entry>
     <title>51Nod 1740 蜂巢迷宫</title>
-    <url>/2019/07/24/51Nod-1740-%E8%9C%82%E5%B7%A2%E8%BF%B7%E5%AE%AB/</url>
+    <url>/posts/58122/</url>
     <content><![CDATA[<h2 id="题目">题目</h2>
 <p><img src="https://img2018.cnblogs.com/blog/1575943/201907/1575943-20190724113104452-1683001528.png" /></p>
 <p>有一个无限大的蜂巢迷宫，为了方便表示每一个六边形格子，现在把座标引入到这个迷宫中，如上图年示。</p>
@@ -2359,7 +2359,7 @@ return 0;</code></pre>
   </entry>
   <entry>
     <title>51Nod 1279 扔盘子</title>
-    <url>/2019/07/24/51Nod-1279-%E6%89%94%E7%9B%98%E5%AD%90/</url>
+    <url>/posts/33095/</url>
     <content><![CDATA[<h2 id="题目">题目</h2>
 <p>有一口井，井的高度为N，每隔1个单位它的宽度有变化。现在从井口往下面扔圆盘，如果圆盘的宽度大于井在某个高度的宽度，则圆盘被卡住（恰好等于的话会下去）。</p>
 <p>盘子有几种命运：1、掉到井底。2、被卡住。3、落到别的盘子上方。</p>
@@ -2377,7 +2377,7 @@ return 0;</code></pre>
   </entry>
   <entry>
     <title>51Nod 1095 Anigram单词</title>
-    <url>/2019/07/24/51Nod-1095-Anigram%E5%8D%95%E8%AF%8D/</url>
+    <url>/posts/23609/</url>
     <content><![CDATA[<h2 id="题目">题目</h2>
 <p>一个单词a如果通过交换单词中字母的顺序可以得到另外的单词b，那么定义b是a的Anigram，例如单词army和mary互为Anigram。另：相同的2个单词不算Anigram。现在给定一个字典，输入Q个单词，从给出的字典中找出这些单词的Anigram。</p>
 <h2 id="思路">思路</h2>
@@ -2393,7 +2393,7 @@ return 0;</code></pre>
   </entry>
   <entry>
     <title>51Nod 1094 和为k的连续区间</title>
-    <url>/2019/07/24/51Nod-1094-%E5%92%8C%E4%B8%BAk%E7%9A%84%E8%BF%9E%E7%BB%AD%E5%8C%BA%E9%97%B4/</url>
+    <url>/posts/52328/</url>
     <content><![CDATA[<h2 id="题目">题目</h2>
 <p>一整数数列a1, a2, ... , an（有正有负），以及另一个整数k，求一个区间[i, j]，(1 &lt;= i &lt;= j &lt;= n)，使得a[i] + ... + a[j] = k。</p>
 <h2 id="思路">思路</h2>
@@ -2409,7 +2409,7 @@ return 0;</code></pre>
   </entry>
   <entry>
     <title>51Nod 1072 威佐夫游戏</title>
-    <url>/2019/07/23/51Nod-1072-%E5%A8%81%E4%BD%90%E5%A4%AB%E6%B8%B8%E6%88%8F/</url>
+    <url>/posts/46915/</url>
     <content><![CDATA[<h2 id="题意">题意</h2>
 <p>有2堆石子。A B两个人轮流拿，A先拿。每次可以从一堆中取任意个或从2堆中取相同数量的石子，但不可不取。拿到最后1颗石子的人获胜。假设A B都非常聪明，拿石子的过程中不会出现失误。给出2堆石子的数量，问最后谁能赢得比赛。</p>
 <span id="more"></span>
@@ -2435,7 +2435,7 @@ return 0;</code></pre>
   </entry>
   <entry>
     <title>51Nod 1067 Bash游戏 V2</title>
-    <url>/2019/07/23/51Nod-1067-Bash%E6%B8%B8%E6%88%8F-V2/</url>
+    <url>/posts/24116/</url>
     <content><![CDATA[<h2 id="题意">题意</h2>
 <p>有一堆石子共有N个。A B两个人轮流拿，A先拿。每次只能拿1，3，4颗，拿到最后1颗石子的人获胜。假设A B都非常聪明，拿石子的过程中不会出现失误。给出N，问最后谁能赢得比赛。</p>
 <h2 id="思路">思路</h2>
@@ -2454,7 +2454,7 @@ return 0;</code></pre>
   </entry>
   <entry>
     <title>51Nod 1074 约瑟夫环 V2</title>
-    <url>/2019/07/23/51Nod-1074-%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF-V2/</url>
+    <url>/posts/2897/</url>
     <content><![CDATA[<h2 id="题意">题意</h2>
 <p>约瑟夫环，N-1e18，K-1000</p>
 <h2 id="思路">思路</h2>
@@ -2470,7 +2470,7 @@ return 0;</code></pre>
   </entry>
   <entry>
     <title>51Nod 1073 约瑟夫环</title>
-    <url>/2019/07/23/51Nod-1073-%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/</url>
+    <url>/posts/60741/</url>
     <content><![CDATA[<h2 id="题意">题意</h2>
 <p>编号1~N，每数K个出局，范围1e6</p>
 <span id="more"></span>
@@ -2484,7 +2484,7 @@ return 0;</code></pre>
   </entry>
   <entry>
     <title>奶牛的聚会</title>
-    <url>/2019/06/23/%E5%A5%B6%E7%89%9B%E7%9A%84%E8%81%9A%E4%BC%9A/</url>
+    <url>/posts/30631/</url>
     <content><![CDATA[<h2 id="题目描述">题目描述</h2>
 <p>农历新年马上就要到了，奶牛们计划举办一次聚会庆祝新年的到来。但是，奶牛们并不喜欢走太远的路，这会给他们的聚会带来消极情绪，当一头奶牛的消极指数为Wi，他参加聚会所需行走的距离为si，那么他就会给聚会带来Si*Wi的消极情绪。所有奶牛所在位置都在一条直线上，已知所有奶牛的坐标和消极指数，求如何确定聚会地点，使得所有奶牛给聚会带来的消极情绪之和最小，输出消极情绪之和的最小值。</p>
 <h2 id="输入">输入</h2>
@@ -2543,7 +2543,7 @@ return 0;</code></pre>
   </entry>
   <entry>
     <title>Disk Tree</title>
-    <url>/2019/06/23/Disk-Tree/</url>
+    <url>/posts/51797/</url>
     <content><![CDATA[<h3 id="题目描述">题目描述</h3>
 <p>Hacker Bill has accidentally lost all the information from his workstation's hard drive and he has no backup copies of its contents. He does not regret for the loss of the files themselves, but for the very nice and convenient directory structure that he had created and cherished during years of work. Fortunately, Bill has several copies of directory listings from his hard drive. Using those listings he was able to recover full paths (like &quot;WINNT32~186&quot;) for some directories. He put all of them in a file by writing each path he has found on a separate line. Your task is to write a program that will help Bill to restore his state of the art directory structure by providing nicely formatted directory tree.</p>
 <span id="more"></span>
@@ -2715,7 +2715,7 @@ return 0;</code></pre>
   </entry>
   <entry>
     <title>二叉排序树</title>
-    <url>/2019/06/23/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/</url>
+    <url>/posts/65300/</url>
     <content><![CDATA[<h2 id="题目描述">题目描述</h2>
 <p>输入一系列整数，建立二叉排序数，并进行前序，中序，后序遍历。</p>
 <h2 id="输入">输入</h2>
@@ -2743,7 +2743,7 @@ return 0;</code></pre>
   </entry>
   <entry>
     <title>字符串的查找删除</title>
-    <url>/2019/06/23/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9F%A5%E6%89%BE%E5%88%A0%E9%99%A4/</url>
+    <url>/posts/39923/</url>
     <content><![CDATA[<h2 id="题目描述">题目描述</h2>
 <p>给定一个短字符串（不含空格），再给定若干字符串，在这些字符串中删除所含有的短字符串。</p>
 <h2 id="输入">输入</h2>
@@ -2786,7 +2786,7 @@ return 0;</code></pre>
   </entry>
   <entry>
     <title>欧几里得游戏(博弈论启蒙)</title>
-    <url>/2019/06/23/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E6%B8%B8%E6%88%8F-%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%90%AF%E8%92%99/</url>
+    <url>/posts/50675/</url>
     <content><![CDATA[<h2 id="题目描述">题目描述</h2>
 <p>小明和小红在玩欧几里得游戏。他们从两个自然数开始，第一个玩家小明，从两个数的较大数中减去较小数的尽可能大的正整数倍，只要差为非负即可。然后，第二个玩家小红，对得到的两个数进行同样的操作，然后又是小明。就这样轮流进行游戏，直至某个玩家将较大数减去较小数的某个倍数之后差为0为止，此时游戏结束，该玩家就是胜利者。</p>
 <h2 id="输入">输入</h2>
@@ -2814,7 +2814,7 @@ return 0;</code></pre>
   </entry>
   <entry>
     <title>二叉树问题</title>
-    <url>/2019/06/23/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%97%AE%E9%A2%98/</url>
+    <url>/posts/63731/</url>
     <content><![CDATA[<h2 id="题目描述">题目描述</h2>
 <p>现给定一棵二叉树的先序遍历序列和中序遍历序列，要求你计算该二叉树的高度。</p>
 <h2 id="输入">输入</h2>
@@ -2839,7 +2839,7 @@ return 0;</code></pre>
   </entry>
   <entry>
     <title>哈夫曼树</title>
-    <url>/2019/06/23/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/</url>
+    <url>/posts/29203/</url>
     <content><![CDATA[<h2 id="题目描述">题目描述</h2>
 <p>哈夫曼树，第一行输入一个数n，表示叶结点的个数。需要用这些叶结点生成哈夫曼树，根据哈夫曼树的概念，这些结点有权值，即weight，题目需要输出所有结点的值与权值的乘积之和。</p>
 <h2 id="输入">输入</h2>
@@ -2865,7 +2865,7 @@ return 0;</code></pre>
   </entry>
   <entry>
     <title>取石子游戏</title>
-    <url>/2019/06/05/%E5%8F%96%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F/</url>
+    <url>/posts/15063/</url>
     <content><![CDATA[<h2 id="题目描述">题目描述</h2>
 <p>一天小明和小红在玩取石子游戏，游戏规则是这样的：<br />
 （1）本游戏是一个二人游戏；<br />
@@ -2920,7 +2920,7 @@ second
   </entry>
   <entry>
     <title>卡特兰数</title>
-    <url>/2019/06/05/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/</url>
+    <url>/posts/54838/</url>
     <content><![CDATA[<p>一、引入</p>
 <p>出栈序</p>
 <p>二、推导（摘自百度百科）</p>
@@ -2941,7 +2941,7 @@ second
   </entry>
   <entry>
     <title>No. 4 最近三场比赛总结及展望——2019.6.3总结</title>
-    <url>/2019/06/03/#4%20%E6%9C%80%E8%BF%91%E4%B8%89%E5%9C%BA%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93%E5%8F%8A%E5%B1%95%E6%9C%9B%E2%80%94%E2%80%942019.6.3%E6%80%BB%E7%BB%93/</url>
+    <url>/posts/11271/</url>
     <content><![CDATA[<h2 id="一队伍训练">一、队伍训练</h2>
 <p>　　可以称得上去训练的算是两场邀请赛及其热身赛吧。</p>
 <p>　　这两次发挥的不理想，具体问题在于西安的没写出bfs题，南昌的我推错了结论。但根本原因却不在这，稍后分析。</p>
@@ -2970,7 +2970,7 @@ second
   </entry>
   <entry>
     <title>No. 3 南昌邀请赛网络赛——2019.4.21总结</title>
-    <url>/2019/04/21/#3%20%E5%8D%97%E6%98%8C%E9%82%80%E8%AF%B7%E8%B5%9B%E7%BD%91%E7%BB%9C%E8%B5%9B%E2%80%94%E2%80%942019.4.21%E6%80%BB%E7%BB%93/</url>
+    <url>/posts/22891/</url>
     <content><![CDATA[<h2 id="一队伍训练">一、队伍训练</h2>
 <p>　　The Preliminary Contest for ICPC China Nanchang National Invitational 　　南昌邀请赛网络赛4题</p>
 <h2 id="二个人训练情况">二、个人训练情况</h2>
@@ -2986,7 +2986,7 @@ second
   </entry>
   <entry>
     <title>No. 2 contest++——2019.4.14总结</title>
-    <url>/2019/04/14/#2%20contest++%E2%80%94%E2%80%942019.4.14%E6%80%BB%E7%BB%93/</url>
+    <url>/posts/46120/</url>
     <content><![CDATA[<h2 id="一队伍训练情况">一、队伍训练情况</h2>
 <p>　　浙大校赛网络同步赛，5题。</p>
 <h2 id="二个人训练情况">二、个人训练情况</h2>
@@ -3004,7 +3004,7 @@ second
   </entry>
   <entry>
     <title>No. 1 论目标——2019.4.7总结</title>
-    <url>/2019/04/06/#1%20%E8%AE%BA%E7%9B%AE%E6%A0%87%E2%80%94%E2%80%942019.4.7%E6%80%BB%E7%BB%93/</url>
+    <url>/posts/50582/</url>
     <content><![CDATA[<h2 id="一队伍训练情况">一、队伍训练情况</h2>
 <p>　　计划下周开始到实验室训练</p>
 <h2 id="二个人训练情况">二、个人训练情况</h2>
@@ -3022,7 +3022,7 @@ second
   </entry>
   <entry>
     <title>No. 0 收拾行装，再次出发——2019.4.1总结</title>
-    <url>/2019/04/01/#0%20%E6%94%B6%E6%8B%BE%E8%A1%8C%E8%A3%85%EF%BC%8C%E5%86%8D%E6%AC%A1%E5%87%BA%E5%8F%91%E2%80%94%E2%80%942019.4.1%E6%80%BB%E7%BB%93/</url>
+    <url>/posts/14270/</url>
     <content><![CDATA[<h2 id="一队伍训练情况">一、队伍训练情况</h2>
 <p>　　no response</p>
 <h2 id="二个人训练情况">二、个人训练情况</h2>
@@ -3042,7 +3042,7 @@ second
   </entry>
   <entry>
     <title>做题中踩过的坑。。。</title>
-    <url>/2019/03/02/%E5%81%9A%E9%A2%98%E4%B8%AD%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91%E3%80%82%E3%80%82%E3%80%82/</url>
+    <url>/posts/22086/</url>
     <content><![CDATA[<p>1、long long=int*int，会数据溢出，直接定义long long或者long long*=long long。（51Nod 1082）</p>
 <p>2、不要再忘记题目条件了！输出No Solution！！！！（51Nod 1090）</p>
 <p>3、二分答案可以在修改边界的过程中留一个ans=mid，要向上取整可以（n+mod-1）%mod，注意不要除以0。（POJ3104）</p>
@@ -3064,7 +3064,7 @@ second
   </entry>
   <entry>
     <title>51Nod 1130 斯特林近似</title>
-    <url>/2019/02/27/51Nod-1130-%E6%96%AF%E7%89%B9%E6%9E%97%E8%BF%91%E4%BC%BC/</url>
+    <url>/posts/17812/</url>
     <content><![CDATA[<p><img src="https://img2018.cnblogs.com/blog/1575943/201902/1575943-20190227195117036-288323810.jpg" /></p>
 <p>log10(n!)=log10(2<em>pi</em>n)<em>0.5+n</em>log10(n/e)</p>
 <p>注意long long</p>
@@ -3081,7 +3081,7 @@ second
   </entry>
   <entry>
     <title>51Nod 1089 最长回文子串 V2（Manacher算法）</title>
-    <url>/2019/02/27/51Nod-1089-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2-V2%EF%BC%88Manacher%E7%AE%97%E6%B3%95%EF%BC%89/</url>
+    <url>/posts/1160/</url>
     <content><![CDATA[<p>俗称马拉车算法-&gt;_-&gt;</p>
 <p>处理最长回文字串复杂度O(n)</p>
 <p>这里菜鸡不会证，简单说一下思路。</p>
@@ -3099,7 +3099,7 @@ second
   </entry>
   <entry>
     <title>归并排序 &amp;&amp; 51Nod 1019逆序数 &amp;&amp; 最小的交换</title>
-    <url>/2019/02/22/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-51Nod-1019%E9%80%86%E5%BA%8F%E6%95%B0-%E6%9C%80%E5%B0%8F%E7%9A%84%E4%BA%A4%E6%8D%A2/</url>
+    <url>/posts/45681/</url>
     <content><![CDATA[<p>一、归并排序</p>
 <p>递归思路，将一个序列二分，使前半段有序，使后半段有序，然后使用双指针扫一遍使整段有序。</p>
 <p>对于n个元素，每个元素都在排序1个元素，2个元素，4个元素，8个元素......的时候出现，因此复杂度是O(nlogn)。</p>
@@ -3138,7 +3138,7 @@ __</code></pre>
   </entry>
   <entry>
     <title>51Nod 1006 最长公共子序列Lcs</title>
-    <url>/2019/02/22/51Nod-1006-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97Lcs/</url>
+    <url>/posts/56788/</url>
     <content><![CDATA[<p>给出两个字符串A B，求A与B的最长公共子序列（子序列不要求是连续的）。</p>
 <p>比如两个串为：</p>
 <p>abcicba</p>
@@ -3214,7 +3214,7 @@ abdkscab</code></pre>
   </entry>
   <entry>
     <title>二分查找</title>
-    <url>/2019/02/22/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
+    <url>/posts/42877/</url>
     <content><![CDATA[<p>终于下定决心不碰运气写二分了。。。</p>
 <p>思路比较乱，建议直接点进参考①</p>
 <p>来说一下我记忆的方法</p>
@@ -3240,7 +3240,7 @@ abdkscab</code></pre>
   </entry>
   <entry>
     <title>（更新）西南民族大学第十届校赛（同步赛）</title>
-    <url>/2018/12/30/%EF%BC%88%E6%9B%B4%E6%96%B0%EF%BC%89%E8%A5%BF%E5%8D%97%E6%B0%91%E6%97%8F%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%B1%8A%E6%A0%A1%E8%B5%9B%EF%BC%88%E5%90%8C%E6%AD%A5%E8%B5%9B%EF%BC%89/</url>
+    <url>/posts/35804/</url>
     <content><![CDATA[<h1 id="格式坏掉了可以去">格式坏掉了，可以去<a href="https://www.cnblogs.com/sz-wcc/p/10200732.html"></a></h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/322#question">西南民族大学第十届校赛（同步赛）</a></p>
 <p>打了11道，果然AK是这辈子也不可能的么QAQ</p>

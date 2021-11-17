@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-vivy.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-vivy.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="PM9xImIZJ5OdDw0XFeXwCNkOm3u98JLNDYmGDd40f0U">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ccwucmcts.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="在做各种取余运算时，我们会发现先除和先取余的结果是不同的，这会导致计算难度的加大，乘法逆元可以解决类似的分数取余问题。   本文按照博主的学习思路排序，结论为（单个）费马小定理求乘法逆元、（单个）利用扩展欧几里得任意情况下求乘法逆元、（批量）线性递推求乘法逆元  同余的运算法则之一 定理3 ac≡bc(mod m)，且若(m,c)≡d，则a≡b(mod m&#x2F;d)。——数论讲义 也">
+<meta property="og:type" content="article">
+<meta property="og:title" content="乘法逆元(从入门到批量求解)(正在学欧拉筛)">
+<meta property="og:url" content="https://ccwucmcts.github.io/posts/34770/index.html">
+<meta property="og:site_name" content="C. C. Blog">
+<meta property="og:description" content="在做各种取余运算时，我们会发现先除和先取余的结果是不同的，这会导致计算难度的加大，乘法逆元可以解决类似的分数取余问题。   本文按照博主的学习思路排序，结论为（单个）费马小定理求乘法逆元、（单个）利用扩展欧几里得任意情况下求乘法逆元、（批量）线性递推求乘法逆元  同余的运算法则之一 定理3 ac≡bc(mod m)，且若(m,c)≡d，则a≡b(mod m&#x2F;d)。——数论讲义 也">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-07-26T23:33:00.000Z">
+<meta property="article:modified_time" content="2021-11-16T12:31:46.081Z">
+<meta property="article:author" content="CCWUCMCTS">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://ccwucmcts.github.io/posts/34770/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>乘法逆元(从入门到批量求解)(正在学欧拉筛) | C. C. Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="C. C. Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">C. C. Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">一切都是脆弱的，因此一切都可以变得更强大。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ccwucmcts.github.io/posts/34770/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="CCWUCMCTS">
+      <meta itemprop="description" content="论文、安全技术、算法、数据结构">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="C. C. Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          乘法逆元(从入门到批量求解)(正在学欧拉筛)
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-27 07:33:00" itemprop="dateCreated datePublished" datetime="2019-07-27T07:33:00+08:00">2019-07-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-16 20:31:46" itemprop="dateModified" datetime="2021-11-16T20:31:46+08:00">2021-11-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>在做各种取余运算时，我们会发现先除和先取余的结果是不同的，这会导致计算难度的加大，乘法逆元可以解决类似的分数取余问题。</p>
+</blockquote>
+<blockquote>
+<p>本文按照博主的学习思路排序，结论为<strong>（单个）费马小定理求乘法逆元</strong>、<strong>（单个）利用扩展欧几里得任意情况下求乘法逆元</strong>、<strong>（批量）线性递推求乘法逆元</strong></p>
+</blockquote>
+<h2 id="同余的运算法则之一">同余的运算法则之一</h2>
+<p>定理3 ac≡bc(mod m)，且若(m,c)≡d，则a≡b(mod m/d)。——数论讲义</p>
+<p>也就是说，同余式两边可以同除一个和模数互质的数（此时模数不变）。</p>
+<h2 id="费马小定理">费马小定理</h2>
+<p>形式1：<strong>若m是素数，则a^m≡a(mod m)。——数论讲义</strong>······①</p>
+<p>形式2：<strong>如果m是一个素数，而整数a不是m的倍数，则有a^(m-1)≡1(mod m)。——某百科</strong>······②</p>
+<h3 id="由于m是一个素数因此到的条件除数a和模数m互质等价于a不是m的倍数"><strong><em>由于m是一个素数，因此①到②的条件：除数a和模数m互质，等价于a不是m的倍数。</em></strong></h3>
+<h2 id="费马小定理的推论">费马小定理②的推论</h2>
+<h3 id="am-11mod-m-aam-21mod-m-am-21amod-m"><strong>a^(m-1)≡1(mod m) =&gt; a*a^(m-2)≡1(mod m) =&gt; a^(m-2)≡1/a(mod m)</strong></h3>
+<h2 id="乘法逆元">乘法逆元</h2>
+<p>对于正整数a和m，如果有ax≡1(mod m)，那么把这个同余方程中x的最小正整数解叫做a模m的逆元。</p>
+<p><em>若a与m不互质，易证ax%m!=1，故a必与m互质</em></p>
+<h2 id="乘法逆元与费马小定理的推论">乘法逆元与费马小定理的推论</h2>
+<p>如果m是素数，有以下推论:</p>
+<h3 id="ax1mod-m-x1amod-m-xam-2mod-m"><strong>ax≡1(mod m) =&gt; x≡1/a(mod m) =&gt; x≡a^(m-2)(mod m)</strong></h3>
+<p>(同余的传递性)</p>
+<h2 id="单个费马小定理求乘法逆元">（单个）费马小定理求乘法逆元</h2>
+<p>计算(a/b)%m：</p>
+<p>若<strong>m是素数</strong>：</p>
+<p>将1/b替换成逆元x，即b^(m-2)%m。</p>
+<p>答案为(a*b^(m-2))%m。</p>
+<h3 id="例题">例题</h3>
+<p><a target="_blank" rel="noopener" href="http://www.51nod.com/Challenge/Problem.html#problemId=1013" title="51Nod 1013 3的幂的和">51Nod 1013</a></p>
+<h3 id="代码">代码</h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> db double</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 1000000007</span></span><br><span class="line">ll n;</span><br><span class="line"><span class="function">ll <span class="title">speed</span><span class="params">(ll a,ll b,ll p)</span></span>&#123;</span><br><span class="line">    ll cur=a,ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b)&#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>) ans=ans*cur%p;</span><br><span class="line">        cur=cur*cur%p;</span><br><span class="line">        b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans%p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    ll ans=((<span class="built_in">speed</span>(<span class="number">3</span>,n+<span class="number">1</span>,mod)<span class="number">-1</span>)*<span class="built_in">speed</span>(<span class="number">2</span>,mod<span class="number">-2</span>,mod))%mod;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    <span class="comment">//cout&lt;&lt;speed(2,mod-2,mod)%mod;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;```</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">**为了方便求任意情况的逆元，我们先来补充几个概念：**</span><br><span class="line"></span><br><span class="line">## 欧几里得算法</span><br><span class="line"></span><br><span class="line">log时间内求解最大公约数。</span><br><span class="line"></span><br><span class="line">### 代码</span><br><span class="line"></span><br><span class="line">```c++</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a,llb)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b==<span class="number">0</span>?a:<span class="built_in">gcd</span>(b,a%b);</span><br><span class="line">&#125;```</span><br><span class="line"></span><br><span class="line">### 证明</span><br><span class="line"></span><br><span class="line">[辗转相除法求最大公约数算法证明](https:<span class="comment">//www.cnblogs.com/zwffff/archive/2010/08/25/1808178.html &quot;【整理】辗转相除法求最大公约数算法证明 - 凌风有约 - 博客园&quot;)</span></span><br><span class="line"></span><br><span class="line">## 贝祖定理</span><br><span class="line"></span><br><span class="line">设a,b是整数，则存在整数x,y，使得ax+by=<span class="built_in">gcd</span>(a,b)</span><br><span class="line"></span><br><span class="line">## 扩展欧几里得算法</span><br><span class="line"></span><br><span class="line">#### 求贝祖定理中x和y的解，即求使ax+by=<span class="built_in">gcd</span>(a,b)的x和y。</span><br><span class="line"></span><br><span class="line">我们利用gcd来求，当递归到最内层时，a=<span class="built_in">gcd</span>(a,b)，b=<span class="number">0</span>，因此x=<span class="number">1</span>，y=<span class="number">0</span>。</span><br><span class="line"></span><br><span class="line">假设我们已经得到内层x1，y1，对于外层a，b有a%b=a-(a/b)*b</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>外层：a<em>x+b</em>y=gcd(a,b)</p>
+<p>内层：b<em>x1+(a-(a/b)</em>b)<em>y1=gcd(a,b) <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">展开对比可得：</span><br><span class="line"></span><br></pre></td></tr></table></figure> x=y1 y=x1-a/b</em>y1 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 代码</span><br><span class="line"></span><br><span class="line">```c++</span><br><span class="line">ll exgcd(ll a,ll b,ll &amp;x,ll &amp;y)&#123;//扩展欧几里得算法</span><br><span class="line">    if(b==0)&#123;//递归边界 </span><br><span class="line">        x=1;y=0;</span><br><span class="line">        return a;</span><br><span class="line">    &#125;</span><br><span class="line">    ll ret=exgcd(b,a%b,x,y);</span><br><span class="line">    ll tmp=y;//求解原x,y     </span><br><span class="line">    y=x-a/b*y;</span><br><span class="line">    x=tmp;</span><br><span class="line">    return ret;//返回gcd      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="参考">参考</h3>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/destiny1507/article/details/81750874" title="扩展欧几里得算法详解">扩展欧几里得算法详解</a></p>
+<h2 id="单个利用扩展欧几里得任意情况下求乘法逆元">（单个）利用扩展欧几里得任意情况下求乘法逆元</h2>
+<p>计算(a/b)%m：</p>
+<p>仍需要逆元存在，即b与m互质。</p>
+<p>构造bx+my=gcd(b,m)=1，用exgcd求出来的x即为逆元。</p>
+<p>代码与前面相同。</p>
+<p><strong>注意这里参数传m和-m都一样，答案要加m再%m。</strong></p>
+<h3 id="参考-1">参考</h3>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/7876eb2dff89" title="欧几里得算法心得(辗转相除法) - 简书">欧几里得算法心得(辗转相除法)</a></p>
+<h2 id="批量线性递推求乘法逆元">（批量）线性递推求乘法逆元</h2>
+<p>给定n,p求1~n中所有整数在模p意义下的乘法逆元。</p>
+<p>n为3e6，p&gt;n且为质数。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.org/problem/P3811" title="P3811 【模板】乘法逆元 - 洛谷 | 计算机科学教育新生态">洛谷P3811 【模板】乘法逆元</a></p>
+<p>此时用单个求法会超时，我们可以推导递推公式。</p>
+<p>本垃圾博主还不会用公式编辑器，于是看这里↓</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/qdscwyy/p/7795368.html?tdsourcetag=s_pcqq_aiomsg" title="线性求逆元 - Grary - 博客园">线性求逆元 - Grary - 博客园</a></p>
+<p>试了试，这里p也必须是质数，还不知道为什么（逃</p>
+<h3 id="代码-1">代码</h3>
+<p><code>c++ #include&lt;bits/stdc++.h&gt; using namespace std; #define ll long long const ll MAXN=3e6+20; ll inv[MAXN]; ll n,mod; void preinv(ll num,ll p)&#123;     inv[0]=inv[1]=1;     for(ll i=2;i&lt;=num;i++)&#123;         inv[i]=(p-p/i)*inv[p%i]%p;     &#125; &#125; int main()&#123;     cin&gt;&gt;n&gt;&gt;mod;     preinv(n,mod);     for(ll i=1;i&lt;=n;i++)&#123;         printf(&quot;%lld\n&quot;,inv[i]);     &#125;     return 0; &#125;</code></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>CCWUCMCTS
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://ccwucmcts.github.io/posts/34770/" title="乘法逆元(从入门到批量求解)(正在学欧拉筛)">https://ccwucmcts.github.io/posts/34770/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://github.com/CCWUCMCTS">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+
+            <span class="label">GitHub</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://www.zhihu.com/people/wang-cheng-chun-18">
+            <span class="icon">
+              <i class="fab fa-zhihu"></i>
+            </span>
+
+            <span class="label">Zhihu</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/58122/" rel="prev" title="51Nod 1740 蜂巢迷宫">
+      <i class="fa fa-chevron-left"></i> 51Nod 1740 蜂巢迷宫
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/57573/" rel="next" title="51Nod 1267 4个数和为0">
+      51Nod 1267 4个数和为0 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E4%BD%99%E7%9A%84%E8%BF%90%E7%AE%97%E6%B3%95%E5%88%99%E4%B9%8B%E4%B8%80"><span class="nav-number">1.</span> <span class="nav-text">同余的运算法则之一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">费马小定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B1%E4%BA%8Em%E6%98%AF%E4%B8%80%E4%B8%AA%E7%B4%A0%E6%95%B0%E5%9B%A0%E6%AD%A4%E5%88%B0%E7%9A%84%E6%9D%A1%E4%BB%B6%E9%99%A4%E6%95%B0a%E5%92%8C%E6%A8%A1%E6%95%B0m%E4%BA%92%E8%B4%A8%E7%AD%89%E4%BB%B7%E4%BA%8Ea%E4%B8%8D%E6%98%AFm%E7%9A%84%E5%80%8D%E6%95%B0"><span class="nav-number">2.1.</span> <span class="nav-text">由于m是一个素数，因此①到②的条件：除数a和模数m互质，等价于a不是m的倍数。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86%E7%9A%84%E6%8E%A8%E8%AE%BA"><span class="nav-number">3.</span> <span class="nav-text">费马小定理②的推论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#am-11mod-m-aam-21mod-m-am-21amod-m"><span class="nav-number">3.1.</span> <span class="nav-text">a^(m-1)≡1(mod m) &#x3D;&gt; a*a^(m-2)≡1(mod m) &#x3D;&gt; a^(m-2)≡1&#x2F;a(mod m)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83"><span class="nav-number">4.</span> <span class="nav-text">乘法逆元</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83%E4%B8%8E%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86%E7%9A%84%E6%8E%A8%E8%AE%BA"><span class="nav-number">5.</span> <span class="nav-text">乘法逆元与费马小定理的推论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ax1mod-m-x1amod-m-xam-2mod-m"><span class="nav-number">5.1.</span> <span class="nav-text">ax≡1(mod m) &#x3D;&gt; x≡1&#x2F;a(mod m) &#x3D;&gt; x≡a^(m-2)(mod m)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E4%B8%AA%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86%E6%B1%82%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83"><span class="nav-number">6.</span> <span class="nav-text">（单个）费马小定理求乘法逆元</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98"><span class="nav-number">6.1.</span> <span class="nav-text">例题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">6.2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">6.3.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E4%B8%AA%E5%88%A9%E7%94%A8%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E4%BB%BB%E6%84%8F%E6%83%85%E5%86%B5%E4%B8%8B%E6%B1%82%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83"><span class="nav-number">7.</span> <span class="nav-text">（单个）利用扩展欧几里得任意情况下求乘法逆元</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83-1"><span class="nav-number">7.1.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%B9%E9%87%8F%E7%BA%BF%E6%80%A7%E9%80%92%E6%8E%A8%E6%B1%82%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83"><span class="nav-number">8.</span> <span class="nav-text">（批量）线性递推求乘法逆元</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="nav-number">8.1.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="CCWUCMCTS"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">CCWUCMCTS</p>
+  <div class="site-description" itemprop="description">论文、安全技术、算法、数据结构</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">140</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/CCWUCMCTS" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;CCWUCMCTS" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/wang-cheng-chun-18" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;wang-cheng-chun-18" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/23731371" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23731371" rel="noopener" target="_blank"><i class="fab fa-bootstrap fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wwwwww931121@gmail.com" title="E-Mail → mailto:wwwwww931121@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://xzaslxr.xyz/" title="https:&#x2F;&#x2F;xzaslxr.xyz&#x2F;" rel="noopener" target="_blank">fe1w0_blog</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+      
+      
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021-11 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CCWUCMCTS</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">60k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1:40</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+  <!--使用 Gitter 实现一个 IM 即时通讯聊天室功能-->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'CCWUCMCTS/blog_comments'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+  <!--单击显示文字-->
+  <script src="/live2d-widget/autoload.js"></script>
+  <script type="text/javascript" src="/js/click_show_text.js"></script> 
+
+</body>
+</html>

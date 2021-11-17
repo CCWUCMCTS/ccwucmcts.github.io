@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-vivy.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-vivy.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="PM9xImIZJ5OdDw0XFeXwCNkOm3u98JLNDYmGDd40f0U">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ccwucmcts.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="终于下定决心不碰运气写二分了。。。 思路比较乱，建议直接点进参考① 来说一下我记忆的方法 注意left&lt;&#x3D;right 首先标准查找是随机的找到一个，分三类，找不到返回-1 然后如果要找第一个和最后一个，因为是准确查找，所以要有判别和找不到返回-1 里面的大于还是大于等于，要具体分析。（分析相等的时候向左找还是向右找，返回谁） 举个例子 寻找最后一个相等的，没有的话找比key小">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二分查找">
+<meta property="og:url" content="https://ccwucmcts.github.io/posts/42877/index.html">
+<meta property="og:site_name" content="C. C. Blog">
+<meta property="og:description" content="终于下定决心不碰运气写二分了。。。 思路比较乱，建议直接点进参考① 来说一下我记忆的方法 注意left&lt;&#x3D;right 首先标准查找是随机的找到一个，分三类，找不到返回-1 然后如果要找第一个和最后一个，因为是准确查找，所以要有判别和找不到返回-1 里面的大于还是大于等于，要具体分析。（分析相等的时候向左找还是向右找，返回谁） 举个例子 寻找最后一个相等的，没有的话找比key小">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif">
+<meta property="og:image" content="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif">
+<meta property="article:published_time" content="2019-02-21T22:21:00.000Z">
+<meta property="article:modified_time" content="2021-11-16T12:31:46.081Z">
+<meta property="article:author" content="CCWUCMCTS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif">
+
+<link rel="canonical" href="https://ccwucmcts.github.io/posts/42877/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>二分查找 | C. C. Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="C. C. Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">C. C. Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">一切都是脆弱的，因此一切都可以变得更强大。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ccwucmcts.github.io/posts/42877/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="CCWUCMCTS">
+      <meta itemprop="description" content="论文、安全技术、算法、数据结构">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="C. C. Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          二分查找
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-02-22 06:21:00" itemprop="dateCreated datePublished" datetime="2019-02-22T06:21:00+08:00">2019-02-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-16 20:31:46" itemprop="dateModified" datetime="2021-11-16T20:31:46+08:00">2021-11-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">基础算法</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>527</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>终于下定决心不碰运气写二分了。。。</p>
+<p>思路比较乱，建议直接点进参考①</p>
+<p>来说一下我记忆的方法</p>
+<p>注意left&lt;=right</p>
+<p>首先标准查找是随机的找到一个，分三类，找不到返回-1</p>
+<p>然后如果要找第一个和最后一个，因为是准确查找，所以要有判别和找不到返回-1</p>
+<p>里面的大于还是大于等于，要具体分析。（分析相等的时候向左找还是向右找，返回谁）</p>
+<p>举个例子</p>
+<p>寻找最后一个相等的，没有的话找比key小的最后一个（searchLastEqualOrSmaller）</p>
+<p>这两个元素的位置都是偏右（比如说{1,2,3,4,4,4,5,6}，分成1,2,3|4,4,4|5,6，3和最后一个4都在所在区间的右边），因此要向右找，让相等的情况跟着缩小左边界，因此是大于</p>
+<p>解释一下为什么返回right，根据while结束条件，最后right&lt;right，如果没有相等的，arr[right]&lt;key&lt;arr[left]，否则，key==arr[right]&lt;arr[left]（所以返回left就是比key大的第一个）</p>
+<p>大于等于同理</p>
+<p><img src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" /><img src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" /></p>
+<pre><code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"> 1 //递增 </span><br><span class="line"> 2 #include&lt;cstdio&gt;</span><br><span class="line"> 3 #include&lt;iostream&gt;</span><br><span class="line"> 4 #include&lt;cstring&gt;</span><br><span class="line"> 5 #include&lt;algorithm&gt;</span><br><span class="line"> 6 using namespace std;</span><br><span class="line"> 7 int search(int *arr,int n,int key)&#123;</span><br><span class="line"> 8     int left=0,right=n-1;</span><br><span class="line"> 9     while(left&lt;=right)&#123;</span><br><span class="line">10         int mid=(left+right)&gt;&gt;1;</span><br><span class="line">11         if(arr[mid]==key) return mid;</span><br><span class="line">12         else if(arr[mid]&gt;key) right=mid-1;</span><br><span class="line">13         else left=mid+1;</span><br><span class="line">14     &#125;</span><br><span class="line">15     return -1;</span><br><span class="line">16 &#125;</span><br><span class="line">17 int searchFirstEqual(int *arr,int n,int key)&#123;</span><br><span class="line">18     int left=0,right=n-1;</span><br><span class="line">19     while(left&lt;=right)&#123;</span><br><span class="line">20         int mid=(left+right)&gt;&gt;1;</span><br><span class="line">21         if(arr[mid]&gt;=key) right=mid-1;</span><br><span class="line">22         else left=mid+1;</span><br><span class="line">23     &#125;</span><br><span class="line">24     if(left&lt;n&amp;&amp;arr[left]==key)&#123;</span><br><span class="line">25         return left;</span><br><span class="line">26     &#125;</span><br><span class="line">27     return -1;</span><br><span class="line">28 &#125;</span><br><span class="line">29 int searchLastEqual(int *arr,int n,int key)&#123;</span><br><span class="line">30     int left=0,right=n-1;</span><br><span class="line">31     while(left&lt;=right)&#123;</span><br><span class="line">32         int mid=(left+right)&gt;&gt;1;</span><br><span class="line">33         if(arr[mid]&gt;key) right=mid-1;</span><br><span class="line">34         else left=mid+1;</span><br><span class="line">35     &#125;</span><br><span class="line">36     if(right&gt;=0&amp;&amp;arr[right]==key)&#123;</span><br><span class="line">37         return right;</span><br><span class="line">38     &#125;</span><br><span class="line">39     return -1;</span><br><span class="line">40 &#125;</span><br><span class="line">41 int searchLastEqualOrSmaller(int *arr,int n,int key)&#123;</span><br><span class="line">42     int left=0,right=n-1;</span><br><span class="line">43     while(left&lt;=right)&#123;</span><br><span class="line">44         int mid=(left+right)&gt;&gt;1;</span><br><span class="line">45         if(arr[mid]&gt;key) right=mid-1;</span><br><span class="line">46         else left=mid+1;</span><br><span class="line">47     &#125;</span><br><span class="line">48     return right;</span><br><span class="line">49 &#125;</span><br><span class="line">50 int searchLastSmaller(int *arr,int n,int key)&#123;</span><br><span class="line">51     int left=0,right=n-1;</span><br><span class="line">52     while(left&lt;=right)&#123;</span><br><span class="line">53         int mid=(left+right)&gt;&gt;1;</span><br><span class="line">54         if(arr[mid]&gt;=key) right=mid-1;</span><br><span class="line">55         else left=mid+1;</span><br><span class="line">56     &#125;</span><br><span class="line">57     return right;</span><br><span class="line">58 &#125;</span><br><span class="line">59 int searchFirstEqualOrLarger(int *arr,int n,int key)&#123;</span><br><span class="line">60     int left=0,right=n-1;</span><br><span class="line">61     while(left&lt;=right)&#123;</span><br><span class="line">62         int mid=(left+right)&gt;&gt;1;</span><br><span class="line">63         if(arr[mid]&gt;=key) right=mid-1;</span><br><span class="line">64         else left=mid+1;</span><br><span class="line">65     &#125;</span><br><span class="line">66     return left;</span><br><span class="line">67 &#125;</span><br><span class="line">68 int searchFirstLarger(int *arr,int n,int key)&#123;</span><br><span class="line">69     int left=0,right=n-1;</span><br><span class="line">70     while(left&lt;=right)&#123;</span><br><span class="line">71         int mid=(left+right)&gt;&gt;1;</span><br><span class="line">72         if(arr[mid]&gt;key) right=mid-1;</span><br><span class="line">73         else left=mid+1;</span><br><span class="line">74     &#125;</span><br><span class="line">75     return left;</span><br><span class="line">76 &#125;</span><br><span class="line">77 </span><br><span class="line">78 int main()&#123;</span><br><span class="line">79     int arr[17] = &#123;1, </span><br><span class="line">80                    2, 2, 5, 5, 5, </span><br><span class="line">81                    5, 5, 5, 5, 5, </span><br><span class="line">82                    5, 5, 6, 6, 7&#125;;</span><br><span class="line">83     printf(&quot;First Equal           : %2d \n&quot;, searchFirstEqual(arr, 16, 5));</span><br><span class="line">84     printf(&quot;Last Equal            : %2d \n&quot;, searchLastEqual(arr, 16, 5));</span><br><span class="line">85     printf(&quot;First Equal or Larger : %2d \n&quot;, searchFirstEqualOrLarger(arr, 16, 5));</span><br><span class="line">86     printf(&quot;First Larger          : %2d \n&quot;, searchFirstLarger(arr, 16, 5));</span><br><span class="line">87     printf(&quot;Last Equal or Smaller : %2d \n&quot;, searchLastEqualOrSmaller(arr, 16, 5));</span><br><span class="line">88     printf(&quot;Last Smaller          : %2d \n&quot;, searchLastSmaller(arr, 16, 5));</span><br><span class="line">89     return 0;</span><br><span class="line">90     return 0;</span><br><span class="line">91 &#125;</span><br></pre></td></tr></table></figure></code></pre>
+<p>View Code</p>
+<p>参考：①<a target="_blank" rel="noopener" href="https://www.cnblogs.com/luoxn28/p/5767571.html">你真的会写二分查找吗 - luoxn28 - 博客园</a></p>
+<p>②<a target="_blank" rel="noopener" href="http://blog.chinaunix.net/uid-1844931-id-3337784.html">你真的会写二分检索吗？-liubird- ChinaUnix博客</a>（测试段代码来源）</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>CCWUCMCTS
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://ccwucmcts.github.io/posts/42877/" title="二分查找">https://ccwucmcts.github.io/posts/42877/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://github.com/CCWUCMCTS">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+
+            <span class="label">GitHub</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://www.zhihu.com/people/wang-cheng-chun-18">
+            <span class="icon">
+              <i class="fab fa-zhihu"></i>
+            </span>
+
+            <span class="label">Zhihu</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/35804/" rel="prev" title="（更新）西南民族大学第十届校赛（同步赛）">
+      <i class="fa fa-chevron-left"></i> （更新）西南民族大学第十届校赛（同步赛）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/56788/" rel="next" title="51Nod 1006 最长公共子序列Lcs">
+      51Nod 1006 最长公共子序列Lcs <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="CCWUCMCTS"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">CCWUCMCTS</p>
+  <div class="site-description" itemprop="description">论文、安全技术、算法、数据结构</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">140</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/CCWUCMCTS" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;CCWUCMCTS" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/wang-cheng-chun-18" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;wang-cheng-chun-18" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/23731371" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23731371" rel="noopener" target="_blank"><i class="fab fa-bootstrap fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wwwwww931121@gmail.com" title="E-Mail → mailto:wwwwww931121@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://xzaslxr.xyz/" title="https:&#x2F;&#x2F;xzaslxr.xyz&#x2F;" rel="noopener" target="_blank">fe1w0_blog</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+      
+      
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021-11 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CCWUCMCTS</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">60k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1:40</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+  <!--使用 Gitter 实现一个 IM 即时通讯聊天室功能-->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'CCWUCMCTS/blog_comments'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+  <!--单击显示文字-->
+  <script src="/live2d-widget/autoload.js"></script>
+  <script type="text/javascript" src="/js/click_show_text.js"></script> 
+
+</body>
+</html>
