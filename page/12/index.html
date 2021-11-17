@@ -9,7 +9,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-vivy.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-vivy.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="PM9xImIZJ5OdDw0XFeXwCNkOm3u98JLNDYmGDd40f0U">
+  <meta name="baidu-site-verification" content="code-6J3zJbaPYN">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -22,15 +25,15 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"ccwucmcts.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"ccwucmcts.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="论文、安全技术、算法、数据结构">
+  <meta name="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="C. C. Blog">
 <meta property="og:url" content="https://ccwucmcts.github.io/page/12/index.html">
 <meta property="og:site_name" content="C. C. Blog">
-<meta property="og:description" content="论文、安全技术、算法、数据结构">
+<meta property="og:description" content="一切都是脆弱的，因此一切都可以变得更强大。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="CCWUCMCTS">
 <meta name="twitter:card" content="summary">
@@ -48,7 +51,7 @@
   };
 </script>
 
-  <title>C. C. Blog - 一切都是脆弱的，因此一切都可以变得更强大。</title>
+  <title>C. C. Blog - Security Research, Algorithm and Data Structure</title>
   
 
 
@@ -103,7 +106,7 @@
       <h1 class="site-title">C. C. Blog</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">一切都是脆弱的，因此一切都可以变得更强大。</p>
+      <p class="site-subtitle" itemprop="description">Security Research, Algorithm and Data Structure</p>
   </div>
 
   <div class="site-nav-right">
@@ -198,7 +201,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="CCWUCMCTS">
-      <meta itemprop="description" content="论文、安全技术、算法、数据结构">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -225,7 +228,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 20:31:46" itemprop="dateModified" datetime="2021-11-16T20:31:46+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-17 18:36:19" itemprop="dateModified" datetime="2021-11-17T18:36:19+08:00">2021-11-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -294,13 +297,13 @@
 <p>将1/b替换成逆元x，即b^(m-2)%m。</p>
 <p>答案为(a*b^(m-2))%m。</p>
 <h3 id="例题">例题</h3>
-<p><a target="_blank" rel="noopener" href="http://www.51nod.com/Challenge/Problem.html#problemId=1013" title="51Nod 1013 3的幂的和">51Nod 1013</a></p>
+<p><span class="exturl" data-url="aHR0cDovL3d3dy41MW5vZC5jb20vQ2hhbGxlbmdlL1Byb2JsZW0uaHRtbCNwcm9ibGVtSWQ9MTAxMw==">51Nod 1013<i class="fa fa-external-link-alt"></i></span></p>
 <h3 id="代码">代码</h3>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> db double</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 1000000007</span></span><br><span class="line">ll n;</span><br><span class="line"><span class="function">ll <span class="title">speed</span><span class="params">(ll a,ll b,ll p)</span></span>&#123;</span><br><span class="line">    ll cur=a,ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b)&#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>) ans=ans*cur%p;</span><br><span class="line">        cur=cur*cur%p;</span><br><span class="line">        b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans%p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    ll ans=((<span class="built_in">speed</span>(<span class="number">3</span>,n+<span class="number">1</span>,mod)<span class="number">-1</span>)*<span class="built_in">speed</span>(<span class="number">2</span>,mod<span class="number">-2</span>,mod))%mod;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    <span class="comment">//cout&lt;&lt;speed(2,mod-2,mod)%mod;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;```</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">**为了方便求任意情况的逆元，我们先来补充几个概念：**</span><br><span class="line"></span><br><span class="line">## 欧几里得算法</span><br><span class="line"></span><br><span class="line">log时间内求解最大公约数。</span><br><span class="line"></span><br><span class="line">### 代码</span><br><span class="line"></span><br><span class="line">```c++</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a,llb)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b==<span class="number">0</span>?a:<span class="built_in">gcd</span>(b,a%b);</span><br><span class="line">&#125;```</span><br><span class="line"></span><br><span class="line">### 证明</span><br><span class="line"></span><br><span class="line">[辗转相除法求最大公约数算法证明](https:<span class="comment">//www.cnblogs.com/zwffff/archive/2010/08/25/1808178.html &quot;【整理】辗转相除法求最大公约数算法证明 - 凌风有约 - 博客园&quot;)</span></span><br><span class="line"></span><br><span class="line">## 贝祖定理</span><br><span class="line"></span><br><span class="line">设a,b是整数，则存在整数x,y，使得ax+by=<span class="built_in">gcd</span>(a,b)</span><br><span class="line"></span><br><span class="line">## 扩展欧几里得算法</span><br><span class="line"></span><br><span class="line">#### 求贝祖定理中x和y的解，即求使ax+by=<span class="built_in">gcd</span>(a,b)的x和y。</span><br><span class="line"></span><br><span class="line">我们利用gcd来求，当递归到最内层时，a=<span class="built_in">gcd</span>(a,b)，b=<span class="number">0</span>，因此x=<span class="number">1</span>，y=<span class="number">0</span>。</span><br><span class="line"></span><br><span class="line">假设我们已经得到内层x1，y1，对于外层a，b有a%b=a-(a/b)*b</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>外层：a<em>x+b</em>y=gcd(a,b)</p>
 <p>内层：b<em>x1+(a-(a/b)</em>b)<em>y1=gcd(a,b) <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">展开对比可得：</span><br><span class="line"></span><br></pre></td></tr></table></figure> x=y1 y=x1-a/b</em>y1 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 代码</span><br><span class="line"></span><br><span class="line">```c++</span><br><span class="line">ll exgcd(ll a,ll b,ll &amp;x,ll &amp;y)&#123;//扩展欧几里得算法</span><br><span class="line">    if(b==0)&#123;//递归边界 </span><br><span class="line">        x=1;y=0;</span><br><span class="line">        return a;</span><br><span class="line">    &#125;</span><br><span class="line">    ll ret=exgcd(b,a%b,x,y);</span><br><span class="line">    ll tmp=y;//求解原x,y     </span><br><span class="line">    y=x-a/b*y;</span><br><span class="line">    x=tmp;</span><br><span class="line">    return ret;//返回gcd      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="参考">参考</h3>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/destiny1507/article/details/81750874" title="扩展欧几里得算法详解">扩展欧几里得算法详解</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Rlc3RpbnkxNTA3L2FydGljbGUvZGV0YWlscy84MTc1MDg3NA==">扩展欧几里得算法详解<i class="fa fa-external-link-alt"></i></span></p>
 <h2 id="单个利用扩展欧几里得任意情况下求乘法逆元">（单个）利用扩展欧几里得任意情况下求乘法逆元</h2>
 <p>计算(a/b)%m：</p>
 <p>仍需要逆元存在，即b与m互质。</p>
@@ -308,14 +311,14 @@
 <p>代码与前面相同。</p>
 <p><strong>注意这里参数传m和-m都一样，答案要加m再%m。</strong></p>
 <h3 id="参考-1">参考</h3>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/7876eb2dff89" title="欧几里得算法心得(辗转相除法) - 简书">欧几里得算法心得(辗转相除法)</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC83ODc2ZWIyZGZmODk=">欧几里得算法心得(辗转相除法)<i class="fa fa-external-link-alt"></i></span></p>
 <h2 id="批量线性递推求乘法逆元">（批量）线性递推求乘法逆元</h2>
 <p>给定n,p求1~n中所有整数在模p意义下的乘法逆元。</p>
 <p>n为3e6，p&gt;n且为质数。</p>
-<p><a target="_blank" rel="noopener" href="https://www.luogu.org/problem/P3811" title="P3811 【模板】乘法逆元 - 洛谷 | 计算机科学教育新生态">洛谷P3811 【模板】乘法逆元</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3Uub3JnL3Byb2JsZW0vUDM4MTE=">洛谷P3811 【模板】乘法逆元<i class="fa fa-external-link-alt"></i></span></p>
 <p>此时用单个求法会超时，我们可以推导递推公式。</p>
 <p>本垃圾博主还不会用公式编辑器，于是看这里↓</p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/qdscwyy/p/7795368.html?tdsourcetag=s_pcqq_aiomsg" title="线性求逆元 - Grary - 博客园">线性求逆元 - Grary - 博客园</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vcWRzY3d5eS9wLzc3OTUzNjguaHRtbD90ZHNvdXJjZXRhZz1zX3BjcXFfYWlvbXNn">线性求逆元 - Grary - 博客园<i class="fa fa-external-link-alt"></i></span></p>
 <p>试了试，这里p也必须是质数，还不知道为什么（逃</p>
 <h3 id="代码-1">代码</h3>
 <p><code>c++ #include&lt;bits/stdc++.h&gt; using namespace std; #define ll long long const ll MAXN=3e6+20; ll inv[MAXN]; ll n,mod; void preinv(ll num,ll p)&#123;     inv[0]=inv[1]=1;     for(ll i=2;i&lt;=num;i++)&#123;         inv[i]=(p-p/i)*inv[p%i]%p;     &#125; &#125; int main()&#123;     cin&gt;&gt;n&gt;&gt;mod;     preinv(n,mod);     for(ll i=1;i&lt;=n;i++)&#123;         printf(&quot;%lld\n&quot;,inv[i]);     &#125;     return 0; &#125;</code></p>
@@ -343,7 +346,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="CCWUCMCTS">
-      <meta itemprop="description" content="论文、安全技术、算法、数据结构">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -370,7 +373,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 20:31:46" itemprop="dateModified" datetime="2021-11-16T20:31:46+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-17 18:36:19" itemprop="dateModified" datetime="2021-11-17T18:36:19+08:00">2021-11-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -444,7 +447,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="CCWUCMCTS">
-      <meta itemprop="description" content="论文、安全技术、算法、数据结构">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -471,7 +474,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 20:31:46" itemprop="dateModified" datetime="2021-11-16T20:31:46+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-17 18:36:19" itemprop="dateModified" datetime="2021-11-17T18:36:19+08:00">2021-11-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -547,7 +550,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="CCWUCMCTS">
-      <meta itemprop="description" content="论文、安全技术、算法、数据结构">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -574,7 +577,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 20:33:48" itemprop="dateModified" datetime="2021-11-16T20:33:48+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-17 18:36:18" itemprop="dateModified" datetime="2021-11-17T18:36:18+08:00">2021-11-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -650,7 +653,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="CCWUCMCTS">
-      <meta itemprop="description" content="论文、安全技术、算法、数据结构">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -677,7 +680,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 20:33:53" itemprop="dateModified" datetime="2021-11-16T20:33:53+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-17 18:36:18" itemprop="dateModified" datetime="2021-11-17T18:36:18+08:00">2021-11-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -753,7 +756,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="CCWUCMCTS">
-      <meta itemprop="description" content="论文、安全技术、算法、数据结构">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -780,7 +783,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 20:32:10" itemprop="dateModified" datetime="2021-11-16T20:32:10+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-17 18:36:18" itemprop="dateModified" datetime="2021-11-17T18:36:18+08:00">2021-11-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -854,7 +857,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="CCWUCMCTS">
-      <meta itemprop="description" content="论文、安全技术、算法、数据结构">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -881,7 +884,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 20:31:59" itemprop="dateModified" datetime="2021-11-16T20:31:59+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-17 18:36:18" itemprop="dateModified" datetime="2021-11-17T18:36:18+08:00">2021-11-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -925,7 +928,7 @@
           <h2 id="题意">题意</h2>
 <p>有一堆石子共有N个。A B两个人轮流拿，A先拿。每次只能拿1，3，4颗，拿到最后1颗石子的人获胜。假设A B都非常聪明，拿石子的过程中不会出现失误。给出N，问最后谁能赢得比赛。</p>
 <h2 id="思路">思路</h2>
-<p>博弈论，从零开始推状态，方法详见<a target="_blank" rel="noopener" href="https://www.cnblogs.com/sz-wcc/p/11071914.html">欧几里得游戏(博弈论启蒙)</a>。 最后发现%7为0和2的数是必败态，其它是必胜态。</p>
+<p>博弈论，从零开始推状态，方法详见<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vc3otd2NjL3AvMTEwNzE5MTQuaHRtbA==">欧几里得游戏(博弈论启蒙)<i class="fa fa-external-link-alt"></i></span>。 最后发现%7为0和2的数是必败态，其它是必胜态。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/24116/#more" rel="contents">
@@ -957,7 +960,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="CCWUCMCTS">
-      <meta itemprop="description" content="论文、安全技术、算法、数据结构">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -984,7 +987,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 20:33:35" itemprop="dateModified" datetime="2021-11-16T20:33:35+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-17 18:36:18" itemprop="dateModified" datetime="2021-11-17T18:36:18+08:00">2021-11-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1060,7 +1063,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="CCWUCMCTS">
-      <meta itemprop="description" content="论文、安全技术、算法、数据结构">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1087,7 +1090,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 20:33:40" itemprop="dateModified" datetime="2021-11-16T20:33:40+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-17 18:36:18" itemprop="dateModified" datetime="2021-11-17T18:36:18+08:00">2021-11-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1161,7 +1164,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="CCWUCMCTS">
-      <meta itemprop="description" content="论文、安全技术、算法、数据结构">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1188,7 +1191,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 20:31:46" itemprop="dateModified" datetime="2021-11-16T20:31:46+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-17 18:36:19" itemprop="dateModified" datetime="2021-11-17T18:36:19+08:00">2021-11-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1322,7 +1325,7 @@
     <img class="site-author-image" itemprop="image" alt="CCWUCMCTS"
       src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">CCWUCMCTS</p>
-  <div class="site-description" itemprop="description">论文、安全技术、算法、数据结构</div>
+  <div class="site-description" itemprop="description">一切都是脆弱的，因此一切都可以变得更强大。</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -1349,23 +1352,23 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/CCWUCMCTS" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;CCWUCMCTS" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0NDV1VDTUNUUw==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;CCWUCMCTS"><i class="fab fa-github fa-fw"></i></span>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/wang-cheng-chun-18" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;wang-cheng-chun-18" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i></a>
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS93YW5nLWNoZW5nLWNodW4tMTg=" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;wang-cheng-chun-18"><i class="fab fa-zhihu fa-fw"></i></span>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23731371" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23731371" rel="noopener" target="_blank"><i class="fab fa-bootstrap fa-fw"></i></a>
+        <span class="exturl" data-url="aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vMjM3MzEzNzE=" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23731371"><i class="fab fa-bootstrap fa-fw"></i></span>
       </span>
       <span class="links-of-author-item">
-        <a href="mailto:wwwwww931121@gmail.com" title="E-Mail → mailto:wwwwww931121@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+        <span class="exturl" data-url="bWFpbHRvOnd3d3d3dzkzMTEyMUBnbWFpbC5jb20=" title="E-Mail → mailto:wwwwww931121@gmail.com"><i class="fa fa-envelope fa-fw"></i></span>
       </span>
       <span class="links-of-author-item">
         <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i></a>
       </span>
   </div>
   <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
   </div>
 
 
@@ -1375,7 +1378,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://xzaslxr.xyz/" title="https:&#x2F;&#x2F;xzaslxr.xyz&#x2F;" rel="noopener" target="_blank">fe1w0_blog</a>
+          <span class="exturl" data-url="aHR0cHM6Ly94emFzbHhyLnh5ei8=" title="https:&#x2F;&#x2F;xzaslxr.xyz&#x2F;">fe1w0_blog</span>
         </li>
     </ul>
   </div>
@@ -1419,7 +1422,7 @@
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     <span title="站点阅读时长">1:40</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span> 强力驱动
   </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
         

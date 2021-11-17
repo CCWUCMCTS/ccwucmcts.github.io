@@ -9,7 +9,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-vivy.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-vivy.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="PM9xImIZJ5OdDw0XFeXwCNkOm3u98JLNDYmGDd40f0U">
+  <meta name="baidu-site-verification" content="code-6J3zJbaPYN">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -22,7 +25,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"ccwucmcts.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"ccwucmcts.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="终于下定决心不碰运气写二分了。。。 思路比较乱，建议直接点进参考① 来说一下我记忆的方法 注意left&lt;&#x3D;right 首先标准查找是随机的找到一个，分三类，找不到返回-1 然后如果要找第一个和最后一个，因为是准确查找，所以要有判别和找不到返回-1 里面的大于还是大于等于，要具体分析。（分析相等的时候向左找还是向右找，返回谁） 举个例子 寻找最后一个相等的，没有的话找比key小">
@@ -35,7 +38,7 @@
 <meta property="og:image" content="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif">
 <meta property="og:image" content="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif">
 <meta property="article:published_time" content="2019-02-21T22:21:00.000Z">
-<meta property="article:modified_time" content="2021-11-16T12:31:46.081Z">
+<meta property="article:modified_time" content="2021-11-17T10:36:19.679Z">
 <meta property="article:author" content="CCWUCMCTS">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif">
@@ -108,7 +111,7 @@
       <h1 class="site-title">C. C. Blog</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">一切都是脆弱的，因此一切都可以变得更强大。</p>
+      <p class="site-subtitle" itemprop="description">Security Research, Algorithm and Data Structure</p>
   </div>
 
   <div class="site-nav-right">
@@ -204,7 +207,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="CCWUCMCTS">
-      <meta itemprop="description" content="论文、安全技术、算法、数据结构">
+      <meta itemprop="description" content="一切都是脆弱的，因此一切都可以变得更强大。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -230,7 +233,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 20:31:46" itemprop="dateModified" datetime="2021-11-16T20:31:46+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-17 18:36:19" itemprop="dateModified" datetime="2021-11-17T18:36:19+08:00">2021-11-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -286,8 +289,8 @@
 <p><img src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" /><img src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" /></p>
 <pre><code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"> 1 //递增 </span><br><span class="line"> 2 #include&lt;cstdio&gt;</span><br><span class="line"> 3 #include&lt;iostream&gt;</span><br><span class="line"> 4 #include&lt;cstring&gt;</span><br><span class="line"> 5 #include&lt;algorithm&gt;</span><br><span class="line"> 6 using namespace std;</span><br><span class="line"> 7 int search(int *arr,int n,int key)&#123;</span><br><span class="line"> 8     int left=0,right=n-1;</span><br><span class="line"> 9     while(left&lt;=right)&#123;</span><br><span class="line">10         int mid=(left+right)&gt;&gt;1;</span><br><span class="line">11         if(arr[mid]==key) return mid;</span><br><span class="line">12         else if(arr[mid]&gt;key) right=mid-1;</span><br><span class="line">13         else left=mid+1;</span><br><span class="line">14     &#125;</span><br><span class="line">15     return -1;</span><br><span class="line">16 &#125;</span><br><span class="line">17 int searchFirstEqual(int *arr,int n,int key)&#123;</span><br><span class="line">18     int left=0,right=n-1;</span><br><span class="line">19     while(left&lt;=right)&#123;</span><br><span class="line">20         int mid=(left+right)&gt;&gt;1;</span><br><span class="line">21         if(arr[mid]&gt;=key) right=mid-1;</span><br><span class="line">22         else left=mid+1;</span><br><span class="line">23     &#125;</span><br><span class="line">24     if(left&lt;n&amp;&amp;arr[left]==key)&#123;</span><br><span class="line">25         return left;</span><br><span class="line">26     &#125;</span><br><span class="line">27     return -1;</span><br><span class="line">28 &#125;</span><br><span class="line">29 int searchLastEqual(int *arr,int n,int key)&#123;</span><br><span class="line">30     int left=0,right=n-1;</span><br><span class="line">31     while(left&lt;=right)&#123;</span><br><span class="line">32         int mid=(left+right)&gt;&gt;1;</span><br><span class="line">33         if(arr[mid]&gt;key) right=mid-1;</span><br><span class="line">34         else left=mid+1;</span><br><span class="line">35     &#125;</span><br><span class="line">36     if(right&gt;=0&amp;&amp;arr[right]==key)&#123;</span><br><span class="line">37         return right;</span><br><span class="line">38     &#125;</span><br><span class="line">39     return -1;</span><br><span class="line">40 &#125;</span><br><span class="line">41 int searchLastEqualOrSmaller(int *arr,int n,int key)&#123;</span><br><span class="line">42     int left=0,right=n-1;</span><br><span class="line">43     while(left&lt;=right)&#123;</span><br><span class="line">44         int mid=(left+right)&gt;&gt;1;</span><br><span class="line">45         if(arr[mid]&gt;key) right=mid-1;</span><br><span class="line">46         else left=mid+1;</span><br><span class="line">47     &#125;</span><br><span class="line">48     return right;</span><br><span class="line">49 &#125;</span><br><span class="line">50 int searchLastSmaller(int *arr,int n,int key)&#123;</span><br><span class="line">51     int left=0,right=n-1;</span><br><span class="line">52     while(left&lt;=right)&#123;</span><br><span class="line">53         int mid=(left+right)&gt;&gt;1;</span><br><span class="line">54         if(arr[mid]&gt;=key) right=mid-1;</span><br><span class="line">55         else left=mid+1;</span><br><span class="line">56     &#125;</span><br><span class="line">57     return right;</span><br><span class="line">58 &#125;</span><br><span class="line">59 int searchFirstEqualOrLarger(int *arr,int n,int key)&#123;</span><br><span class="line">60     int left=0,right=n-1;</span><br><span class="line">61     while(left&lt;=right)&#123;</span><br><span class="line">62         int mid=(left+right)&gt;&gt;1;</span><br><span class="line">63         if(arr[mid]&gt;=key) right=mid-1;</span><br><span class="line">64         else left=mid+1;</span><br><span class="line">65     &#125;</span><br><span class="line">66     return left;</span><br><span class="line">67 &#125;</span><br><span class="line">68 int searchFirstLarger(int *arr,int n,int key)&#123;</span><br><span class="line">69     int left=0,right=n-1;</span><br><span class="line">70     while(left&lt;=right)&#123;</span><br><span class="line">71         int mid=(left+right)&gt;&gt;1;</span><br><span class="line">72         if(arr[mid]&gt;key) right=mid-1;</span><br><span class="line">73         else left=mid+1;</span><br><span class="line">74     &#125;</span><br><span class="line">75     return left;</span><br><span class="line">76 &#125;</span><br><span class="line">77 </span><br><span class="line">78 int main()&#123;</span><br><span class="line">79     int arr[17] = &#123;1, </span><br><span class="line">80                    2, 2, 5, 5, 5, </span><br><span class="line">81                    5, 5, 5, 5, 5, </span><br><span class="line">82                    5, 5, 6, 6, 7&#125;;</span><br><span class="line">83     printf(&quot;First Equal           : %2d \n&quot;, searchFirstEqual(arr, 16, 5));</span><br><span class="line">84     printf(&quot;Last Equal            : %2d \n&quot;, searchLastEqual(arr, 16, 5));</span><br><span class="line">85     printf(&quot;First Equal or Larger : %2d \n&quot;, searchFirstEqualOrLarger(arr, 16, 5));</span><br><span class="line">86     printf(&quot;First Larger          : %2d \n&quot;, searchFirstLarger(arr, 16, 5));</span><br><span class="line">87     printf(&quot;Last Equal or Smaller : %2d \n&quot;, searchLastEqualOrSmaller(arr, 16, 5));</span><br><span class="line">88     printf(&quot;Last Smaller          : %2d \n&quot;, searchLastSmaller(arr, 16, 5));</span><br><span class="line">89     return 0;</span><br><span class="line">90     return 0;</span><br><span class="line">91 &#125;</span><br></pre></td></tr></table></figure></code></pre>
 <p>View Code</p>
-<p>参考：①<a target="_blank" rel="noopener" href="https://www.cnblogs.com/luoxn28/p/5767571.html">你真的会写二分查找吗 - luoxn28 - 博客园</a></p>
-<p>②<a target="_blank" rel="noopener" href="http://blog.chinaunix.net/uid-1844931-id-3337784.html">你真的会写二分检索吗？-liubird- ChinaUnix博客</a>（测试段代码来源）</p>
+<p>参考：①<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vbHVveG4yOC9wLzU3Njc1NzEuaHRtbA==">你真的会写二分查找吗 - luoxn28 - 博客园<i class="fa fa-external-link-alt"></i></span></p>
+<p>②<span class="exturl" data-url="aHR0cDovL2Jsb2cuY2hpbmF1bml4Lm5ldC91aWQtMTg0NDkzMS1pZC0zMzM3Nzg0Lmh0bWw=">你真的会写二分检索吗？-liubird- ChinaUnix博客<i class="fa fa-external-link-alt"></i></span>（测试段代码来源）</p>
 
     </div>
 
@@ -306,7 +309,7 @@
     <a href="https://ccwucmcts.github.io/posts/42877/" title="二分查找">https://ccwucmcts.github.io/posts/42877/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
   </li>
 </ul>
 </div>
@@ -432,7 +435,7 @@
     <img class="site-author-image" itemprop="image" alt="CCWUCMCTS"
       src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">CCWUCMCTS</p>
-  <div class="site-description" itemprop="description">论文、安全技术、算法、数据结构</div>
+  <div class="site-description" itemprop="description">一切都是脆弱的，因此一切都可以变得更强大。</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -459,23 +462,23 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/CCWUCMCTS" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;CCWUCMCTS" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0NDV1VDTUNUUw==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;CCWUCMCTS"><i class="fab fa-github fa-fw"></i></span>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/wang-cheng-chun-18" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;wang-cheng-chun-18" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i></a>
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS93YW5nLWNoZW5nLWNodW4tMTg=" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;wang-cheng-chun-18"><i class="fab fa-zhihu fa-fw"></i></span>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23731371" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23731371" rel="noopener" target="_blank"><i class="fab fa-bootstrap fa-fw"></i></a>
+        <span class="exturl" data-url="aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vMjM3MzEzNzE=" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23731371"><i class="fab fa-bootstrap fa-fw"></i></span>
       </span>
       <span class="links-of-author-item">
-        <a href="mailto:wwwwww931121@gmail.com" title="E-Mail → mailto:wwwwww931121@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+        <span class="exturl" data-url="bWFpbHRvOnd3d3d3dzkzMTEyMUBnbWFpbC5jb20=" title="E-Mail → mailto:wwwwww931121@gmail.com"><i class="fa fa-envelope fa-fw"></i></span>
       </span>
       <span class="links-of-author-item">
         <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i></a>
       </span>
   </div>
   <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
   </div>
 
 
@@ -485,7 +488,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://xzaslxr.xyz/" title="https:&#x2F;&#x2F;xzaslxr.xyz&#x2F;" rel="noopener" target="_blank">fe1w0_blog</a>
+          <span class="exturl" data-url="aHR0cHM6Ly94emFzbHhyLnh5ei8=" title="https:&#x2F;&#x2F;xzaslxr.xyz&#x2F;">fe1w0_blog</span>
         </li>
     </ul>
   </div>
@@ -529,7 +532,7 @@
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     <span title="站点阅读时长">1:40</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span> 强力驱动
   </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
         
