@@ -25,19 +25,19 @@
     var CONFIG = {"hostname":"ccwucmcts.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="俗称马拉车算法-&gt;_-&gt; 处理最长回文字串复杂度O(n) 这里菜鸡不会证，简单说一下思路。 由于回文串有奇有偶，所以将串之间和两边加上&#39;#&#39;，为了防止后面某个地方超边界，新串0位置加上$。这样每个回文子串为#a#b#a#形式，必定奇数个，且原子串长度为新字串半径减一，求这个半径p[i]。（即p[i]是以i为中心的最长回文字串的半径） i从1到n，过程中维护一个id点(id&amp;lt">
+  <meta name="description" content="新博客正式启用！ 这几天在搞github pages上的博客，之前也搭过，但功能不是很满意，就没有继续用。换了NexT主题后发现可以实现的功能还是很多的，也把 博客园上的博客 迁移了过来，尽量修改了格式，有些格式不对的可以回去看。 以后可能会发一些技术类的和论文阅读类的，偶尔也会继续做题发题解。 感谢阅读~">
 <meta property="og:type" content="article">
-<meta property="og:title" content="51Nod 1089 最长回文子串 V2（Manacher算法）">
-<meta property="og:url" content="https://ccwucmcts.github.io/2019/02/27/51Nod-1089-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2-V2%EF%BC%88Manacher%E7%AE%97%E6%B3%95%EF%BC%89/index.html">
+<meta property="og:title" content="新博客正式启用">
+<meta property="og:url" content="https://ccwucmcts.github.io/2021/11/17/%E6%96%B0%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E5%90%AF%E7%94%A8/index.html">
 <meta property="og:site_name" content="C. C. Blog">
-<meta property="og:description" content="俗称马拉车算法-&gt;_-&gt; 处理最长回文字串复杂度O(n) 这里菜鸡不会证，简单说一下思路。 由于回文串有奇有偶，所以将串之间和两边加上&#39;#&#39;，为了防止后面某个地方超边界，新串0位置加上$。这样每个回文子串为#a#b#a#形式，必定奇数个，且原子串长度为新字串半径减一，求这个半径p[i]。（即p[i]是以i为中心的最长回文字串的半径） i从1到n，过程中维护一个id点(id&amp;lt">
+<meta property="og:description" content="新博客正式启用！ 这几天在搞github pages上的博客，之前也搭过，但功能不是很满意，就没有继续用。换了NexT主题后发现可以实现的功能还是很多的，也把 博客园上的博客 迁移了过来，尽量修改了格式，有些格式不对的可以回去看。 以后可能会发一些技术类的和论文阅读类的，偶尔也会继续做题发题解。 感谢阅读~">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-02-27T03:06:00.000Z">
-<meta property="article:modified_time" content="2021-11-16T12:31:45.974Z">
+<meta property="article:published_time" content="2021-11-17T07:42:59.000Z">
+<meta property="article:modified_time" content="2021-11-17T07:49:30.121Z">
 <meta property="article:author" content="CCWUCMCTS">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://ccwucmcts.github.io/2019/02/27/51Nod-1089-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2-V2%EF%BC%88Manacher%E7%AE%97%E6%B3%95%EF%BC%89/">
+<link rel="canonical" href="https://ccwucmcts.github.io/2021/11/17/%E6%96%B0%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E5%90%AF%E7%94%A8/">
 
 
 <script id="page-configurations">
@@ -50,7 +50,7 @@
   };
 </script>
 
-  <title>51Nod 1089 最长回文子串 V2（Manacher算法） | C. C. Blog</title>
+  <title>新博客正式启用 | C. C. Blog</title>
   
 
 
@@ -198,7 +198,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ccwucmcts.github.io/2019/02/27/51Nod-1089-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2-V2%EF%BC%88Manacher%E7%AE%97%E6%B3%95%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="https://ccwucmcts.github.io/2021/11/17/%E6%96%B0%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E5%90%AF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -211,7 +211,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          51Nod 1089 最长回文子串 V2（Manacher算法）
+          新博客正式启用
         </h1>
 
         <div class="post-meta">
@@ -221,27 +221,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-02-27 11:06:00" itemprop="dateCreated datePublished" datetime="2019-02-27T11:06:00+08:00">2019-02-27</time>
+              <time title="创建时间：2021-11-17 15:42:59 / 修改时间：15:49:30" itemprop="dateCreated datePublished" datetime="2021-11-17T15:42:59+08:00">2021-11-17</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 20:31:45" itemprop="dateModified" datetime="2021-11-16T20:31:45+08:00">2021-11-16</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">程序设计竞赛</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url" rel="index"><span itemprop="name">字符串</span></a>
+                  <a href="/categories/hello-world/" itemprop="url" rel="index"><span itemprop="name">hello-world</span></a>
                 </span>
             </span>
 
@@ -251,7 +241,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>467</span>
+              <span>148</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -270,15 +260,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>俗称马拉车算法-&gt;_-&gt;</p>
-<p>处理最长回文字串复杂度O(n)</p>
-<p>这里菜鸡不会证，简单说一下思路。</p>
-<p>由于回文串有奇有偶，所以将串之间和两边加上'#'，为了防止后面某个地方超边界，新串0位置加上$。这样每个回文子串为#a#b#a#形式，必定奇数个，且原子串长度为新字串半径减一，求这个半径p[i]。（即p[i]是以i为中心的最长回文字串的半径）</p>
-<p>i从1到n，过程中维护一个id点(id&lt;i，i拉着id走，马拉车)，它是某个回文子串的中心，这个字串右边界是当前最大的。（p[i]是半径，故i+p[i]为边界）</p>
-<p>那么当右边界比i还大时，就可以根据对称性，找到i关于id的对称点j=2*id-i，来优化找字串的过程。怎么优化呢？在id管辖范围内，p[i]和p[j]情况是相同的。由于超出id右边界的的地方不符合对称性，因此p[i]=p[j]当且仅当p[j]小于等于j-(id-p[id])（即j串的左边界不超出id串的左边界），否则只能直接到id右边界，p[i]=mx-i，之后的手动算。</p>
-<p>如果id右边界太小，不能做优化，也得手动算。</p>
-<p>以下代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">100020</span>],sn[<span class="number">200020</span>];</span><br><span class="line"><span class="keyword">int</span> p[<span class="number">200020</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len=<span class="built_in">strlen</span>(s);</span><br><span class="line">    sn[<span class="number">0</span>]=<span class="string">&#x27;$&#x27;</span>;sn[<span class="number">1</span>]=<span class="string">&#x27;#&#x27;</span>;</span><br><span class="line">    <span class="keyword">int</span> j=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">        sn[j++]=s[i];</span><br><span class="line">        sn[j++]=<span class="string">&#x27;#&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    sn[j]=<span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> j;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Manacher</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len=<span class="built_in">init</span>();</span><br><span class="line">    <span class="keyword">int</span> mx_len=<span class="number">-1</span>,id,mx=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;len;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;mx)&#123;</span><br><span class="line">        p[i]=<span class="built_in">min</span>(p[<span class="number">2</span>*id-i],mx-i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        p[i]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(sn[i-p[i]]==sn[i+p[i]]) p[i]++;</span><br><span class="line">        <span class="keyword">if</span>(p[i]+i&gt;mx)&#123;</span><br><span class="line">            id=i;</span><br><span class="line">            mx=p[i]+i;</span><br><span class="line">        &#125;</span><br><span class="line">        mx_len=<span class="built_in">max</span>(mx_len,p[i]<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> mx_len;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;s;</span><br><span class="line">    cout&lt;&lt;<span class="built_in">Manacher</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>新博客正式启用！</p>
+<p>这几天在搞github pages上的博客，之前也搭过，但功能不是很满意，就没有继续用。换了NexT主题后发现可以实现的功能还是很多的，也把 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/sz-wcc/">博客园上的博客</a> 迁移了过来，尽量修改了格式，有些格式不对的可以回去看。</p>
+<p>以后可能会发一些技术类的和论文阅读类的，偶尔也会继续做题发题解。</p>
+<p>感谢阅读~</p>
 
     </div>
 
@@ -294,7 +279,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://ccwucmcts.github.io/2019/02/27/51Nod-1089-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2-V2%EF%BC%88Manacher%E7%AE%97%E6%B3%95%EF%BC%89/" title="51Nod 1089 最长回文子串 V2（Manacher算法）">https://ccwucmcts.github.io/2019/02/27/51Nod-1089-最长回文子串-V2（Manacher算法）/</a>
+    <a href="https://ccwucmcts.github.io/2021/11/17/%E6%96%B0%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E5%90%AF%E7%94%A8/" title="新博客正式启用">https://ccwucmcts.github.io/2021/11/17/新博客正式启用/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -350,13 +335,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/02/22/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-51Nod-1019%E9%80%86%E5%BA%8F%E6%95%B0-%E6%9C%80%E5%B0%8F%E7%9A%84%E4%BA%A4%E6%8D%A2/" rel="prev" title="归并排序 && 51Nod 1019逆序数 && 最小的交换">
-      <i class="fa fa-chevron-left"></i> 归并排序 && 51Nod 1019逆序数 && 最小的交换
+    <a href="/2021/11/10/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2019/02/27/51Nod-1130-%E6%96%AF%E7%89%B9%E6%9E%97%E8%BF%91%E4%BC%BC/" rel="next" title="51Nod 1130 斯特林近似">
-      51Nod 1130 斯特林近似 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     

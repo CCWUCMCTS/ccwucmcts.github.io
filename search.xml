@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>新博客正式启用</title>
+    <url>/2021/11/17/%E6%96%B0%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E5%90%AF%E7%94%A8/</url>
+    <content><![CDATA[<p>新博客正式启用！</p>
+<p>这几天在搞github pages上的博客，之前也搭过，但功能不是很满意，就没有继续用。换了NexT主题后发现可以实现的功能还是很多的，也把 <a href="https://www.cnblogs.com/sz-wcc/">博客园上的博客</a> 迁移了过来，尽量修改了格式，有些格式不对的可以回去看。</p>
+<p>以后可能会发一些技术类的和论文阅读类的，偶尔也会继续做题发题解。</p>
+<p>感谢阅读~</p>
+]]></content>
+      <categories>
+        <category>hello-world</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2021/11/10/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
