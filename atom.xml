@@ -6,7 +6,7 @@
   <link href="https://ccwucmcts.github.io/atom.xml" rel="self"/>
   
   <link href="https://ccwucmcts.github.io/"/>
-  <updated>2021-11-30T06:57:07.273Z</updated>
+  <updated>2021-11-30T07:24:12.594Z</updated>
   <id>https://ccwucmcts.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://ccwucmcts.github.io/posts/63534/"/>
     <id>https://ccwucmcts.github.io/posts/63534/</id>
     <published>2021-11-30T06:22:51.000Z</published>
-    <updated>2021-11-30T06:57:07.273Z</updated>
+    <updated>2021-11-30T07:24:12.594Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="problem"><a href="">Problem</a></h2><span id="more"></span><h2 id="solution">Solution</h2><p><img src="2021-11-30-test/希灵帝国2.jpg" /></p><h2 id="code">Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span></span></span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="problem"><a href="">Problem</a></h2><span id="more"></span><h2 id="solution">Solution</h2><p><img src="希灵帝国2.jpg" /></p><h2 id="code">Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span></span></span><br></pre></td></tr></table></figure>]]></content>
     
     
     <summary type="html">&lt;h2 id=&quot;problem&quot;&gt;&lt;a href=&quot;&quot;&gt;Problem&lt;/a&gt;&lt;/h2&gt;</summary>
