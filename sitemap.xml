@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ccwucmcts.github.io/posts/63534/</loc>
-    
-    <lastmod>2021-11-30</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ccwucmcts.github.io/posts/35804/</loc>
     
     <lastmod>2021-11-17</lastmod>
@@ -1092,13 +1085,6 @@
   
   <url>
     <loc>https://ccwucmcts.github.io/categories/hello-world/</loc>
-    <lastmod>2021-11-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ccwucmcts.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B/%E6%9C%AA%E5%88%86%E7%B1%BB/</loc>
     <lastmod>2021-11-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
